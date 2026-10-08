@@ -1441,10 +1441,19 @@ func _build() -> void:
 
 
         stand.props = props
+        # MOBILE FIX (the 71-74% crash): on phones -- and on any run recovering
+        # from a load-time crash -- the stand is built one sub-step per rendered
+        # frame, and its particle FX are built lazily at first sale, so the
+        # loading window compiles only what the stand itself is made of. Every
+        # sub-step then writes its own breadcrumb into the crash report.
+        stand.staged_build = Cfg.is_mobile or CrashReport.safe_load
+        stand.lean_fx = stand.staged_build
         stand.position = _seat(STAND_POS) + STAND_OUT * Warehouse.long_for(Cfg.yard_inner_for_pile())
         stand.rotation.y = deg_to_rad(STAND_YAW)
         add_child(stand)
         CrashReport.note_doing("stand:ready")
+        if stand.staged_build:
+                await stand.build_staged_steps()
 
 
         builds.stand = stand
@@ -1469,6 +1478,7 @@ func _build() -> void:
         shop.add_child(rank_board)
         CrashReport.note_doing("stand:rank_board")
 
+        await _breathe()
 
         bay_door = BayDoor.new()
         bay_door.name = "BayDoor"
@@ -1478,6 +1488,7 @@ func _build() -> void:
         add_child(bay_door)
         CrashReport.note_doing("stand:bay_door")
 
+        await _breathe()
 
         if plaza != null:
                 plaza.seat_tunnel(bay_door)
@@ -1497,6 +1508,8 @@ func _build() -> void:
 
         if props != null:
                 props.truck = truck
+
+        await _breathe()
 
         delivery_board = DeliveryBoard.new()
         delivery_board.name = "DeliveryBoard"

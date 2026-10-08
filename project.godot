@@ -74,5 +74,13 @@ lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 reflections/reflection_atlas/reflection_count=2
 textures/default_filters/anisotropic_filtering_level=4
 anti_aliasing/quality/msaa_3d=2
+; MOBILE FIX: MSAA 4x on Mali-G-series mobile drivers is both the single
+; biggest per-frame memory cost and a known fault source in the tiled
+; renderer; phones get the plain (no-MSAA) pipeline.
+anti_aliasing/quality/msaa_3d.mobile=0
 occlusion_culling/use_occlusion_culling=true
+; ...and no HB occlusion buffers on phones either: the yard is open enough
+; that culling barely helps, and the occlusion pass is one more driver edge
+; the 71-74% window does not need.
+occlusion_culling/use_occlusion_culling.mobile=false
 driver/threads/thread_model.template=2

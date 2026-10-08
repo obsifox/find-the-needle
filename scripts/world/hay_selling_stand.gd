@@ -418,8 +418,34 @@ var _belt_mid:= Vector3.ZERO
 var _rng:= RandomNumberGenerator.new()
 
 
+## staged/mobile build (the world sets this before add_child): _ready() builds
+## the model shell only, and build_staged_steps() then runs one sub-build per
+## rendered frame -- so if a driver fault hits a pipeline, the crash report's
+## "last action" names the exact sub-step that drew it, not whichever step
+## happened to run last inside one big frame.
+var staged_build:= false
+
+## lean FX (staged builds): the payout particle layers, the deck puff and the
+## kick dust are decoration until the first sale, so they are NOT built during
+## the load at all -- they are built lazily at first use, on the far side of
+## the loading screen. The 71-74% window then compiles only what the stand
+## itself is made of.
+var lean_fx:= false
+
+
 func _ready() -> void:
         _rng.randomize()
+        if staged_build:
+                CrashReport.note_doing("standbuild:model")
+                _build_model()
+                Tech.tech_changed.connect(_on_price_tech_changed)
+                Tech.tech_reset.connect(_refresh_price_board)
+                return
+        _build_all()
+
+
+## The one-shot build (desktop). Verbatim so the desktop load is untouched.
+func _build_all() -> void:
         CrashReport.note_doing("standbuild:model")
         _build_model()
         CrashReport.note_doing("standbuild:belt")
@@ -452,6 +478,54 @@ func _ready() -> void:
 
         Tech.tech_changed.connect(_on_price_tech_changed)
         Tech.tech_reset.connect(_refresh_price_board)
+
+
+## One sub-build per rendered frame (staged builds only). Between steps the
+## render thread gets a frame in which whatever the step above just added is
+## actually drawn, so a pipeline the mobile driver cannot compile is blamed on
+## the step that drew it.
+func build_staged_steps() -> void:
+        var steps: Array = [
+                ["standbuild:belt", _build_belt],
+                ["standbuild:payout", _build_payout_area],
+                ["standbuild:skin", _skin],
+                ["standbuild:dress", _dress],
+                ["standbuild:ledger", _build_ledger_note],
+                ["standbuild:price_board", _build_price_board],
+                ["standbuild:till", _build_till],
+        ]
+        if not lean_fx:
+                steps.append(["standbuild:coins", _build_coins])
+        steps.append(["standbuild:coin_pool", _build_coin_pool])
+        steps.append(["standbuild:sack", _build_sack])
+        if not lean_fx:
+                steps.append(["standbuild:kick", _build_kick])
+                steps.append(["standbuild:sale_fx", _build_sale_fx])
+        for step: Array in steps:
+                CrashReport.note_doing(str(step [0]))
+                (step [1] as Callable).call()
+                await get_tree().process_frame
+
+
+## Lazy builders behind lean_fx: everything here used to be built during the
+## load and only drawn later; now it is built -- and its pipelines compiled --
+## the first time a sale actually needs it.
+func _ensure_payout_fx() -> void:
+        if _coins != null:
+                return
+        CrashReport.note_doing("fxfirst:payout_fx")
+        _build_coins()
+
+
+func _ensure_deck_fx() -> void:
+        if _puff != null and _kick_dust != null:
+                return
+        CrashReport.note_doing("fxfirst:deck_fx")
+        var at:= to_global(_scale_plate) + Vector3(0, 0.05, 0)
+        if _puff == null:
+                _puff = _build_puff(at + Vector3(0, 0.1, 0))
+        if _kick_dust == null:
+                _kick_dust = _build_kick_dust_layer(at)
 
 
 func _build_model() -> void:
@@ -798,6 +872,7 @@ func _build_sack() -> void:
 func _build_sale_fx() -> void:
         _sale_fx = SaleFx.new()
         _sale_fx.name = "SaleFx"
+        _sale_fx.lean = lean_fx
         add_child(_sale_fx)
 
         _sale_fx.watch(_sack, _sack_mesh, _sack_fill,
@@ -1687,6 +1762,8 @@ func _build_kick_dust_layer(at: Vector3) -> GPUParticles3D:
 
 
 func _kick_burst() -> void:
+        if lean_fx:
+                _ensure_deck_fx()
         var f:= clampf(_weigh, 0.0, 1.0)
         if _kick_dust != null:
                 _kick_dust.amount_ratio = clampf(lerpf(0.55, 1.0, f), 0.05, 1.0)
@@ -2395,6 +2472,8 @@ func _tick_coins(delta: float) -> void:
 
 
 func _burst(amount: float) -> void:
+        if lean_fx:
+                _ensure_payout_fx()
         var t:= 0.0
         if amount > 0.0:
                 t = clampf(log(1.0 + amount) / log(1.0 + COIN_REF), 0.0, 1.0)
