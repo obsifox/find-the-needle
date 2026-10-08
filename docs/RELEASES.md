@@ -8,10 +8,13 @@
 - فایل zip کامل سورس (pak-solona.zip) به‌عنوان asset به release پیوست می‌شود
 - **APK ندارد** — هنوز باگ‌ها رفع نشده
 
-## v2.0.0 — باگ‌فیکس (سورس جدا + APK جدا) ⏳
+## v2.0.0 — باگ‌فیکس (سورس + APK در یک ریلیز) ✅
 - رفع ۴ باگ: کرش 74% (Terrain3D)، کنترل لمسی کامل + layout واکنش‌گرا، حذف تنظیمات بی‌استفاده، لودینگ جدید
-- Assetها: `source.zip` (سورس جدید) **و** `FindTheNeedle-v2.0.0.apk` (universal: arm64-v8a + armeabi-v7a، minSdk 26، ETC2/ASTC)
-- کیفیت‌ها: low / medium / high
+- Assetها:
+  - `FindTheNeedle-v2.0.0-universal.apk` (~616MB — universal: arm64-v8a + armeabi-v7a، minSdk 26، فقط ETC2/ASTC، signed)
+  - `find-the-needle-v2.0.0-source.zip` (سورس کامل قابل‌بیلد: + سورس تکسچرهای بازسازی‌شده + export_presets.cfg)
+- سورس تکسچرها از کش ctex بازسازی شد (BCn decode) تا پروژه از صفر قابل import مجدد باشد
+- Terraria... Terrain3D arm32 هم داخل APK هست
 
 ## بعد از v2.0.0
 - هر release: سورس به‌روز + APK ساخته‌شده از همان commit
