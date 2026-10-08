@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" path="res://assets/materials/plaza_wall.tres" id="1_en1t2"]
 [ext_resource type="Material" path="res://assets/materials/plaza_apron.tres" id="2_c48kw"]
-[ext_resource type="PackedScene" path="res://assets/models/warehouse_door.glb" id="3_yfxcc"]
+[ext_resource type="PackedScene" path="res://assets/models/compiled/warehouse_door.scn" id="3_yfxcc"]
 
 [sub_resource type="BoxMesh" id="Box_Blade_01"]
 material = ExtResource("1_en1t2")
