@@ -14,7 +14,7 @@
   - `FindTheNeedle-v2.0.0-universal.apk` (~616MB — universal: arm64-v8a + armeabi-v7a، minSdk 26، فقط ETC2/ASTC، signed)
   - `find-the-needle-v2.0.0-source.zip` (سورس کامل قابل‌بیلد: + سورس تکسچرهای بازسازی‌شده + export_presets.cfg)
 - سورس تکسچرها از کش ctex بازسازی شد (BCn decode) تا پروژه از صفر قابل import مجدد باشد
-- Terraria... Terrain3D arm32 هم داخل APK هست
+- کتابخانه Terrain3D (arm64 + arm32) داخل APK گنجانده شد
 
 ## بعد از v2.0.0
 - هر release: سورس به‌روز + APK ساخته‌شده از همان commit
