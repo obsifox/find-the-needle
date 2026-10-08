@@ -63,6 +63,10 @@ jolt_physics_3d/limits/max_contact_constraints=32768
 3d/time_before_sleep=0.4
 
 [rendering]
+renderer/rendering_method="forward_plus"
+renderer/rendering_method.mobile="mobile"
+textures/vram_compression/import_etc2_astc=true
+textures/vram_compression/import_s3tc_bptc=true
 rendering_device/fallback_to_vulkan=false
 rendering_device/fallback_to_d3d12=false
 rendering_device/fallback_to_opengl3=false

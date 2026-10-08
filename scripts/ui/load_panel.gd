@@ -16,7 +16,7 @@ const COL_WASH:= Color(0, 0, 0, 0.55)
 const COL_DONE:= Color(0.16, 0.38, 0.14)
 
 
-const LOCK_ICON:= preload("res://assets/ui/icon_lock.svg")
+static var LOCK_ICON: Texture2D = load("res://assets/ui/icon_lock.svg")
 const LOCK_PX:= 20
 
 const TICK_PX:= 18.0

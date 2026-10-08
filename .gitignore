@@ -19,3 +19,4 @@ Thumbs.db
 # Godot shader cache (regenerable, machine-specific)
 .godot/shader_cache/
 .godot/exported/
+build/
