@@ -18,32 +18,32 @@ uniform float speed = 0.5;
 uniform float edge = 0.0;
 /// How much of a glow sits in the middle.
 uniform float centre = 0.6;
-instance uniform float fade = 1.0;
+uniform float fade = 1.0;
 /// 0 to 1: a single ring at that radius instead of the travelling loop. Below 0
 /// the loop runs. The downlink's landing drives this once, outward.
-instance uniform float burst = -1.0;
+uniform float burst = -1.0;
 
 void fragment() {
-	float r = length(UV * 2.0 - 1.0);
-	if (r > 1.0) {
-		discard;
-	}
-	float wave;
-	if (burst >= 0.0) {
-		float d = (r - burst) / 0.06;
-		wave = exp(-d * d) * (1.0 - burst) * 2.0 + exp(-r * r * 6.0) * (1.0 - burst);
-	} else {
-		// A sharp front on the outside with its trail behind it, so the rings
-		// read as going OUT from the spot rather than falling in on it.
-		float t = fract(r * rings - TIME * speed);
-		wave = pow(t, 9.0) * (1.0 - r * r);
-	}
-	float rim_line = 0.0;
-	if (edge > 0.0) {
-		float d = (r - edge) / 0.03;
-		rim_line = exp(-d * d) * (0.75 + 0.25 * sin(TIME * 4.0));
-	}
-	float glow = exp(-r * r * 14.0) * centre;
-	float edge_fade = 1.0 - smoothstep(0.85, 1.0, r);
-	ALBEDO = tint * (wave + rim_line + glow) * edge_fade * intensity * fade;
+        float r = length(UV * 2.0 - 1.0);
+        if (r > 1.0) {
+                discard;
+        }
+        float wave;
+        if (burst >= 0.0) {
+                float d = (r - burst) / 0.06;
+                wave = exp(-d * d) * (1.0 - burst) * 2.0 + exp(-r * r * 6.0) * (1.0 - burst);
+        } else {
+                // A sharp front on the outside with its trail behind it, so the rings
+                // read as going OUT from the spot rather than falling in on it.
+                float t = fract(r * rings - TIME * speed);
+                wave = pow(t, 9.0) * (1.0 - r * r);
+        }
+        float rim_line = 0.0;
+        if (edge > 0.0) {
+                float d = (r - edge) / 0.03;
+                rim_line = exp(-d * d) * (0.75 + 0.25 * sin(TIME * 4.0));
+        }
+        float glow = exp(-r * r * 14.0) * centre;
+        float edge_fade = 1.0 - smoothstep(0.85, 1.0, r);
+        ALBEDO = tint * (wave + rim_line + glow) * edge_fade * intensity * fade;
 }

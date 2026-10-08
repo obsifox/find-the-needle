@@ -30,46 +30,46 @@ uniform float pulse_amount = 0.8;
 uniform float end_fade = 0.6;
 /// 1 fades the light out going up the mesh, for a wall rising out of the hay.
 uniform float top_fade : hint_range(0.0, 1.0) = 0.0;
-/// Written per instance, so every mark can fade on its own clock and still share
-/// this one material.
-instance uniform float fade = 1.0;
+/// Per mark, so every mark can fade on its own clock and still share
+/// this one material family (driven per mesh through its own material copy).
+uniform float fade = 1.0;
 
 varying float along_m;
 varying float length_m;
 
 void vertex() {
-	length_m = length(MODEL_MATRIX[1].xyz);
-	along_m = (VERTEX.y + 0.5) * length_m;
+        length_m = length(MODEL_MATRIX[1].xyz);
+        along_m = (VERTEX.y + 0.5) * length_m;
 }
 
 float hash(float n) {
-	return fract(sin(n) * 43758.5453);
+        return fract(sin(n) * 43758.5453);
 }
 
 float noise1(float x) {
-	float i = floor(x);
-	float f = fract(x);
-	f = f * f * (3.0 - 2.0 * f);
-	return mix(hash(i), hash(i + 1.0), f);
+        float i = floor(x);
+        float f = fract(x);
+        f = f * f * (3.0 - 2.0 * f);
+        return mix(hash(i), hash(i + 1.0), f);
 }
 
 void fragment() {
-	float facing = abs(dot(normalize(NORMAL), normalize(VIEW)));
-	float core = pow(facing, 7.0);
-	float body = pow(facing, 1.6);
-	float shaft = body * 0.5 + core * 1.1;
-	float wall = pow(1.0 - facing, 2.5) * 0.9 + 0.08;
-	float shape = mix(shaft, wall, rim);
+        float facing = abs(dot(normalize(NORMAL), normalize(VIEW)));
+        float core = pow(facing, 7.0);
+        float body = pow(facing, 1.6);
+        float shaft = body * 0.5 + core * 1.1;
+        float wall = pow(1.0 - facing, 2.5) * 0.9 + 0.08;
+        float shape = mix(shaft, wall, rim);
 
-	float phase = along_m - TIME * pulse_speed;
-	float pulse = pow(0.5 + 0.5 * sin(phase * TAU / pulse_spacing), 10.0) * pulse_amount;
-	float flicker = 0.82 + 0.3 * noise1(along_m * 1.3 - TIME * 7.0 + UV.x * 5.0);
+        float phase = along_m - TIME * pulse_speed;
+        float pulse = pow(0.5 + 0.5 * sin(phase * TAU / pulse_spacing), 10.0) * pulse_amount;
+        float flicker = 0.82 + 0.3 * noise1(along_m * 1.3 - TIME * 7.0 + UV.x * 5.0);
 
-	float ends = smoothstep(0.0, end_fade, along_m)
-		* smoothstep(0.0, end_fade, length_m - along_m);
-	float rise = along_m / max(length_m, 0.001);
-	float up = mix(1.0, pow(1.0 - clamp(rise, 0.0, 1.0), 1.5), top_fade);
+        float ends = smoothstep(0.0, end_fade, along_m)
+                * smoothstep(0.0, end_fade, length_m - along_m);
+        float rise = along_m / max(length_m, 0.001);
+        float up = mix(1.0, pow(1.0 - clamp(rise, 0.0, 1.0), 1.5), top_fade);
 
-	vec3 col = mix(tint, core_tint, clamp(core * (1.0 - rim) + pulse * 0.35, 0.0, 1.0));
-	ALBEDO = col * shape * (flicker + pulse) * ends * up * intensity * fade;
+        vec3 col = mix(tint, core_tint, clamp(core * (1.0 - rim) + pulse * 0.35, 0.0, 1.0));
+        ALBEDO = col * shape * (flicker + pulse) * ends * up * intensity * fade;
 }

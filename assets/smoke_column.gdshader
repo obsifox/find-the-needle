@@ -1,6 +1,6 @@
 shader_type spatial;
 render_mode blend_mix, depth_draw_never, cull_back, shadows_disabled,
-	specular_disabled, unshaded;
+        specular_disabled, unshaded;
 // Smoke Shader by Yui Kinomoto (@arlez80), MIT -- https://godotshaders.com/shader/smoke-shader/
 // Ported from Godot 3 to 4: hint_color -> source_color, WORLD_MATRIX ->
 // MODEL_MATRIX, NORMALMAP -> NORMAL_MAP, and unshaded because this yard's sun
@@ -38,10 +38,16 @@ uniform float scale = 1.0;
 uniform vec3 tex_speed = vec3(0.0, -2.2, 0.5);
 uniform float smoke_volume : hint_range(0.0, 2.0) = 0.8;
 // `smoke_volume` again, per MACHINE: a generator's steam comes up with its own
-// fire, while every generator wears its model's one copy of this material (see
-// HayCompressor.shared_material). One on everything that does not set it, which
+// fire, while every generator wears its own copy of this material (see
+// HayCompressor.drive_instance). One on everything that does not set it, which
 // is the fire and the stand.
-instance uniform float volume_gain : instance_index(5) = 1.0;
+//
+// MOBILE FIX (Mali crash at the selling stand): this used to be an
+// `instance uniform`, and the stand's puff is the first mesh in the whole load
+// that compiles one -- on mobile Vulkan drivers the pipeline died there and
+// took the game down at 71-74%. Instance uniforms are gone from every project
+// shader now; per-machine variation rides on per-machine material copies.
+uniform float volume_gain = 1.0;
 // How far in from the silhouette the column starts thinning. One is the bare
 // view angle, which only softens the last few degrees and leaves the mesh's own
 // outline plainly readable as a cone. Above one the thin band widens and the
@@ -81,101 +87,101 @@ uniform float base_fade : hint_range(0.0, 1.0) = 0.18;
 varying vec4 world_vertex;
 
 float random(vec3 pos) {
-	return fract(sin(dot(pos, vec3(12.9898, 78.233, -3.532532))) * 43758.5453);
+        return fract(sin(dot(pos, vec3(12.9898, 78.233, -3.532532))) * 43758.5453);
 }
 
 float value_noise(vec3 pos) {
-	vec3 p = floor(pos);
-	vec3 f = fract(pos);
-	float v000 = random(p);
-	float v100 = random(p + vec3(1.0, 0.0, 0.0));
-	float v010 = random(p + vec3(0.0, 1.0, 0.0));
-	float v110 = random(p + vec3(1.0, 1.0, 0.0));
-	float v001 = random(p + vec3(0.0, 0.0, 1.0));
-	float v101 = random(p + vec3(1.0, 0.0, 1.0));
-	float v011 = random(p + vec3(0.0, 1.0, 1.0));
-	float v111 = random(p + vec3(1.0, 1.0, 1.0));
-	vec3 u = f * f * (3.0 - 2.0 * f);
-	return mix(
-		mix(mix(v000, v100, u.x), mix(v010, v110, u.x), u.y),
-		mix(mix(v001, v101, u.x), mix(v011, v111, u.x), u.y),
-		u.z);
+        vec3 p = floor(pos);
+        vec3 f = fract(pos);
+        float v000 = random(p);
+        float v100 = random(p + vec3(1.0, 0.0, 0.0));
+        float v010 = random(p + vec3(0.0, 1.0, 0.0));
+        float v110 = random(p + vec3(1.0, 1.0, 0.0));
+        float v001 = random(p + vec3(0.0, 0.0, 1.0));
+        float v101 = random(p + vec3(1.0, 0.0, 1.0));
+        float v011 = random(p + vec3(0.0, 1.0, 1.0));
+        float v111 = random(p + vec3(1.0, 1.0, 1.0));
+        vec3 u = f * f * (3.0 - 2.0 * f);
+        return mix(
+                mix(mix(v000, v100, u.x), mix(v010, v110, u.x), u.y),
+                mix(mix(v001, v101, u.x), mix(v011, v111, u.x), u.y),
+                u.z);
 }
 
 float noise_tex(vec3 p) {
-	return value_noise(p * 0.984864) * 0.5
-		+ value_noise(p * 2.543) * 0.25
-		+ value_noise(p * 9.543543) * 0.125
-		+ value_noise(p * 21.65436) * 0.0625
-		+ value_noise(p * 42.0) * 0.03125
-		+ value_noise(p * 87.135148) * 0.015625
-		+ value_noise(p * 340.66534654) * 0.0078125;
+        return value_noise(p * 0.984864) * 0.5
+                + value_noise(p * 2.543) * 0.25
+                + value_noise(p * 9.543543) * 0.125
+                + value_noise(p * 21.65436) * 0.0625
+                + value_noise(p * 42.0) * 0.03125
+                + value_noise(p * 87.135148) * 0.015625
+                + value_noise(p * 340.66534654) * 0.0078125;
 }
 
 void vertex() {
-	world_vertex = MODEL_MATRIX * vec4(VERTEX * scale, 1.0);
+        world_vertex = MODEL_MATRIX * vec4(VERTEX * scale, 1.0);
 }
 
 void fragment() {
-	// ONE sample, where the original took nine.
-	//
-	// The other eight were a 3x3 tap the original ran a Sobel filter over to
-	// derive a NORMAL_MAP -- and this material is `unshaded`, so nothing is ever
-	// lit by that normal and the whole result was thrown away. Each tap is a
-	// seven-octave fractal, so the plume was costing sixty-three value_noise
-	// evaluations per pixel to compute a value it did not use.
-	float height = clamp(UV.y, 0.0, 1.0);
+        // ONE sample, where the original took nine.
+        //
+        // The other eight were a 3x3 tap the original ran a Sobel filter over to
+        // derive a NORMAL_MAP -- and this material is `unshaded`, so nothing is ever
+        // lit by that normal and the whole result was thrown away. Each tap is a
+        // seven-octave fractal, so the plume was costing sixty-three value_noise
+        // evaluations per pixel to compute a value it did not use.
+        float height = clamp(UV.y, 0.0, 1.0);
 
-	// The sample point drifts sideways as it climbs, so the pattern the plume is
-	// cut from meanders instead of standing straight up over the pipe.
-	vec3 at = world_vertex.xyz + tex_speed * TIME;
-	at.xz += vec2(sin(height * 2.1 + TIME * 0.31),
-		cos(height * 1.7 + TIME * 0.23)) * sway * height;
-	// ONE sample, where the original took nine.
-	//
-	// The other eight were a 3x3 tap the original ran a Sobel filter over to
-	// derive a NORMAL_MAP -- and this material is `unshaded`, so nothing is ever
-	// lit by that normal and the whole result was thrown away. Each tap is a
-	// seven-octave fractal, so the plume was costing sixty-three value_noise
-	// evaluations per pixel to compute a value it did not use.
-	// Warped first: see `warp`. The offsets are arbitrary and only there to stop
-	// the two samples sharing a lattice.
-	float drag = noise_tex(at * 0.41 + vec3(19.3, 7.1, 4.7)) - 0.5;
-	at += vec3(drag, drag * 0.6, -drag) * warp;
-	float density = clamp((noise_tex(at) - 0.5) * noise_contrast + 0.5, 0.0, 1.0);
+        // The sample point drifts sideways as it climbs, so the pattern the plume is
+        // cut from meanders instead of standing straight up over the pipe.
+        vec3 at = world_vertex.xyz + tex_speed * TIME;
+        at.xz += vec2(sin(height * 2.1 + TIME * 0.31),
+                cos(height * 1.7 + TIME * 0.23)) * sway * height;
+        // ONE sample, where the original took nine.
+        //
+        // The other eight were a 3x3 tap the original ran a Sobel filter over to
+        // derive a NORMAL_MAP -- and this material is `unshaded`, so nothing is ever
+        // lit by that normal and the whole result was thrown away. Each tap is a
+        // seven-octave fractal, so the plume was costing sixty-three value_noise
+        // evaluations per pixel to compute a value it did not use.
+        // Warped first: see `warp`. The offsets are arbitrary and only there to stop
+        // the two samples sharing a lattice.
+        float drag = noise_tex(at * 0.41 + vec3(19.3, 7.1, 4.7)) - 0.5;
+        at += vec3(drag, drag * 0.6, -drag) * warp;
+        float density = clamp((noise_tex(at) - 0.5) * noise_contrast + 0.5, 0.0, 1.0);
 
-	// How much column the eye is looking through here: one straight on, zero at
-	// the silhouette, whatever direction the camera comes from. abs() because
-	// the plume is thin enough to see the far wall through and its normal points
-	// the other way.
-	float depth_through = abs(dot(normalize(NORMAL), normalize(VIEW)));
-	// The original ends the column with a hard edge at both ends of the mesh. A
-	// chimney's plume grows out of the mouth and thins away at the top, so both
-	// ends are faded rather than cut.
-	float rise = smoothstep(0.0, max(base_fade, 0.001), height);
-	float dissipate = 1.0 - smoothstep(1.0 - top_fade, 1.0, height);
-	// Everything about the CONE, in one number: thick down the middle, gone at
-	// the silhouette, growing out of the mouth and thinning away at the top.
-	float shape = clamp(pow(depth_through, edge_falloff) * smoke_volume * volume_gain, 0.0, 1.0)
-		* rise * dissipate;
+        // How much column the eye is looking through here: one straight on, zero at
+        // the silhouette, whatever direction the camera comes from. abs() because
+        // the plume is thin enough to see the far wall through and its normal points
+        // the other way.
+        float depth_through = abs(dot(normalize(NORMAL), normalize(VIEW)));
+        // The original ends the column with a hard edge at both ends of the mesh. A
+        // chimney's plume grows out of the mouth and thins away at the top, so both
+        // ends are faded rather than cut.
+        float rise = smoothstep(0.0, max(base_fade, 0.001), height);
+        float dissipate = 1.0 - smoothstep(1.0 - top_fade, 1.0, height);
+        // Everything about the CONE, in one number: thick down the middle, gone at
+        // the silhouette, growing out of the mouth and thinning away at the top.
+        float shape = clamp(pow(depth_through, edge_falloff) * smoke_volume * volume_gain, 0.0, 1.0)
+                * rise * dissipate;
 
-	// THE NOISE DECIDES WHERE THE EDGE IS, NOT HOW BRIGHT IT IS.
-	//
-	// This is the whole difference between smoke and a cone with a soft rim.
-	// Fading the cone out and then multiplying noise over it leaves the outline
-	// exactly where the mesh put it: every contour of the result is a contour of
-	// the cone, so however soft the fade is, the eye still reads a cone -- which
-	// is what the player kept seeing and calling a tunnel.
-	//
-	// Multiplying the noise IN before the threshold moves the boundary instead.
-	// The plume ends where `density * shape` falls below the gate, and since
-	// density is a moving fractal, that contour is ragged, has tongues sticking
-	// out where the noise runs high and bites taken out of it where it runs low.
-	// The mesh stops being a shape that is drawn and becomes the envelope the
-	// smoke is cut out of, which is why the cone is now wider than the plume.
-	float gate = smoke_aperture + (1.0 - smoke_aperture) * height * 0.35;
-	float smoke = smoothstep(gate, gate + smoke_softness, density * shape);
+        // THE NOISE DECIDES WHERE THE EDGE IS, NOT HOW BRIGHT IT IS.
+        //
+        // This is the whole difference between smoke and a cone with a soft rim.
+        // Fading the cone out and then multiplying noise over it leaves the outline
+        // exactly where the mesh put it: every contour of the result is a contour of
+        // the cone, so however soft the fade is, the eye still reads a cone -- which
+        // is what the player kept seeing and calling a tunnel.
+        //
+        // Multiplying the noise IN before the threshold moves the boundary instead.
+        // The plume ends where `density * shape` falls below the gate, and since
+        // density is a moving fractal, that contour is ragged, has tongues sticking
+        // out where the noise runs high and bites taken out of it where it runs low.
+        // The mesh stops being a shape that is drawn and becomes the envelope the
+        // smoke is cut out of, which is why the cone is now wider than the plume.
+        float gate = smoke_aperture + (1.0 - smoke_aperture) * height * 0.35;
+        float smoke = smoothstep(gate, gate + smoke_softness, density * shape);
 
-	ALBEDO = smoke_color.rgb;
-	ALPHA = clamp(smoke * smoke_color.a, 0.0, 1.0);
+        ALBEDO = smoke_color.rgb;
+        ALPHA = clamp(smoke * smoke_color.a, 0.0, 1.0);
 }

@@ -33,33 +33,33 @@ uniform float specular : hint_range(0.0, 1.0) = 0.5;
 uniform float edge_cell = 0.035;
 uniform float edge_jitter = 0.06;
 
-instance uniform vec3 road_origin = vec3(0.0);
-instance uniform vec3 road_dir = vec3(0.0, 0.0, 1.0);
-instance uniform float road_offset = 0.0;
+uniform vec3 road_origin = vec3(0.0);
+uniform vec3 road_dir = vec3(0.0, 0.0, 1.0);
+uniform float road_offset = 0.0;
 // (tail, front) in metres down the road. The defaults draw nothing.
-instance uniform vec2 road_seg_a = vec2(1000.0, -1000.0);
-instance uniform vec2 road_seg_b = vec2(1000.0, -1000.0);
+uniform vec2 road_seg_a = vec3(1000.0, -1000.0).xy;
+uniform vec2 road_seg_b = vec3(1000.0, -1000.0).xy;
 
 varying vec3 from_origin;
 
 void vertex() {
-	from_origin = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz - road_origin;
+        from_origin = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz - road_origin;
 }
 
 float cell_noise(vec3 p) {
-	return fract(sin(dot(floor(p / edge_cell), vec3(12.9898, 78.233, 37.719))) * 43758.5453);
+        return fract(sin(dot(floor(p / edge_cell), vec3(12.9898, 78.233, 37.719))) * 43758.5453);
 }
 
 void fragment() {
-	float s = road_offset + dot(from_origin, road_dir)
-		+ (cell_noise(from_origin) * 2.0 - 1.0) * edge_jitter;
-	bool in_a = s > road_seg_a.x && s < road_seg_a.y;
-	bool in_b = s > road_seg_b.x && s < road_seg_b.y;
-	if (!in_a && !in_b) {
-		discard;
-	}
-	ALBEDO = albedo.rgb;
-	ROUGHNESS = roughness;
-	METALLIC = metallic;
-	SPECULAR = specular;
+        float s = road_offset + dot(from_origin, road_dir)
+                + (cell_noise(from_origin) * 2.0 - 1.0) * edge_jitter;
+        bool in_a = s > road_seg_a.x && s < road_seg_a.y;
+        bool in_b = s > road_seg_b.x && s < road_seg_b.y;
+        if (!in_a && !in_b) {
+                discard;
+        }
+        ALBEDO = albedo.rgb;
+        ROUGHNESS = roughness;
+        METALLIC = metallic;
+        SPECULAR = specular;
 }

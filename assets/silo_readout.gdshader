@@ -41,9 +41,9 @@ render_mode cull_back, shadows_disabled;
 // material (see HayCompressor.shared_material), because a copy per silo is a
 // mesh and material pair nothing else shares and cannot be drawn instanced. The
 // number is the one thing that differs between two silos, so it lives on the
-// instance; `HaySilo._apply_readout` sets it through
+// per-machine; `HaySilo._apply_readout` sets it through
 // HayCompressor.drive_instance. Everything below it is a constant.
-instance uniform int value : instance_index(0) = 0;
+uniform int value = 0;
 // How many digit cells the quad is divided into.
 uniform float cells = 3.0;
 // What fraction of a cell the glyph itself covers, across and up. The rest is
@@ -70,59 +70,59 @@ const int GLYPH_MASK[10] = {63, 6, 91, 79, 102, 109, 125, 7, 127, 111};
 // Signed distance to a box, negative inside. One function for all seven, so a
 // segment is a position and a size and nothing else.
 float box_sd(vec2 p, vec2 half_size) {
-	vec2 d = abs(p) - half_size;
-	return length(max(d, vec2(0.0))) + min(max(d.x, d.y), 0.0);
+        vec2 d = abs(p) - half_size;
+        return length(max(d, vec2(0.0))) + min(max(d.x, d.y), 0.0);
 }
 
 // How much of this pixel the segment covers, softened by one pixel so a slab
 // edge is a line rather than a staircase.
 float seg_cover(int mask, int bit, vec2 g, vec2 at, vec2 half_size, float aa) {
-	if ((mask / bit) % 2 == 0) {
-		return 0.0;
-	}
-	return 1.0 - smoothstep(-aa, aa, box_sd(g - at, half_size));
+        if ((mask / bit) % 2 == 0) {
+                return 0.0;
+        }
+        return 1.0 - smoothstep(-aa, aa, box_sd(g - at, half_size));
 }
 
 void fragment() {
-	int shown = clamp(value, 0, 999);
-	int n = int(cells);
-	float u = UV.x * cells;
-	int cell = clamp(int(floor(u)), 0, n - 1);
+        int shown = clamp(value, 0, 999);
+        int n = int(cells);
+        float u = UV.x * cells;
+        int cell = clamp(int(floor(u)), 0, n - 1);
 
-	// The place this cell stands in, worked out by dividing down rather than by
-	// a power: shader `pow` is a float, and 10^2 coming back as 99.999 is a
-	// hundreds digit that reads one too low on some machines and not others.
-	int place = 1;
-	for (int i = cell + 1; i < n; i++) {
-		place *= 10;
-	}
-	// A leading zero is BLANK and not "0". A drive display reading 010 for ten
-	// a minute is a display nobody trusts the first digit of.
-	bool blanked = (shown < place) && (cell < n - 1);
-	int digit = (shown / place) % 10;
+        // The place this cell stands in, worked out by dividing down rather than by
+        // a power: shader `pow` is a float, and 10^2 coming back as 99.999 is a
+        // hundreds digit that reads one too low on some machines and not others.
+        int place = 1;
+        for (int i = cell + 1; i < n; i++) {
+                place *= 10;
+        }
+        // A leading zero is BLANK and not "0". A drive display reading 010 for ten
+        // a minute is a display nobody trusts the first digit of.
+        bool blanked = (shown < place) && (cell < n - 1);
+        int digit = (shown / place) % 10;
 
-	// Into the glyph's own box: one unit wide, one tall, origin in the middle,
-	// +y up. UV.y runs down the quad, which is the flip.
-	vec2 g = vec2((fract(u) - 0.5) / glyph.x, (0.5 - UV.y) / glyph.y);
-	float aa = fwidth(g.x) * 0.8;
+        // Into the glyph's own box: one unit wide, one tall, origin in the middle,
+        // +y up. UV.y runs down the quad, which is the flip.
+        vec2 g = vec2((fract(u) - 0.5) / glyph.x, (0.5 - UV.y) / glyph.y);
+        float aa = fwidth(g.x) * 0.8;
 
-	float lit = 0.0;
-	if (!blanked) {
-		int m = GLYPH_MASK[digit];
-		vec2 bar = vec2(bar_len, bar_thick) * 0.5;
-		vec2 post = vec2(post_thick, post_len) * 0.5;
-		lit = max(lit, seg_cover(m, 1, g, vec2(0.0, 0.5), bar, aa));    // a, top
-		lit = max(lit, seg_cover(m, 2, g, vec2(0.5, 0.25), post, aa));  // b
-		lit = max(lit, seg_cover(m, 4, g, vec2(0.5, -0.25), post, aa)); // c
-		lit = max(lit, seg_cover(m, 8, g, vec2(0.0, -0.5), bar, aa));   // d, foot
-		lit = max(lit, seg_cover(m, 16, g, vec2(-0.5, -0.25), post, aa)); // e
-		lit = max(lit, seg_cover(m, 32, g, vec2(-0.5, 0.25), post, aa));  // f
-		lit = max(lit, seg_cover(m, 64, g, vec2(0.0, 0.0), bar, aa));   // g, bar
-	}
+        float lit = 0.0;
+        if (!blanked) {
+                int m = GLYPH_MASK[digit];
+                vec2 bar = vec2(bar_len, bar_thick) * 0.5;
+                vec2 post = vec2(post_thick, post_len) * 0.5;
+                lit = max(lit, seg_cover(m, 1, g, vec2(0.0, 0.5), bar, aa));    // a, top
+                lit = max(lit, seg_cover(m, 2, g, vec2(0.5, 0.25), post, aa));  // b
+                lit = max(lit, seg_cover(m, 4, g, vec2(0.5, -0.25), post, aa)); // c
+                lit = max(lit, seg_cover(m, 8, g, vec2(0.0, -0.5), bar, aa));   // d, foot
+                lit = max(lit, seg_cover(m, 16, g, vec2(-0.5, -0.25), post, aa)); // e
+                lit = max(lit, seg_cover(m, 32, g, vec2(-0.5, 0.25), post, aa));  // f
+                lit = max(lit, seg_cover(m, 64, g, vec2(0.0, 0.0), bar, aa));   // g, bar
+        }
 
-	ALBEDO = mix(off_color, on_color, lit);
-	EMISSION = on_color * on_emit * lit;
-	ROUGHNESS = mix(off_rough, on_rough, lit);
-	METALLIC = 0.0;
-	SPECULAR = 0.4;
+        ALBEDO = mix(off_color, on_color, lit);
+        EMISSION = on_color * on_emit * lit;
+        ROUGHNESS = mix(off_rough, on_rough, lit);
+        METALLIC = 0.0;
+        SPECULAR = 0.4;
 }

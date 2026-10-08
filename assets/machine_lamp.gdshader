@@ -36,25 +36,26 @@ uniform float emission_energy = 1.0;
 // Negative is "not set", which falls back to the table's. One per mesh: two
 // lamps on one mesh would share it, and none of the models do that.
 //
-// The slots are stated because the slurry, the pour and the steam carry
-// instance uniforms too, and two materials on one mesh that both claim slot 0
-// under different names overwrite each other.
-instance uniform float lamp_energy : instance_index(0) = -1.0;
+// Per machine, through HayCompressor.drive_instance: each driven mesh wears
+// its own copy of the material, so no slot is claimed and no copy overwrites
+// another (instance uniforms used to do this job and are gone -- mobile
+// Vulkan drivers lost the device compiling the first one).
+uniform float lamp_energy = -1.0;
 // The machine's lamp colour, for the albedo and the glow both, as the scanner
 // writes them: its alpha is only "set" (1) or "not set" (negative), and the
 // surface keeps the material's own alpha either way. Sent as a Color, so it
 // arrives converted to linear the way `albedo` and `emission` are.
-instance uniform vec4 lamp_colour : instance_index(6) = vec4(0.0, 0.0, 0.0, -1.0);
+uniform vec4 lamp_colour = vec4(0.0, 0.0, 0.0, -1.0);
 
 void fragment() {
-	bool tinted = lamp_colour.a >= 0.0;
-	ALBEDO = tinted ? lamp_colour.rgb : albedo.rgb;
-	ROUGHNESS = roughness;
-	METALLIC = metallic;
-	SPECULAR = specular;
-	EMISSION = (tinted ? lamp_colour.rgb : emission)
-		* (lamp_energy < 0.0 ? emission_energy : lamp_energy);
+        bool tinted = lamp_colour.a >= 0.0;
+        ALBEDO = tinted ? lamp_colour.rgb : albedo.rgb;
+        ROUGHNESS = roughness;
+        METALLIC = metallic;
+        SPECULAR = specular;
+        EMISSION = (tinted ? lamp_colour.rgb : emission)
+                * (lamp_energy < 0.0 ? emission_energy : lamp_energy);
 #ifdef LAMP_ALPHA
-	ALPHA = albedo.a;
+        ALPHA = albedo.a;
 #endif
 }

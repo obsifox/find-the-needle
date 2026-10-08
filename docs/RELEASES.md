@@ -20,3 +20,22 @@
 - هر release: سورس به‌روز + APK ساخته‌شده از همان commit
 - تگ‌گذاری: `vX.Y.Z`
 - APKها زیر ۲GB (محدودیت GitHub Releases asset)
+
+---
+
+## v2.0.0 — به‌روزرسانی (نسخه‌ی APK: versionCode 3) 🔁
+
+ریشه‌ی واقعی کرش ۷۱–۷۴٪ پیدا و رفع شد (جزئیات فنی در `docs/BUGS.md`):
+حذف کامل `instance uniform` از شیدرها + مسیر جدید per-machine برای متریال‌ها.
+
+- `FindTheNeedle-v2.0.0-universal.apk` بازساخته شد (versionCode 3):
+  - universal — arm64-v8a + armeabi-v7a
+  - minSdk 24 (پیش‌فرض قالب گودوت؛ دستگاه هدف Android 36 پشتیبانی می‌شود)، targetSdk 36
+  - بافت‌ها: ETC2/ASTC، کیفیت‌های low/medium/high داخل بازی
+- `find-the-needle-v2.0.0-source.zip` بازساخته شد — این بار **کامل و قابل‌بیلد
+  به‌تنهایی**: سورس‌ها + کش‌های `.godot/imported` (باینری GLB/صوت/تکسچر) +
+  فایل‌های `.import` تعمیرشده.
+- ⚠️ **امضای APK عوض شده** (کلید قبلی در دسترس نیست): قبل از نصب، نسخه‌ی قبلی
+  را حذف (uninstall) کنید.
+- اگر باز هم کرشی رخ دهد: بعد از اجرای بعدی بازی، دیالوگ گزارش کرش دقیقاً
+  آخرین زیرمرحله‌ی لود (مثلاً `standbuild:kick`) را نشان می‌دهد.

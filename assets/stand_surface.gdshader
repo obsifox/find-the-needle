@@ -80,17 +80,13 @@ uniform float coat_rough : hint_range(0.0, 1.0) = 0.1;
 // carrying it here rather than in a second shader is `coat`'s argument above,
 // word for word.
 //
-// PER MACHINE ON THE POUR, and only there. Every pulper wears its model's one
-// copy of the cream, so one pulper pouring cannot scroll it on the material.
-// `HayCompressor.flowing_shader` compiles this file again with the define set
-// and the pour alone wears that copy, because an instance uniform here would
-// give every surface in the yard wearing this shader a slot in the global
-// instance buffer, and there are thousands of them.
-#ifdef FLOW_PER_INSTANCE
-instance uniform vec2 flow_uv : instance_index(4) = vec2(0.0);
-#else
+// PER MACHINE ON THE POUR, and only there. Every pulper wears its own copy of
+// the material, so one pulper pouring cannot scroll it on the material.
+// `HayCompressor.drive_instance` writes it on the pour's own material copy
+// (an instance uniform used to do this job; it is gone -- the stand's puff was
+// the first mesh to compile one, and mobile Vulkan drivers lost the device
+// right there, which is the 71-74% crash this tree exists to fix).
 uniform vec2 flow_uv = vec2(0.0);
-#endif
 
 // Everything above this WORLD height is thrown away.
 //
@@ -142,81 +138,81 @@ const float WOBBLE_RIPPLE_MIX = 0.35;
 const float WOBBLE_SQUASH = 0.5;
 
 void vertex() {
-	// A `return` is not allowed in a processor function, so the whole stage
-	// sits inside the test rather than stepping over it. Same branch either
-	// way: one compare on a uniform, taken the same way by every vertex of
-	// the draw.
-	if (wobble.x != 0.0 || wobble.y != 0.0 || wobble.z != 0.0) {
-		// Zero at the anchor plane and one at the top, squared: a linear weight
-		// shears the block like a deck of cards, and the square is what makes the
-		// top overshoot and the foot hold still.
-		float h = max(wobble_height, 0.001);
-		float t = clamp(VERTEX.y / h, 0.0, 1.0);
-		float w = t * t;
-		// Zero outside the band, because the weight is clamped there and a
-		// constant does not tilt: without this the lighting on anything above the
-		// top of the block leans while the block itself does not.
-		float dw = (t > 0.0 && t < 1.0) ? 2.0 * t / h : 0.0;
-		float ph = wobble_phase + (VERTEX.x + VERTEX.z) * WOBBLE_RIPPLE;
-		float r = sin(ph);
-		float dr = cos(ph) * WOBBLE_RIPPLE;
-		float lean = 1.0 + WOBBLE_RIPPLE_MIX * r;
-		// `flat` is a reserved word in this shading language, hence the name.
-		float sag = WOBBLE_SQUASH * length(wobble.xz);
+        // A `return` is not allowed in a processor function, so the whole stage
+        // sits inside the test rather than stepping over it. Same branch either
+        // way: one compare on a uniform, taken the same way by every vertex of
+        // the draw.
+        if (wobble.x != 0.0 || wobble.y != 0.0 || wobble.z != 0.0) {
+                // Zero at the anchor plane and one at the top, squared: a linear weight
+                // shears the block like a deck of cards, and the square is what makes the
+                // top overshoot and the foot hold still.
+                float h = max(wobble_height, 0.001);
+                float t = clamp(VERTEX.y / h, 0.0, 1.0);
+                float w = t * t;
+                // Zero outside the band, because the weight is clamped there and a
+                // constant does not tilt: without this the lighting on anything above the
+                // top of the block leans while the block itself does not.
+                float dw = (t > 0.0 && t < 1.0) ? 2.0 * t / h : 0.0;
+                float ph = wobble_phase + (VERTEX.x + VERTEX.z) * WOBBLE_RIPPLE;
+                float r = sin(ph);
+                float dr = cos(ph) * WOBBLE_RIPPLE;
+                float lean = 1.0 + WOBBLE_RIPPLE_MIX * r;
+                // `flat` is a reserved word in this shading language, hence the name.
+                float sag = WOBBLE_SQUASH * length(wobble.xz);
 
-		vec3 d = vec3(wobble.x * w * lean,
-			(wobble.y * lean - sag) * w,
-			wobble.z * w * lean);
-		VERTEX += d;
+                vec3 d = vec3(wobble.x * w * lean,
+                        (wobble.y * lean - sag) * w,
+                        wobble.z * w * lean);
+                VERTEX += d;
 
-		// The normal has to come with it, and on this object more than on any
-		// other: the slab is the only surface in the game wearing a clearcoat, so
-		// what the player actually reads the wobble off is the highlight sliding
-		// over it. Displacing the vertices alone leaves that highlight pinned to a
-		// shape that is no longer there.
-		//
-		// First order, N' = N - transpose(J) * N, with J the derivative of the
-		// displacement above. Written out rather than sampled twice, because the
-		// displacement is an expression and its derivative is nine multiplies.
-		float dxx = wobble.x * w * WOBBLE_RIPPLE_MIX * dr;
-		float dxy = wobble.x * dw * lean;
-		float dzz = wobble.z * w * WOBBLE_RIPPLE_MIX * dr;
-		float dzy = wobble.z * dw * lean;
-		float dyx = wobble.y * WOBBLE_RIPPLE_MIX * dr * w;
-		float dyy = (wobble.y * lean - sag) * dw;
-		// The x and z rows are the same expression on purpose: the ripple runs on
-		// x + z, so every derivative with respect to x is the derivative with
-		// respect to z.
-		vec3 jn = vec3(
-			NORMAL.x * dxx + NORMAL.y * dyx + NORMAL.z * dzz,
-			NORMAL.x * dxy + NORMAL.y * dyy + NORMAL.z * dzy,
-			NORMAL.x * dxx + NORMAL.y * dyx + NORMAL.z * dzz);
-		NORMAL = normalize(NORMAL - jn);
-	}
+                // The normal has to come with it, and on this object more than on any
+                // other: the slab is the only surface in the game wearing a clearcoat, so
+                // what the player actually reads the wobble off is the highlight sliding
+                // over it. Displacing the vertices alone leaves that highlight pinned to a
+                // shape that is no longer there.
+                //
+                // First order, N' = N - transpose(J) * N, with J the derivative of the
+                // displacement above. Written out rather than sampled twice, because the
+                // displacement is an expression and its derivative is nine multiplies.
+                float dxx = wobble.x * w * WOBBLE_RIPPLE_MIX * dr;
+                float dxy = wobble.x * dw * lean;
+                float dzz = wobble.z * w * WOBBLE_RIPPLE_MIX * dr;
+                float dzy = wobble.z * dw * lean;
+                float dyx = wobble.y * WOBBLE_RIPPLE_MIX * dr * w;
+                float dyy = (wobble.y * lean - sag) * dw;
+                // The x and z rows are the same expression on purpose: the ripple runs on
+                // x + z, so every derivative with respect to x is the derivative with
+                // respect to z.
+                vec3 jn = vec3(
+                        NORMAL.x * dxx + NORMAL.y * dyx + NORMAL.z * dzz,
+                        NORMAL.x * dxy + NORMAL.y * dyy + NORMAL.z * dzy,
+                        NORMAL.x * dxx + NORMAL.y * dyx + NORMAL.z * dzz);
+                NORMAL = normalize(NORMAL - jn);
+        }
 }
 
 void fragment() {
-	if ((INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).y > clip_above) {
-		discard;
-	}
-	vec2 uv = UV * per_metre + flow_uv * TIME;
+        if ((INV_VIEW_MATRIX * vec4(VERTEX, 1.0)).y > clip_above) {
+                discard;
+        }
+        vec2 uv = UV * per_metre + flow_uv * TIME;
 
-	vec3 c = texture(tex_albedo, uv).rgb;
-	// Rec. 709 luminance, so desaturating a straw scan does not turn it green.
-	float lum = dot(c, vec3(0.2126, 0.7152, 0.0722));
-	c = mix(vec3(lum), c, saturation);
-	if (ao_strength > 0.0) {
-		c *= mix(1.0, texture(tex_ao, uv).r, ao_strength);
-	}
-	// The tint is a gain, so it is applied last and is allowed above 1.0.
-	ALBEDO = c * tint;
+        vec3 c = texture(tex_albedo, uv).rgb;
+        // Rec. 709 luminance, so desaturating a straw scan does not turn it green.
+        float lum = dot(c, vec3(0.2126, 0.7152, 0.0722));
+        c = mix(vec3(lum), c, saturation);
+        if (ao_strength > 0.0) {
+                c *= mix(1.0, texture(tex_ao, uv).r, ao_strength);
+        }
+        // The tint is a gain, so it is applied last and is allowed above 1.0.
+        ALBEDO = c * tint;
 
-	NORMAL_MAP = texture(tex_normal, uv).rgb;
-	NORMAL_MAP_DEPTH = normal_strength;
-	ROUGHNESS = mix(rough_min, rough_max, texture(tex_rough, uv).r);
-	METALLIC = metallic_amount;
-	// Dry by default: see the note on `coat` above. Only the pulp sets it.
-	CLEARCOAT = coat;
-	CLEARCOAT_ROUGHNESS = coat_rough;
-	SPECULAR = 0.4;
+        NORMAL_MAP = texture(tex_normal, uv).rgb;
+        NORMAL_MAP_DEPTH = normal_strength;
+        ROUGHNESS = mix(rough_min, rough_max, texture(tex_rough, uv).r);
+        METALLIC = metallic_amount;
+        // Dry by default: see the note on `coat` above. Only the pulp sets it.
+        CLEARCOAT = coat;
+        CLEARCOAT_ROUGHNESS = coat_rough;
+        SPECULAR = 0.4;
 }

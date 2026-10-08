@@ -420,20 +420,33 @@ var _rng:= RandomNumberGenerator.new()
 
 func _ready() -> void:
         _rng.randomize()
+        CrashReport.note_doing("standbuild:model")
         _build_model()
+        CrashReport.note_doing("standbuild:belt")
         _build_belt()
+        CrashReport.note_doing("standbuild:payout")
         _build_payout_area()
+        CrashReport.note_doing("standbuild:skin")
         _skin()
+        CrashReport.note_doing("standbuild:dress")
         _dress()
+        CrashReport.note_doing("standbuild:ledger")
         _build_ledger_note()
+        CrashReport.note_doing("standbuild:price_board")
         _build_price_board()
+        CrashReport.note_doing("standbuild:till")
         _build_till()
+        CrashReport.note_doing("standbuild:coins")
         _build_coins()
+        CrashReport.note_doing("standbuild:coin_pool")
         _build_coin_pool()
 
+        CrashReport.note_doing("standbuild:sack")
         _build_sack()
+        CrashReport.note_doing("standbuild:kick")
         _build_kick()
 
+        CrashReport.note_doing("standbuild:sale_fx")
         _build_sale_fx()
 
 

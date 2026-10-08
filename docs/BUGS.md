@@ -50,3 +50,31 @@ Resolution، Fullscreen، V-Sync، Renderer، کلیدبایدهای کیبور�
 ۶۰۹ فایل `.gdc` (بایت‌کد GDSC v101: magic `GDSC` + zstd token buffer، identifierها
 XOR `0xB6`) به گزارش متنی کلیدهای کیبورد/ماوس رمزگشایی شده بود — خروجی در
 پیام ذخیره‌شده تلگرام (message_id=76).
+
+
+---
+
+## v2.0.0  — باگ ۱: ریشه واقعی پیدا شد (به‌روزرسانی تحقیق)
+
+جایگزینی Terrain3D مشکل را حل نکرد: روی دستگاه کاربر، بیلد v2.0.0 دوباره در
+**۷۱ تا ۷۴٪ — همان پنجره `OPENING THE STAND`** بسته می‌شد. یعنی مقصر اصلی
+Terrain3D نبود.
+
+**ریشه واقعی:** «پاف دودِ» selling stand (`HaySellingStand._build_puff`) اولین
+مشِ کل مسیر لود است که شیدر `smoke_column.gdshader` را کامپایل می‌کند و آن شیدر
+یک `instance uniform` داشت. کامپایل اولین pipeline دارای instance uniform روی
+درایور Vulkan موبایل (Mali-G615 / Android 36) دستگاه، device loss و بسته شدن
+برنامه می‌دهد. به همین دلیل هم کرش در هر دو بیلد v1 و v2 دقیقاً همان‌جا بود.
+
+**فیکس اعمال‌شده (commit فعلی):**
+1. همه‌ی `instance uniform`ها از شیدرهای پروژه حذف شدند (۸ شیدر: smoke_column،
+   stand_surface، silo_readout، radar_beam، radar_ring، machine_lamp،
+   flow_road، pulp_slurry) → uniform معمولی.
+2. تغییرات per-machine حالا از طریق نسخه‌ی مخصوص هر دستگاه از متریال
+   (`HayCompressor.drive_instance` جدید) اعمال می‌شود — خروجی بصری یکسان.
+3. رادار (`needle_radar.gd`) هم به همان مسیر منتقل شد.
+4. ردپای لود (breadcrumb): هر زیرمرحله‌ی ساخت استند با `CrashReport.note_doing`
+   ثبت می‌شود؛ اگر باز هم کرشی رخ دهد، دیالوگ گزارش کرش دقیقاً می‌گوید آخرین
+   زیرمرحله چه بوده.
+
+**معیار پذیرش:** لود کامل 0→100% روی Mali-G615 (دستگاه کاربر) بدون کرش.
