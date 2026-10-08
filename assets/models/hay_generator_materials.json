@@ -1,0 +1,459 @@
+{
+ "flats": {
+  "M_Ash": {
+   "color": [
+    0.062,
+    0.058,
+    0.053
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.95
+  },
+  "M_Bakelite": {
+   "color": [
+    0.03,
+    0.026,
+    0.023
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.42
+  },
+  "M_Brass": {
+   "color": [
+    0.42,
+    0.305,
+    0.105
+   ],
+   "emit": 0.0,
+   "metal": 0.88,
+   "rough": 0.36
+  },
+  "M_Bronze": {
+   "color": [
+    0.115,
+    0.082,
+    0.042
+   ],
+   "emit": 0.0,
+   "metal": 0.5,
+   "rough": 0.66
+  },
+  "M_Bulb": {
+   "color": [
+    1.0,
+    0.76,
+    0.38
+   ],
+   "emit": 5.0,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_Cable": {
+   "color": [
+    0.035,
+    0.033,
+    0.032
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_CableRed": {
+   "color": [
+    0.16,
+    0.045,
+    0.032
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.7
+  },
+  "M_Caution": {
+   "color": [
+    0.52,
+    0.4,
+    0.045
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  },
+  "M_Coal": {
+   "color": [
+    0.018,
+    0.016,
+    0.015
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.66
+  },
+  "M_Copper": {
+   "color": [
+    0.55,
+    0.26,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.36
+  },
+  "M_Dial": {
+   "color": [
+    0.66,
+    0.645,
+    0.6
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.56
+  },
+  "M_Glass": {
+   "color": [
+    0.72,
+    0.7,
+    0.66
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_Ink": {
+   "color": [
+    0.86,
+    0.85,
+    0.8
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.78
+  },
+  "M_Led": {
+   "color": [
+    0.2,
+    1.0,
+    0.28
+   ],
+   "emit": 3.0,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_MachinedEdge": {
+   "color": [
+    0.29,
+    0.31,
+    0.3
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.82,
+   "rough": 0.34
+  },
+  "M_Mark": {
+   "color": [
+    0.04,
+    0.038,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_Needle": {
+   "color": [
+    0.4,
+    0.05,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.45
+  },
+  "M_Soot": {
+   "color": [
+    0.012,
+    0.01,
+    0.009
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.96
+  }
+ },
+ "surfaces": {
+  "M_Cast": {
+   "ao": 0.2,
+   "asset": "blue_metal_plate",
+   "metal": 0.6,
+   "nor": 0.22,
+   "per_metre": 8.0,
+   "rough": [
+    0.4,
+    0.66
+   ],
+   "sat": 0.08,
+   "tint": [
+    0.23,
+    0.28,
+    0.25
+   ]
+  },
+  "M_Cleat": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.4,
+   "per_metre": 3.0,
+   "rough": [
+    0.78,
+    0.96
+   ],
+   "sat": 0.12,
+   "tint": [
+    0.215,
+    0.21,
+    0.204
+   ]
+  },
+  "M_FeederSteel": {
+   "ao": 0.2,
+   "asset": "blue_metal_plate",
+   "metal": 0.42,
+   "nor": 0.35,
+   "per_metre": 1.8,
+   "rough": [
+    0.43,
+    0.67
+   ],
+   "sat": 0.12,
+   "tint": [
+    0.46,
+    0.53,
+    0.43
+   ]
+  },
+  "M_Frame": {
+   "ao": 0.55,
+   "asset": "rust_coarse_01",
+   "metal": 0.45,
+   "nor": 0.55,
+   "per_metre": 4.0,
+   "rough": [
+    0.5,
+    0.82
+   ],
+   "sat": 0.22,
+   "tint": [
+    0.32,
+    0.35,
+    0.32
+   ]
+  },
+  "M_FurnaceIron": {
+   "ao": 0.2,
+   "asset": "blue_metal_plate",
+   "metal": 0.48,
+   "nor": 0.35,
+   "per_metre": 1.8,
+   "rough": [
+    0.48,
+    0.72
+   ],
+   "sat": 0.12,
+   "tint": [
+    0.24,
+    0.28,
+    0.25
+   ]
+  },
+  "M_Panel": {
+   "ao": 0.2,
+   "asset": "blue_metal_plate",
+   "metal": 0.42,
+   "nor": 0.35,
+   "per_metre": 1.8,
+   "rough": [
+    0.43,
+    0.67
+   ],
+   "sat": 0.12,
+   "tint": [
+    0.46,
+    0.53,
+    0.43
+   ]
+  },
+  "M_Plate": {
+   "ao": 0.65,
+   "asset": "metal_plate",
+   "metal": 0.5,
+   "nor": 1.2,
+   "per_metre": 2.6,
+   "rough": [
+    0.44,
+    0.84
+   ],
+   "sat": 0.28,
+   "tint": [
+    0.34,
+    0.33,
+    0.315
+   ]
+  },
+  "M_Porcelain": {
+   "ao": 0.25,
+   "asset": "concrete_floor_painted",
+   "metal": 0.0,
+   "nor": 0.15,
+   "per_metre": 34.0,
+   "rough": [
+    0.16,
+    0.3
+   ],
+   "sat": 0.16,
+   "tint": [
+    0.95,
+    0.92,
+    0.86
+   ]
+  },
+  "M_Rubber": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.35,
+   "per_metre": 2.2,
+   "rough": [
+    0.86,
+    0.99
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.155,
+    0.152,
+    0.149
+   ]
+  },
+  "M_Rust": {
+   "ao": 0.0,
+   "asset": "blue_metal_plate",
+   "metal": 0.78,
+   "nor": 0.16,
+   "per_metre": 7.5,
+   "rough": [
+    0.3,
+    0.5
+   ],
+   "sat": 0.08,
+   "tint": [
+    0.34,
+    0.35,
+    0.33
+   ]
+  },
+  "M_Shell": {
+   "ao": 0.2,
+   "asset": "blue_metal_plate",
+   "metal": 0.55,
+   "nor": 0.3,
+   "per_metre": 1.8,
+   "rough": [
+    0.54,
+    0.78
+   ],
+   "sat": 0.08,
+   "tint": [
+    0.19,
+    0.215,
+    0.2
+   ]
+  },
+  "M_Steel": {
+   "ao": 0.2,
+   "asset": "blue_metal_plate",
+   "metal": 0.42,
+   "nor": 0.35,
+   "per_metre": 1.8,
+   "rough": [
+    0.43,
+    0.67
+   ],
+   "sat": 0.12,
+   "tint": [
+    0.46,
+    0.53,
+    0.43
+   ]
+  },
+  "M_Straw": {
+   "ao": 0.35,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.4,
+   "per_metre": 6.0,
+   "rough": [
+    0.74,
+    0.97
+   ],
+   "sat": 0.8,
+   "tint": [
+    1.42,
+    1.28,
+    0.92
+   ]
+  },
+  "M_StrawDark": {
+   "ao": 0.24,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 22.0,
+   "rough": [
+    0.76,
+    0.99
+   ],
+   "sat": 0.9,
+   "tint": [
+    1.24,
+    1.06,
+    0.6
+   ]
+  },
+  "M_StrawHeap": {
+   "ao": 0.22,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.3,
+   "per_metre": 7.0,
+   "rough": [
+    0.72,
+    0.97
+   ],
+   "sat": 0.85,
+   "tint": [
+    1.78,
+    1.56,
+    1.06
+   ]
+  },
+  "M_StrawPale": {
+   "ao": 0.12,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 0.9,
+   "per_metre": 25.0,
+   "rough": [
+    0.68,
+    0.96
+   ],
+   "sat": 0.9,
+   "tint": [
+    2.1,
+    1.82,
+    1.16
+   ]
+  }
+ }
+}

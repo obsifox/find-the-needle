@@ -1,0 +1,69 @@
+[gd_resource type="Environment" format=3]
+
+[ext_resource type="Material" path="res://scenes/look/yard_sky.tres" id="1_j06pg"]
+
+[sub_resource type="Gradient" id="Gradient_k3hg2"]
+offsets = PackedFloat32Array(0, 0.35, 0.7, 1)
+colors = PackedColorArray(0.004, 0.008, 0.022, 1, 0.3, 0.298, 0.312, 1, 0.73, 0.71, 0.67, 1, 1, 0.972, 0.912, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_j4gkn"]
+gradient = SubResource("Gradient_k3hg2")
+
+[sub_resource type="Sky" id="Sky_6jh07"]
+sky_material = ExtResource("1_j06pg")
+process_mode = 1
+
+[resource]
+resource_name = "YardEnvironment"
+background_mode = 2
+sky = SubResource("Sky_6jh07")
+ambient_light_source = 3
+ambient_light_color = Color(0.72, 0.53, 0.31, 1)
+ambient_light_sky_contribution = 0.8
+ambient_light_energy = 0.7
+reflected_light_source = 2
+tonemap_mode = 4
+tonemap_exposure = 0.89
+tonemap_white = 4.6
+ssao_enabled = true
+ssao_radius = 1.4
+ssao_intensity = 1.75
+ssao_light_affect = 0.12
+ssil_radius = 4.0
+ssil_intensity = 0.65
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_bounce_feedback = 0.6
+sdfgi_min_cell_size = 0.25
+sdfgi_energy = 3.0
+glow_enabled = true
+glow_levels/1 = 0.35
+glow_levels/2 = 0.55
+glow_levels/3 = 0.75
+glow_levels/4 = 0.9
+glow_levels/5 = 1.0
+glow_levels/6 = 0.7
+glow_levels/7 = 0.4
+glow_intensity = 0.04
+glow_bloom = 0.04
+glow_blend_mode = 0
+glow_hdr_threshold = 1.25
+fog_enabled = true
+fog_light_color = Color(0.74, 0.74, 0.76, 1)
+fog_sun_scatter = 0.15
+fog_density = 0.0015
+fog_aerial_perspective = 0.42
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.88, 0.82, 0.7, 1)
+volumetric_fog_emission_energy = 0.0
+volumetric_fog_gi_inject = 0.0
+volumetric_fog_anisotropy = 0.45
+volumetric_fog_length = 36.0
+volumetric_fog_ambient_inject = 0.35
+volumetric_fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.09
+adjustment_saturation = 1.04
+adjustment_color_correction = SubResource("GradientTexture1D_j4gkn")

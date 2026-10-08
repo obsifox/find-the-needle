@@ -1,0 +1,289 @@
+{
+ "flats": {
+  "M_NC_Bone": {
+   "color": [
+    0.885,
+    0.845,
+    0.725
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.58
+  },
+  "M_NC_Brass": {
+   "color": [
+    0.72,
+    0.52,
+    0.19
+   ],
+   "emit": 0.0,
+   "metal": 1.0,
+   "rough": 0.34
+  },
+  "M_NC_ButtonRed": {
+   "color": [
+    0.58,
+    0.055,
+    0.045
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.32
+  },
+  "M_NC_Card": {
+   "color": [
+    0.88,
+    0.845,
+    0.745
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.88
+  },
+  "M_NC_Coal": {
+   "color": [
+    0.048,
+    0.045,
+    0.05
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_NC_CompRed": {
+   "color": [
+    0.8,
+    0.12,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.42
+  },
+  "M_NC_Copper": {
+   "color": [
+    0.86,
+    0.42,
+    0.17
+   ],
+   "emit": 0.0,
+   "metal": 1.0,
+   "rough": 0.28
+  },
+  "M_NC_Diamond": {
+   "color": [
+    0.74,
+    0.83,
+    0.88
+   ],
+   "emit": 0.16,
+   "metal": 0.0,
+   "rough": 0.04
+  },
+  "M_NC_Glass": {
+   "alpha": 0.11,
+   "color": [
+    0.075,
+    0.095,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.13
+  },
+  "M_NC_GlassNdl": {
+   "alpha": 0.34,
+   "color": [
+    0.62,
+    0.72,
+    0.74
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.09
+  },
+  "M_NC_Gold": {
+   "color": [
+    1.0,
+    0.78,
+    0.26
+   ],
+   "emit": 0.0,
+   "metal": 1.0,
+   "rough": 0.22
+  },
+  "M_NC_Ink": {
+   "color": [
+    0.115,
+    0.085,
+    0.065
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.7
+  },
+  "M_NC_LcdBack": {
+   "color": [
+    0.021,
+    0.03,
+    0.024
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.24
+  },
+  "M_NC_LcdCase": {
+   "color": [
+    0.055,
+    0.058,
+    0.055
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.48
+  },
+  "M_NC_LcdOn": {
+   "color": [
+    0.24,
+    1.0,
+    0.42
+   ],
+   "emit": 1.9,
+   "metal": 0.0,
+   "rough": 0.3
+  },
+  "M_NC_Meteor": {
+   "color": [
+    0.3,
+    0.285,
+    0.27
+   ],
+   "emit": 0.0,
+   "metal": 1.0,
+   "rough": 0.6
+  },
+  "M_NC_Obsidian": {
+   "color": [
+    0.035,
+    0.03,
+    0.044
+   ],
+   "emit": 0.04,
+   "metal": 0.0,
+   "rough": 0.09
+  },
+  "M_NC_Pearl": {
+   "color": [
+    0.93,
+    0.9,
+    0.85
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_NC_PinHead": {
+   "color": [
+    0.95,
+    0.7,
+    0.04
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.28
+  },
+  "M_NC_PinRed": {
+   "color": [
+    0.72,
+    0.075,
+    0.075
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.26
+  },
+  "M_NC_Ruby": {
+   "color": [
+    0.56,
+    0.016,
+    0.07
+   ],
+   "emit": 0.09,
+   "metal": 0.0,
+   "rough": 0.11
+  },
+  "M_NC_Sapphire": {
+   "color": [
+    0.035,
+    0.115,
+    0.62
+   ],
+   "emit": 0.16,
+   "metal": 0.0,
+   "rough": 0.11
+  },
+  "M_NC_Steel": {
+   "color": [
+    0.86,
+    0.88,
+    0.92
+   ],
+   "emit": 0.0,
+   "metal": 1.0,
+   "rough": 0.2
+  }
+ },
+ "surfaces": {
+  "M_NC_Felt": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 0.6,
+   "per_metre": 9.0,
+   "rough": [
+    0.94,
+    1.0
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.44,
+    0.135,
+    0.155
+   ]
+  },
+  "M_NC_Wood": {
+   "ao": 0.4,
+   "asset": "rough_wood",
+   "metal": 0.0,
+   "nor": 0.75,
+   "per_metre": 3.1,
+   "rough": [
+    0.22,
+    0.54
+   ],
+   "sat": 0.3,
+   "tint": [
+    0.98,
+    0.6,
+    0.34
+   ]
+  },
+  "M_NC_WoodDk": {
+   "ao": 0.45,
+   "asset": "rough_wood",
+   "metal": 0.0,
+   "nor": 0.9,
+   "per_metre": 5.0,
+   "rough": [
+    0.26,
+    0.58
+   ],
+   "sat": 0.28,
+   "tint": [
+    0.55,
+    0.31,
+    0.17
+   ]
+  }
+ }
+}

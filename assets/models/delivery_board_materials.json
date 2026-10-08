@@ -1,0 +1,126 @@
+{
+  "surfaces": {
+    "Preview oiled timber": {
+      "asset": "fine_grained_wood",
+      "per_metre": 1.5,
+      "nor": 0.5,
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "rough": [
+        0,
+        1
+      ],
+      "sat": 1.0,
+      "ao": 0.0,
+      "metal": 0
+    },
+    "Preview natural cork": {
+      "asset": "cork001",
+      "per_metre": 3.0,
+      "nor": 0.22,
+      "tint": [
+        0.72,
+        0.59,
+        0.4
+      ],
+      "rough": [
+        0.86,
+        0.98
+      ],
+      "sat": 0.55,
+      "ao": 0.0,
+      "metal": 0
+    },
+    "Worn graphite key drawings": {
+      "asset": "fine_grained_wood",
+      "per_metre": 1.5,
+      "nor": 0.5,
+      "tint": [
+        0.43,
+        0.44,
+        0.43
+      ],
+      "rough": [
+        0,
+        1
+      ],
+      "sat": 1.0,
+      "ao": 0.0,
+      "metal": 0
+    },
+    "Preview shared palette": {
+      "asset": "delivery_board_palette",
+      "per_metre": 1,
+      "nor": 0,
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "rough": [
+        0.65,
+        0.65
+      ],
+      "sat": 1.0,
+      "ao": 0.0,
+      "metal": 0
+    },
+    "M_DB_Roof": {
+      "ao": 0.35,
+      "asset": "worn_corrugated_iron",
+      "metal": 1.0,
+      "nor": 1.6,
+      "per_metre": 1.9,
+      "rough": [
+        0.5,
+        0.88
+      ],
+      "sat": 0.72,
+      "tint": [
+        0.72,
+        0.7,
+        0.66
+      ]
+    },
+    "M_DB_Iron": {
+      "ao": 0.3,
+      "asset": "rusty_metal_03",
+      "metal": 1.0,
+      "nor": 1.1,
+      "per_metre": 9.0,
+      "rough": [
+        0.44,
+        0.86
+      ],
+      "sat": 0.6,
+      "tint": [
+        0.62,
+        0.57,
+        0.53
+      ]
+    }
+  },
+  "flats": {
+    "Preview polished pin steel": {
+      "color": [
+        0.8266570641175989,
+        0.85430583154494,
+        0.8808250210902997
+      ],
+      "metal": 1,
+      "rough": 0.22
+    },
+    "M_PinHead": {
+      "color": [
+        0.4731206227190587,
+        0.06100854008843736,
+        0.05070871397734796
+      ],
+      "metal": 0,
+      "rough": 0.085
+    }
+  }
+}

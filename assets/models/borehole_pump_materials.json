@@ -1,0 +1,564 @@
+{
+ "flats": {
+  "M_BP_Chrome": {
+   "color": [
+    0.62,
+    0.63,
+    0.66
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.3
+  },
+  "M_BP_Copper": {
+   "color": [
+    0.31,
+    0.155,
+    0.075
+   ],
+   "emit": 0.0,
+   "metal": 0.85,
+   "rough": 0.52
+  },
+  "M_BP_Dark": {
+   "color": [
+    0.04,
+    0.045,
+    0.05
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.38
+  },
+  "M_BP_Dial": {
+   "color": [
+    0.9,
+    0.89,
+    0.85
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  },
+  "M_BP_EarthSleeve": {
+   "color": [
+    0.13,
+    0.19,
+    0.065
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.67
+  },
+  "M_BP_Glass": {
+   "alpha": 0.1,
+   "color": [
+    0.6,
+    0.64,
+    0.62
+   ],
+   "emit": 0.0,
+   "ior": 1.02,
+   "metal": 0.0,
+   "rough": 0.06
+  },
+  "M_BP_HeroBlack": {
+   "color": [
+    0.014,
+    0.016,
+    0.018
+   ],
+   "emit": 0.0,
+   "metal": 0.1,
+   "rough": 0.68
+  },
+  "M_BP_HeroExposed": {
+   "color": [
+    0.29,
+    0.28,
+    0.24
+   ],
+   "emit": 0.0,
+   "metal": 0.74,
+   "rough": 0.5
+  },
+  "M_BP_HeroInk": {
+   "color": [
+    0.009,
+    0.014,
+    0.017
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.65
+  },
+  "M_BP_HeroLetter": {
+   "color": [
+    0.71,
+    0.69,
+    0.61
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.62
+  },
+  "M_BP_HeroOxide": {
+   "color": [
+    0.105,
+    0.049,
+    0.018
+   ],
+   "emit": 0.0,
+   "metal": 0.08,
+   "rough": 0.88
+  },
+  "M_BP_HeroRed": {
+   "color": [
+    0.38,
+    0.013,
+    0.008
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  },
+  "M_BP_HeroYellow": {
+   "color": [
+    0.73,
+    0.4,
+    0.025
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.6
+  },
+  "M_BP_Ink": {
+   "color": [
+    0.032,
+    0.032,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.62
+  },
+  "M_BP_Letter": {
+   "color": [
+    0.86,
+    0.83,
+    0.74
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.52
+  },
+  "M_BP_Porcelain": {
+   "color": [
+    0.93,
+    0.915,
+    0.88
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_BP_RefGaugeGlass": {
+   "alpha": 0.06,
+   "color": [
+    0.8,
+    0.84,
+    0.83
+   ],
+   "emit": 0.0,
+   "fresnel": [
+    2.5,
+    0.7
+   ],
+   "ior": 1.5,
+   "metal": 0.0,
+   "rough": 0.03
+  },
+  "M_BP_Steel": {
+   "color": [
+    0.3,
+    0.308,
+    0.325
+   ],
+   "emit": 0.0,
+   "metal": 0.75,
+   "rough": 0.46
+  },
+  "M_BP_Stop": {
+   "color": [
+    0.46,
+    0.03,
+    0.02
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.3
+  },
+  "M_BP_Warn": {
+   "color": [
+    0.64,
+    0.49,
+    0.05
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.52
+  },
+  "M_BP_Wire": {
+   "color": [
+    0.075,
+    0.077,
+    0.081
+   ],
+   "emit": 0.0,
+   "metal": 0.55,
+   "rough": 0.62
+  }
+ },
+ "surfaces": {
+  "M_BP_Cast": {
+   "ao": 0.55,
+   "asset": "metal_plate_02",
+   "metal": 0.4,
+   "nor": 1.2,
+   "per_metre": 3.0,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.5,
+    0.51,
+    0.55
+   ]
+  },
+  "M_BP_Concrete": {
+   "ao": 0.55,
+   "asset": "concrete_layers",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 0.55,
+   "rough": [
+    0.7,
+    0.95
+   ],
+   "sat": 0.6,
+   "tint": [
+    1.28,
+    1.25,
+    1.2
+   ]
+  },
+  "M_BP_Frame": {
+   "ao": 0.45,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.54,
+    0.9
+   ],
+   "sat": 0.55,
+   "tint": [
+    0.86,
+    0.98,
+    1.18
+   ]
+  },
+  "M_BP_Frame2": {
+   "ao": 0.42,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 2.4,
+   "rough": [
+    0.52,
+    0.88
+   ],
+   "sat": 0.5,
+   "tint": [
+    0.84,
+    0.96,
+    1.16
+   ]
+  },
+  "M_BP_Guard": {
+   "ao": 0.1,
+   "asset": "metal_plate_02",
+   "metal": 0.0,
+   "nor": 0.26,
+   "per_metre": 6.5,
+   "rough": [
+    0.34,
+    0.66
+   ],
+   "sat": 0.03,
+   "tint": [
+    3.096,
+    2.522,
+    0.459
+   ]
+  },
+  "M_BP_HeroBrass": {
+   "ao": 0.3,
+   "asset": "metal_plate_02",
+   "metal": 0.72,
+   "nor": 0.6,
+   "per_metre": 3.6,
+   "rough": [
+    0.3,
+    0.62
+   ],
+   "sat": 0.18,
+   "tint": [
+    2.87,
+    1.79,
+    0.65
+   ]
+  },
+  "M_BP_HeroCastBlue": {
+   "ao": 0.45,
+   "asset": "blue_metal_plate",
+   "metal": 0.3,
+   "nor": 0.95,
+   "per_metre": 3.4,
+   "rough": [
+    0.37,
+    0.73
+   ],
+   "sat": 0.52,
+   "tint": [
+    0.67,
+    0.82,
+    0.97
+   ]
+  },
+  "M_BP_HeroForged": {
+   "ao": 0.35,
+   "asset": "rusty_metal_02",
+   "metal": 0.58,
+   "nor": 0.7,
+   "per_metre": 4.8,
+   "rough": [
+    0.4,
+    0.75
+   ],
+   "sat": 0.3,
+   "tint": [
+    0.19,
+    0.18,
+    0.17
+   ]
+  },
+  "M_BP_HeroIron": {
+   "ao": 0.35,
+   "asset": "metal_plate_02",
+   "metal": 0.65,
+   "nor": 1.05,
+   "per_metre": 3.1,
+   "rough": [
+    0.34,
+    0.73
+   ],
+   "sat": 0.35,
+   "tint": [
+    1.15,
+    1.06,
+    0.94
+   ]
+  },
+  "M_BP_HeroIvory": {
+   "ao": 0.12,
+   "asset": "metal_plate_02",
+   "metal": 0.03,
+   "nor": 0.36,
+   "per_metre": 4.8,
+   "rough": [
+    0.38,
+    0.66
+   ],
+   "sat": 0.12,
+   "tint": [
+    2.95,
+    2.83,
+    2.55
+   ]
+  },
+  "M_BP_HeroNavy": {
+   "ao": 0.4,
+   "asset": "blue_metal_plate",
+   "metal": 0.28,
+   "nor": 0.85,
+   "per_metre": 2.0,
+   "rough": [
+    0.35,
+    0.74
+   ],
+   "sat": 0.6,
+   "tint": [
+    0.68,
+    0.83,
+    1.0
+   ]
+  },
+  "M_BP_HeroPipe": {
+   "ao": 0.38,
+   "asset": "rusty_metal_02",
+   "metal": 0.65,
+   "nor": 1.05,
+   "per_metre": 2.8,
+   "rough": [
+    0.34,
+    0.75
+   ],
+   "sat": 0.45,
+   "tint": [
+    0.43,
+    0.42,
+    0.39
+   ]
+  },
+  "M_BP_HeroSteel": {
+   "ao": 0.2,
+   "asset": "metal_plate_02",
+   "metal": 0.78,
+   "nor": 0.55,
+   "per_metre": 6.2,
+   "rough": [
+    0.23,
+    0.53
+   ],
+   "sat": 0.15,
+   "tint": [
+    2.4,
+    2.38,
+    2.3
+   ]
+  },
+  "M_BP_Mesh": {
+   "ao": 0.5,
+   "asset": "metal_grate_rusty",
+   "metal": 0.0,
+   "nor": 1.3,
+   "per_metre": 5.0,
+   "rough": [
+    0.55,
+    0.9
+   ],
+   "sat": 0.3,
+   "tint": [
+    0.78,
+    0.76,
+    0.72
+   ]
+  },
+  "M_BP_Panel": {
+   "ao": 0.34,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 0.7,
+   "per_metre": 2.6,
+   "rough": [
+    0.4,
+    0.7
+   ],
+   "sat": 0.1,
+   "tint": [
+    1.52,
+    1.54,
+    1.58
+   ]
+  },
+  "M_BP_Rod": {
+   "ao": 0.0,
+   "asset": "metal_plate_02",
+   "metal": 0.88,
+   "nor": 0.5,
+   "per_metre": 7.5,
+   "rough": [
+    0.05,
+    0.24
+   ],
+   "sat": 0.05,
+   "tint": [
+    2.55,
+    2.55,
+    2.66
+   ]
+  },
+  "M_BP_Roller": {
+   "ao": 0.0,
+   "asset": "metal_plate_02",
+   "metal": 0.55,
+   "nor": 1.0,
+   "per_metre": 5.5,
+   "rough": [
+    0.32,
+    0.64
+   ],
+   "sat": 0.16,
+   "tint": [
+    1.34,
+    1.36,
+    1.42
+   ]
+  },
+  "M_BP_Rubber": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.35,
+   "per_metre": 2.4,
+   "rough": [
+    0.8,
+    0.98
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.2,
+    0.198,
+    0.196
+   ]
+  },
+  "M_BP_Rust": {
+   "ao": 0.48,
+   "asset": "rusty_metal_02",
+   "metal": 0.0,
+   "nor": 1.2,
+   "per_metre": 2.2,
+   "rough": [
+    0.55,
+    0.92
+   ],
+   "sat": 0.7,
+   "tint": [
+    0.2,
+    0.185,
+    0.175
+   ]
+  },
+  "M_BP_Rust2": {
+   "ao": 0.46,
+   "asset": "rusty_metal_02",
+   "metal": 0.0,
+   "nor": 1.15,
+   "per_metre": 4.4,
+   "rough": [
+    0.54,
+    0.92
+   ],
+   "sat": 0.66,
+   "tint": [
+    0.195,
+    0.182,
+    0.175
+   ]
+  }
+ }
+}

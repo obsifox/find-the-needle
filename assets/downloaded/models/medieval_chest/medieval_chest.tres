@@ -1,0 +1,12 @@
+[gd_resource type="ORMMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/downloaded/models/medieval_chest/medieval_chest_color.jpg" id="1_r1p3q"]
+[ext_resource type="Texture2D" path="res://assets/downloaded/models/medieval_chest/medieval_chest_normal.png" id="2_sc1lt"]
+[ext_resource type="Texture2D" path="res://assets/downloaded/models/medieval_chest/medieval_chest_orm.png" id="3_yu6do"]
+
+[resource]
+resource_name = "WoodendChest"
+albedo_texture = ExtResource("1_r1p3q")
+orm_texture = ExtResource("3_yu6do")
+normal_enabled = true
+normal_texture = ExtResource("2_sc1lt")

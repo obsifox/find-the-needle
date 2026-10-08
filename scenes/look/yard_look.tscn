@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/yard_look.gd" id="1_276v2"]
+[ext_resource type="Environment" path="res://scenes/look/yard_environment.tres" id="2_3j6bd"]
+[ext_resource type="Script" path="res://scripts/world/look_editor_room.gd" id="3_f41u4"]
+
+[node name="YardLook" type="Node3D" unique_id=1272512189]
+script = ExtResource("1_276v2")
+
+[node name="Environment" type="WorldEnvironment" parent="." unique_id=453495539]
+environment = ExtResource("2_3j6bd")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=878397526]
+transform = Transform3D(0.32556814, 0.9432153, -0.06595604, 0, 0.06975646, 0.9975641, 0.9455185, -0.32477507, 0.022710487, -0.06595604, 0.9975641, 0.022710487)
+light_color = Color(1, 0.96, 0.91, 1)
+light_energy = 4.2
+light_volumetric_fog_energy = 0.75
+light_angular_distance = 3.6
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_normal_bias = 0.7
+directional_shadow_split_2 = 0.28
+directional_shadow_split_3 = 0.6
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 40.0
+
+[node name="BounceFill" type="DirectionalLight3D" parent="." unique_id=2091455050]
+transform = Transform3D(-0.8093002, 0.34256628, 0.47715992, 0, 0.81233186, -0.58319545, -0.5873953, -0.47198018, -0.65742034, 0.45, -0.55, -0.62)
+light_color = Color(1, 0.9, 0.78, 1)
+light_energy = 1.09
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+
+[node name="SkyFill" type="DirectionalLight3D" parent="." unique_id=1539931190]
+transform = Transform3D(-0.5812382, 0.7475203, -0.32152066, 0, 0.39511788, 0.9186304, 0.81373346, 0.5339431, -0.2296576, 0, 0, 0)
+light_color = Color(0.86, 0.92, 1, 1)
+light_energy = 0.9
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+
+[node name="EditorRoom" type="Node3D" parent="." unique_id=1149251103]
+script = ExtResource("3_f41u4")

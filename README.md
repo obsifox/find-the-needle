@@ -39,3 +39,14 @@ demo/                  ← داده دمو
 locale/                ← ترجمه‌ها (.po)
 docs/                  ← مستندات باگ‌ها و ریلیزها
 ```
+
+## 📱 Mobile build status (v2.0.0 work)
+
+| باگ | وضعیت |
+|---|---|
+| کرش/قفل لود روی موبایل (Terrain3D / Mali-G615) | ✅ رفع شد — زمین native جایگزین شد (`yard_terrain.gd`) |
+| لودینگ بلوکه‌شده | ✅ لود مرحله‌ای اجباری روی موبایل (`world.gd`) |
+| بسته شدن اپ بعد از لود | ✅ `loading.gd` دیگر هرگز روی موبایل quit نمی‌کند |
+| کنترل لمسی | ✅ لایه `scripts/ui/touch_controls.gd` (استیک + دکمه‌ها) |
+| برش دکمه‌ها در صفحه گوشی | ✅ stretch mode `canvas_items` + sensor landscape |
+| تنظیمات بی‌استفاده (Resolution/Fullscreen/V-Sync/Renderer/کیبورد) | ✅ مخفی در موبایل (`options_panel.gd`) |

@@ -1,0 +1,205 @@
+{
+ "flats": {
+  "M_TL_Copper": {
+   "color": [
+    0.55,
+    0.26,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.36
+  },
+  "M_TL_Dark": {
+   "color": [
+    0.045,
+    0.048,
+    0.052
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.42
+  },
+  "M_TL_Glow": {
+   "color": [
+    0.95,
+    0.55,
+    0.1
+   ],
+   "emit": 1.8,
+   "metal": 0.0,
+   "rough": 0.3
+  },
+  "M_TL_Plate": {
+   "color": [
+    0.58,
+    0.6,
+    0.62
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.34
+  },
+  "M_TL_Porcelain": {
+   "color": [
+    0.93,
+    0.915,
+    0.88
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_TL_Screen": {
+   "color": [
+    0.035,
+    0.045,
+    0.055
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_TL_Stop": {
+   "color": [
+    0.52,
+    0.045,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.28
+  },
+  "M_TL_Warn": {
+   "color": [
+    0.62,
+    0.48,
+    0.06
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  }
+ },
+ "surfaces": {
+  "M_TL_Chrome": {
+   "ao": 0.0,
+   "asset": "metal_plate_02",
+   "metal": 0.85,
+   "nor": 0.45,
+   "per_metre": 3.8,
+   "rough": [
+    0.05,
+    0.24
+   ],
+   "sat": 0.04,
+   "tint": [
+    1.62,
+    1.66,
+    1.72
+   ]
+  },
+  "M_TL_Frame": {
+   "ao": 0.4,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.18,
+   "tint": [
+    1.74,
+    1.76,
+    1.62
+   ]
+  },
+  "M_TL_Grate": {
+   "ao": 0.6,
+   "asset": "metal_grate_rusty",
+   "metal": 0.0,
+   "nor": 1.45,
+   "per_metre": 1.35,
+   "rough": [
+    0.5,
+    0.9
+   ],
+   "sat": 0.2,
+   "tint": [
+    1.18,
+    1.15,
+    1.08
+   ]
+  },
+  "M_TL_Hull": {
+   "ao": 0.5,
+   "asset": "container_side",
+   "metal": 0.0,
+   "nor": 1.25,
+   "per_metre": 0.7,
+   "rough": [
+    0.52,
+    0.88
+   ],
+   "sat": 0.05,
+   "tint": [
+    1.3,
+    1.34,
+    1.36
+   ]
+  },
+  "M_TL_Rubber": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.35,
+   "per_metre": 2.0,
+   "rough": [
+    0.82,
+    0.98
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.45,
+    0.442,
+    0.432
+   ]
+  },
+  "M_TL_Steel": {
+   "ao": 0.28,
+   "asset": "rusty_metal_04",
+   "metal": 0.0,
+   "nor": 0.75,
+   "per_metre": 2.6,
+   "rough": [
+    0.42,
+    0.8
+   ],
+   "sat": 0.12,
+   "tint": [
+    1.06,
+    1.03,
+    0.99
+   ]
+  },
+  "M_TL_Tube": {
+   "ao": 0.35,
+   "asset": "metal_plate_02",
+   "metal": 0.3,
+   "nor": 0.85,
+   "per_metre": 1.15,
+   "rough": [
+    0.26,
+    0.58
+   ],
+   "sat": 0.07,
+   "tint": [
+    0.8,
+    0.83,
+    0.9
+   ]
+  }
+ }
+}

@@ -1,0 +1,365 @@
+{
+ "flats": {
+  "M_HM_Chrome": {
+   "color": [
+    0.78,
+    0.79,
+    0.82
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.12
+  },
+  "M_HM_Copper": {
+   "color": [
+    0.55,
+    0.26,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.36
+  },
+  "M_HM_Dark": {
+   "color": [
+    0.042,
+    0.048,
+    0.052
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.38
+  },
+  "M_HM_Dial": {
+   "color": [
+    0.88,
+    0.86,
+    0.8
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.58
+  },
+  "M_HM_Glass": {
+   "alpha": 0.1,
+   "color": [
+    0.86,
+    0.9,
+    0.94
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.14
+  },
+  "M_HM_Ink": {
+   "color": [
+    0.05,
+    0.05,
+    0.05
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.62
+  },
+  "M_HM_LampAmber": {
+   "color": [
+    0.52,
+    0.28,
+    0.02
+   ],
+   "emit": 0.35,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_HM_LampGo": {
+   "color": [
+    0.05,
+    0.34,
+    0.08
+   ],
+   "emit": 0.45,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_HM_LampStop": {
+   "color": [
+    0.45,
+    0.02,
+    0.02
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_HM_Letter": {
+   "color": [
+    0.86,
+    0.83,
+    0.74
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.52
+  },
+  "M_HM_Plastic": {
+   "color": [
+    0.03,
+    0.03,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.18
+  },
+  "M_HM_Warn": {
+   "color": [
+    0.62,
+    0.48,
+    0.06
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  }
+ },
+ "surfaces": {
+  "M_FC_Core": {
+   "ao": 0.65,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 62.0,
+   "rough": [
+    0.78,
+    0.99
+   ],
+   "sat": 1.0,
+   "tint": [
+    0.17,
+    0.11,
+    0.055
+   ]
+  },
+  "M_FC_Pellet": {
+   "ao": 0.25,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.55,
+   "per_metre": 115.0,
+   "rough": [
+    0.58,
+    0.88
+   ],
+   "sat": 1.0,
+   "tint": [
+    0.3,
+    0.19,
+    0.095
+   ]
+  },
+  "M_FC_PelletDark": {
+   "ao": 0.4,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.65,
+   "per_metre": 104.0,
+   "rough": [
+    0.66,
+    0.96
+   ],
+   "sat": 1.0,
+   "tint": [
+    0.175,
+    0.108,
+    0.052
+   ]
+  },
+  "M_FC_PelletPale": {
+   "ao": 0.2,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.55,
+   "per_metre": 128.0,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "sat": 0.95,
+   "tint": [
+    0.46,
+    0.32,
+    0.175
+   ]
+  },
+  "M_HM_Brick": {
+   "ao": 0.42,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.25,
+   "per_metre": 15.0,
+   "rough": [
+    0.64,
+    0.94
+   ],
+   "sat": 0.5,
+   "tint": [
+    1.169,
+    0.747,
+    0.285
+   ]
+  },
+  "M_HM_Frame": {
+   "ao": 0.4,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.18,
+   "tint": [
+    1.74,
+    1.76,
+    1.62
+   ]
+  },
+  "M_HM_Galv": {
+   "ao": 0.45,
+   "asset": "metal_plate_02",
+   "metal": 0.4,
+   "nor": 0.85,
+   "per_metre": 6.0,
+   "rough": [
+    0.42,
+    0.74
+   ],
+   "sat": 0.16,
+   "tint": [
+    0.86,
+    0.88,
+    0.9
+   ]
+  },
+  "M_HM_Porcelain": {
+   "ao": 0.18,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.1,
+   "per_metre": 5.0,
+   "rough": [
+    0.1,
+    0.23
+   ],
+   "sat": 0.12,
+   "tint": [
+    0.97,
+    0.945,
+    0.9
+   ]
+  },
+  "M_HM_Rod": {
+   "ao": 0.0,
+   "asset": "rusty_metal_03",
+   "metal": 0.85,
+   "nor": 0.5,
+   "per_metre": 7.0,
+   "rough": [
+    0.06,
+    0.26
+   ],
+   "sat": 0.06,
+   "tint": [
+    1.38,
+    1.38,
+    1.44
+   ]
+  },
+  "M_HM_Roller": {
+   "ao": 0.0,
+   "asset": "rusty_metal_03",
+   "metal": 0.35,
+   "nor": 1.0,
+   "per_metre": 3.0,
+   "rough": [
+    0.3,
+    0.62
+   ],
+   "sat": 0.28,
+   "tint": [
+    1.07,
+    1.04,
+    1.0
+   ]
+  },
+  "M_HM_Rubber": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.35,
+   "per_metre": 2.0,
+   "rough": [
+    0.82,
+    0.98
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.45,
+    0.442,
+    0.432
+   ]
+  },
+  "M_HM_Shell": {
+   "ao": 0.45,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.05,
+   "per_metre": 1.9,
+   "rough": [
+    0.55,
+    0.88
+   ],
+   "sat": 0.16,
+   "tint": [
+    2.05,
+    0.6,
+    0.42
+   ]
+  },
+  "M_HM_Straw": {
+   "ao": 0.5,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 2.4,
+   "rough": [
+    0.64,
+    0.95
+   ],
+   "sat": 0.8,
+   "tint": [
+    1.18,
+    1.0,
+    0.68
+   ]
+  },
+  "M_HM_Trim": {
+   "ao": 0.4,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 2.4,
+   "rough": [
+    0.48,
+    0.82
+   ],
+   "sat": 0.12,
+   "tint": [
+    2.73,
+    2.11,
+    0.37
+   ]
+  }
+ }
+}

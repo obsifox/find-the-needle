@@ -1,0 +1,484 @@
+{
+  "surfaces": {
+    "M_CR_Concrete": {
+      "asset": "concrete_wall_003",
+      "per_metre": 0.4,
+      "tint": [
+        0.46,
+        0.49,
+        0.46
+      ],
+      "sat": 0.4,
+      "rough": [
+        0.72,
+        0.94
+      ],
+      "metal": 0,
+      "nor": 0.65,
+      "ao": 0.22
+    },
+    "M_CR_Floor": {
+      "asset": "concrete_floor_worn_02",
+      "per_metre": 0.38,
+      "tint": [
+        0.32,
+        0.35,
+        0.34
+      ],
+      "sat": 0.3,
+      "rough": [
+        0.5,
+        0.83
+      ],
+      "metal": 0,
+      "nor": 0.55,
+      "ao": 0.2
+    },
+    "M_CR_Paint": {
+      "asset": "green_metal_rust",
+      "per_metre": 1.2,
+      "tint": [
+        0.25,
+        0.32,
+        0.29
+      ],
+      "sat": 0.22,
+      "rough": [
+        0.42,
+        0.73
+      ],
+      "metal": 0.32,
+      "nor": 0.25,
+      "ao": 0.15
+    },
+    "M_CR_Steel": {
+      "asset": "metal_plate_02",
+      "per_metre": 1.3,
+      "tint": [
+        0.46,
+        0.5,
+        0.52
+      ],
+      "sat": 0.1,
+      "rough": [
+        0.32,
+        0.56
+      ],
+      "metal": 0.8,
+      "nor": 0.2,
+      "ao": 0.15
+    },
+    "M_CR_Rubber": {
+      "asset": "rubberized_track",
+      "per_metre": 3,
+      "tint": [
+        0.045,
+        0.047,
+        0.048
+      ],
+      "sat": 0,
+      "rough": [
+        0.66,
+        0.9
+      ],
+      "metal": 0,
+      "nor": 0.12,
+      "ao": 0
+    },
+    "M_CR_Laminate": {
+      "asset": "control_room_plastic",
+      "per_metre": 2,
+      "tint": [
+        0.3,
+        0.34,
+        0.32
+      ],
+      "sat": 0.1,
+      "rough": [
+        0.34,
+        0.49
+      ],
+      "metal": 0,
+      "nor": 0.1,
+      "ao": 0
+    },
+    "M_CR_HeadphoneLeather": {
+      "asset": "control_room_leather",
+      "per_metre": 5,
+      "tint": [
+        0.14,
+        0.14,
+        0.14
+      ],
+      "sat": 0,
+      "rough": [
+        0.38,
+        0.63
+      ],
+      "metal": 0,
+      "nor": 0.24,
+      "ao": 0
+    },
+    "M_CR_OfficeChairPlastic": {
+      "asset": "control_room_plastic",
+      "per_metre": 1,
+      "tint": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "sat": 0.5,
+      "rough": [
+        0.4,
+        0.8
+      ],
+      "metal": 0,
+      "nor": 0.5,
+      "ao": 0
+    },
+    "M_CR_OfficeChairMetal": {
+      "asset": "control_room_metal",
+      "per_metre": 1,
+      "tint": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "sat": 0.5,
+      "rough": [
+        0.2,
+        0.8
+      ],
+      "metal": 0.8,
+      "nor": 0.5,
+      "ao": 0
+    },
+    "M_CR_OfficeChairLeather": {
+      "asset": "control_room_leather",
+      "per_metre": 1,
+      "tint": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "sat": 0.5,
+      "rough": [
+        0.25,
+        0.85
+      ],
+      "metal": 0,
+      "nor": 0.6,
+      "ao": 0
+    },
+    "M_CR_OfficeChairCloth": {
+      "asset": "control_room_cloth",
+      "per_metre": 1,
+      "tint": [
+        0.65,
+        0.68,
+        0.63
+      ],
+      "sat": 0.5,
+      "rough": [
+        0.5,
+        0.95
+      ],
+      "metal": 0,
+      "nor": 0.6,
+      "ao": 0
+    },
+    "M_CR_desk_lamp_arm_01": {
+      "asset": "control_room_lamp",
+      "per_metre": 1,
+      "tint": [
+        0.2,
+        0.2,
+        0.2
+      ],
+      "sat": 0.65,
+      "rough": [
+        0.2,
+        0.85
+      ],
+      "metal": 0.55,
+      "nor": 0.7,
+      "ao": 0
+    }
+  },
+  "flats": {
+    "M_CR_Black": {
+      "color": [
+        0.009,
+        0.012,
+        0.012
+      ],
+      "rough": 0.59,
+      "metal": 0.1
+    },
+    "M_CR_Keys": {
+      "color": [
+        0.16,
+        0.155,
+        0.13
+      ],
+      "rough": 0.57,
+      "metal": 0
+    },
+    "M_CR_Paper": {
+      "color": [
+        0.22,
+        0.205,
+        0.16
+      ],
+      "rough": 0.9,
+      "metal": 0
+    },
+    "M_CR_Ceramic": {
+      "color": [
+        0.1,
+        0.16,
+        0.15
+      ],
+      "rough": 0.23,
+      "metal": 0
+    },
+    "M_CR_Coffee": {
+      "color": [
+        0.016,
+        0.006,
+        0.002
+      ],
+      "rough": 0.18,
+      "metal": 0
+    },
+    "M_CR_LED": {
+      "color": [
+        0.06,
+        0.35,
+        0.21
+      ],
+      "rough": 0.4,
+      "metal": 0,
+      "emit": 1.6
+    },
+    "M_CR_Bulb": {
+      "color": [
+        1,
+        0.57,
+        0.22
+      ],
+      "rough": 0.4,
+      "metal": 0,
+      "emit": 3
+    },
+    "M_CR_Lens": {
+      "color": [
+        0.007,
+        0.014,
+        0.023
+      ],
+      "rough": 0.09,
+      "metal": 0.45
+    },
+    "M_CR_Screen_Main": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_01": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_02": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_03": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_04": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_05": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_06": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_07": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_08": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_09": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_10": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_11": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_12": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_13": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_14": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_15": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    },
+    "M_CR_Screen_16": {
+      "color": [
+        0.008,
+        0.018,
+        0.017
+      ],
+      "rough": 0.27,
+      "metal": 0,
+      "emit": 0.25
+    }
+  },
+  "imported": {},
+  "screen_contract": {
+    "small_aspect": "4:3",
+    "main_aspect": "16:9",
+    "names": [
+      "Screen_Main",
+      "Screen_01",
+      "Screen_02",
+      "Screen_03",
+      "Screen_04",
+      "Screen_05",
+      "Screen_06",
+      "Screen_07",
+      "Screen_08",
+      "Screen_09",
+      "Screen_10",
+      "Screen_11",
+      "Screen_12",
+      "Screen_13",
+      "Screen_14",
+      "Screen_15",
+      "Screen_16"
+    ],
+    "uv": "0..1, top of picture at V=1 in Blender; glTF flips V"
+  },
+  "dimensions_m": [
+    6,
+    5,
+    2.6
+  ]
+}

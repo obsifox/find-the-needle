@@ -1,0 +1,64 @@
+{
+ "robotic_arm_game_ready.glb": {
+  "spec": "res://assets/models/robotic_arm_materials.json",
+  "install_lods": false,
+  "finish_source": "linear_table",
+  "excluded": ["RA_ReachWire", "RA_StatusGreen", "RA_Honey_OrangePaint"]
+ },
+ "hay_generator.glb": {
+  "install_lods": false,
+  "finish_source": "table",
+  "excluded": ["M_Led", "M_Bulb", "M_Glass"]
+ },
+ "paper_machine.glb": {
+  "finish_source": "imported",
+  "excluded": ["M_PM_Belt", "M_PM_Paper", "M_PM_PaperEdge", "M_PM_Core", "M_HP_Mash", "M_HP_Fibre", "M_HP_FibreDark", "M_HP_FibrePale", "M_HP_Liquor"]
+ },
+ "borehole_pump.glb": {
+  "finish_source": "imported",
+  "excluded": ["M_BP_RefGaugeGlass"]
+ },
+ "hay_pelletizer.glb": {
+  "install_lods": false,
+  "finish_source": "table",
+  "excluded": ["M_HP_LCD", "M_HP_DisplayInk", "M_HP_LampGo", "M_HP_LampWarn", "M_HP_LampFault"]
+ },
+ "haystack_scanner.glb": {
+  "install_lods": false,
+  "finish_source": "table",
+  "excluded": ["M_SC_Glow", "M_SC_Laser", "M_SC_Beam", "M_SC_Lens", "M_SC_Screen", "M_SC_Warn"]
+ },
+ "hay_compressor.glb": {
+  "finish_source": "table",
+  "install_lods": false,
+  "excluded": ["M_HC_LampGo", "M_HC_LampStop", "M_HC_Glass"]
+ },
+ "hay_wrapper.glb": {
+  "finish_source": "table",
+  "install_lods": false,
+  "excluded": ["M_HW_LampGo", "M_HW_LampStop", "M_HW_Film", "M_HW_Web"]
+ },
+ "hay_silo.glb": {
+  "finish_source": "table",
+  "excluded": ["M_SL_LampGo", "M_SL_LampWarn", "M_SL_LampStop", "M_SL_Segment", "M_SL_Plastic", "M_SL_Glass", "M_SL_Lens"]
+ },
+ "piston_rake.glb": {
+  "finish_source": "table",
+  "install_lods": false,
+  "excluded": []
+ },
+ "tube_launcher.glb": {
+  "finish_source": "table",
+  "install_lods": false,
+  "excluded": ["M_TL_Glow"]
+ },
+ "briquette_press.glb": {
+  "finish_source": "imported",
+  "excluded": ["BP_DetailRolledSteel", "BP_DetailSafetyYellow", "BP_SightGlass", "BP_HydraulicOil", "M_BeltRubber", "M_ConveyorFrame", "M_ConveyorDrum", "M_EB_Brick", "M_EB_Stamp", "BP_Straw0", "BP_Straw1", "BP_Straw2", "BP_Straw3", "BP_Straw4", "BP_FeedPelletCore", "BP_FeedPellet", "BP_FeedPelletPale", "BP_FeedPelletDark"]
+ },
+ "needle_radar.glb": {
+  "finish_source": "imported",
+  "install_lods": false,
+  "excluded": ["NR_ScreenGlass", "NR_RadarPhosphor"]
+ }
+}

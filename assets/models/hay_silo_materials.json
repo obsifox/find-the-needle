@@ -1,0 +1,365 @@
+{
+ "flats": {
+  "M_SL_Chrome": {
+   "color": [
+    0.78,
+    0.79,
+    0.82
+   ],
+   "emit": 0.0,
+   "metal": 0.85,
+   "rough": 0.26
+  },
+  "M_SL_Copper": {
+   "color": [
+    0.55,
+    0.26,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.36
+  },
+  "M_SL_Dark": {
+   "color": [
+    0.042,
+    0.048,
+    0.052
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.38
+  },
+  "M_SL_Dial": {
+   "color": [
+    0.88,
+    0.86,
+    0.8
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.58
+  },
+  "M_SL_Estop": {
+   "color": [
+    0.38,
+    0.03,
+    0.02
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.34
+  },
+  "M_SL_Glass": {
+   "alpha": 0.2,
+   "color": [
+    0.52,
+    0.6,
+    0.58
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.09
+  },
+  "M_SL_Ink": {
+   "color": [
+    0.035,
+    0.035,
+    0.038
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.62
+  },
+  "M_SL_LampGo": {
+   "color": [
+    0.05,
+    0.34,
+    0.08
+   ],
+   "emit": 0.45,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_SL_LampStop": {
+   "color": [
+    0.45,
+    0.02,
+    0.02
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_SL_LampWarn": {
+   "color": [
+    0.42,
+    0.24,
+    0.02
+   ],
+   "emit": 0.38,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_SL_Lens": {
+   "alpha": 0.62,
+   "color": [
+    0.06,
+    0.07,
+    0.075
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.12
+  },
+  "M_SL_Letter": {
+   "color": [
+    0.86,
+    0.83,
+    0.74
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.52
+  },
+  "M_SL_Plastic": {
+   "color": [
+    0.03,
+    0.03,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.18
+  },
+  "M_SL_Porcelain": {
+   "color": [
+    0.93,
+    0.915,
+    0.88
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_SL_Segment": {
+   "color": [
+    0.52,
+    0.3,
+    0.02
+   ],
+   "emit": 0.55,
+   "metal": 0.0,
+   "rough": 0.24
+  },
+  "M_SL_Steel": {
+   "color": [
+    0.42,
+    0.432,
+    0.455
+   ],
+   "emit": 0.0,
+   "metal": 0.15,
+   "rough": 0.55
+  },
+  "M_SL_Warn": {
+   "color": [
+    0.62,
+    0.48,
+    0.06
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  }
+ },
+ "surfaces": {
+  "M_SL_Cast": {
+   "ao": 0.55,
+   "asset": "rusty_metal_03",
+   "metal": 0.15,
+   "nor": 1.2,
+   "per_metre": 2.2,
+   "rough": [
+    0.72,
+    0.96
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.62,
+    0.635,
+    0.66
+   ]
+  },
+  "M_SL_Frame": {
+   "ao": 0.4,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.18,
+   "tint": [
+    1.74,
+    1.76,
+    1.62
+   ]
+  },
+  "M_SL_Grate": {
+   "ao": 0.55,
+   "asset": "metal_grate_rusty",
+   "metal": 0.0,
+   "nor": 1.3,
+   "per_metre": 1.6,
+   "rough": [
+    0.55,
+    0.9
+   ],
+   "sat": 0.3,
+   "tint": [
+    1.16,
+    1.14,
+    1.06
+   ]
+  },
+  "M_SL_Guard": {
+   "ao": 0.4,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 2.2,
+   "rough": [
+    0.52,
+    0.86
+   ],
+   "sat": 0.12,
+   "tint": [
+    2.66,
+    2.04,
+    0.34
+   ]
+  },
+  "M_SL_Panel": {
+   "ao": 0.34,
+   "asset": "green_metal_rust",
+   "metal": 0.0,
+   "nor": 0.7,
+   "per_metre": 2.4,
+   "rough": [
+    0.42,
+    0.72
+   ],
+   "sat": 0.42,
+   "tint": [
+    0.96,
+    1.12,
+    0.82
+   ]
+  },
+  "M_SL_Rod": {
+   "ao": 0.0,
+   "asset": "rusty_metal_03",
+   "metal": 0.85,
+   "nor": 0.5,
+   "per_metre": 7.0,
+   "rough": [
+    0.06,
+    0.26
+   ],
+   "sat": 0.06,
+   "tint": [
+    1.38,
+    1.38,
+    1.44
+   ]
+  },
+  "M_SL_Roller": {
+   "ao": 0.0,
+   "asset": "rusty_metal_03",
+   "metal": 0.35,
+   "nor": 1.0,
+   "per_metre": 3.0,
+   "rough": [
+    0.3,
+    0.62
+   ],
+   "sat": 0.28,
+   "tint": [
+    1.07,
+    1.04,
+    1.0
+   ]
+  },
+  "M_SL_Rubber": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.35,
+   "per_metre": 2.0,
+   "rough": [
+    0.82,
+    0.98
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.45,
+    0.442,
+    0.432
+   ]
+  },
+  "M_SL_Shell": {
+   "ao": 0.45,
+   "asset": "green_metal_rust",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 0.85,
+   "rough": [
+    0.58,
+    0.92
+   ],
+   "sat": 0.62,
+   "tint": [
+    1.02,
+    1.18,
+    0.86
+   ]
+  },
+  "M_SL_Shell2": {
+   "ao": 0.45,
+   "asset": "green_metal_rust",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 1.5,
+   "rough": [
+    0.58,
+    0.92
+   ],
+   "sat": 0.58,
+   "tint": [
+    0.98,
+    1.14,
+    0.84
+   ]
+  },
+  "M_SL_Straw": {
+   "ao": 0.5,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 2.6,
+   "rough": [
+    0.64,
+    0.95
+   ],
+   "sat": 0.8,
+   "tint": [
+    1.2,
+    1.02,
+    0.68
+   ]
+  }
+ }
+}

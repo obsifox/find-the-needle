@@ -1,0 +1,73 @@
+{
+ "flats": {},
+ "surfaces": {
+  "M_FC_Core": {
+   "ao": 0.65,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 62.0,
+   "rough": [
+    0.78,
+    0.99
+   ],
+   "sat": 1.0,
+   "tint": [
+    0.17,
+    0.11,
+    0.055
+   ]
+  },
+  "M_FC_Pellet": {
+   "ao": 0.25,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.55,
+   "per_metre": 115.0,
+   "rough": [
+    0.58,
+    0.88
+   ],
+   "sat": 1.0,
+   "tint": [
+    0.3,
+    0.19,
+    0.095
+   ]
+  },
+  "M_FC_PelletDark": {
+   "ao": 0.4,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.65,
+   "per_metre": 104.0,
+   "rough": [
+    0.66,
+    0.96
+   ],
+   "sat": 1.0,
+   "tint": [
+    0.175,
+    0.108,
+    0.052
+   ]
+  },
+  "M_FC_PelletPale": {
+   "ao": 0.2,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.55,
+   "per_metre": 128.0,
+   "rough": [
+    0.6,
+    0.9
+   ],
+   "sat": 0.95,
+   "tint": [
+    0.46,
+    0.32,
+    0.175
+   ]
+  }
+ }
+}

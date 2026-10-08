@@ -1,0 +1,268 @@
+{
+ "clears": {},
+ "flats": {
+  "M_YV_Chrome": {
+   "color": [
+    0.7,
+    0.73,
+    0.76
+   ],
+   "emit": 0.0,
+   "metal": 1.0,
+   "rough": 0.16
+  },
+  "M_YV_Clear": {
+   "alpha": 0.088,
+   "color": [
+    0.93,
+    0.96,
+    0.98
+   ],
+   "emit": 0.0,
+   "fresnel": [
+    2.5,
+    0.7
+   ],
+   "ior": 1.46,
+   "metal": 0.0,
+   "rough": 0.065
+  },
+  "M_YV_Dark": {
+   "color": [
+    0.04,
+    0.042,
+    0.046
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.4
+  },
+  "M_YV_Galv": {
+   "color": [
+    0.62,
+    0.65,
+    0.68
+   ],
+   "emit": 0.0,
+   "metal": 1.0,
+   "rough": 0.3
+  },
+  "M_YV_Grip": {
+   "color": [
+    0.022,
+    0.024,
+    0.027
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.52
+  },
+  "M_YV_Legend": {
+   "color": [
+    0.85,
+    0.88,
+    0.9
+   ],
+   "emit": 0.0,
+   "metal": 0.1,
+   "rough": 0.4
+  },
+  "M_YV_LooseStraw0": {
+   "color": [
+    0.34,
+    0.22,
+    0.065
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_YV_LooseStraw1": {
+   "color": [
+    0.52,
+    0.36,
+    0.12
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_YV_LooseStraw2": {
+   "color": [
+    0.68,
+    0.49,
+    0.2
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_YV_LooseStraw3": {
+   "color": [
+    0.42,
+    0.29,
+    0.095
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_YV_LooseStraw4": {
+   "color": [
+    0.76,
+    0.6,
+    0.3
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_YV_Paint": {
+   "color": [
+    0.022,
+    0.025,
+    0.03
+   ],
+   "emit": 0.0,
+   "metal": 0.45,
+   "rough": 0.23
+  },
+  "M_YV_PerforatedSteel": {
+   "color": [
+    0.4713,
+    0.496,
+    0.5207
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.32
+  },
+  "M_YV_Rubber": {
+   "color": [
+    0.018,
+    0.02,
+    0.023
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.48
+  },
+  "M_YV_Shell": {
+   "color": [
+    0.34,
+    0.355,
+    0.37
+   ],
+   "emit": 0.0,
+   "metal": 0.42,
+   "rough": 0.28
+  },
+  "M_YV_Smoke": {
+   "color": [
+    0.025,
+    0.03,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.5,
+   "rough": 0.24
+  },
+  "M_YV_Steel": {
+   "color": [
+    0.18,
+    0.2,
+    0.22
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.25
+  }
+ },
+ "surfaces": {
+  "M_YV_Filter": {
+   "ao": 0.35,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.55,
+   "per_metre": 6.0,
+   "rough": [
+    0.72,
+    0.94
+   ],
+   "sat": 0.35,
+   "tint": [
+    1.1,
+    1.02,
+    0.86
+   ]
+  },
+  "M_YV_Grate": {
+   "ao": 0.6,
+   "asset": "metal_grate_rusty",
+   "metal": 0.0,
+   "nor": 1.45,
+   "per_metre": 2.6,
+   "rough": [
+    0.5,
+    0.9
+   ],
+   "sat": 0.18,
+   "tint": [
+    1.14,
+    1.11,
+    1.05
+   ]
+  },
+  "M_YV_Hay": {
+   "ao": 0.35,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 9.0,
+   "rough": [
+    0.66,
+    0.94
+   ],
+   "sat": 0.95,
+   "tint": [
+    1.62,
+    1.34,
+    0.78
+   ]
+  },
+  "M_YV_HayDark": {
+   "ao": 0.45,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 11.0,
+   "rough": [
+    0.7,
+    0.96
+   ],
+   "sat": 1.0,
+   "tint": [
+    1.18,
+    0.94,
+    0.52
+   ]
+  },
+  "M_YV_HayPale": {
+   "ao": 0.25,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 0.9,
+   "per_metre": 13.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.85,
+   "tint": [
+    1.92,
+    1.62,
+    1.0
+   ]
+  }
+ }
+}

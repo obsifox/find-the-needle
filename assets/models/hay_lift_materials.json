@@ -1,0 +1,175 @@
+{
+  "surfaces": {
+    "M_HL_Steel": {
+      "asset": "metal_plate_02",
+      "per_metre": 8.0,
+      "sat": 0.0,
+      "tint": [
+        3.2,
+        3.2,
+        3.1
+      ],
+      "ao": 0.1,
+      "nor": 0.22,
+      "rough": [
+        0.29,
+        0.48
+      ],
+      "metal": 0.78
+    },
+    "M_HL_Frame": {
+      "asset": "blue_metal_plate",
+      "per_metre": 1.8,
+      "sat": 0.0,
+      "tint": [
+        0.72,
+        0.74,
+        0.68
+      ],
+      "ao": 0.12,
+      "nor": 0.22,
+      "rough": [
+        0.43,
+        0.65
+      ],
+      "metal": 0.12
+    },
+    "M_HL_Yellow": {
+      "asset": "blue_metal_plate",
+      "per_metre": 2.5,
+      "sat": 0.0,
+      "tint": [
+        1.85,
+        1.1,
+        0.2
+      ],
+      "ao": 0.1,
+      "nor": 0.15,
+      "rough": [
+        0.43,
+        0.64
+      ],
+      "metal": 0.04
+    },
+    "M_HL_Rubber": {
+      "asset": "rubberized_track",
+      "per_metre": 4.0,
+      "sat": 0.0,
+      "tint": [
+        0.06,
+        0.063,
+        0.059
+      ],
+      "ao": 0.12,
+      "nor": 0.35,
+      "rough": [
+        0.68,
+        0.88
+      ],
+      "metal": 0.0
+    },
+    "M_HL_Dark": {
+      "asset": "blue_metal_plate",
+      "per_metre": 3.0,
+      "sat": 0.0,
+      "tint": [
+        0.14,
+        0.15,
+        0.14
+      ],
+      "ao": 0.1,
+      "nor": 0.16,
+      "rough": [
+        0.46,
+        0.68
+      ],
+      "metal": 0.12
+    },
+    "M_HL_Brass": {
+      "asset": "metal_plate_02",
+      "per_metre": 6.0,
+      "sat": 0.0,
+      "tint": [
+        3.2,
+        2.15,
+        0.75
+      ],
+      "ao": 0.08,
+      "nor": 0.14,
+      "rough": [
+        0.27,
+        0.43
+      ],
+      "metal": 0.8
+    },
+    "M_HL_Blue": {
+      "asset": "blue_metal_plate",
+      "per_metre": 1.25,
+      "sat": 0.0,
+      "tint": [
+        1.08,
+        1.1,
+        1.01
+      ],
+      "ao": 0.08,
+      "nor": 0.16,
+      "rough": [
+        0.38,
+        0.6
+      ],
+      "metal": 0.06
+    }
+  },
+  "flats": {
+    "M_HL_Belt": {
+      "color": [
+        0.018,
+        0.023,
+        0.026
+      ],
+      "rough": 0.68,
+      "metal": 0.0,
+      "emit": 0.0
+    },
+    "M_HL_Green": {
+      "color": [
+        0.04,
+        0.5,
+        0.18
+      ],
+      "rough": 0.24,
+      "metal": 0.0,
+      "emit": 0.0
+    },
+    "M_HL_Red": {
+      "color": [
+        0.6,
+        0.023,
+        0.012
+      ],
+      "rough": 0.24,
+      "metal": 0.0,
+      "emit": 0.0
+    },
+    "M_HL_Amber": {
+      "color": [
+        0.85,
+        0.42,
+        0.02
+      ],
+      "rough": 0.24,
+      "metal": 0.0,
+      "emit": 0.0
+    },
+    "M_HL_White": {
+      "color": [
+        0.72,
+        0.75,
+        0.69
+      ],
+      "rough": 0.4,
+      "metal": 0.0,
+      "emit": 0.0
+    }
+  }
+}

@@ -1,0 +1,715 @@
+{
+ "flats": {
+  "HD_PU_Amber": {
+   "color": [
+    0.62,
+    0.32,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.1,
+   "rough": 0.28
+  },
+  "HD_PU_Chrome": {
+   "color": [
+    0.61,
+    0.63,
+    0.64
+   ],
+   "emit": 0.0,
+   "metal": 0.95,
+   "rough": 0.19
+  },
+  "HD_PU_Glass": {
+   "alpha": 0.16,
+   "color": [
+    0.72,
+    0.8,
+    0.78
+   ],
+   "emit": 0.0,
+   "fresnel": [
+    2.5,
+    0.7
+   ],
+   "ior": 1.25,
+   "metal": 0.0,
+   "rough": 0.03
+  },
+  "HD_PU_Ink": {
+   "color": [
+    0.007,
+    0.009,
+    0.01
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.52
+  },
+  "HD_PU_Motor": {
+   "color": [
+    0.04,
+    0.105,
+    0.16
+   ],
+   "emit": 0.0,
+   "metal": 0.55,
+   "rough": 0.34
+  },
+  "HD_PU_Red": {
+   "color": [
+    0.55,
+    0.012,
+    0.009
+   ],
+   "emit": 0.0,
+   "metal": 0.05,
+   "rough": 0.29
+  },
+  "HD_PU_Rubber": {
+   "color": [
+    0.011,
+    0.013,
+    0.015
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.67
+  },
+  "HD_PU_Scratch": {
+   "color": [
+    0.35,
+    0.365,
+    0.38
+   ],
+   "emit": 0.0,
+   "metal": 0.83,
+   "rough": 0.42
+  },
+  "HD_PU_Scratch dark": {
+   "color": [
+    0.105,
+    0.115,
+    0.12
+   ],
+   "emit": 0.0,
+   "metal": 0.76,
+   "rough": 0.58
+  },
+  "HD_PU_Silver": {
+   "color": [
+    0.46,
+    0.48,
+    0.49
+   ],
+   "emit": 0.0,
+   "metal": 0.78,
+   "rough": 0.28
+  },
+  "HD_PU_Straw0": {
+   "color": [
+    0.24,
+    0.15,
+    0.041
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.79
+  },
+  "HD_PU_Straw1": {
+   "color": [
+    0.42,
+    0.29,
+    0.087
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.79
+  },
+  "HD_PU_Straw2": {
+   "color": [
+    0.57,
+    0.42,
+    0.16
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.79
+  },
+  "HD_PU_Straw3": {
+   "color": [
+    0.7,
+    0.54,
+    0.25
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.79
+  },
+  "HD_PU_Straw4": {
+   "color": [
+    0.33,
+    0.24,
+    0.09
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.79
+  },
+  "HD_PU_Weld": {
+   "color": [
+    0.19,
+    0.205,
+    0.21
+   ],
+   "emit": 0.0,
+   "metal": 0.78,
+   "rough": 0.44
+  },
+  "HD_PU_White": {
+   "color": [
+    0.83,
+    0.81,
+    0.73
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.53
+  },
+  "HD_PU_Yellow": {
+   "color": [
+    0.95,
+    0.59,
+    0.015
+   ],
+   "emit": 0.0,
+   "metal": 0.3,
+   "rough": 0.32
+  },
+  "M_PU_Chrome": {
+   "color": [
+    0.78,
+    0.79,
+    0.82
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.12
+  },
+  "M_PU_Copper": {
+   "color": [
+    0.55,
+    0.26,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.36
+  },
+  "M_PU_Dark": {
+   "color": [
+    0.042,
+    0.048,
+    0.052
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.38
+  },
+  "M_PU_Dial": {
+   "color": [
+    0.88,
+    0.86,
+    0.8
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.58
+  },
+  "M_PU_Glass": {
+   "alpha": 0.16,
+   "color": [
+    0.72,
+    0.8,
+    0.78
+   ],
+   "emit": 0.0,
+   "fresnel": [
+    2.5,
+    0.7
+   ],
+   "ior": 1.25,
+   "metal": 0.0,
+   "rough": 0.03
+  },
+  "M_PU_Guard": {
+   "color": [
+    0.7,
+    0.43,
+    0.055
+   ],
+   "emit": 0.0,
+   "metal": 0.55,
+   "rough": 0.43
+  },
+  "M_PU_LampGo": {
+   "color": [
+    0.05,
+    0.34,
+    0.08
+   ],
+   "emit": 0.45,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_PU_LampStop": {
+   "color": [
+    0.45,
+    0.02,
+    0.02
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_PU_Letter": {
+   "color": [
+    0.88,
+    0.87,
+    0.84
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.52
+  },
+  "M_PU_Motor": {
+   "color": [
+    0.075,
+    0.12,
+    0.16
+   ],
+   "emit": 0.0,
+   "metal": 0.65,
+   "rough": 0.42
+  },
+  "M_PU_Paint": {
+   "color": [
+    0.045,
+    0.165,
+    0.43
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.48
+  },
+  "M_PU_Plastic": {
+   "color": [
+    0.03,
+    0.03,
+    0.035
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.18
+  },
+  "M_PU_Rubber": {
+   "color": [
+    0.018,
+    0.022,
+    0.026
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.7
+  },
+  "M_PU_Slurry": {
+   "alpha": 0.95,
+   "color": [
+    0.6,
+    0.47,
+    0.17
+   ],
+   "emit": 0.0,
+   "ior": 1.36,
+   "metal": 0.0,
+   "rough": 0.44,
+   "waves": [
+    0.016,
+    0.34,
+    0.55,
+    0.09
+   ]
+  },
+  "M_PU_Steel": {
+   "color": [
+    0.17,
+    0.18,
+    0.2
+   ],
+   "emit": 0.0,
+   "metal": 0.85,
+   "rough": 0.62
+  },
+  "M_PU_Warn": {
+   "color": [
+    0.62,
+    0.48,
+    0.06
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  },
+  "M_PU_Water": {
+   "alpha": 0.92,
+   "color": [
+    0.14,
+    0.33,
+    0.4
+   ],
+   "emit": 0.0,
+   "ior": 1.33,
+   "metal": 0.0,
+   "rough": 0.3
+  }
+ },
+ "palettes": {
+  "MP_PU_StaticPalette": {
+   "entries": [
+    "HD_PU_Silver",
+    "HD_PU_Rubber",
+    "HD_PU_Yellow",
+    "HD_PU_Motor",
+    "M_PU_Paint",
+    "HD_PU_Chrome",
+    "HD_PU_Weld",
+    "HD_PU_Ink",
+    "HD_PU_White",
+    "HD_PU_Red",
+    "HD_PU_Amber",
+    "HD_PU_Straw0",
+    "HD_PU_Straw1",
+    "HD_PU_Straw2",
+    "HD_PU_Straw3",
+    "HD_PU_Straw4",
+    "HD_PU_Scratch",
+    "HD_PU_Scratch dark"
+   ],
+   "nodes": [
+    "HayPulper/HayPulperBody"
+   ]
+  }
+ },
+ "surfaces": {
+  "HD_PU_BeltFrame": {
+   "ao": 0.0,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.3,
+   "tint": [
+    1.74,
+    1.764,
+    1.62
+   ]
+  },
+  "HD_PU_Cast": {
+   "ao": 0.44,
+   "asset": "metal_plate_02",
+   "metal": 0.3,
+   "nor": 1.7,
+   "per_metre": 3.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.3,
+   "tint": [
+    0.66,
+    0.655,
+    0.66
+   ]
+  },
+  "HD_PU_Frame": {
+   "ao": 0.34,
+   "asset": "metal_plate_02",
+   "metal": 0.42,
+   "nor": 1.15,
+   "per_metre": 4.5,
+   "rough": [
+    0.4,
+    0.78
+   ],
+   "sat": 0.16,
+   "tint": [
+    0.88,
+    0.91,
+    0.99
+   ]
+  },
+  "HD_PU_Shell": {
+   "ao": 0.32,
+   "asset": "metal_plate_02",
+   "metal": 0.45,
+   "nor": 1.0,
+   "per_metre": 3.4,
+   "rough": [
+    0.28,
+    0.6
+   ],
+   "sat": 0.18,
+   "tint": [
+    1.3,
+    1.35,
+    1.44
+   ]
+  },
+  "M_PU_Belt": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.3,
+   "per_metre": 2.0,
+   "ridge": [
+    0.25,
+    0.95
+   ],
+   "rough": [
+    0.8,
+    0.98
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.41,
+    0.401,
+    0.39
+   ]
+  },
+  "M_PU_BeltFrame": {
+   "ao": 0.0,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.3,
+   "tint": [
+    1.74,
+    1.764,
+    1.62
+   ]
+  },
+  "M_PU_Bronze": {
+   "ao": 0.12,
+   "asset": "metal_plate_02",
+   "metal": 0.94,
+   "nor": 0.55,
+   "per_metre": 10.0,
+   "rough": [
+    0.16,
+    0.42
+   ],
+   "sat": 0.22,
+   "tint": [
+    1.72,
+    1.24,
+    0.74
+   ]
+  },
+  "M_PU_Cast": {
+   "ao": 0.44,
+   "asset": "metal_plate_02",
+   "metal": 0.3,
+   "nor": 1.7,
+   "per_metre": 3.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.3,
+   "tint": [
+    0.66,
+    0.655,
+    0.66
+   ]
+  },
+  "M_PU_Frame": {
+   "ao": 0.34,
+   "asset": "metal_plate_02",
+   "metal": 0.42,
+   "nor": 1.15,
+   "per_metre": 4.5,
+   "rough": [
+    0.4,
+    0.78
+   ],
+   "sat": 0.16,
+   "tint": [
+    0.88,
+    0.91,
+    0.99
+   ]
+  },
+  "M_PU_Galv": {
+   "ao": 0.45,
+   "asset": "metal_plate_02",
+   "metal": 0.7,
+   "nor": 0.85,
+   "per_metre": 13.0,
+   "rough": [
+    0.34,
+    0.68
+   ],
+   "sat": 0.16,
+   "tint": [
+    0.62,
+    0.645,
+    0.66
+   ]
+  },
+  "M_PU_Pipe": {
+   "ao": 0.25,
+   "asset": "metal_plate_02",
+   "metal": 0.22,
+   "nor": 1.0,
+   "per_metre": 12.0,
+   "rough": [
+    0.38,
+    0.76
+   ],
+   "sat": 0.16,
+   "tint": [
+    0.84,
+    0.92,
+    1.05
+   ]
+  },
+  "M_PU_Porcelain": {
+   "ao": 0.18,
+   "asset": "white_plaster_02",
+   "metal": 0.0,
+   "nor": 0.1,
+   "per_metre": 5.0,
+   "rough": [
+    0.1,
+    0.23
+   ],
+   "sat": 0.12,
+   "tint": [
+    0.97,
+    0.945,
+    0.9
+   ]
+  },
+  "M_PU_Pulp": {
+   "ao": 0.12,
+   "asset": "brown_mud_leaves_01",
+   "metal": 0.0,
+   "nor": 1.2,
+   "per_metre": 5.0,
+   "rough": [
+    0.05,
+    0.2
+   ],
+   "sat": 0.3,
+   "tint": [
+    2.62,
+    2.44,
+    1.88
+   ]
+  },
+  "M_PU_Rod": {
+   "ao": 0.0,
+   "asset": "rusty_metal_03",
+   "metal": 0.85,
+   "nor": 0.5,
+   "per_metre": 7.0,
+   "rough": [
+    0.06,
+    0.26
+   ],
+   "sat": 0.06,
+   "tint": [
+    1.38,
+    1.38,
+    1.44
+   ]
+  },
+  "M_PU_Roller": {
+   "ao": 0.0,
+   "asset": "rusty_metal_03",
+   "metal": 0.35,
+   "nor": 1.0,
+   "per_metre": 3.0,
+   "rough": [
+    0.3,
+    0.62
+   ],
+   "sat": 0.28,
+   "tint": [
+    1.07,
+    1.04,
+    1.0
+   ]
+  },
+  "M_PU_Shell": {
+   "ao": 0.32,
+   "asset": "metal_plate_02",
+   "metal": 0.45,
+   "nor": 1.0,
+   "per_metre": 3.4,
+   "rough": [
+    0.28,
+    0.6
+   ],
+   "sat": 0.18,
+   "tint": [
+    1.3,
+    1.35,
+    1.44
+   ]
+  },
+  "M_PU_Straw": {
+   "ao": 0.5,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 2.4,
+   "rough": [
+    0.64,
+    0.95
+   ],
+   "sat": 0.8,
+   "tint": [
+    1.18,
+    1.0,
+    0.68
+   ]
+  },
+  "M_PU_Weather": {
+   "ao": 0.4,
+   "asset": "metal_plate_02",
+   "metal": 0.34,
+   "nor": 1.4,
+   "per_metre": 5.5,
+   "rough": [
+    0.58,
+    0.94
+   ],
+   "sat": 0.32,
+   "tint": [
+    0.96,
+    0.82,
+    0.68
+   ]
+  }
+ }
+}

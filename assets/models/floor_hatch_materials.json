@@ -1,0 +1,49 @@
+{
+  "surfaces": {
+    "M_FH_Steel": {
+      "asset": "floor_hatch_steel",
+      "per_metre": 1.5,
+      "tint": [
+        1,
+        1,
+        1
+      ],
+      "sat": 1,
+      "rough": [
+        0.3,
+        0.58
+      ],
+      "metal": 0.65,
+      "nor": 0.65,
+      "ao": 0.25
+    },
+    "M_FH_Edge": {
+      "asset": "metal_plate_02",
+      "per_metre": 1.35,
+      "tint": [
+        1.2,
+        1.24,
+        1.28
+      ],
+      "sat": 0.12,
+      "rough": [
+        0.28,
+        0.57
+      ],
+      "metal": 0.85,
+      "nor": 0.22,
+      "ao": 0.2
+    }
+  },
+  "flats": {
+    "M_FH_Dark": {
+      "color": [
+        0.009,
+        0.007,
+        0.005
+      ],
+      "rough": 0.94,
+      "metal": 0
+    }
+  }
+}

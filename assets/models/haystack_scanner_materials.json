@@ -1,0 +1,169 @@
+{
+ "flats": {
+  "M_SC_Beam": {
+   "alpha": 0.07,
+   "color": [
+    0.35,
+    0.8,
+    0.95
+   ],
+   "emit": 0.55,
+   "metal": 0.0,
+   "rough": 0.4
+  },
+  "M_SC_Copper": {
+   "color": [
+    0.55,
+    0.26,
+    0.1
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.36
+  },
+  "M_SC_Glow": {
+   "color": [
+    0.16,
+    0.7,
+    0.95
+   ],
+   "emit": 1.6,
+   "metal": 0.0,
+   "rough": 0.3
+  },
+  "M_SC_Laser": {
+   "color": [
+    0.18,
+    0.86,
+    1.0
+   ],
+   "emit": 3.0,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_SC_Lens": {
+   "alpha": 0.5,
+   "color": [
+    0.46,
+    0.05,
+    0.04
+   ],
+   "emit": 0.65,
+   "metal": 0.0,
+   "rough": 0.14
+  },
+  "M_SC_MagBlue": {
+   "color": [
+    0.03,
+    0.075,
+    0.4
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.28
+  },
+  "M_SC_MagRed": {
+   "color": [
+    0.46,
+    0.035,
+    0.03
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.28
+  },
+  "M_SC_Pole": {
+   "color": [
+    0.4,
+    0.415,
+    0.435
+   ],
+   "emit": 0.0,
+   "metal": 0.9,
+   "rough": 0.38
+  },
+  "M_SC_Porcelain": {
+   "color": [
+    0.93,
+    0.915,
+    0.88
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_SC_Screen": {
+   "color": [
+    0.035,
+    0.045,
+    0.055
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_SC_Warn": {
+   "color": [
+    0.62,
+    0.48,
+    0.06
+   ],
+   "emit": 0.0,
+   "metal": 0.0,
+   "rough": 0.55
+  }
+ },
+ "surfaces": {
+  "M_SC_Frame": {
+   "ao": 0.4,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.62,
+    0.92
+   ],
+   "sat": 0.18,
+   "tint": [
+    1.74,
+    1.76,
+    1.62
+   ]
+  },
+  "M_SC_Panel": {
+   "ao": 0.45,
+   "asset": "blue_metal_plate",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 2.2,
+   "rough": [
+    0.5,
+    0.84
+   ],
+   "sat": 0.14,
+   "tint": [
+    1.3,
+    1.32,
+    1.34
+   ]
+  },
+  "M_SC_Rubber": {
+   "ao": 0.0,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.35,
+   "per_metre": 2.0,
+   "rough": [
+    0.82,
+    0.98
+   ],
+   "sat": 0.1,
+   "tint": [
+    0.45,
+    0.442,
+    0.432
+   ]
+  }
+ }
+}

@@ -1,0 +1,160 @@
+{
+ "flats": {
+  "M_HS_Ink": {
+   "color": [
+    0.04,
+    0.04,
+    0.045
+   ],
+   "metal": 0.0,
+   "rough": 0.78
+  },
+  "M_HS_Paint": {
+   "color": [
+    0.8,
+    0.77,
+    0.7
+   ],
+   "metal": 0.0,
+   "rough": 0.7
+  }
+ },
+ "surfaces": {
+  "M_HS_Bolt": {
+   "ao": 0.25,
+   "asset": "rusty_metal_03",
+   "metal": 0.8,
+   "nor": 0.9,
+   "per_metre": 13.0,
+   "rough": [
+    0.34,
+    0.7
+   ],
+   "sat": 0.3,
+   "tint": [
+    0.92,
+    0.74,
+    0.44
+   ]
+  },
+  "M_HS_Frame": {
+   "ao": 0.55,
+   "asset": "green_metal_rust",
+   "metal": 0.1,
+   "nor": 1.4,
+   "per_metre": 1.75,
+   "rough": [
+    0.5,
+    0.92
+   ],
+   "sat": 0.8,
+   "tint": [
+    0.44,
+    0.62,
+    0.5
+   ]
+  },
+  "M_HS_Iron": {
+   "ao": 0.55,
+   "asset": "rusty_metal_03",
+   "metal": 0.12,
+   "nor": 1.4,
+   "per_metre": 4.2,
+   "rough": [
+    0.56,
+    0.95
+   ],
+   "sat": 0.28,
+   "tint": [
+    0.3,
+    0.278,
+    0.252
+   ]
+  },
+  "M_HS_Lip": {
+   "ao": 0.35,
+   "asset": "metal_plate_02",
+   "metal": 0.1,
+   "nor": 1.0,
+   "per_metre": 2.2,
+   "rough": [
+    0.44,
+    0.88
+   ],
+   "sat": 0.25,
+   "tint": [
+    1.6,
+    1.05,
+    0.16
+   ]
+  },
+  "M_HS_Plate": {
+   "ao": 0.5,
+   "asset": "metal_plate_02",
+   "metal": 0.14,
+   "nor": 1.35,
+   "per_metre": 2.6,
+   "rough": [
+    0.55,
+    0.93
+   ],
+   "sat": 0.15,
+   "tint": [
+    1.08,
+    0.44,
+    0.29
+   ]
+  },
+  "M_HS_Rubber": {
+   "ao": 0.42,
+   "asset": "rubberized_track",
+   "metal": 0.0,
+   "nor": 1.1,
+   "per_metre": 3.2,
+   "rough": [
+    0.72,
+    0.97
+   ],
+   "sat": 0.2,
+   "tint": [
+    0.2,
+    0.195,
+    0.19
+   ]
+  },
+  "M_HS_Screen": {
+   "ao": 0.48,
+   "asset": "metal_plate_02",
+   "metal": 0.28,
+   "nor": 1.15,
+   "per_metre": 3.4,
+   "rough": [
+    0.5,
+    0.88
+   ],
+   "sat": 0.14,
+   "tint": [
+    0.235,
+    0.24,
+    0.255
+   ]
+  },
+  "M_HS_Steel": {
+   "ao": 0.45,
+   "asset": "metal_plate_02",
+   "metal": 0.3,
+   "nor": 1.25,
+   "per_metre": 3.2,
+   "rough": [
+    0.48,
+    0.9
+   ],
+   "sat": 0.18,
+   "tint": [
+    0.44,
+    0.45,
+    0.49
+   ]
+  }
+ }
+}

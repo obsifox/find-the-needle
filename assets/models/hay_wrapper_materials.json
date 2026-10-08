@@ -1,0 +1,294 @@
+{
+ "flats": {
+  "M_HW_Cast": {
+   "color": [
+    0.07,
+    0.085,
+    0.092
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.3,
+   "rough": 0.43
+  },
+  "M_HW_Chrome": {
+   "color": [
+    0.56,
+    0.6,
+    0.63
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.86,
+   "rough": 0.29
+  },
+  "M_HW_Copper": {
+   "color": [
+    0.55,
+    0.26,
+    0.1
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.9,
+   "rough": 0.36
+  },
+  "M_HW_Core": {
+   "color": [
+    0.3,
+    0.2,
+    0.1
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.83
+  },
+  "M_HW_Dark": {
+   "color": [
+    0.022,
+    0.029,
+    0.034
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.42
+  },
+  "M_HW_Dial": {
+   "color": [
+    0.88,
+    0.86,
+    0.8
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.58
+  },
+  "M_HW_Film": {
+   "alpha": 0.74,
+   "coat": 0.22,
+   "color": [
+    0.035,
+    0.235,
+    0.105
+   ],
+   "double_sided": false,
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "normal": "res://assets/models/wrapper_film_normal.png",
+   "rough": 0.34
+  },
+  "M_HW_Frame": {
+   "color": [
+    0.12,
+    0.155,
+    0.17
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.45,
+   "rough": 0.37
+  },
+  "M_HW_Guard": {
+   "color": [
+    0.085,
+    0.115,
+    0.125
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.25,
+   "rough": 0.32
+  },
+  "M_HW_Ivory": {
+   "color": [
+    0.63,
+    0.67,
+    0.64
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.34
+  },
+  "M_HW_LampGo": {
+   "color": [
+    0.05,
+    0.34,
+    0.08
+   ],
+   "emit": 0.45,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_HW_LampStop": {
+   "color": [
+    0.45,
+    0.02,
+    0.02
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.2
+  },
+  "M_HW_Letter": {
+   "color": [
+    0.78,
+    0.82,
+    0.79
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.5
+  },
+  "M_HW_Plastic": {
+   "color": [
+    0.03,
+    0.03,
+    0.035
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.18
+  },
+  "M_HW_Porcelain": {
+   "color": [
+    0.93,
+    0.915,
+    0.88
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.16
+  },
+  "M_HW_Rod": {
+   "color": [
+    0.48,
+    0.52,
+    0.56
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.85,
+   "rough": 0.23
+  },
+  "M_HW_Roll": {
+   "color": [
+    0.6,
+    0.73,
+    0.45
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.25
+  },
+  "M_HW_Roller": {
+   "color": [
+    0.32,
+    0.35,
+    0.38
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.8,
+   "rough": 0.32
+  },
+  "M_HW_Rubber": {
+   "color": [
+    0.022,
+    0.026,
+    0.028
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.72
+  },
+  "M_HW_Shell": {
+   "color": [
+    0.009,
+    0.075,
+    0.09
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.29
+  },
+  "M_HW_Steel": {
+   "color": [
+    0.34,
+    0.39,
+    0.42
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.8,
+   "rough": 0.34
+  },
+  "M_HW_Trim": {
+   "color": [
+    0.82,
+    0.43,
+    0.045
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.32
+  },
+  "M_HW_Warn": {
+   "color": [
+    0.62,
+    0.48,
+    0.06
+   ],
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.55
+  },
+  "M_HW_Web": {
+   "alpha": 0.23,
+   "coat": 0.22,
+   "color": [
+    0.48,
+    0.66,
+    0.36
+   ],
+   "double_sided": true,
+   "emit": 0.0,
+   "linear_color": true,
+   "metal": 0.0,
+   "rough": 0.2
+  }
+ },
+ "surfaces": {
+  "M_HW_Straw": {
+   "ao": 0.25,
+   "asset": "thatch_roof_angled",
+   "metal": 0.0,
+   "nor": 0.7,
+   "per_metre": 2.4,
+   "rough": [
+    0.68,
+    0.9
+   ],
+   "sat": 0.8,
+   "tint": [
+    1.28,
+    1.04,
+    0.64
+   ]
+  }
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "displays": [
+  {
+   "id": "wheelbarrow",
+   "label": "WHEELBARROW",
+   "model": "res://assets/models/wheelbarrow.glb",
+   "marker": "Marker_Display_wheelbarrow",
+   "price": 40.0,
+   "anchor": [
+    2.95,
+    0.075,
+    2.35
+   ],
+   "origin": [
+    2.9587,
+    0.075,
+    2.33152
+   ],
+   "basis_columns": [
+    [
+     0.290761,
+     0.0,
+     -0.62354
+    ],
+    [
+     0.0,
+     0.688,
+     0.0
+    ],
+    [
+     0.62354,
+     0.0,
+     0.290761
+    ]
+   ]
+  },
+  {
+   "id": "spade",
+   "label": "SPADE",
+   "model": "res://assets/downloaded/models/rusted_spade_01/rusted_spade_01_1k.gltf",
+   "marker": "Marker_Display_spade",
+   "price": 12.0,
+   "anchor": [
+    1.18,
+    1.9,
+    -1.1625
+   ],
+   "origin": [
+    1.1767,
+    1.29789,
+    -1.16229
+   ],
+   "basis_columns": [
+    [
+     0.997564,
+     -0.069756,
+     0.0
+    ],
+    [
+     0.069756,
+     0.997564,
+     0.0
+    ],
+    [
+     0.0,
+     0.0,
+     1.0
+    ]
+   ]
+  },
+  {
+   "id": "pitchfork",
+   "label": "PITCHFORK",
+   "model": "res://assets/models/pitchfork.glb",
+   "marker": "Marker_Display_pitchfork",
+   "price": 28.0,
+   "anchor": [
+    1.98,
+    1.89,
+    -1.1625
+   ],
+   "origin": [
+    1.92937,
+    1.36422,
+    -1.16575
+   ],
+   "basis_columns": [
+    [
+     0.017433,
+     0.001525,
+     0.0
+    ],
+    [
+     0.0,
+     -0.0,
+     0.0105
+    ],
+    [
+     0.000741,
+     -0.008468,
+     -0.0
+    ]
+   ]
+  },
+  {
+   "id": "bucket",
+   "label": "BUCKET",
+   "model": "res://assets/models/bucket.glb",
+   "marker": "Marker_Display_bucket",
+   "price": 10.0,
+   "anchor": [
+    -1.98,
+    1.0675,
+    1.08
+   ],
+   "origin": [
+    -1.98034,
+    1.0675,
+    1.08106
+   ],
+   "basis_columns": [
+    [
+     0.951057,
+     0.0,
+     0.309017
+    ],
+    [
+     0.0,
+     1.0,
+     0.0
+    ],
+    [
+     -0.309017,
+     0.0,
+     0.951057
+    ]
+   ]
+  },
+  {
+   "id": "sand_shovel",
+   "label": "TOY SHOVEL",
+   "model": "res://assets/models/sand_shovel.glb",
+   "marker": "Marker_Display_sand_shovel",
+   "price": 0.25,
+   "anchor": [
+    -0.88,
+    1.0675,
+    1.06
+   ],
+   "origin": [
+    -0.95184,
+    1.09882,
+    1.0394
+   ],
+   "basis_columns": [
+    [
+     0.021197,
+     0.0,
+     -0.073921
+    ],
+    [
+     0.0,
+     0.0769,
+     0.0
+    ],
+    [
+     0.073921,
+     0.0,
+     0.021197
+    ]
+   ]
+  }
+ ]
+}

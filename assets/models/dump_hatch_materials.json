@@ -1,0 +1,75 @@
+{
+ "flats": {
+  "M_HatchChrome": {
+   "color": [
+    0.72,
+    0.73,
+    0.75
+   ],
+   "metal": 0.95,
+   "rough": 0.16
+  },
+  "M_HatchWarn": {
+   "color": [
+    0.86,
+    0.62,
+    0.09
+   ],
+   "metal": 0.0,
+   "rough": 0.55
+  }
+ },
+ "surfaces": {
+  "M_HatchDeck": {
+   "ao": 0.5,
+   "asset": "metal_plate",
+   "metal": 0.35,
+   "nor": 1.2,
+   "per_metre": 0.85,
+   "rough": [
+    0.44,
+    0.8
+   ],
+   "sat": 0.3,
+   "tint": [
+    1.24,
+    1.22,
+    1.18
+   ]
+  },
+  "M_HatchIron": {
+   "ao": 0.4,
+   "asset": "rust_coarse_01",
+   "metal": 0.55,
+   "nor": 1.2,
+   "per_metre": 4.2,
+   "rough": [
+    0.44,
+    0.82
+   ],
+   "sat": 0.3,
+   "tint": [
+    0.78,
+    0.75,
+    0.72
+   ]
+  },
+  "M_HatchSteel": {
+   "ao": 0.45,
+   "asset": "blue_metal_plate",
+   "metal": 0.3,
+   "nor": 1.0,
+   "per_metre": 1.0,
+   "rough": [
+    0.46,
+    0.84
+   ],
+   "sat": 0.24,
+   "tint": [
+    1.62,
+    1.64,
+    1.56
+   ]
+  }
+ }
+}

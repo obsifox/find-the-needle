@@ -1,0 +1,404 @@
+{
+ "cols": 6,
+ "rows": 4,
+ "lots": 4,
+ "lot_odds": [
+  2,
+  4,
+  8,
+  16,
+  24,
+  48
+ ],
+ "specimen": {
+  "z0": -0.03,
+  "z1": 0.088,
+  "length": 0.118
+ },
+ "slots": [
+  {
+   "slot": 0,
+   "object": "Needle_00",
+   "name": "BENT PIN",
+   "research": 1,
+   "one_in": 2,
+   "lot": 0,
+   "row": 0,
+   "col": 0,
+   "label": [
+    "BENT PIN",
+    "1:2"
+   ],
+   "shape": "pin",
+   "material": "M_NC_PinHead"
+  },
+  {
+   "slot": 1,
+   "object": "Needle_01",
+   "name": "SEWING",
+   "research": 1,
+   "one_in": 4,
+   "lot": 0,
+   "row": 0,
+   "col": 1,
+   "label": [
+    "SEWING",
+    "1:4"
+   ],
+   "shape": "sewing",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 2,
+   "object": "Needle_02",
+   "name": "SAFETY PIN",
+   "research": 1,
+   "one_in": 8,
+   "lot": 0,
+   "row": 0,
+   "col": 2,
+   "label": [
+    "SAFETY PIN",
+    "1:8"
+   ],
+   "shape": "safety",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 3,
+   "object": "Needle_03",
+   "name": "DESK PIN",
+   "research": 1,
+   "one_in": 16,
+   "lot": 0,
+   "row": 0,
+   "col": 3,
+   "label": [
+    "DESK PIN",
+    "1:16"
+   ],
+   "shape": "deskpin",
+   "material": "M_NC_PinRed"
+  },
+  {
+   "slot": 4,
+   "object": "Needle_04",
+   "name": "DARNING",
+   "research": 2,
+   "one_in": 24,
+   "lot": 0,
+   "row": 0,
+   "col": 4,
+   "label": [
+    "DARNING",
+    "1:24"
+   ],
+   "shape": "darning",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 5,
+   "object": "Needle_05",
+   "name": "HAT PIN",
+   "research": 2,
+   "one_in": 48,
+   "lot": 0,
+   "row": 0,
+   "col": 5,
+   "label": [
+    "HAT PIN",
+    "1:48"
+   ],
+   "shape": "hatpin",
+   "material": "M_NC_Pearl"
+  },
+  {
+   "slot": 6,
+   "object": "Needle_06",
+   "name": "BODKIN",
+   "research": 1,
+   "one_in": 2,
+   "lot": 1,
+   "row": 1,
+   "col": 0,
+   "label": [
+    "BODKIN",
+    "1:2"
+   ],
+   "shape": "bodkin",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 7,
+   "object": "Needle_07",
+   "name": "CROCHET",
+   "research": 2,
+   "one_in": 4,
+   "lot": 1,
+   "row": 1,
+   "col": 1,
+   "label": [
+    "CROCHET",
+    "1:4"
+   ],
+   "shape": "crochet",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 8,
+   "object": "Needle_08",
+   "name": "LEATHER AWL",
+   "research": 2,
+   "one_in": 8,
+   "lot": 1,
+   "row": 1,
+   "col": 2,
+   "label": [
+    "LEATHER AWL",
+    "1:8"
+   ],
+   "shape": "awl",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 9,
+   "object": "Needle_09",
+   "name": "KNITTING",
+   "research": 2,
+   "one_in": 16,
+   "lot": 1,
+   "row": 1,
+   "col": 3,
+   "label": [
+    "KNITTING",
+    "1:16"
+   ],
+   "shape": "knitting",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 10,
+   "object": "Needle_10",
+   "name": "SYRINGE",
+   "research": 3,
+   "one_in": 24,
+   "lot": 1,
+   "row": 1,
+   "col": 4,
+   "label": [
+    "SYRINGE",
+    "1:24"
+   ],
+   "shape": "syringe",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 11,
+   "object": "Needle_11",
+   "name": "PHONOGRAPH",
+   "research": 3,
+   "one_in": 48,
+   "lot": 1,
+   "row": 1,
+   "col": 5,
+   "label": [
+    "PHONOGRAPH",
+    "1:48"
+   ],
+   "shape": "stylus",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 12,
+   "object": "Needle_12",
+   "name": "WRENCH",
+   "research": 2,
+   "one_in": 2,
+   "lot": 2,
+   "row": 2,
+   "col": 0,
+   "label": [
+    "WRENCH",
+    "1:2"
+   ],
+   "shape": "wrench",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 13,
+   "object": "Needle_13",
+   "name": "BONE",
+   "research": 2,
+   "one_in": 4,
+   "lot": 2,
+   "row": 2,
+   "col": 1,
+   "label": [
+    "BONE",
+    "1:4"
+   ],
+   "shape": "bone",
+   "material": "M_NC_Bone"
+  },
+  {
+   "slot": 14,
+   "object": "Needle_14",
+   "name": "COAL",
+   "research": 3,
+   "one_in": 8,
+   "lot": 2,
+   "row": 2,
+   "col": 2,
+   "label": [
+    "COAL",
+    "1:8"
+   ],
+   "shape": "coal",
+   "material": "M_NC_Coal"
+  },
+  {
+   "slot": 15,
+   "object": "Needle_15",
+   "name": "COPPER",
+   "research": 3,
+   "one_in": 16,
+   "lot": 2,
+   "row": 2,
+   "col": 3,
+   "label": [
+    "COPPER",
+    "1:16"
+   ],
+   "shape": "twist",
+   "material": "M_NC_Copper"
+  },
+  {
+   "slot": 16,
+   "object": "Needle_16",
+   "name": "GLASS",
+   "research": 4,
+   "one_in": 24,
+   "lot": 2,
+   "row": 2,
+   "col": 4,
+   "label": [
+    "GLASS",
+    "1:24"
+   ],
+   "shape": "rod",
+   "material": "M_NC_GlassNdl"
+  },
+  {
+   "slot": 17,
+   "object": "Needle_17",
+   "name": "COMPASS",
+   "research": 4,
+   "one_in": 48,
+   "lot": 2,
+   "row": 2,
+   "col": 5,
+   "label": [
+    "COMPASS",
+    "1:48"
+   ],
+   "shape": "compass",
+   "material": "M_NC_Steel"
+  },
+  {
+   "slot": 18,
+   "object": "Needle_18",
+   "name": "SAPPHIRE",
+   "research": 3,
+   "one_in": 2,
+   "lot": 3,
+   "row": 3,
+   "col": 0,
+   "label": [
+    "SAPPHIRE",
+    "1:2"
+   ],
+   "shape": "crystal",
+   "material": "M_NC_Sapphire"
+  },
+  {
+   "slot": 19,
+   "object": "Needle_19",
+   "name": "RUBY",
+   "research": 4,
+   "one_in": 4,
+   "lot": 3,
+   "row": 3,
+   "col": 1,
+   "label": [
+    "RUBY",
+    "1:4"
+   ],
+   "shape": "crystal",
+   "material": "M_NC_Ruby"
+  },
+  {
+   "slot": 20,
+   "object": "Needle_20",
+   "name": "OBSIDIAN",
+   "research": 4,
+   "one_in": 8,
+   "lot": 3,
+   "row": 3,
+   "col": 2,
+   "label": [
+    "OBSIDIAN",
+    "1:8"
+   ],
+   "shape": "shard",
+   "material": "M_NC_Obsidian"
+  },
+  {
+   "slot": 21,
+   "object": "Needle_21",
+   "name": "DIAMOND",
+   "research": 5,
+   "one_in": 16,
+   "lot": 3,
+   "row": 3,
+   "col": 3,
+   "label": [
+    "DIAMOND",
+    "1:16"
+   ],
+   "shape": "crystal",
+   "material": "M_NC_Diamond"
+  },
+  {
+   "slot": 22,
+   "object": "Needle_22",
+   "name": "METEORIC",
+   "research": 5,
+   "one_in": 24,
+   "lot": 3,
+   "row": 3,
+   "col": 4,
+   "label": [
+    "METEORIC",
+    "1:24"
+   ],
+   "shape": "meteoric",
+   "material": "M_NC_Meteor"
+  },
+  {
+   "slot": 23,
+   "object": "Needle_23",
+   "name": "GOLDEN",
+   "research": 5,
+   "one_in": 48,
+   "lot": 3,
+   "row": 3,
+   "col": 5,
+   "label": [
+    "GOLDEN",
+    "1:48"
+   ],
+   "shape": "sewing",
+   "material": "M_NC_Gold"
+  }
+ ]
+}

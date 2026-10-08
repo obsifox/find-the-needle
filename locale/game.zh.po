@@ -1,0 +1,8622 @@
+# Find The Needle, Simplified Chinese.
+#
+# An empty msgstr is not a bug: it means the string falls back to its message
+# id, which is the English source text. See docs/localization/PLAN.md.
+#
+# Chinese has one plural form, so every plural entry here carries a single
+# msgstr[0] and the count sits in it as a number.
+#
+# To bring this file up to date after the English has moved:
+#     python scripts/dev/gen_pot.py --merge zh
+msgid ""
+msgstr ""
+"Project-Id-Version: Find The Needle\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "SMALL"
+msgstr "小"
+
+msgid "Designed for weaker computers. A shorter hunt with room to walk around the pile."
+msgstr "为配置较低的电脑准备。找针的时间短一些，草堆周围也有地方走动。"
+
+msgid "STANDARD"
+msgstr "标准"
+
+msgid "The yard as it comes. The pile the game was built around, under one steel roof."
+msgstr "默认的院子。整个游戏就是围着这堆草设计的，头顶是一整片钢屋顶。"
+
+msgid "BIG"
+msgstr "大"
+
+msgid "Twice the hay and a crown that stands over the wall plates. Bring a belt."
+msgstr "草多一倍，堆顶比墙头还高。准备好传送带吧。"
+
+msgid "HUGE"
+msgstr "巨大"
+
+msgid "Eight storeys of straw. The shed goes out to meet it and the roof still loses. Slow to load."
+msgstr "八层楼高的草。草棚往外扩了，屋顶还是盖不住。加载较慢。"
+
+msgid "THE MOUNTAIN"
+msgstr "草山"
+
+msgid "Fifty metres. It does not fit under the roof, it is not supposed to, and you will not finish it. Takes a minute to pour."
+msgstr "五十米高。屋顶下面装不下，本来也没打算装下，你也挖不完。草堆起来要一分钟左右。"
+
+msgid "SMALL ARM"
+msgstr "小型机械臂"
+
+msgid "STANDARD ARM"
+msgstr "标准机械臂"
+
+msgid "LONG-REACH ARM"
+msgstr "长臂机械臂"
+
+msgid "SCANNER MK I"
+msgstr "扫描仪 Mk I"
+
+msgid "SCANNER MK II"
+msgstr "扫描仪 Mk II"
+
+msgid "Potato"
+msgstr "土豆"
+
+msgid "Low"
+msgstr "低"
+
+msgid "Medium"
+msgstr "中"
+
+msgid "High"
+msgstr "高"
+
+msgid "Ultra"
+msgstr "极高"
+
+msgid "VULKAN"
+msgstr "VULKAN"
+
+msgid "DIRECT3D 12"
+msgstr "DIRECT3D 12"
+
+msgid "AUTO"
+msgstr "自动"
+
+msgid "ON"
+msgstr "开"
+
+msgid "OFF"
+msgstr "关"
+
+msgid "2X"
+msgstr "2X"
+
+msgid "4X"
+msgstr "4X"
+
+msgid "8X"
+msgstr "8X"
+
+msgid "LINEAR"
+msgstr "线性"
+
+msgid "REINHARD"
+msgstr "REINHARD"
+
+msgid "FILMIC"
+msgstr "FILMIC"
+
+msgid "ACES"
+msgstr "ACES"
+
+msgid "AGX"
+msgstr "AGX"
+
+msgid "LOW"
+msgstr "低"
+
+msgid "MEDIUM"
+msgstr "中"
+
+msgid "HIGH"
+msgstr "高"
+
+msgid "ULTRA"
+msgstr "极高"
+
+msgid "40 m"
+msgstr "40 m"
+
+msgid "60 m"
+msgstr "60 m"
+
+msgid "80 m"
+msgstr "80 m"
+
+msgid "120 m"
+msgstr "120 m"
+
+msgid "200 m"
+msgstr "200 m"
+
+msgid "400 m"
+msgstr "400 m"
+
+msgid "Unlimited"
+msgstr "不限"
+
+msgid "Simple"
+msgstr "简单"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "PERCENT"
+msgstr "百分比"
+
+msgid "AMOUNT"
+msgstr "数量"
+
+msgid "Ring"
+msgstr "圆环"
+
+msgid "Dot"
+msgstr "圆点"
+
+msgid "Cross"
+msgstr "十字"
+
+msgid "Off"
+msgstr "关"
+
+msgid "White"
+msgstr "白色"
+
+msgid "Amber"
+msgstr "琥珀色"
+
+msgid "Lime"
+msgstr "黄绿色"
+
+msgid "Cyan"
+msgstr "青色"
+
+msgid "Red"
+msgstr "红色"
+
+msgid "Black"
+msgstr "黑色"
+
+msgid "The game hit a fault and was closed by the system."
+msgstr "游戏出了故障，被系统关闭了。"
+
+msgid "The game stopped without shutting down."
+msgstr "游戏没有正常退出就停止了。"
+
+msgid "Forward"
+msgstr "前进"
+
+msgid "MOVEMENT"
+msgstr "移动"
+
+msgid "Back"
+msgstr "后退"
+
+msgid "Left"
+msgstr "左移"
+
+msgid "Right"
+msgstr "右移"
+
+msgid "Jump"
+msgstr "跳跃"
+
+msgid "Sprint"
+msgstr "冲刺"
+
+msgid "Crouch"
+msgstr "蹲下"
+
+msgid "Use"
+msgstr "使用"
+
+msgid "HANDS"
+msgstr "动作"
+
+msgid "Aim / throw"
+msgstr "瞄准/投掷"
+
+msgid "Interact"
+msgstr "互动"
+
+msgid "Throw / inspect / no snap"
+msgstr "投掷/查看/不吸附"
+
+msgid "Reset aim / turn"
+msgstr "重置瞄准/旋转"
+
+msgid "Drop / cancel"
+msgstr "放下/取消"
+
+msgid "Build catalogue"
+msgstr "建造目录"
+
+msgid "BUILDING"
+msgstr "建造"
+
+msgid "Tech tree"
+msgstr "科技树"
+
+msgid "Dismantle"
+msgstr "拆除"
+
+msgid "Copy a building"
+msgstr "复制建筑"
+
+msgid "Place further"
+msgstr "放远一点"
+
+msgid "Place closer"
+msgstr "放近一点"
+
+msgid "Snap to grid"
+msgstr "对齐网格"
+
+msgid "Next type"
+msgstr "下一种"
+
+msgid "Slot 1"
+msgstr "栏位1"
+
+msgid "HOTBAR"
+msgstr "快捷栏"
+
+msgid "Slot 2"
+msgstr "栏位2"
+
+msgid "Slot 3"
+msgstr "栏位3"
+
+msgid "Slot 4"
+msgstr "栏位4"
+
+msgid "Slot 5"
+msgstr "栏位5"
+
+msgid "Slot 6"
+msgstr "栏位6"
+
+msgid "Slot 7"
+msgstr "栏位7"
+
+msgid "Slot 8"
+msgstr "栏位8"
+
+msgid "Slot 9"
+msgstr "栏位9"
+
+msgid "Slot 10"
+msgstr "栏位10"
+
+msgid "Quick save"
+msgstr "快速存档"
+
+msgid "SYSTEM"
+msgstr "系统"
+
+msgid "Save a bug report"
+msgstr "保存错误报告"
+
+msgid "Hide the HUD"
+msgstr "隐藏界面"
+
+msgid "Debug readout"
+msgstr "调试信息"
+
+msgid "LMB"
+msgstr "左键"
+
+msgid "RMB"
+msgstr "右键"
+
+msgid "MMB"
+msgstr "中键"
+
+msgid "Wheel up"
+msgstr "滚轮上"
+
+msgid "Wheel down"
+msgstr "滚轮下"
+
+msgid "Wheel left"
+msgstr "滚轮左"
+
+msgid "Wheel right"
+msgstr "滚轮右"
+
+msgid "Mouse 4"
+msgstr "鼠标4"
+
+msgid "Mouse 5"
+msgstr "鼠标5"
+
+msgid "Mouse %d"
+msgstr "鼠标%d"
+
+msgctxt "key"
+msgid "Space"
+msgstr "空格"
+
+msgctxt "key"
+msgid "Shift"
+msgstr "Shift"
+
+msgctxt "key"
+msgid "Ctrl"
+msgstr "Ctrl"
+
+msgctxt "key"
+msgid "Alt"
+msgstr "Alt"
+
+msgctxt "key"
+msgid "Tab"
+msgstr "Tab"
+
+msgctxt "key"
+msgid "Enter"
+msgstr "回车"
+
+msgctxt "key"
+msgid "Backspace"
+msgstr "退格"
+
+msgctxt "key"
+msgid "Escape"
+msgstr "Esc"
+
+msgctxt "key"
+msgid "Delete"
+msgstr "Delete"
+
+msgctxt "key"
+msgid "Insert"
+msgstr "Insert"
+
+msgctxt "key"
+msgid "Home"
+msgstr "Home"
+
+msgctxt "key"
+msgid "End"
+msgstr "End"
+
+msgctxt "key"
+msgid "PageUp"
+msgstr "PageUp"
+
+msgctxt "key"
+msgid "PageDown"
+msgstr "PageDown"
+
+msgctxt "key"
+msgid "CapsLock"
+msgstr "CapsLock"
+
+msgctxt "key"
+msgid "Up"
+msgstr "上"
+
+msgctxt "key"
+msgid "Down"
+msgstr "下"
+
+msgctxt "key"
+msgid "Left"
+msgstr "左"
+
+msgctxt "key"
+msgid "Right"
+msgstr "右"
+
+msgid "RICHEST"
+msgstr "最富"
+
+msgid "RICHEST YARD"
+msgstr "最富的院子"
+
+msgid "EARNED"
+msgstr "总收入"
+
+msgid "MOST MONEY EARNED"
+msgstr "总收入最高"
+
+msgid "$/MIN"
+msgstr "$/分钟"
+
+msgid "BIGGEST INCOME PER MINUTE"
+msgstr "每分钟收入最高"
+
+msgid "HAY DUG"
+msgstr "挖草量"
+
+msgid "TOTAL HAY DUG"
+msgstr "挖草总量"
+
+msgid "NEEDLES"
+msgstr "针"
+
+msgid "NEEDLES FOUND"
+msgstr "找到的针"
+
+msgid "FASTEST"
+msgstr "最快"
+
+msgid "FASTEST FIRST NEEDLE"
+msgstr "最快找到第一根针"
+
+msgid "CLEARED"
+msgstr "清堆"
+
+msgid "FASTEST PILE CLEAR"
+msgstr "最快清空草堆"
+
+msgid "BUILT"
+msgstr "建造数"
+
+msgid "STRUCTURES BUILT"
+msgstr "建造数量"
+
+msgid "TIME"
+msgstr "时长"
+
+msgid "TIME PLAYED"
+msgstr "游戏时长"
+
+msgid "DAILY"
+msgstr "每日"
+
+msgid "WEEKLY"
+msgstr "每周"
+
+msgid "MONTHLY"
+msgstr "每月"
+
+msgid "ALL TIME"
+msgstr "总榜"
+
+msgid "leaderboard is off"
+msgstr "排行榜已关闭"
+
+msgid "could not sign in"
+msgstr "登录失败"
+
+msgid "leaderboards are off in this build"
+msgstr "这个版本没有排行榜"
+
+msgid "this board is not on the server yet"
+msgstr "服务器上还没有这个榜单"
+
+msgid "the server is off in this build"
+msgstr "这个版本不连服务器"
+
+msgid "could not reach the server"
+msgstr "连不上服务器"
+
+msgid "the server did not answer in time"
+msgstr "服务器响应超时"
+
+msgid "no internet connection"
+msgstr "没有网络连接"
+
+msgid "no time yet"
+msgstr "还没有成绩"
+
+msgctxt "stopwatch"
+msgid "%dh %02dm %02ds"
+msgstr "%d小时%02d分%02d秒"
+
+msgctxt "stopwatch"
+msgid "%dm %02ds"
+msgstr "%d分%02d秒"
+
+msgctxt "stopwatch"
+msgid "%ds"
+msgstr "%d秒"
+
+msgid "Still loading. Close the game again to quit."
+msgstr "还在加载。再关一次就会退出游戏。"
+
+msgid "no such upgrade"
+msgstr "没有这项升级"
+
+msgid "fully upgraded"
+msgstr "已满级"
+
+msgid "comes with %s"
+msgstr "随%s一起解锁"
+
+msgid "needs %s"
+msgstr "需要%s"
+
+msgctxt "list join"
+msgid " and "
+msgstr " 和 "
+
+msgid "needs the %s delivery, order %d of %d on the board"
+msgstr "需要先完成%s订单（送货板上第%d单，共%d单）"
+
+msgid "$%s short"
+msgstr "还差$%s"
+
+msgid "OUTFEED BLOCKED  ·  clear the disc off the belt"
+msgstr "出料口堵了  ·  把饲料饼从传送带上拿走"
+
+msgid "NOT FED  ·  it needs hay on one belt and eco bricks on the other"
+msgstr "没有进料  ·  需要一条传送带送草，另一条送环保草砖"
+
+msgid "NO HAY  ·  the wad belt has run dry"
+msgstr "没有草  ·  草团传送带空了"
+
+msgid "NO BRICKS  ·  the eco brick belt has run dry"
+msgstr "没有草砖  ·  环保草砖传送带空了"
+
+msgid "load"
+msgstr "东西"
+
+msgid "WRONG BELT  ·  the %s goes on the other belt"
+msgstr "传送带接错了  ·  %s应该走另一条传送带"
+
+msgid "WRONG LOAD  ·  take the %s off the hay input"
+msgstr "进错料了  ·  把%s从进草口拿走"
+
+msgid "WRONG LOAD  ·  take the %s off the brick input"
+msgstr "进错料了  ·  把%s从进砖口拿走"
+
+msgid "Excavation"
+msgstr "挖掘"
+
+msgid "Haulage"
+msgstr "运输"
+
+msgid "Processing"
+msgstr "加工"
+
+msgid "Power"
+msgstr "供电"
+
+msgid "Water"
+msgstr "水"
+
+msgid "Structure"
+msgstr "建筑"
+
+msgid "Prospecting"
+msgstr "勘探"
+
+msgid "from $%d"
+msgstr "$%d起"
+
+msgid "Picks up hay and puts it on a belt. Reaches %.1f m. The first %d cost the normal price, then each one costs more. Max %d."
+msgstr "把草抓起来放到传送带上。够得到%.1f米。前%d台按原价，之后一台比一台贵。最多%d台。"
+
+msgid "Place robotic arm"
+msgstr "放置机械臂"
+
+msgid "Conveyor Belt"
+msgstr "传送带"
+
+msgid "BELT"
+msgstr "传送带"
+
+msgid "$%d per metre"
+msgstr "每米$%d"
+
+msgid "Carries loose hay along the floor. Click one end, then the other."
+msgstr "沿地面运送散草。点一端，再点另一端。"
+
+msgid "Start run"
+msgstr "起点"
+
+msgid "Place run"
+msgstr "放置传送带"
+
+msgid "Enclosed Conveyor"
+msgstr "封闭传送带"
+
+msgid "TUNNEL"
+msgstr "隧道"
+
+msgid "Hides packaged cargo inside a sealed tunnel to save performance. Loose hay cannot enter."
+msgstr "把打包好的货物藏进封闭隧道里，省性能。散草进不去。"
+
+msgid "Small Arm"
+msgstr "小型机械臂"
+
+msgid "ARM"
+msgstr "机械臂"
+
+msgid "Standard Arm"
+msgstr "标准机械臂"
+
+msgid "STD ARM"
+msgstr "标准臂"
+
+msgid "Long-Reach Arm"
+msgstr "长臂机械臂"
+
+msgid "LONG ARM"
+msgstr "长臂"
+
+msgid "Hay Drone"
+msgstr "运草无人机"
+
+msgid "DRONE"
+msgstr "无人机"
+
+msgid "Digs the pile in a zone you choose and flies the hay to a drop point, up to %.0f m from its pad. Each one costs more than the last. Max %d."
+msgstr ""
+
+msgid "Place drone"
+msgstr "放置无人机"
+
+msgid "works the circle drawn on the ground"
+msgstr "在地上画的圆圈里干活"
+
+msgid "Platform"
+msgstr "平台"
+
+msgid "DECK"
+msgstr "平台"
+
+msgid "$%d per m2"
+msgstr "每平方米$%d"
+
+msgid "A floor you can walk on. Click two corners."
+msgstr "可以在上面走的地板。点两个角。"
+
+msgid "Start corner"
+msgstr "第一个角"
+
+msgid "Place deck"
+msgstr "放置平台"
+
+msgid "Stair"
+msgstr "楼梯"
+
+msgid "STAIR"
+msgstr "楼梯"
+
+msgid "$%d per metre of rise"
+msgstr "每升高1米$%d"
+
+msgid "Climbs from the floor to a deck. Click the deck edge it comes off, then the spot on the ground it lands on."
+msgstr "从地面通到平台上。先点楼梯连着的平台边缘，再点楼梯落地的位置。"
+
+msgid "Start on deck edge"
+msgstr "从平台边缘开始"
+
+msgid "Land stair"
+msgstr "楼梯落地"
+
+msgid "Wall"
+msgstr "墙"
+
+msgid "WALL"
+msgstr "墙"
+
+msgid "A solid steel wall, %.1f m tall. Built in %.0f m sections."
+msgstr "实心钢墙，高%.1f米。每段%.0f米。"
+
+msgid "Start wall"
+msgstr "墙起点"
+
+msgid "Place wall"
+msgstr "放置墙"
+
+msgid "Window Wall"
+msgstr "带窗墙"
+
+msgid "WINDOW"
+msgstr "窗墙"
+
+msgid "A wall with a %.1f m hole in each section. Hay, belts and people can go through."
+msgstr "每段墙上有%.1f米宽的洞口。草、传送带和人都能穿过去。"
+
+msgid "Doorway"
+msgstr "门洞"
+
+msgid "DOOR"
+msgstr "门洞"
+
+msgid "One wall section with a %.1f m doorway. Snaps into a wall you already built."
+msgstr "一段带%.1f米门洞的墙。能嵌进已经建好的墙里。"
+
+msgid "Start doorway"
+msgstr "门洞起点"
+
+msgid "Place doorway"
+msgstr "放置门洞"
+
+msgid "Roof"
+msgstr "屋顶"
+
+msgid "ROOF"
+msgstr "屋顶"
+
+msgid "A flat roof, built in %.0f m sections along the top of a wall. Reaches %.0f m in."
+msgstr "平屋顶，沿墙顶一段段建，每段%.0f米，往里伸出%.0f米。"
+
+msgid "Start roof"
+msgstr "屋顶起点"
+
+msgid "Place roof"
+msgstr "放置屋顶"
+
+msgid "Other side"
+msgstr "另一侧"
+
+msgid "Angled Roof"
+msgstr "斜屋顶"
+
+msgid "PITCH"
+msgstr "斜顶"
+
+msgid "A sloped roof that rises %.1f m. Two of them facing each other across a %.0f m building meet in the middle."
+msgstr "升高%.1f米的斜屋顶。在%.0f米宽的房子两边各放一个，就会在中间合上。"
+
+msgid "Slope the other way"
+msgstr "反方向倾斜"
+
+msgid "Roof Hatch"
+msgstr "屋顶天窗"
+
+msgid "HATCH"
+msgstr "天窗"
+
+msgid "$%d per bay"
+msgstr "每格$%d"
+
+msgid "A roof section with a %.1f m hole and a ladder. Use it to get onto the roof."
+msgstr "带%.1f米开口和梯子的一段屋顶。从这里爬上屋顶。"
+
+msgid "Place hatch"
+msgstr "放置天窗"
+
+msgid "Turn the hatch"
+msgstr "旋转天窗"
+
+msgid "lines itself up with the bays either side"
+msgstr "自动和两边的屋顶对齐"
+
+msgid "Railing"
+msgstr "栏杆"
+
+msgid "RAIL"
+msgstr "栏杆"
+
+msgid "A railing along the edge of a platform."
+msgstr "装在平台边上的栏杆。"
+
+msgid "Start rail"
+msgstr "栏杆起点"
+
+msgid "Place rail"
+msgstr "放置栏杆"
+
+msgid "Belt Splitter"
+msgstr "分流器"
+
+msgid "SPLIT"
+msgstr "分流"
+
+msgid "$%d"
+msgstr "$%d"
+
+msgid "Splits one belt into two, one load each way."
+msgstr "把一条传送带分成两条，两边轮流各送一份。"
+
+msgid "Place splitter"
+msgstr "放置分流器"
+
+msgid "snaps to the end of a belt run"
+msgstr "吸附到传送带末端"
+
+msgid "Compact Splitter"
+msgstr "紧凑分流器"
+
+msgid "3 WAY"
+msgstr "三路分流"
+
+msgid "Splits one belt evenly across three outputs."
+msgstr "把一条传送带平均分给三个出口。"
+
+msgid "Place compact splitter"
+msgstr "放置紧凑分流器"
+
+msgid "snaps to an open or covered belt end"
+msgstr "吸附在敞开或封闭的传送带末端"
+
+msgid "Smart Splitter"
+msgstr "智能分流器"
+
+msgid "SMART"
+msgstr "智能分流"
+
+msgid "Routes items by type, with undefined and overflow rules."
+msgstr "按类型分送物品，还有「其余全部」和「溢出」规则。"
+
+msgid "Place smart splitter"
+msgstr "放置智能分流器"
+
+msgid "U Splitter"
+msgstr "U形分流器"
+
+msgid "U SPLIT"
+msgstr "U分流"
+
+msgid "Splits one belt into two belts side by side, going the same way."
+msgstr "把一条传送带分成并排同向的两条。"
+
+msgid "Place U splitter"
+msgstr "放置U形分流器"
+
+msgid "T Junction"
+msgstr "T形三通"
+
+msgid "T JUNCT"
+msgstr "T三通"
+
+msgid "Sets itself up from its belts: one belt in splits into two, two belts in join into one."
+msgstr "根据接上的传送带自动调整：进一条就分成两条，进两条就合成一条。"
+
+msgid "Place T junction"
+msgstr "放置T形三通"
+
+msgid "snaps to a belt end  ·  R picks which end the belt goes in"
+msgstr "吸附到传送带末端  ·  按R选择传送带从哪个口进"
+
+msgid "Belt Joiner"
+msgstr "合流器"
+
+msgid "JOIN"
+msgstr "合流"
+
+msgid "Merges two belts into one, one load from each in turn."
+msgstr "把两条传送带合成一条，两边轮流各送一份。"
+
+msgid "Place joiner"
+msgstr "放置合流器"
+
+msgid "snaps a belt onto the side you face away from"
+msgstr "传送带接在你背对的那一侧"
+
+msgid "U Joiner"
+msgstr "U形合流器"
+
+msgid "U JOIN"
+msgstr "U合流"
+
+msgid "Merges two side by side belts into one."
+msgstr "把两条并排的传送带合成一条。"
+
+msgid "Place U joiner"
+msgstr "放置U形合流器"
+
+msgid "snaps to the end of a belt run on the side you aim at"
+msgstr "吸附到你瞄准那一侧的传送带末端"
+
+msgid "Haystack Scanner"
+msgstr "草堆扫描仪"
+
+msgid "SCANNER"
+msgstr "扫描仪"
+
+msgid "Checks everything on a belt for needles and keeps them in its drawer. The Mk I stops the belt until you empty it."
+msgstr "检查传送带上的每样东西里有没有针，找到就放进抽屉。Mk I 会让传送带停下，等你把抽屉清空。"
+
+msgid "Place scanner"
+msgstr "放置扫描仪"
+
+msgid "Hay Compressor"
+msgstr "干草打捆机"
+
+msgid "PRESS"
+msgstr "打捆"
+
+msgid "Presses %d strands into a bale worth %.1fx loose hay."
+msgstr "把%d根草压成一捆，价值是散草的%.1f倍。"
+
+msgid "Place compressor"
+msgstr "放置打捆机"
+
+msgid "Hay Wrapper"
+msgstr "草捆裹膜机"
+
+msgid "WRAP"
+msgstr "裹膜"
+
+msgid "Wraps bales. Takes bales only, so put it after a compressor. Wrapped bales sell for %.2fx a bale."
+msgstr "给草捆裹膜。只收草捆，所以要放在打捆机后面。裹膜草捆卖价是普通草捆的%.2f倍。"
+
+msgid "Place wrapper"
+msgstr "放置裹膜机"
+
+msgid "Hay Pulper"
+msgstr "干草碎浆机"
+
+msgid "PULP"
+msgstr "碎浆"
+
+msgid "Place pulper"
+msgstr "放置碎浆机"
+
+msgid "Paper Mill"
+msgstr "造纸机"
+
+msgid "PAPER"
+msgstr "造纸"
+
+msgid "Place paper mill"
+msgstr "放置造纸机"
+
+msgid "Feed Disc Press"
+msgstr "饲料饼压制机"
+
+msgid "DISCS"
+msgstr "饲料饼"
+
+msgid "Presses hay from one belt and eco bricks from another into feed discs worth %.2fx the hay. Uses %d straw and %d bricks a disc and stops if either belt runs out. Any size of brick counts as one brick. It is %d m long with an input on the side, so leave room beside it. Uses %.1f kW."
+msgstr "把一条传送带送来的草和另一条送来的环保草砖压成饲料饼，价值是草的%.2f倍。每个饲料饼用%d根草和%d块砖，任何一条传送带断料就会停。砖不分大小，都算一块。机器长%d米，侧面有进料口，旁边要留出空间。耗电%.1f kW。"
+
+msgid "Place feed disc press"
+msgstr "放置饲料饼压制机"
+
+msgid "snaps to a belt; run the second belt to the side input after"
+msgstr "吸附到传送带上；然后把第二条传送带接到侧面进料口"
+
+msgid "Piston Rake"
+msgstr "活塞耙"
+
+msgid "RAKE"
+msgstr "耙"
+
+msgid "Digs the pile in front of it and throws the hay behind it. Keep the area behind it clear. The first %d cost the normal price, then each one costs more. Max %d."
+msgstr "把前面的草堆耙开，把草往身后扔。身后要空着。前%d台按原价，之后一台比一台贵。最多%d台。"
+
+msgid "Place rake"
+msgstr "放置活塞耙"
+
+msgid "Hay Pelletizer"
+msgstr "干草压块机"
+
+msgid "MILL"
+msgstr "压块"
+
+msgid "Turns loose hay into fuel bricks worth %.1fx the hay and throws them out."
+msgstr "把散草压成燃料砖再扔出来，价值是草的%.1f倍。"
+
+msgid "Place pelletizer"
+msgstr "放置压块机"
+
+msgid "Hay Generator"
+msgstr "干草发电机"
+
+msgid "POWER"
+msgstr "发电"
+
+msgid "Burns hay to make up to %.0f kW. More hay means more power, up to the max. Every straw gives the same power, loose or pressed. If it runs out of hay, machines on its line slow down."
+msgstr "烧草发电，最多%.0f kW。草越多电越多，直到上限。不管是散草还是压过的草，每根草发的电都一样。草烧完了，同一线路上的机器就会变慢。"
+
+msgid "Place generator"
+msgstr "放置发电机"
+
+msgid "Gas Plant"
+msgstr "燃气发电站"
+
+msgid "GAS"
+msgstr "燃气"
+
+msgid "Burns eco bricks only and makes up to %.0f kW, %d times the power a Hay Generator gets from the same straw. Needs a water pipe from a pump. Its tank holds %d seconds of water, so it can start without one."
+msgstr "只烧环保草砖，最多发%.0f kW。同样的草，它发的电是干草发电机的%d倍。需要从水泵接来的水管。水箱里的水能用%d秒，所以没接水管也能先开起来。"
+
+msgid "Place gas plant"
+msgstr "放置燃气发电站"
+
+msgid "Borehole Pump"
+msgstr "深井泵"
+
+msgid "PUMP"
+msgstr "水泵"
+
+msgid "Pumps %.0f litres of water a second and uses %.0f kW. Pipe the water to a pulper."
+msgstr "每秒抽%.0f升水，耗电%.0f kW。用水管把水接到碎浆机。"
+
+msgid "Sink borehole"
+msgstr "打井"
+
+msgid "one click, anywhere flat"
+msgstr "点一下就行，平地上哪里都可以"
+
+msgid "Water Pipe"
+msgstr "水管"
+
+msgid "PIPE"
+msgstr "水管"
+
+msgid "Carries water from a pump to a machine. Click the shiny flange on one machine, then on the other. Both ends must be on a flange."
+msgstr "把水从水泵送到机器。先点一台机器上发亮的接口，再点另一台的。两头都要接在接口上。"
+
+msgid "Start pipe"
+msgstr "水管起点"
+
+msgid "Place pipe"
+msgstr "放置水管"
+
+msgid "Water Splitter"
+msgstr "分水器"
+
+msgid "WYE"
+msgstr "分水"
+
+msgid "Splits one water pipe into two. Turn it to face where the water goes, then connect pipes to all three flanges."
+msgstr "把一根水管分成两根。转到出水的方向，再把三个接口都接上水管。"
+
+msgid "Power Pole"
+msgstr "电线杆"
+
+msgid "Carries power. Poles up to %d m apart connect. Machines within %d m get power if nothing blocks the wire."
+msgstr "输送电力。相距%d米以内的电线杆会连起来。%d米内的机器只要电线没被挡住就能通电。"
+
+msgid "Plant pole"
+msgstr "立电线杆"
+
+msgid "Cable Box"
+msgstr "电缆箱"
+
+msgid "CABLE"
+msgstr "电缆"
+
+msgid "Works like a power pole, but the cable is underground so nothing blocks it. Connects up to %d m away and powers machines within %d m. Hold one to see the cables."
+msgstr "和电线杆一样，但电缆埋在地下，不会被挡住。最远连到%d米外，给%d米内的机器供电。拿在手上能看到电缆。"
+
+msgid "Set box"
+msgstr "放置电缆箱"
+
+msgid "Paint Board"
+msgstr "画板"
+
+msgid "BOARD"
+msgstr "画板"
+
+msgid "A whiteboard you can draw on. Hold left click to draw and right click to erase. Press %s at it to pick colours and save drawings."
+msgstr "可以画画的白板。按住左键画，按住右键擦。对着它按%s能选颜色、保存画作。"
+
+msgid "Stand board"
+msgstr "立起画板"
+
+msgid "Work Lamp"
+msgstr "工作灯"
+
+msgid "LAMP"
+msgstr "灯"
+
+msgid "A lamp that lights up to %d m in the direction you face when you place it. Press %s at it to change the brightness. Needs no power, and its battery never runs out."
+msgstr "能照亮前方%d米，朝向就是你放下时面对的方向。对着它按%s调亮度。不用电，电池也永远用不完。"
+
+msgid "Stand lamp"
+msgstr "立起工作灯"
+
+msgid "Dump Hatch"
+msgstr "卸料口"
+
+msgid "TIPPER"
+msgstr "卸料"
+
+msgid "Put it over a belt. Walk up with a full bucket or barrow and it empties it onto the belt."
+msgstr "放在传送带上方。拿着装满的桶或手推车走过去，就会倒到传送带上。"
+
+msgid "Place dump hatch"
+msgstr "放置卸料口"
+
+msgid "stand it over a belt, facing the way you want it to tip"
+msgstr "立在传送带上方，朝向你想倒料的方向"
+
+msgid "Tube Launcher"
+msgstr "管式发射器"
+
+msgid "LAUNCH"
+msgstr "发射"
+
+msgid "Throws whatever a belt brings it. Press %s at it to set the angle and power."
+msgstr "传送带送来什么就发射什么。对着它按%s设置角度和力度。"
+
+msgid "Place launcher"
+msgstr "放置发射器"
+
+msgid "Hay Silo"
+msgstr "干草筒仓"
+
+msgid "SILO"
+msgstr "筒仓"
+
+msgid "Stores hay in a belt line. Press %s at it to set how fast hay comes out. Holds %d loads."
+msgstr "在传送带线路里存草。对着它按%s设置出草速度。能存%d份。"
+
+msgid "Place silo"
+msgstr "放置筒仓"
+
+msgid "the bottom snaps to a belt; the top opening is %.1f m up"
+msgstr "底部吸附到传送带；顶部入口高%.1f米"
+
+msgid "Hay Stairs"
+msgstr "干草阶梯"
+
+msgid "HAYSTAIRS"
+msgstr "草阶梯"
+
+msgid "Brings hay down to the floor. Drop hay in the top. Belts cannot go down slopes steeper than %d degrees."
+msgstr "把草送到地面。从顶上把草丢进去。传送带下坡不能超过%d度。"
+
+msgid "Place hay stairs"
+msgstr "放置干草阶梯"
+
+msgid "run a belt off the bottom; drop into the top from anywhere"
+msgstr "从底部接出传送带；从哪里往顶上丢都行"
+
+msgid "Hay Lift"
+msgstr "干草升降机"
+
+msgid "HAYLIFT"
+msgstr "升降机"
+
+msgid "Carries hay up. Belts cannot climb slopes steeper than %d degrees. Click the bottom, then look up and click the top. Lifts %s m, each extra metre costs $%d, up to %s m."
+msgstr "把草往上送。传送带爬坡不能超过%d度。先点底部，再抬头点顶部。基础升高%s米，每多一米$%d，最高%s米。"
+
+msgid "Place hay lift"
+msgstr "放置升降机"
+
+msgid "both ends snap to a belt run; the top one is as high as you built it"
+msgstr "两头都吸附到传送带；顶部高度就是你建的高度"
+
+msgid "Needle Cabinet"
+msgstr "收针柜"
+
+msgid "CABINET"
+msgstr "收针柜"
+
+msgid "Holds one of each kind of needle you find. One per yard."
+msgstr "找到的每种针都能放一根进去。每个院子只能有一个。"
+
+msgid "Place cabinet"
+msgstr "放置收针柜"
+
+msgid "Satellite Dish"
+msgstr "卫星天线"
+
+msgid "DISH"
+msgstr "天线"
+
+msgid "Scans the pile and marks buried needles within %d m. One per yard."
+msgstr "扫描草堆，标出%d米内埋着的针。每个院子只能有一个。"
+
+msgid "Place satellite dish"
+msgstr "放置卫星天线"
+
+msgid "FREE x%d"
+msgstr "免费 x%d"
+
+msgid "Mixes %d strands with %.0f litres of water into a pulp slab worth %.1fx the hay. Needs power and a water pipe. It is a long machine, so leave room."
+msgstr "把%d根草和%.0f升水混成纸浆板，价值是草的%.1f倍。需要电和水管。机器很长，要留出空间。"
+
+msgid "Turns %d pulp slabs into a paper roll worth %.2fx the slabs. It is %d m long and uses %.0f kW. Takes slabs only."
+msgstr "把%d块纸浆板做成一卷纸，价值是纸浆板的%.2f倍。机器长%d米，耗电%.0f kW。只收纸浆板。"
+
+msgid "take it off the %s's outfeed first"
+msgstr "先把它从%s的出料口拿走"
+
+msgid "machine"
+msgstr "机器"
+
+msgid "clear %d from the tile first"
+msgstr "先清掉这格上的%d样东西"
+
+msgid "blocked"
+msgstr "被挡住了"
+
+msgid "biggest model"
+msgstr "已经是最大型号了"
+
+msgid "not unlocked yet"
+msgstr "还没解锁"
+
+msgid "need %s"
+msgstr "需要%s"
+
+msgid "another arm in reach"
+msgstr "附近已经有机械臂"
+
+msgid "a deck is in the way"
+msgstr "被平台挡住了"
+
+msgid "Unlock the %s in the tech tree first."
+msgstr ""
+
+msgid "The bigger arm reaches %s m. Move the other arm farther away."
+msgstr ""
+
+msgid "The bigger arm would hit a deck when it swings."
+msgstr ""
+
+msgid "hay pile"
+msgstr ""
+
+msgid "Something next to its base is in the way. The bigger base is %s m wide."
+msgstr ""
+
+msgid "The %s next to its base is in the way. The bigger base is %s m wide."
+msgstr ""
+
+msgid "collect %d needle first"
+msgid_plural "collect %d needles first"
+msgstr[0] "先收走%d根针"
+
+msgid "clear %d from the roof first"
+msgstr "先清掉屋顶上的%d样东西"
+
+msgid "clear %d from the deck first"
+msgstr "先清掉平台上的%d样东西"
+
+msgid "%s and %s"
+msgstr "%s和%s"
+
+msgid "a load"
+msgstr "一份料"
+
+msgid "%d strand"
+msgid_plural "%d strands"
+msgstr[0] "%d根草"
+
+msgid "%d load"
+msgid_plural "%d loads"
+msgstr[0] "%d份"
+
+msgid "%d bale"
+msgid_plural "%d bales"
+msgstr[0] "%d捆"
+
+msgid "%d slab"
+msgid_plural "%d slabs"
+msgstr[0] "%d块纸浆板"
+
+msgid "%d brick"
+msgid_plural "%d bricks"
+msgstr[0] "%d块砖"
+
+msgid "turn further off the belt"
+msgstr "再转开一点，离传送带远些"
+
+msgid "in the hay"
+msgstr "在草堆里"
+
+msgid "on a belt"
+msgstr "在传送带上"
+
+msgid "belt connected"
+msgstr "已接上传送带"
+
+msgid "%s is in the way"
+msgstr "%s挡住了路"
+
+msgid "no funds"
+msgstr "钱不够"
+
+msgid "nothing under it"
+msgstr "下面没东西撑着"
+
+msgid "too short"
+msgstr "太短"
+
+msgid "too long"
+msgstr "太长"
+
+msgid "already railed"
+msgstr "已经有栏杆了"
+
+msgid "already walled"
+msgstr "已经有墙了"
+
+msgid "no room under it"
+msgstr "下面没空间"
+
+msgid "already roofed"
+msgstr "已经有屋顶了"
+
+msgid "deck too small"
+msgstr "平台太小"
+
+msgid "nothing under the eave"
+msgstr "屋檐下面没东西"
+
+msgid "no length"
+msgstr "长度为零"
+
+msgid "CAN'T COPY  ·  %s"
+msgstr "无法复制  ·  %s"
+
+msgid "Deck tile"
+msgstr "平台格"
+
+msgid "get closer"
+msgstr "再靠近点"
+
+msgid "you can only take down things you built"
+msgstr "只能拆你自己建的东西"
+
+msgid "CAN'T DISMANTLE  ·  %s"
+msgstr "无法拆除  ·  %s"
+
+msgid "%s LOST"
+msgstr "损失了%s"
+
+msgid "MONEY BACK  ·  +$%s  ·  %s LOST"
+msgstr "退款  ·  +$%s  ·  损失了%s"
+
+msgid "MONEY BACK  ·  +$%s"
+msgstr "退款  ·  +$%s"
+
+msgid "aim at ground"
+msgstr "对准地面"
+
+msgid "overlaps a deck"
+msgstr "和平台重叠"
+
+msgid "no ground under it"
+msgstr "下面没有地面"
+
+msgid "an arm is in the way"
+msgstr "被机械臂挡住了"
+
+msgid "aim at a deck"
+msgstr "对准平台"
+
+msgid "aim at the ground"
+msgstr "对准地面"
+
+msgid "land it further out"
+msgstr "落点再远一点"
+
+msgid "nothing to descend to"
+msgstr "下面没地方可下"
+
+msgid "too high to reach"
+msgstr "太高了，够不着"
+
+msgid "aim away from the deck"
+msgstr "朝平台外面瞄准"
+
+msgid "too steep, land it further out"
+msgstr "太陡了，落点再远一点"
+
+msgid "too shallow, land it closer in"
+msgstr "太平了，落点再近一点"
+
+msgid "surface too steep"
+msgstr "表面太陡"
+
+msgid "needs level ground"
+msgstr "需要平地"
+
+msgid "you already have a cabinet"
+msgstr "已经有收针柜了"
+
+msgid "no room for the doors"
+msgstr "没地方开柜门"
+
+msgid "you already have a satellite dish"
+msgstr "已经有卫星天线了"
+
+msgid "no room for the dish"
+msgstr "放不下天线"
+
+msgid "no room for the board"
+msgstr "放不下画板"
+
+msgid "no room for the lamp"
+msgstr "放不下灯"
+
+msgid "too close to another one"
+msgstr "离另一个太近"
+
+msgid "no room"
+msgstr "没空间"
+
+msgid "too high for one lift"
+msgstr "一台升降机够不到这么高"
+
+msgid "too close to another machine"
+msgstr "离其他机器太近"
+
+msgid "belt end not joined"
+msgstr "传送带末端没接上"
+
+msgid "arm not joined"
+msgstr "分支没接上"
+
+msgid "too close to the machine"
+msgstr "离机器太近"
+
+msgid "belt end too low"
+msgstr "传送带末端太低"
+
+msgid "belt end too high"
+msgstr "传送带末端太高"
+
+msgid "pipe connected"
+msgstr "已接上水管"
+
+msgid "that flange already has a pipe on it"
+msgstr "这个接口已经接了水管"
+
+msgid "both ends on the same piece"
+msgstr "两头接在同一个东西上"
+
+msgid "too steep"
+msgstr "太陡了"
+
+msgid "turn further off the pipe"
+msgstr "再转开一点，离水管远些"
+
+msgid "too close to another fitting"
+msgstr "离另一个接头太近"
+
+msgid "FIRST BOX  ·  nothing to link to yet"
+msgstr "第一个电缆箱  ·  还没东西可连"
+
+msgid "FIRST POLE  ·  nothing to link to yet"
+msgstr "第一根电线杆  ·  还没东西可连"
+
+msgid "NO POLE OR BOX IN REACH  ·  it will not connect to anything"
+msgstr "附近没有电线杆或电缆箱  ·  连不上任何东西"
+
+msgid "LINKS %d POST"
+msgid_plural "LINKS %d POSTS"
+msgstr[0] "连到%d根电线杆"
+
+msgid "REACHES %d MACHINE"
+msgid_plural "REACHES %d MACHINES"
+msgstr[0] "覆盖%d台机器"
+
+msgid "%d MACHINE OUT OF CABLE REACH  ·  it needs a pole it can see"
+msgid_plural "%d MACHINES OUT OF CABLE REACH  ·  they need a pole they can see"
+msgstr[0] "%d台机器不在电缆范围内  ·  需要一根中间不被挡住的电线杆"
+
+msgid "too close to another post"
+msgstr "离另一根杆子太近"
+
+msgid "too near the edge"
+msgstr "太靠边了"
+
+msgid "stand it on the floor"
+msgstr "要放在地上"
+
+msgid "you are in the way"
+msgstr "你挡住位置了"
+
+msgid "too close to another hatch"
+msgstr "离另一个卸料口太近"
+
+msgid "not enough room"
+msgstr "空间不够"
+
+msgid "nothing to stand on"
+msgstr "下面是空的"
+
+msgid "the side input is blocked"
+msgstr "侧面入口被挡住了"
+
+msgid "fed from the top: run the belt up to the top opening"
+msgstr "从顶部进料：把传送带接到顶上的开口"
+
+msgid "arm limit reached (%d)"
+msgstr "机械臂已达上限（%d）"
+
+msgid "drone limit reached (%d)"
+msgstr "无人机已达上限（%d）"
+
+msgid "rake limit reached (%d)"
+msgstr "活塞耙已达上限（%d）"
+
+msgid "too close to another drone"
+msgstr "离另一架无人机太近"
+
+msgid "too close to the hay"
+msgstr "离草太近"
+
+msgid "must face the hay"
+msgstr "要朝着草堆"
+
+msgid "too close to another rake"
+msgstr "离另一台活塞耙太近"
+
+msgid "put a belt between two splitter boxes"
+msgstr "两个分流箱之间要放一段传送带"
+
+msgid "too close to another module"
+msgstr "离另一个模块太近"
+
+msgid "already joined here  ·  use a splitter to branch"
+msgstr "这里已经接上了  ·  要分岔请用分流器"
+
+msgid "already joined here  ·  use a joiner to merge"
+msgstr "这里已经接上了  ·  要合并请用合流器"
+
+msgid "wrong side  ·  hay goes the other way here"
+msgstr "接错边了  ·  这里的草往另一边走"
+
+msgid "all three doors, taking turns"
+msgstr "三个门轮流出货"
+
+msgid "each door by its own rule"
+msgstr "每个门各按自己的规则"
+
+msgid "LEFT"
+msgstr "左边"
+
+msgid "ALTERNATE"
+msgstr "轮流"
+
+msgid "RIGHT"
+msgstr "右边"
+
+msgid "LEFT FIRST"
+msgstr "先左"
+
+msgid "RIGHT FIRST"
+msgstr "先右"
+
+msgid "left side only"
+msgstr "只走左边"
+
+msgid "right side only"
+msgstr "只走右边"
+
+msgid "left side first, right when it backs up"
+msgstr "先走左边，堵了再走右边"
+
+msgid "right side first, left when it backs up"
+msgstr "先走右边，堵了再走左边"
+
+msgid "both sides, alternating"
+msgstr "两边轮流"
+
+msgid "JOINING"
+msgstr "合流"
+
+msgid "ONE IN, TWO OUT"
+msgstr ""
+
+msgid "TWO IN, ONE OUT"
+msgstr ""
+
+msgid "Connect belt IN or OUT"
+msgstr ""
+
+msgid "NO BELT IN"
+msgstr "未接传送带"
+
+msgid "STRAIGHT ON"
+msgstr "直行"
+
+msgid "STRAIGHT FIRST"
+msgstr "先直行"
+
+msgid "straight on only"
+msgstr "只直行"
+
+msgid "straight on first, left when it backs up"
+msgstr "先直行，堵了再走左边"
+
+msgid "straight on first, right when it backs up"
+msgstr "先直行，堵了再走右边"
+
+msgid "left side first, straight on when it backs up"
+msgstr "先走左边，堵了再直行"
+
+msgid "right side first, straight on when it backs up"
+msgstr "先走右边，堵了再直行"
+
+msgid "loose hay"
+msgstr "散草"
+
+msgid "NO WATER  ·  run a water pipe onto its flange"
+msgstr "没有水  ·  把水管接到接口上"
+
+msgid "NO WATER  ·  no pump is on this pipe, build a borehole pump on it"
+msgstr "没有水  ·  这根水管上没有水泵，在上面建一台深井泵"
+
+msgid "NO WATER  ·  get the pump running, feed a Hay Generator on its line"
+msgstr "没有水  ·  让水泵转起来，给同一线路上的干草发电机喂草"
+
+msgid "BRICKS ONLY  ·  a gas plant burns eco bricks and nothing else"
+msgstr "只烧草砖  ·  燃气发电站只烧环保草砖，别的都不烧"
+
+msgid "BRICKS ONLY  ·  take the %s off the intake"
+msgstr "只烧草砖  ·  把%s从进料口拿走"
+
+msgid "NO BRICKS  ·  nothing is reaching the intake"
+msgstr "没有草砖  ·  进料口什么都没收到"
+
+msgid "OUTFEED BLOCKED  ·  move the bale off the deck"
+msgstr "出料口堵了  ·  把草捆从平台上搬走"
+
+msgid "NO HAY  ·  nothing is reaching the intake"
+msgstr "没有草  ·  进料口什么都没收到"
+
+msgid "The drop is full. Clear some space under it."
+msgstr ""
+
+msgid "No room at the drop. It waits for a gap."
+msgstr ""
+
+msgid "NOT SET UP  ·  open its pad to give it a zone and a drop"
+msgstr ""
+
+msgid "DROP IS GONE  ·  what it dropped on was taken down, set a new drop"
+msgstr ""
+
+msgid "CAN'T TAKE OFF  ·  something is in the way above the pad"
+msgstr ""
+
+msgid "ZONE IS COVERED  ·  something is built over the zone"
+msgstr ""
+
+msgid "CAN'T REACH THE DROP  ·  something is built over the drop"
+msgstr ""
+
+msgid "NO WAY THROUGH  ·  something is too tall between the pad, the zone and the drop"
+msgstr ""
+
+msgid "Switched off. Press the button to start it."
+msgstr ""
+
+msgid "Give it a zone to work and a drop point, with SET ZONE AND DROP."
+msgstr ""
+
+msgid "What it dropped on was taken down. Set a new drop point."
+msgstr ""
+
+msgid "Something is built over its pad, so it can't take off."
+msgstr ""
+
+msgid "Something is built over its zone, so it can't get down to it."
+msgstr ""
+
+msgid "Something is built over its drop, so it can't get down to it."
+msgstr ""
+
+msgid "Something too tall stands in its way. Move the zone or the drop."
+msgstr ""
+
+msgid "Waiting for another drone to pass."
+msgstr ""
+
+msgid "Its zone is dug out. Move the zone to keep digging."
+msgstr ""
+
+msgid "Nothing to pick up in its zone right now. It keeps looking."
+msgstr ""
+
+msgid "Taking a load to the drop."
+msgstr ""
+
+msgid "Flying home to wait for work."
+msgstr ""
+
+msgid "Digging hay off the pile."
+msgstr ""
+
+msgid "Collecting from its zone."
+msgstr ""
+
+msgid "Part of its zone is too close to something built, so it can't get down there."
+msgstr ""
+
+msgid "Its zone is too steep to dig from above. Move it lower down the pile."
+msgstr ""
+
+msgid "OUT OF RANGE"
+msgstr ""
+
+msgid "TOO CLOSE TO ITS DROP"
+msgstr ""
+
+msgid "ANOTHER DRONE WORKS HERE"
+msgstr ""
+
+msgid "ANOTHER DRONE DROPS HERE"
+msgstr ""
+
+msgid "TOO CLOSE TO ANOTHER PAD"
+msgstr ""
+
+msgid "NOT THE SELLING STAND"
+msgstr ""
+
+msgid "NOT ON THE PILE"
+msgstr ""
+
+msgid "NO ROOM TO FLY HERE"
+msgstr ""
+
+msgid "INSIDE ITS OWN ZONE"
+msgstr ""
+
+msgid "NOT HERE"
+msgstr ""
+
+msgid "DIG"
+msgstr ""
+
+msgid "COLLECT"
+msgstr ""
+
+msgid "DROP"
+msgstr "丢下"
+
+msgid "FEED\nHAY"
+msgstr ""
+
+msgid "GENERATE\nPOWER"
+msgstr ""
+
+msgid "RUN\nMACHINES"
+msgstr ""
+
+msgid "More machines running =\nhay burns faster"
+msgstr ""
+
+msgid "Switched off"
+msgstr ""
+
+msgid "Out of fuel: add hay"
+msgstr ""
+
+msgid "Fuel left: %d min %02d sec"
+msgstr ""
+
+msgid "TOO BIG FOR THE FIREBOX  ·  it goes in once the fire has burnt down"
+msgstr "炉膛放不下  ·  等火烧小了就能进去"
+
+msgid "NO CABLE REACHES THIS  ·  a pole is near, but something is in the way"
+msgstr "电缆接不到这里  ·  附近有电线杆，但中间有东西挡着"
+
+msgid "NO POLE  ·  the power has nowhere to go, put a pole near it"
+msgstr "没有电线杆  ·  电送不出去，在旁边放一根电线杆"
+
+msgid "FIREBOX EMPTY  ·  nothing is reaching the hopper"
+msgstr "炉膛空了  ·  进料斗什么都没收到"
+
+msgid "WRONG LOAD  ·  take the %s out of the intake"
+msgstr "进错料了  ·  把%s从进料口拿出来"
+
+msgid "BELT FULL  ·  no room where the bricks land"
+msgstr "传送带满了  ·  草砖落点没有空位"
+
+msgid "NO WATER  ·  the main it is on is empty, check the pump"
+msgstr "没有水  ·  接的总管没水，检查一下水泵"
+
+msgid "OUTFEED BLOCKED  ·  move the slab off the deck"
+msgstr "出料口堵了  ·  把纸浆板从平台上搬走"
+
+msgid "STOPPED  ·  it is full and nothing is coming out, press START"
+msgstr "已停止  ·  装满了，什么都不出来，按「开始」"
+
+msgid "OUTFEED BLOCKED  ·  clear the belt below it"
+msgstr "出料口堵了  ·  把下面的传送带清空"
+
+msgid "NOTHING COMING IN  ·  nothing is arriving on the feed belt"
+msgstr "没有进料  ·  进料传送带上什么都没有过来"
+
+msgid "NOTHING COMING IN  ·  no belt reaches the top opening"
+msgstr "没有进料  ·  没有传送带接到顶上的开口"
+
+msgid "OUTFEED BLOCKED  ·  move the wrapped bale off the deck"
+msgstr "出料口堵了  ·  把裹膜草捆从平台上搬走"
+
+msgid "NO BALES  ·  nothing is reaching the intake"
+msgstr "没有草捆  ·  进料口什么都没收到"
+
+msgid "BALE"
+msgstr "草捆"
+
+msgid "BRICK"
+msgstr "草砖"
+
+msgid "NEEDLE FOUND  ·  the line is held until you empty the drawer"
+msgstr "找到针了  ·  清空抽屉前产线会一直停着"
+
+msgid "OUTFEED BACKED UP  ·  the belt out of here is not moving"
+msgstr "出料口堵了  ·  出料的传送带没在动"
+
+msgid "TIP  ·  a %s does not stop the belt"
+msgstr "提示  ·  %s 不会让传送带停下"
+
+msgid "BLOCK"
+msgstr "料块"
+
+msgctxt "scanner screen"
+msgid "STOP"
+msgstr "已停"
+
+msgid "FULL"
+msgstr "已满"
+
+msgid "READY"
+msgstr "就绪"
+
+msgid "%d FULL"
+msgstr "%d已满"
+
+msgid "%d HELD"
+msgstr "%d待取"
+
+msgid "close the drawer"
+msgstr "关上抽屉"
+
+msgid "collect %d needle"
+msgid_plural "collect %d needles"
+msgstr[0] "取出%d根针"
+
+msgid "%s and start the line"
+msgstr "%s，重新开动产线"
+
+msgid "NO POWER  ·  the generator is out of hay, feed it"
+msgstr "没电  ·  发电机没草了，给它加点草"
+
+msgid "NO POWER  ·  nothing on this line makes power, build a generator or switch one on"
+msgstr "没电  ·  这条线路上没有东西发电，建一台发电机或者打开一台"
+
+msgid "NO POWER  ·  put a power pole near this machine"
+msgstr "没电  ·  在这台机器旁边放一根电线杆"
+
+msgid "this machine needs %.1f kW  ·  it is getting %d%% of that"
+msgstr "这台机器需要%.1f kW  ·  现在只有%d%%"
+
+msgid "this machine needs %.1f kW"
+msgstr "这台机器需要%.1f kW"
+
+msgid "Close the case"
+msgstr "关上收针柜"
+
+msgid "Open the case"
+msgstr "打开收针柜"
+
+msgid "%s  (%d/%d found)"
+msgstr "%s  （已找到%d/%d）"
+
+msgid "needs the Satellite Dish plans"
+msgstr "需要卫星天线图纸"
+
+msgid "already scanning"
+msgstr "正在扫描"
+
+msgid "recharging"
+msgstr "充能中"
+
+msgid "%.1f m deep"
+msgstr "深%.1f米"
+
+msgid "Scan the pile"
+msgstr "扫描草堆"
+
+msgid "a rough circle round each needle for %d s"
+msgstr "在每根针周围圈出大概范围，持续%d秒"
+
+msgid "exact spots, names and depths, for %d s"
+msgstr "标出准确位置、名字和深度，持续%d秒"
+
+msgid "exact spots for %d s"
+msgstr "标出准确位置，持续%d秒"
+
+msgid "Unsaved drawing"
+msgstr "未保存的画"
+
+msgid "Empty board"
+msgstr "空白画板"
+
+msgid "Drawing"
+msgstr "画作"
+
+msgid "OUTFEED BLOCKED  ·  move the paper roll off the deck"
+msgstr "出料口堵了  ·  把纸卷从平台上搬走"
+
+msgid "NO PULP  ·  nothing is reaching the intake"
+msgstr "没有纸浆  ·  进料口什么都没收到"
+
+msgid "JAMMED  ·  a wad is stuck in the head, carry it away"
+msgstr "卡住了  ·  耙头里卡着一个草团，把它搬走"
+
+msgid "RAKING NOTHING  ·  the head does not reach the pile"
+msgstr "耙了个空  ·  耙头够不到草堆"
+
+msgid "NO PILE  ·  there is no hay here to rake"
+msgstr "没有草堆  ·  这里没有草可耙"
+
+msgid "NOTHING TO RAKE  ·  no pile left in front of the head"
+msgstr "没草可耙  ·  耙头前面的草堆没了"
+
+msgid "Needles"
+msgstr "针"
+
+msgid "always picked up"
+msgstr "见到就抓"
+
+msgid "Loose hay"
+msgstr "散草"
+
+msgid "hay on the floor"
+msgstr "地上的草"
+
+msgid "Hay wads"
+msgstr "草团"
+
+msgid "bundles of loose hay"
+msgstr "一团团的散草"
+
+msgid "Hay bales"
+msgstr "草捆"
+
+msgid "what the compressor makes"
+msgstr "打捆机做的"
+
+msgid "Eco bricks"
+msgstr "环保草砖"
+
+msgid "what the pelletizer makes"
+msgstr "压块机做的"
+
+msgid "Wrapped bales"
+msgstr "裹膜草捆"
+
+msgid "bales from the wrapper"
+msgstr "裹膜机出来的草捆"
+
+msgid "The pile"
+msgstr "草堆"
+
+msgid "digs the haystack"
+msgstr "直接挖草堆"
+
+msgid "Wet pulp"
+msgstr "湿纸浆"
+
+msgid "from the pulper"
+msgstr "碎浆机出来的"
+
+msgid "Paper rolls"
+msgstr "纸卷"
+
+msgid "from the paper mill"
+msgstr "造纸机出来的"
+
+msgid "Feed discs"
+msgstr "饲料饼"
+
+msgid "from the feed disc press"
+msgstr "饲料饼压制机出来的"
+
+msgid "SET TO TAKE NOTHING  ·  every kind is switched off"
+msgstr "设成了什么都不抓  ·  所有种类都关掉了"
+
+msgid "BELT FULL  ·  clear the line it feeds, or lay another belt"
+msgstr "传送带满了  ·  疏通下游线路，或再铺一条传送带"
+
+msgid "BELT TOO SHORT  ·  lay a longer belt here"
+msgstr "传送带太短  ·  在这里铺一条更长的"
+
+msgid "BELT OUT OF REACH  ·  move the arm closer to the belt"
+msgstr "够不到传送带  ·  把机械臂挪近传送带"
+
+msgid "NOWHERE TO PUT IT  ·  no belt in reach with room"
+msgstr "没地方放  ·  附近没有空着的传送带"
+
+msgid "NO BELT IN REACH  ·  lay a conveyor beside this arm"
+msgstr "附近没有传送带  ·  在机械臂旁边铺一条"
+
+msgid "ARMS DROP ONTO BELTS, NOT SPLITTERS  ·  run a conveyor from here into the %s"
+msgstr "机械臂只放到传送带上，不放到分流器上  ·  从这里铺一条传送带到%s"
+
+msgid "ARMS DROP ONTO BELTS, NOT JOINERS  ·  run a conveyor from here into the %s"
+msgstr "机械臂只放到传送带上，不放到合流器上  ·  从这里铺一条传送带到%s"
+
+msgid "ARMS DROP ONTO BELTS, NOT MACHINES  ·  run a conveyor from here into the %s"
+msgstr "机械臂只放到传送带上，不放进机器  ·  从这里铺一条传送带到%s"
+
+msgid "No belt in its radius. Lay a conveyor beside it."
+msgstr "范围里没有传送带。在它旁边铺一条。"
+
+msgid "It drops onto belts, not splitters. Run a conveyor from here into the %s."
+msgstr "它只放到传送带上，不放到分流器上。从这里铺一条传送带到%s。"
+
+msgid "It drops onto belts, not joiners. Run a conveyor from here into the %s."
+msgstr "它只放到传送带上，不放到合流器上。从这里铺一条传送带到%s。"
+
+msgid "It drops onto belts, not machines. Run a conveyor from here into the %s."
+msgstr "它只放到传送带上，不放进机器。从这里铺一条传送带到%s。"
+
+msgid "nothing"
+msgstr "什么都不抓"
+
+msgid "everything under it"
+msgstr "下面的全都抓"
+
+msgid "ALL CLEAR  ·  nothing left in reach, it waits for more"
+msgstr "清空了  ·  范围里没东西了，等新的过来"
+
+msgid "WAITING FOR A GAP  ·  the belt is too busy to take more right now"
+msgstr "正在等空位  ·  传送带现在太满，放不下更多"
+
+msgid "Turned off. It will not move until you turn it on."
+msgstr "关着呢。你不打开，它就不会动。"
+
+msgid "No power. A pole is near, but something blocks the cable."
+msgstr "没电。附近有电线杆，但有东西挡住了电缆。"
+
+msgid "No power. The generator is out of hay."
+msgstr "没电。发电机没草了。"
+
+msgid "No power. Nothing on its line makes power."
+msgstr "没电。它的线路上没有东西发电。"
+
+msgid "No power. Put a power pole near it."
+msgstr "没电。在它旁边放一根电线杆。"
+
+msgid "Nothing is ticked, so it picks nothing up."
+msgstr "什么都没勾选，所以什么都不抓。"
+
+msgid "Only needles are ticked, so it waits for a needle. Tick more below."
+msgstr "只勾了针，所以它在等针。在下面多勾几样。"
+
+msgid "It leaves its belt alone until the belt gets stuck, then helps out."
+msgstr "传送带卡住之前不去碰它，卡住了就帮忙。"
+
+msgid "Nothing on its belts that it is ticked to take. It waits for the next one."
+msgstr "它的传送带上没有勾选的东西。等下一个过来。"
+
+msgid "Nothing to pick up in its radius, and no belt to put it on."
+msgstr "范围里没东西可抓，也没有传送带可放。"
+
+msgid "Nothing left to pick up in its radius. It starts again when more arrives."
+msgstr "范围里没东西可抓了。有新的过来就会接着干。"
+
+msgid "The belt is busy. It holds the load until a gap comes."
+msgstr "传送带太挤了。它拿着货，等出现空位。"
+
+msgid "Waiting for room on a belt."
+msgstr "在等传送带上的空位。"
+
+msgid "Lifting its first load, for %d belt."
+msgid_plural "Lifting its first load, for %d belts."
+msgstr[0] "正在抓第一份，要送到%d条传送带上。"
+
+msgid "Moving %d hay a minute onto %d belt."
+msgid_plural "Moving %d hay a minute onto %d belts."
+msgstr[0] "每分钟送%d根草，放到%d条传送带上。"
+
+msgid "The belt here is too short for a load. Lay a longer one."
+msgstr "这里的传送带太短，放不下一份。铺一条更长的。"
+
+msgid "The belt is just past its reach. Move the arm closer."
+msgstr "传送带刚好在范围外面一点。把机械臂挪近些。"
+
+msgid "Every belt it can reach is full. Clear the line it feeds."
+msgstr "够得到的传送带全满了。疏通它供货的线路。"
+
+msgid "TAKE"
+msgstr "取"
+
+msgid "PUT"
+msgstr "放"
+
+msgid "Drawing %d"
+msgstr "画作%d"
+
+msgid "DROP FULL  ·  clear where it is aimed, or aim it somewhere else"
+msgstr "落点堆满了  ·  清一清落点，或者换个方向瞄"
+
+msgid "NO LOAD  ·  nothing is reaching the intake"
+msgstr "没东西可发射  ·  进料口什么都没收到"
+
+msgid "bucket"
+msgstr "桶"
+
+msgid "Pick up"
+msgstr "捡起"
+
+msgid "Rip apart the %s"
+msgstr "撕开%s"
+
+msgid "Extra Life Coin"
+msgstr "续命硬币"
+
+msgid "Break open the feed disc (the pellets are lost)"
+msgstr "掰开饲料饼（颗粒就浪费了）"
+
+msgid "NO ROOM"
+msgstr "放不下"
+
+msgid "container"
+msgstr "容器"
+
+msgid "%s full, %d"
+msgstr "%s满了（%d）"
+
+msgid "%d / %d in %s"
+msgstr "%d / %d（%s）"
+
+msgid "Bucket"
+msgstr "桶"
+
+msgid "Holds %d strands of hay."
+msgstr "能装%d根草。"
+
+msgid "Toy Shovel"
+msgstr "玩具铲"
+
+msgid "A small shovel. Digs %d strands at a time."
+msgstr "一把小铲子。一次挖%d根草。"
+
+msgid "Wheelbarrow"
+msgstr "手推车"
+
+msgid "Spade"
+msgstr "铁锹"
+
+msgid "Digs %d strands at a time."
+msgstr "一次挖%d根草。"
+
+msgid "Pitchfork"
+msgstr "草叉"
+
+msgid "Lifts %d strands at a time."
+msgstr "一次叉起%d根草。"
+
+msgid "Broom"
+msgstr "扫帚"
+
+msgid "Pushes spilled hay along the floor."
+msgstr "把撒在地上的草推着走。"
+
+msgid "Metal Detector"
+msgstr "金属探测器"
+
+msgid "Finds needles you cannot see. Shows how close, not which way."
+msgstr "能找到看不见的针。只显示离得多近，不显示方向。"
+
+msgid "Yard Vac"
+msgstr "吸草机"
+
+msgid "Left click sucks up hay. Right click pours it out."
+msgstr "左键吸草，右键倒出来。"
+
+msgid "Lighter"
+msgstr "打火机"
+
+msgid "Burns around %d strands. You can use it every %d seconds."
+msgstr "能烧掉大约%d根草。每%d秒能用一次。"
+
+msgid "Hay Bale"
+msgstr "草捆"
+
+msgid "%d strands pressed into a bale. Worth %.1fx loose hay."
+msgstr "%d根草压成的一捆。价值是散草的%.1f倍。"
+
+msgid "Wrapped Bale"
+msgstr "裹膜草捆"
+
+msgid "A wrapped bale. Worth %.2fx a normal bale."
+msgstr "裹了膜的草捆。价值是普通草捆的%.2f倍。"
+
+msgid "Eco Brick"
+msgstr "环保草砖"
+
+msgid "A fuel brick made from hay. Worth %.1fx the hay in it."
+msgstr "用草做的燃料砖。价值是里面草的%.1f倍。"
+
+msgid "Pulp Slab"
+msgstr "纸浆板"
+
+msgid "Wet hay pulp. Worth %.1fx the hay in it. Used to make paper."
+msgstr "湿草浆。价值是里面草的%.1f倍。可以用来造纸。"
+
+msgid "Paper Roll"
+msgstr "纸卷"
+
+msgid "A roll of paper made from pulp slabs. Worth %.2fx the slabs."
+msgstr "用纸浆板做的一卷纸。价值是纸浆板的%.2f倍。"
+
+msgid "Feed Disc"
+msgstr "饲料饼"
+
+msgid "Hay and eco bricks pressed into a disc. Worth %.1fx the hay in it."
+msgstr "草和环保草砖压成的圆饼。价值是里面草的%.1f倍。"
+
+msgid "Hay Wad"
+msgstr "草团"
+
+msgid "A bundle of up to %d strands of hay."
+msgstr "一团草，最多%d根。"
+
+msgid "Hay Tuft"
+msgstr "草簇"
+
+msgid "A small clump of up to %d strands of hay."
+msgstr "一小撮草，最多%d根。"
+
+msgid "Shred the paper roll (the paper is lost)"
+msgstr "把纸卷撕碎（纸就浪费了）"
+
+msgid "Pick up %s"
+msgstr "捡起%s"
+
+msgid "barrow"
+msgstr "手推车"
+
+msgid "Drive"
+msgstr "推车"
+
+msgid "Steady Hands"
+msgstr "手稳"
+
+msgid "Digging costs 12% less stamina"
+msgstr "挖草少耗12%体力"
+
+msgid "Fine Work"
+msgstr "细活"
+
+msgid "Hand tools lift 8% more straw"
+msgstr "手持工具多拿起8%的草"
+
+msgid "Quick Pour"
+msgstr "倒得快"
+
+msgid "Buckets and barrows pour 15% faster"
+msgstr "桶和手推车倒得快15%"
+
+msgid "Long Reach"
+msgstr "够得远"
+
+msgid "You can pick things up from 15% further away"
+msgstr "捡东西的距离远15%"
+
+msgid "Second Wind"
+msgstr "缓过劲来"
+
+msgid "Stamina comes back 25% faster"
+msgstr "体力恢复快25%"
+
+msgid "Pinpoint"
+msgstr "精确定位"
+
+msgid "Digging finds needles from twice as far away"
+msgstr "挖草时能在两倍远的地方发现针"
+
+msgid "Belt Grease"
+msgstr "传送带润滑油"
+
+msgid "Every belt in the yard runs 6% faster"
+msgstr "院子里所有传送带快6%"
+
+msgid "Tape Measure"
+msgstr "卷尺"
+
+msgid "You can place buildings 20% further out"
+msgstr "建筑能放得远20%"
+
+msgid "Deep Bucket"
+msgstr "深桶"
+
+msgid "Buckets and wheelbarrows hold 12% more"
+msgstr "桶和手推车多装12%"
+
+msgid "Quick Count"
+msgstr "数得快"
+
+msgid "The selling stand takes hay 25% faster"
+msgstr "收购点收草快25%"
+
+msgid "Good Price"
+msgstr "好价钱"
+
+msgid "Hay sells for 8% more"
+msgstr "草多卖8%"
+
+msgid "Fast Belts"
+msgstr "快速传送带"
+
+msgid "Every belt in the yard runs 25% faster"
+msgstr "院子里所有传送带快25%"
+
+msgid "Discount"
+msgstr "打折"
+
+msgid "Everything in the catalogue costs 8% less"
+msgstr "建造目录里的东西全部便宜8%"
+
+msgid "Deep Store"
+msgstr "大仓库"
+
+msgid "Machine buffers hold 40% more"
+msgstr "机器能多存40%"
+
+msgid "Fired Up"
+msgstr "火力全开"
+
+msgid "Compressors and pelletizers work 12% faster"
+msgstr "打捆机和压块机快12%"
+
+msgid "Quick Arms"
+msgstr "快速机械臂"
+
+msgid "Robotic arms swing 15% faster"
+msgstr "机械臂挥得快15%"
+
+msgid "Clear Lens"
+msgstr "透亮镜片"
+
+msgid "Scanners take 25% bigger batches"
+msgstr "扫描仪一次多处理25%"
+
+msgid "Sharp Eye"
+msgstr "眼尖"
+
+msgid "Digging finds needles from 50% further away"
+msgstr "挖草时发现针的距离远50%"
+
+msgid "Top Price"
+msgstr "高价"
+
+msgid "Hay sells for 10% more"
+msgstr "草多卖10%"
+
+msgid "Full Speed"
+msgstr "全速"
+
+msgid "Every machine in the yard works 10% faster"
+msgstr "院子里所有机器快10%"
+
+msgid "Sharp Edge"
+msgstr "利刃"
+
+msgid "Every dig lifts 25% more"
+msgstr "每次多挖25%"
+
+msgid "Big Drawer"
+msgstr "大抽屉"
+
+msgid "Scanner drawers hold twice as much"
+msgstr "扫描仪抽屉容量翻倍"
+
+msgid "Meteoric Iron"
+msgstr "陨铁"
+
+msgid "Scanners work 25% faster"
+msgstr "扫描仪快25%"
+
+msgid "The Golden Needle"
+msgstr "金针"
+
+msgid "The whole yard earns and runs 15% better"
+msgstr "整个院子的收入和效率提高15%"
+
+msgid "Pins and sewing needles"
+msgstr "大头针和缝衣针"
+
+msgid "Threading tools"
+msgstr "穿线工具"
+
+msgid "Workshop steel"
+msgstr "车间钢件"
+
+msgid "Gemstones"
+msgstr "宝石"
+
+msgid "A new row"
+msgstr "新的一排"
+
+msgid "YOU ALREADY HAVE THE %s"
+msgstr "已经有%s了"
+
+msgid "YOUR HANDS ARE FULL  ·  PRESS %s TO PUT A TOOL DOWN FIRST"
+msgstr "手上拿满了  ·  先按%s放下一件工具"
+
+msgid "%s LOAD DROPPED"
+msgstr "%s上的草掉了"
+
+msgid "You cannot open the door yet. Check the order on the board by the bay door."
+msgstr "门现在还打不开。去卷帘门旁边的送货板上看看订单。"
+
+msgid "pitchfork"
+msgstr "草叉"
+
+msgid "toy shovel"
+msgstr "玩具铲"
+
+msgid "spade"
+msgstr "铁锹"
+
+msgid "Locked."
+msgstr "上锁了。"
+
+msgid "Hand Work"
+msgstr "手动工具"
+
+msgid "shovels, buckets and barrows"
+msgstr "铲子、桶和手推车"
+
+msgid "Fitness"
+msgstr "体能"
+
+msgid "running, carrying and reaching"
+msgstr "跑步、搬东西、够东西"
+
+msgid "Selling"
+msgstr "卖草"
+
+msgid "getting more for the hay"
+msgstr "让草卖得更贵"
+
+msgid "Yard Building"
+msgstr "院子建设"
+
+msgid "platforms, walls and roofs"
+msgstr "平台、墙和屋顶"
+
+msgid "Hay Lines"
+msgstr "干草产线"
+
+msgid "belts, splitters and the launcher"
+msgstr "传送带、分流器和发射器"
+
+msgid "the generator and its wires"
+msgstr "发电机和电线"
+
+msgid "bales, wraps, bricks and the silo"
+msgstr "草捆、裹膜、草砖和筒仓"
+
+msgid "Automation"
+msgstr "自动化"
+
+msgid "rakes, arms and the drone"
+msgstr "活塞耙、机械臂和无人机"
+
+msgid "the well, the mains and the pulper"
+msgstr "水井、总管和碎浆机"
+
+msgid "finding and scanning needles"
+msgstr "找针和扫描"
+
+msgid "Arm upgrades"
+msgstr "机械臂升级"
+
+msgid "Rake upgrades"
+msgstr "活塞耙升级"
+
+msgid "Generator upgrades"
+msgstr "发电机升级"
+
+msgid "Scanner upgrades"
+msgstr "扫描仪升级"
+
+msgid "Belt upgrades"
+msgstr "传送带升级"
+
+msgid "Not available in Demo"
+msgstr "试玩版不可用"
+
+msgid "Not on this site"
+msgstr "这个场地没有"
+
+msgid "%d straw"
+msgid_plural "%d straw"
+msgstr[0] "%d根草"
+
+msgid "1 wad · %d straw"
+msgid_plural "1 wad · %d straw"
+msgstr[0] "1个草团 · %d根草"
+
+msgid "Bare Hands"
+msgstr "徒手"
+
+msgid "Pick up hay with your hands and carry it to the selling stand."
+msgstr "用手捡起草，拿到收购点去。"
+
+msgid "Pick up and carry hay"
+msgstr "捡草、搬草"
+
+msgid "Bigger Handful"
+msgstr "一把抓更多"
+
+msgid "Each level lets you hold more hay and grab more with each click, up to fifteen pieces."
+msgstr "每级能多拿一些草，每次点击也能抓更多，最多十五根。"
+
+msgid " in hand"
+msgstr " 根/把"
+
+msgid "Unlocks the toy shovel in the shop. Digs %d straw at a time."
+msgstr "商店开始卖玩具铲。一次挖%d根草。"
+
+msgid "SHOP · Toy Shovel · $%.2f"
+msgstr "商店 · 玩具铲 · $%.2f"
+
+msgid "Bigger Toy Shovel"
+msgstr "大号玩具铲"
+
+msgid "Each level digs 3 more straw."
+msgstr "每级多挖3根草。"
+
+msgid " a dig"
+msgstr " /次"
+
+msgid "Unlocks the spade in the shop. Digs %d straw at a time."
+msgstr "商店开始卖铁锹。一次挖%d根草。"
+
+msgid "SHOP · Spade · $%d"
+msgstr "商店 · 铁锹 · $%d"
+
+msgid "Bigger Spade"
+msgstr "大号铁锹"
+
+msgid "Each level digs about 12% more straw."
+msgstr "每级大约多挖12%的草。"
+
+msgid "Unlocks the pitchfork in the shop. Lifts %d straw at a time."
+msgstr "商店开始卖草叉。一次叉起%d根草。"
+
+msgid "SHOP · Pitchfork · $%d"
+msgstr "商店 · 草叉 · $%d"
+
+msgid "Bigger Pitchfork"
+msgstr "大号草叉"
+
+msgid "Each level lifts about 12% more straw."
+msgstr "每级大约多叉12%的草。"
+
+msgid "Unlocks the broom in the shop. Pushes loose hay along the floor at %.1f m/s."
+msgstr "商店开始卖扫帚。把地上的散草推着走，速度%.1f米/秒。"
+
+msgid "SHOP · Broom · $%d"
+msgstr "商店 · 扫帚 · $%d"
+
+msgid "Better Broom"
+msgstr "改良扫帚"
+
+msgid "Each level lets the broom sweep a wider patch of floor."
+msgstr "每级让扫帚一次扫过更宽的一片地面。"
+
+msgid "Bucket Licence"
+msgstr "桶许可证"
+
+msgid "Unlocks the bucket in the shop. Holds %d pieces of hay and empties at %d a second."
+msgstr "商店开始卖桶。能装%d根草，每秒倒出%d根。"
+
+msgid "SHOP · Bucket · $%d"
+msgstr "商店 · 桶 · $%d"
+
+msgid "Bigger Bucket"
+msgstr "大号桶"
+
+msgid "Each level lets the bucket hold about a third more hay."
+msgstr "桶每级多装大约三分之一。"
+
+msgid " pieces"
+msgstr " 根"
+
+msgid "Wheelbarrow Licence"
+msgstr "手推车许可证"
+
+msgid "Unlocks the wheelbarrow in the shop. Holds %d pieces and empties at %d a second. A bucket empties at %d."
+msgstr "商店开始卖手推车。能装%d根，每秒倒出%d根。桶是每秒%d根。"
+
+msgid "SHOP · Wheelbarrow · $%d"
+msgstr "商店 · 手推车 · $%d"
+
+msgid "Bigger Wheelbarrow"
+msgstr "大号手推车"
+
+msgid "Each level lets the wheelbarrow hold about a fifth more hay."
+msgstr "手推车每级多装大约五分之一。"
+
+msgid "Dump Hatch Plans"
+msgstr "卸料口图纸"
+
+msgid "Unlocks the Dump Hatch, $%d each. Walk up to it with a full bucket or barrow and it empties it onto the belt below for you."
+msgstr "解锁卸料口，每个$%d。拿着装满的桶或手推车走过去，它会帮你倒到下面的传送带上。"
+
+msgid "BUILD · Dump Hatch · $%d"
+msgstr "建造 · 卸料口 · $%d"
+
+msgid "Smooth Pouring"
+msgstr "倒得更顺"
+
+msgid "Each level makes buckets and barrows empty 12% faster. The numbers below are for the bucket."
+msgstr "每级让桶和手推车倒得快12%。下面的数字是桶的。"
+
+msgid " a second"
+msgstr " /秒"
+
+msgid "Yard Vac Licence"
+msgstr "吸草机许可证"
+
+msgid "Unlocks the yard vac in the shop, $%d. Hold left click to suck up hay from the floor or the pile at %d a second. Holds %d pieces. Hold right click to pour it out, or aim at a tipper, a bucket or a barrow to empty it straight in."
+msgstr "商店开始卖吸草机，$%d。按住左键从地上或草堆里吸草，每秒%d根。能装%d根。按住右键倒出来，对准卸料口、桶或手推车就直接倒进去。"
+
+msgid "SHOP · Yard Vac · $%d"
+msgstr "商店 · 吸草机 · $%d"
+
+msgid "Bigger Vac Bin"
+msgstr "大号集草箱"
+
+msgid "Each level lets the yard vac hold 500 more pieces."
+msgstr "吸草机每级多装500根。"
+
+msgid "Stronger Suction"
+msgstr "吸力加强"
+
+msgid "Each level makes the yard vac suck up hay 25% faster, from a wider patch."
+msgstr "吸草机每级吸草快25%，吸的范围也更大。"
+
+msgid "Lighter Licence"
+msgstr "打火机许可证"
+
+msgid "Unlocks the lighter in the shop, $%d. Burns about %d strands. Can be used every %d seconds."
+msgstr "商店开始卖打火机，$%d。能烧掉大约%d根草。每%d秒能用一次。"
+
+msgid "SHOP · Lighter · $%d"
+msgstr "商店 · 打火机 · $%d"
+
+msgid "Conveyor Plans"
+msgstr "传送带图纸"
+
+msgid "Unlocks conveyor belts, $%d a metre. Belts move hay at %.1f m/s."
+msgstr "解锁传送带，每米$%d。传送带运草速度%.1f米/秒。"
+
+msgid "BUILD · Conveyor Belt · $%d per metre"
+msgstr "建造 · 传送带 · 每米$%d"
+
+msgid "Enclosed Conveyor Plans"
+msgstr "封闭传送带图纸"
+
+msgid "Unlocks enclosed conveyors, $%d a metre. Packaged cargo travels without visible moving objects, which saves performance in large factories. Loose hay cannot enter."
+msgstr "解锁封闭传送带，每米$%d。打包好的货物在里面走，看不到移动的物体，大工厂里能省性能。散草进不去。"
+
+msgid "BUILD · Enclosed Conveyor · $%d per metre"
+msgstr "建造 · 封闭传送带 · 每米$%d"
+
+msgid "Faster Belt Motor"
+msgstr "高速传送带电机"
+
+msgid "Each level makes all belts 45% faster, including ones already built."
+msgstr "所有传送带每级快45%，已经建好的也算。"
+
+msgid "Platform Plans"
+msgstr "平台图纸"
+
+msgid "Unlocks platforms, $%d a square metre. You and your machines can stand on them."
+msgstr "解锁平台，每平方米$%d。你和机器都能站在上面。"
+
+msgid "BUILD · Platform · $%d per m2"
+msgstr "建造 · 平台 · 每平方米$%d"
+
+msgid "Stairs and Railings"
+msgstr "楼梯和栏杆"
+
+msgid "Unlocks stairs ($%d a metre of height) and railings ($%d a metre). Railings are %.2f m tall."
+msgstr "解锁楼梯（每米高度$%d）和栏杆（每米$%d）。栏杆高%.2f米。"
+
+msgid "BUILD · Stair $%d/m rise · Railing $%d/m"
+msgstr "建造 · 楼梯每米高$%d · 栏杆每米$%d"
+
+msgid "Unlocks the Paint Board, $%d. Hold left click to draw and right click to erase."
+msgstr "解锁画板，$%d。按住左键画画，按住右键擦掉。"
+
+msgid "BUILD · Paint Board · $%d"
+msgstr "建造 · 画板 · $%d"
+
+msgid "Wall Plans"
+msgstr "墙体图纸"
+
+msgid "Unlocks walls, window walls and doorways, $%d a metre."
+msgstr "解锁墙、带窗墙和门洞，每米$%d。"
+
+msgid "BUILD · Wall · Window Wall · $%d per metre"
+msgstr "建造 · 墙 · 带窗墙 · 每米$%d"
+
+msgid "Roof Plans"
+msgstr "屋顶图纸"
+
+msgid "Unlocks flat roofs, angled roofs and roof hatches, $%d a metre. Climb onto the roof through a hatch."
+msgstr "解锁平屋顶、斜屋顶和屋顶天窗，每米$%d。从天窗爬上屋顶。"
+
+msgid "BUILD · Roof · Angled Roof · Roof Hatch · $%d per metre"
+msgstr "建造 · 屋顶 · 斜屋顶 · 屋顶天窗 · 每米$%d"
+
+msgid "Unlocks the Work Lamp. Lights up to %d m. Press %s at it to change the brightness. Needs no power. $%d each."
+msgstr "解锁工作灯。照亮%d米范围。对着它按%s调亮度。不用电。每盏$%d。"
+
+msgid "BUILD · Work Lamp · $%d"
+msgstr "建造 · 工作灯 · $%d"
+
+msgid "Alternating Splitter"
+msgstr "轮流分流"
+
+msgid "Unlocks the splitter, $%d. Splits one belt into two: one load left, the next load right. It can also send everything one way."
+msgstr "解锁分流器，$%d。把一条传送带分成两条：这一份往左，下一份往右。也可以全部送往同一边。"
+
+msgid "BUILD · Belt Splitter · $%d"
+msgstr "建造 · 分流器 · $%d"
+
+msgid "Splitter Priority"
+msgstr "分流优先级"
+
+msgid "Adds a priority setting to every splitter. The chosen side gets all the hay. The other side only gets hay when the first one is backed up."
+msgstr "所有分流器多一个优先设置。选中的那边拿走全部干草，另一边要等这边堵住了才有草。"
+
+msgid "SPLITTERS · Priority · one side gets hay first"
+msgstr "分流器 · 优先 · 一边先拿草"
+
+msgid "Unlocks the T Junction, $%d. It sets itself up from the belts you connect: bring one belt in and it splits it into two, bring two belts in and it joins them into one."
+msgstr "解锁T形三通，$%d。它会根据你接上的传送带自动调整：接入一条，它就分成两条；接入两条，它就合成一条。"
+
+msgid "BUILD · T Junction · $%d"
+msgstr "建造 · T形三通 · $%d"
+
+msgid "Compact Splitter Plans"
+msgstr "紧凑分流器图纸"
+
+msgid "Unlocks the Compact Splitter, $%d. Shares one belt between three belts, taking turns. Works with open and enclosed belts."
+msgstr "解锁紧凑分流器，$%d。把一条传送带轮流分给三条传送带。敞开的和封闭的传送带都能用。"
+
+msgid "BUILD · Compact Splitter · $%d"
+msgstr "建造 · 紧凑分流器 · $%d"
+
+msgid "Smart Splitter Plans"
+msgstr "智能分流器图纸"
+
+msgid "Unlocks the Smart Splitter, $%d. You pick what may leave through each of its three outputs, so one belt can be sorted by type."
+msgstr "解锁智能分流器，$%d。三个出口各放什么出去由你决定，一条传送带就能按类型分好。"
+
+msgid "BUILD · Smart Splitter · $%d"
+msgstr "建造 · 智能分流器 · $%d"
+
+msgid "Unlocks the joiner, $%d. Merges two belts into one."
+msgstr "解锁合流器，$%d。把两条传送带合成一条。"
+
+msgid "BUILD · Belt Joiner · $%d"
+msgstr "建造 · 合流器 · $%d"
+
+msgid "Compressor Plans"
+msgstr "打捆机图纸"
+
+msgid "Unlocks the Hay Compressor, $%d. Presses %d straw into a bale every %.1f seconds. Bales sell for %.1fx the price of loose hay."
+msgstr "解锁干草打捆机，$%d。每次把%d根草压成一捆，每捆要%.1f秒。草捆卖价是散草的%.1f倍。"
+
+msgid "BUILD · Hay Compressor · $%d"
+msgstr "建造 · 干草打捆机 · $%d"
+
+msgid "Larger Bale Chamber"
+msgstr "加大压捆室"
+
+msgid "Each level puts 25% more hay into every bale, so each bale is worth more."
+msgstr "每级让每捆多装25%的草，每捆也就更值钱。"
+
+msgid " a bale"
+msgstr " 每捆"
+
+msgid "Faster Bale Press"
+msgstr "压捆提速"
+
+msgid "Each level makes every compressor 8% faster."
+msgstr "每级让所有打捆机快8%。"
+
+msgid " s a bale"
+msgstr " 秒/捆"
+
+msgid "Raise Bale Quality"
+msgstr "提升草捆品质"
+
+msgid "Each level makes bales sell for about 7% more."
+msgstr "每级让草捆多卖7%左右。"
+
+msgid " the hay value"
+msgstr " 干草价"
+
+msgid "Wrapper Plans"
+msgstr "裹膜机图纸"
+
+msgid "Unlocks the Hay Wrapper, $%d. Wraps a bale every %.2f seconds. Takes bales only. Wrapped bales sell for %.2fx a bale, which is %.2fx the price of loose hay."
+msgstr "解锁草捆裹膜机，$%d。每%.2f秒裹好一捆，只收草捆。裹膜草捆卖价是草捆的%.2f倍，也就是散草的%.2f倍。"
+
+msgid "BUILD · Hay Wrapper · $%d"
+msgstr "建造 · 草捆裹膜机 · $%d"
+
+msgid "Faster Wrapper"
+msgstr "裹膜提速"
+
+msgid "Each level makes every wrapper 12% faster. At the top it keeps up with a fully upgraded compressor."
+msgstr "每级让所有裹膜机快12%。升满后，能跟上满级的打捆机。"
+
+msgid "Better Wrap"
+msgstr "优质裹膜"
+
+msgid "Each level makes wrapped bales sell for more."
+msgstr "每级让裹膜草捆卖得更贵。"
+
+msgid " the bale value"
+msgstr " 草捆价"
+
+msgid "Hay Silo Plans"
+msgstr "干草筒仓图纸"
+
+msgid "Unlocks the Hay Silo, $%d. Put it in a belt line to store hay. Press %s at it to set how fast hay comes out, up to %d loads a minute. Holds %d loads."
+msgstr "解锁干草筒仓，$%d。接在传送带线路上，用来存草。对着它按%s可以设置出草速度，最快每分钟%d份。能存%d份。"
+
+msgid "BUILD · Hay Silo · $%d"
+msgstr "建造 · 干草筒仓 · $%d"
+
+msgid "Faster Silo Output"
+msgstr "筒仓出料提速"
+
+msgid "Each level raises the silo's top speed by 20 loads a minute."
+msgstr "每级让筒仓最快出草速度每分钟多20份。"
+
+msgid " loads a minute"
+msgstr " 份/分钟"
+
+msgid "Bigger Silo"
+msgstr "加大筒仓"
+
+msgid "Each level lets a silo hold about a quarter more."
+msgstr "每级让筒仓多存大约四分之一。"
+
+msgid " loads"
+msgstr " 份"
+
+msgid "Fuller Silo Loads"
+msgstr "筒仓装得更满"
+
+msgid "Each level puts 25% more loose hay into every load the silo lets out. Bales and bricks do not change."
+msgstr "每级让筒仓放出的每份散草多25%。草捆和草砖不变。"
+
+msgid " a load"
+msgstr " 每份"
+
+msgid "Unlocks Hay Stairs, $%d. Belts cannot go down slopes steeper than %d degrees. Drop hay in the top and it comes out on a belt at the bottom."
+msgstr "解锁干草阶梯，$%d。传送带不能走超过%d度的下坡。从顶上丢草进去，草会从底部出来，落到传送带上。"
+
+msgid "BUILD · Hay Stairs · $%d"
+msgstr "建造 · 干草阶梯 · $%d"
+
+msgid "Unlocks the Hay Lift, from $%d. Carries hay straight up. Click the bottom, look up and click the top. Lifts %s m, and each extra metre costs $%d."
+msgstr "解锁干草升降机，$%d起。把草垂直往上送。先点底部，再抬头点顶部。能升%s米，每多一米加$%d。"
+
+msgid "BUILD · Hay Lift · from $%d"
+msgstr "建造 · 干草升降机 · $%d起"
+
+msgid "Pelletizer Plans"
+msgstr "压块机图纸"
+
+msgid "Unlocks the Hay Pelletizer, $%d. Turns %d straw into a fuel brick every %.1f seconds and throws it out. Bricks sell for %.1fx the price of loose hay."
+msgstr "解锁干草压块机，$%d。每%d根草压成一块燃料砖，每块要%.1f秒，压好就抛出来。草砖卖价是散草的%.1f倍。"
+
+msgid "BUILD · Hay Pelletizer · $%d"
+msgstr "建造 · 干草压块机 · $%d"
+
+msgid "Tube Launcher Plans"
+msgstr "管式发射器图纸"
+
+msgid "Unlocks the Tube Launcher, $%d. Throws whatever a belt brings it. Set the angle and power at the machine."
+msgstr "解锁管式发射器，$%d。传送带送来什么就发射什么。角度和力度在机器上调。"
+
+msgid "BUILD · Tube Launcher · $%d"
+msgstr "建造 · 管式发射器 · $%d"
+
+msgid "Electricity"
+msgstr "电力"
+
+msgid "Unlocks the Hay Generator ($%d) and Power Poles ($%d). The generator burns hay and makes %.0f kW. Machines within %d m of a pole get power. Belts do not need power."
+msgstr "解锁干草发电机（$%d）和电线杆（$%d）。发电机烧草发电，功率%.0f kW。离电线杆%d米以内的机器都有电。传送带不用电。"
+
+msgid "BUILD · Hay Generator · $%d · Power Pole · $%d"
+msgstr "建造 · 干草发电机 · $%d · 电线杆 · $%d"
+
+msgid "Carries power. Poles up to %d m apart connect. Machines within %d m get power if nothing blocks the wire. Comes with Electricity."
+msgstr "用来输电。相距%d米以内的电线杆会连起来。%d米以内的机器，只要电线没被挡住就有电。随电力一起解锁。"
+
+msgid "BUILD · Power Pole · $%d"
+msgstr "建造 · 电线杆 · $%d"
+
+msgid "Stronger Generator"
+msgstr "强力发电机"
+
+msgid "Each level raises how much power a generator can make. It still needs enough hay to get there."
+msgstr "每级提高发电机的最大功率。不过得喂够草才行。"
+
+msgid "Borehole Plans"
+msgstr "深井图纸"
+
+msgid "Unlocks the Borehole Pump, $%d. Pumps %.0f litres of water a second and uses %.0f kW. Pipe the water to a pulper."
+msgstr "解锁深井泵，$%d。每秒抽%.0f升水，耗电%.0f kW。用水管把水接到碎浆机。"
+
+msgid "BUILD · Borehole Pump · $%d"
+msgstr "建造 · 深井泵 · $%d"
+
+msgid "Deeper Bore"
+msgstr "钻得更深"
+
+msgid "Each level makes every pump bring up more water. It does not use more power."
+msgstr "每级让所有水泵抽上来更多水，耗电不变。"
+
+msgid " litres a second"
+msgstr " 升/秒"
+
+msgid "Water Mains"
+msgstr "供水总管"
+
+msgid "Unlocks water pipes, $%d a metre. Click the shiny flange on one machine, then on another. Both ends must be on a flange."
+msgstr "解锁水管，每米$%d。先点一台机器上发亮的接口，再点另一台的。两头都要接在接口上。"
+
+msgid "BUILD · Water Pipe · $%d/m"
+msgstr "建造 · 水管 · $%d/米"
+
+msgid "Gas Plant Plans"
+msgstr "燃气发电站图纸"
+
+msgid "Unlocks the Gas Plant, $%d. It burns only eco bricks and gets %d times as much power from each straw as a Hay Generator. Makes up to %.0f kW and needs %.0f litres of water a second, so pipe it from a pump."
+msgstr "解锁燃气发电站，$%d。只烧环保草砖，每根草发的电是干草发电机的%d倍。最多发%.0f kW，每秒要用%.0f升水，所以要从水泵接水管过来。"
+
+msgid "BUILD · Gas Plant · $%d"
+msgstr "建造 · 燃气发电站 · $%d"
+
+msgid "Bigger Gas Plant"
+msgstr "扩建燃气发电站"
+
+msgid "Each level raises how much power a gas plant can make. It needs more bricks and more water to get there."
+msgstr "每级提高燃气发电站的最大功率。要发到那么多，得喂更多草砖，也要更多水。"
+
+msgid "Longer Spans"
+msgstr "电线加长"
+
+msgid "Each level lets poles and cable boxes connect from 1.5 m further apart."
+msgstr "每级让电线杆和电缆箱的连接距离远1.5米。"
+
+msgid " m between poles"
+msgstr " 米（杆距）"
+
+msgid "Longer Drops"
+msgstr "供电更远"
+
+msgid "Each level lets poles and cable boxes power machines 1 m further away."
+msgstr "每级让电线杆和电缆箱的供电距离远1米。"
+
+msgid " m to a machine"
+msgstr " 米（供电距离）"
+
+msgid "Underground Cable"
+msgstr "地下电缆"
+
+msgid "Unlocks Cable Boxes, $%d. Works like a pole, but the cable is underground so walls cannot block it. Connects up to %d m away and powers machines within %d m. Hold one to see the cables."
+msgstr "解锁电缆箱，$%d。用法和电线杆一样，但电缆埋在地下，墙挡不住。最远能连%d米，给%d米以内的机器供电。手里拿着电缆箱就能看到电缆。"
+
+msgid "BUILD · Cable Box · $%d"
+msgstr "建造 · 电缆箱 · $%d"
+
+msgid "Bigger Firebox"
+msgstr "加大炉膛"
+
+msgid "Each level lets generators hold 25%% more hay. A full generator now lasts %d minutes at full power, and about %d minutes at max level."
+msgstr "每级让发电机多装25%%的草。现在装满一炉，满功率能烧%d分钟，升到满级大约%d分钟。"
+
+msgid " in the box"
+msgstr " 一炉"
+
+msgid "Bigger Brick Die"
+msgstr "加大砖模"
+
+msgid "Each level puts 25%% more hay into every brick, so bricks sell for more and burn longer. A feed disc still takes %d bricks, so discs are worth more too."
+msgstr "每级让每块草砖多装25%%的草，草砖卖得更贵，也更耐烧。一个饲料饼还是用%d块砖，所以饲料饼也更值钱。"
+
+msgid " a brick"
+msgstr " 每块"
+
+msgid "Faster Grinding"
+msgstr "研磨提速"
+
+msgid "Each level makes every pelletizer 8% faster."
+msgstr "每级让所有压块机快8%。"
+
+msgid " s a brick"
+msgstr " 秒/块"
+
+msgid "Raise Brick Quality"
+msgstr "提升草砖品质"
+
+msgid "Each level makes bricks sell for about 6% more."
+msgstr "每级让草砖多卖6%左右。"
+
+msgid "Pulper Plans"
+msgstr "碎浆机图纸"
+
+msgid "BUILD · Hay Pulper · $%d"
+msgstr "建造 · 干草碎浆机 · $%d"
+
+msgid "Bigger Pulp Slabs"
+msgstr "加大纸浆板"
+
+msgid "Each level puts 25% more hay into every slab. Slabs sell for more and use the same water."
+msgstr "每级让每块纸浆板多装25%的草。纸浆板卖得更贵，用水不变。"
+
+msgid " a slab"
+msgstr " 每块"
+
+msgid "Faster Drum"
+msgstr "转鼓提速"
+
+msgid "Each level makes every pulper 8% faster. A faster pulper also uses water faster."
+msgstr "每级让所有碎浆机快8%。碎浆机越快，用水也越快。"
+
+msgid " s a slab"
+msgstr " 秒/块"
+
+msgid "Raise Pulp Quality"
+msgstr "提升纸浆品质"
+
+msgid "Each level makes slabs sell for more."
+msgstr "每级让纸浆板卖得更贵。"
+
+msgid "Paper Mill Plans"
+msgstr "造纸机图纸"
+
+msgid "BUILD · Paper Mill · $%d"
+msgstr "建造 · 造纸机 · $%d"
+
+msgid "Faster Winder"
+msgstr "卷纸提速"
+
+msgid "Each level makes every paper mill 8% faster. It also uses slabs faster."
+msgstr "每级让所有造纸机快8%，用纸浆板也更快。"
+
+msgid " s a roll"
+msgstr " 秒/卷"
+
+msgid "Finer Paper"
+msgstr "精制纸张"
+
+msgid "Each level makes paper rolls sell for more."
+msgstr "每级让纸卷卖得更贵。"
+
+msgid " the slab value"
+msgstr " 纸浆板价"
+
+msgid "Feed Disc Press Plans"
+msgstr "饲料饼压制机图纸"
+
+msgid "Unlocks the Feed Disc Press, $%d. Presses hay from one belt and eco bricks from another into feed discs. Discs sell for %.2fx the price of loose hay. Each disc uses %d straw and %d bricks. Any size of brick counts as one brick. It is %d m long, has a side input and uses %.1f kW."
+msgstr "解锁饲料饼压制机，$%d。一条传送带送草，另一条送环保草砖，压成饲料饼。饲料饼卖价是散草的%.2f倍。每个饼用%d根草和%d块砖。不管多大的砖都算一块。机器长%d米，侧面有入口，耗电%.1f kW。"
+
+msgid "BUILD · Feed Disc Press · $%d"
+msgstr "建造 · 饲料饼压制机 · $%d"
+
+msgid "Faster Disc Press"
+msgstr "压饼提速"
+
+msgid "Each level makes every disc press 8% faster. It also uses hay and bricks faster."
+msgstr "每级让所有压制机快8%，用草和砖也更快。"
+
+msgid " s a disc"
+msgstr " 秒/个"
+
+msgid "Better Feed"
+msgstr "优质饲料"
+
+msgid "Each level makes feed discs sell for more."
+msgstr "每级让饲料饼卖得更贵。"
+
+msgid " the loose hay value"
+msgstr " 散草价"
+
+msgid "Extend the Shed"
+msgstr "扩建草棚"
+
+msgid "Each level makes the shed 6 m wider and 6 m longer."
+msgstr "每级让草棚加宽6米、加长6米。"
+
+msgid " m across"
+msgstr " 米宽"
+
+msgid "Waste Less Material"
+msgstr "减少损耗"
+
+msgid "Each level takes 5% off the price of belts, platforms, stairs, railings, walls and roofs. Machines still cost full price."
+msgstr "每级让传送带、平台、楼梯、栏杆、墙和屋顶便宜5%。机器还是原价。"
+
+msgid "Hay Piston Rake"
+msgstr "活塞耙"
+
+msgid "Unlocks the Piston Rake, $%d. Digs into the pile and throws the hay behind it every %.1f seconds. Throws %d straw at a time and uses %.0f kW, or %.0f kW with Wider Rake Head. Must face the pile."
+msgstr "解锁活塞耙，$%d。每%.1f秒扎进草堆，把草往身后甩。一次甩%d根草，耗电%.0f kW，有加宽耙头时是%.0f kW。必须正对草堆。"
+
+msgid "BUILD · Piston Rake · $%d"
+msgstr "建造 · 活塞耙 · $%d"
+
+msgid "Wider Rake Head"
+msgstr "加宽耙头"
+
+msgid "Level 1 raises each throw from %d straw to 50, and each rake then uses %.0f kW instead of %.0f kW. Each level after that adds 25%%."
+msgstr "第1级把每次甩的草从%d根加到50根，每台耙的耗电变成%.0f kW（原来是%.0f kW）。之后每级再多25%%。"
+
+msgid " a stroke"
+msgstr " 每下"
+
+msgid "Faster Rake"
+msgstr "耙草提速"
+
+msgid "Each level makes every rake 8% faster."
+msgstr "每级让所有活塞耙快8%。"
+
+msgid " s a stroke"
+msgstr " 秒/下"
+
+msgid "Rake Wheels"
+msgstr "活塞耙车轮"
+
+msgid "Adds Forward and Back buttons to every piston rake. Move a rake a little closer to the pile without taking it down. It stops by itself if something is in the way."
+msgstr "给所有活塞耙加上前进和后退按钮。不用拆掉就能把耙子往草堆挪近一点。前面有东西挡着会自己停下。"
+
+msgid "RAKES · Forward and Back · move without taking down"
+msgstr "活塞耙 · 前进和后退 · 不拆就能挪"
+
+msgid "Small Arm Plans"
+msgstr "小型机械臂图纸"
+
+msgid "Unlocks the Small Arm, $%d. Reaches %.2f m and moves %d straw every %.2f seconds (%.1f a second)."
+msgstr "解锁小型机械臂，$%d。够得到%.2f米，一次搬%d根草，每%.2f秒一趟（每秒%.1f根）。"
+
+msgid "BUILD · Small Arm · $%d"
+msgstr "建造 · 小型机械臂 · $%d"
+
+msgid "Standard Arm Plans"
+msgstr "标准机械臂图纸"
+
+msgid "Unlocks the Standard Arm, $%d. Reaches %.2f m and moves %d straw every %.2f seconds (%.1f a second, %d%% more). Uses %.1f kW instead of %.1f. Arms you already built stay the size they are."
+msgstr "解锁标准机械臂，$%d。够得到%.2f米，一次搬%d根草，每%.2f秒一趟（每秒%.1f根，多%d%%）。耗电%.1f kW，上一款是%.1f。已经建好的机械臂大小不变。"
+
+msgid "BUILD · Standard Arm · $%d"
+msgstr "建造 · 标准机械臂 · $%d"
+
+msgid "Long-Reach Arm Plans"
+msgstr "长臂机械臂图纸"
+
+msgid "Unlocks the Long-Reach Arm, $%d. Reaches %.2f m and moves %d straw every %.2f seconds (%.1f a second, %d%% more). Uses %.1f kW instead of %.1f. Arms you already built stay the size they are."
+msgstr "解锁长臂机械臂，$%d。够得到%.2f米，一次搬%d根草，每%.2f秒一趟（每秒%.1f根，多%d%%）。耗电%.1f kW，上一款是%.1f。已经建好的机械臂大小不变。"
+
+msgid "BUILD · Long-Reach Arm · $%d"
+msgstr "建造 · 长臂机械臂 · $%d"
+
+msgid "Belt Links"
+msgstr "传送带连接"
+
+msgid "Choose the belts an arm works with. It takes from one belt and puts on another. Tick one kind on its plate and it sorts that kind off the belt."
+msgstr "选机械臂用哪些传送带。从一条传送带上取，放到另一条上。在它上面只勾一种东西，它就把这一种从传送带上分拣出来。"
+
+msgid "ARMS · Belt Links · choose where it takes and puts"
+msgstr "机械臂 · 传送带连接 · 选从哪取、放到哪"
+
+msgid "Overflow Arm"
+msgstr "溢流机械臂"
+
+msgid "An arm can leave a belt alone while it moves, and only take from it when the belt gets stuck. Tick it under TAKE FROM on the arm."
+msgstr "传送带在动时机械臂不去碰它，只有卡住了才从上面取。在机械臂的「从这取」下面勾选。"
+
+msgid "ARMS · Overflow · helps out when a belt gets stuck"
+msgstr "机械臂 · 溢流 · 传送带卡住时帮忙"
+
+msgid "Pick Order"
+msgstr "抓取顺序"
+
+msgid "Choose what each arm grabs first: loose hay, the biggest things, or whatever is closest. Needles always come first."
+msgstr "选每个机械臂先抓什么：散草、最大的东西，还是最近的。针永远排第一。"
+
+msgid "ARMS · Pick Order · choose what it grabs first"
+msgstr "机械臂 · 抓取顺序 · 选先抓什么"
+
+msgid "Hay Drone Plans"
+msgstr "运草无人机图纸"
+
+msgid "Unlocks the Hay Drone, $%d. Each extra drone costs %.2fx the last. Give it a zone on the pile and a drop point up to %.0f m away: it digs the zone and flies the hay to the drop."
+msgstr ""
+
+msgid "BUILD · Hay Drone · $%d"
+msgstr "建造 · 运草无人机 · $%d"
+
+msgid "Drone Pickup"
+msgstr ""
+
+msgid "Drones can collect things as well as dig. Tick what a drone picks up (wads, bales, bricks and more) and it carries them from its zone to its drop."
+msgstr ""
+
+msgid "DRONES · Pickup · collect what you tick"
+msgstr ""
+
+msgid "Longer Range"
+msgstr ""
+
+msgid "Each level lets every drone work %.1f m farther from its pad, and makes its zone %.1f m bigger."
+msgstr ""
+
+msgid " m reach"
+msgstr " 米范围"
+
+msgid "Faster Rotors"
+msgstr "旋翼提速"
+
+msgid "Each level makes every drone fly 8% faster."
+msgstr "每级让所有无人机飞得快8%。"
+
+msgid "Arm Speed"
+msgstr "机械臂速度"
+
+msgid "Each level makes every arm 8% faster."
+msgstr "每级让所有机械臂快8%。"
+
+msgid " faster"
+msgstr " 速度"
+
+msgid "Arm Carry Size"
+msgstr "机械臂抓取量"
+
+msgid "Each level lets every arm carry 8% more."
+msgstr "每级让所有机械臂多拿8%。"
+
+msgid "Scanner Mk I Plans"
+msgstr "扫描仪 Mk I 图纸"
+
+msgid "Unlocks the Scanner Mk I, $%d. Put it on a belt. Checks %d straw every %.1f seconds (%.1f a second) for needles. Stops the belt when it finds one, until you empty the drawer. The drawer holds %d."
+msgstr "解锁扫描仪 Mk I，$%d。装在传送带上，每次检查%d根草，每%.1f秒一次（每秒%.1f根），看里面有没有针。找到针就让传送带停下，清空抽屉后才继续。抽屉能放%d根。"
+
+msgid "BUILD · Scanner Mk I · $%d"
+msgstr "建造 · 扫描仪 Mk I · $%d"
+
+msgid "Unlocks the Needle Cabinet, $%d. One per yard. Has a slot for each of the %d kinds of needle."
+msgstr "解锁收针柜，$%d。一个院子只能放一个。%d种针各有一个格子。"
+
+msgid "BUILD · Needle Cabinet · $%d"
+msgstr "建造 · 收针柜 · $%d"
+
+msgid "Scanner Mk II Plans"
+msgstr "扫描仪 Mk II 图纸"
+
+msgid "Upgrades all scanners to Mk II, $%d. Does not stop the belt when it finds a needle. Checks %.1f straw a second (Mk I: %.1f, so %d%% faster) and a bale in %.1f seconds (Mk I: %.1f)."
+msgstr "把所有扫描仪升级成 Mk II，$%d。找到针时不会停下传送带。每秒检查%.1f根草（Mk I：%.1f，快%d%%），扫一捆要%.1f秒（Mk I：%.1f）。"
+
+msgid "UPGRADE · Scanner Mk II · $%d  ·  every scanner you own"
+msgstr "升级 · 扫描仪 Mk II · $%d  ·  所有扫描仪"
+
+msgid "Satellite Dish Mk I Plans"
+msgstr "卫星天线 Mk I 图纸"
+
+msgid "Unlocks the Satellite Dish, $%d. One per yard. Scans the pile and puts a circle around every needle within %d m for %d seconds. Recharges in %d seconds."
+msgstr "解锁卫星天线，$%d。一个院子只能放一个。扫描草堆，把%d米内的每根针圈出来，持续%d秒。充能要%d秒。"
+
+msgid "BUILD · Satellite Dish · $%d"
+msgstr "建造 · 卫星天线 · $%d"
+
+msgid "Satellite Dish Mk II Plans"
+msgstr "卫星天线 Mk II 图纸"
+
+msgid "Upgrades the dish. Shows the exact spot of every needle in range for %d seconds."
+msgstr "升级天线。显示范围内每根针的准确位置，持续%d秒。"
+
+msgid "UPGRADE · Satellite Dish Mk II  ·  exact spots"
+msgstr "升级 · 卫星天线 Mk II  ·  准确位置"
+
+msgid "Satellite Dish Mk III Plans"
+msgstr "卫星天线 Mk III 图纸"
+
+msgid "Upgrades the dish. Needle markers last %d seconds instead of %d."
+msgstr "升级天线。针的标记能留%d秒，原来是%d秒。"
+
+msgid "UPGRADE · Satellite Dish Mk III  ·  markers last %d s"
+msgstr "升级 · 卫星天线 Mk III  ·  标记留%d秒"
+
+msgid "Satellite Dish Mk IV Plans"
+msgstr "卫星天线 Mk IV 图纸"
+
+msgid "Upgrades the dish. Markers also show how deep each needle is. They last %d seconds."
+msgstr "升级天线。标记还会显示每根针埋得多深，能留%d秒。"
+
+msgid "UPGRADE · Satellite Dish Mk IV  ·  shows depth"
+msgstr "升级 · 卫星天线 Mk IV  ·  显示深度"
+
+msgid "Scan Batch Size"
+msgstr "单次扫描量"
+
+msgid "Each level lets scanners check 25% more hay at once."
+msgstr "每级让扫描仪一次多检查25%的草。"
+
+msgid "Scan Cycle Speed"
+msgstr "扫描提速"
+
+msgid "Each level makes scanners check loose hay 8% faster. Bales and bricks do not change."
+msgstr "每级让扫描仪检查散草快8%。草捆和草砖不变。"
+
+msgid "Scan Bigger Blocks"
+msgstr "料块扫描提速"
+
+msgid "Scanners check bales and bricks one at a time: %.1f seconds each on a Mk I, %.1f on a Mk II. Each level makes this 12%% faster."
+msgstr "扫描仪一次只查一个草捆或一块草砖：Mk I 每个要%.1f秒，Mk II 要%.1f秒。每级快12%%。"
+
+msgid " s a block"
+msgstr " 秒/个"
+
+msgid "Unlocks the metal detector in the shop, $%d. Beeps faster the closer you are to a needle, but does not show which way. Reaches %.1f m, less through hay."
+msgstr "商店开始卖金属探测器，$%d。离针越近，嘀嘀声越快，但不会告诉你方向。探测距离%.1f米，隔着草会变短。"
+
+msgid "SHOP · Metal Detector · $%d"
+msgstr "商店 · 金属探测器 · $%d"
+
+msgid "Bigger Coil"
+msgstr "加大线圈"
+
+msgid "Each level makes the metal detector reach 18% further."
+msgstr "每级让金属探测器的探测距离远18%。"
+
+msgid " in the open"
+msgstr " （空旷处）"
+
+msgid "Bigger Drawer"
+msgstr "加大抽屉"
+
+msgid "Each level lets scanner drawers hold 4 more needles."
+msgstr "每级让扫描仪的抽屉多放4根针。"
+
+msgid " needles"
+msgstr " 根针"
+
+msgid "Better Bargaining"
+msgstr "会砍价"
+
+msgid "Each level makes everything sell for 5% more."
+msgstr "每级让所有东西多卖5%。"
+
+msgid " the base price"
+msgstr " 基础价"
+
+msgid "Yard Boots"
+msgstr "工作靴"
+
+msgid "Each level makes you walk and run 4% faster."
+msgstr "每级让你走路和跑步快4%。"
+
+msgid " m/s walking"
+msgstr " 米/秒（步行）"
+
+msgid "Strong Back"
+msgstr "腰板硬"
+
+msgid "Each level gives you 15% more stamina."
+msgstr "每级让体力上限多15%。"
+
+msgid " stamina"
+msgstr " 体力"
+
+msgid "Carry More"
+msgstr "多抱几个"
+
+msgid "Each level lets you carry one more bale, wad or brick. They stack up in your arms, and E puts the top one down."
+msgstr "每升一级就能多抱一个草捆、草团或草砖。它们会在怀里叠成一摞，按 E 放下最上面的那个。"
+
+msgid " in your arms"
+msgstr " 个在怀里"
+
+msgid "Each level makes stamina come back 18% faster."
+msgstr "每级让体力恢复快18%。"
+
+msgid "Easy Swing"
+msgstr "省力挥动"
+
+msgid "Each level makes digging use 8% less stamina."
+msgstr "每级让挖草少耗8%体力。"
+
+msgid "Each level makes you spill 8% less hay while running."
+msgstr "每级让跑动时少洒8%的草。"
+
+msgid " sway and spill"
+msgstr " 晃动洒落"
+
+msgid "Careful Steps"
+msgstr "小心脚下"
+
+msgid "Each level makes you walk 5% faster while crouching."
+msgstr "每级让蹲行速度提高5%。"
+
+msgid " m/s crouching"
+msgstr " 米/秒（蹲行）"
+
+msgid "Longer Reach"
+msgstr "手够得更远"
+
+msgid "Each level lets you pick things up from 30 cm further away."
+msgstr "每级让拾取距离增加30厘米。"
+
+msgid "Spring Heels"
+msgstr "弹簧鞋"
+
+msgid "Each level makes you jump 5 cm higher."
+msgstr "每级能多跳高5厘米。"
+
+msgid "Jetpack"
+msgstr "喷气背包"
+
+msgid "You wear a jetpack. Jump, then hold jump in the air to fly. A full tank lasts %d seconds and refills in about %d seconds after you land. Hold an eco brick and press E to refill it at once."
+msgstr "你背上了喷气背包。起跳后在空中按住跳跃键就能飞。满箱能飞%d秒，落地后大约%d秒充满。手拿环保草砖按E可以马上加满。"
+
+msgid "WORN · Jetpack · jump, then jump again to fly"
+msgstr "已穿戴 · 喷气背包 · 起跳后再按跳跃就能飞"
+
+msgid "Grippy Boots"
+msgstr ""
+
+msgid "Your boots grip the rubber, so a running belt no longer pushes you along. Walk on your belts any way you like."
+msgstr ""
+
+msgid "WORN · Grippy Boots · belts no longer carry you"
+msgstr ""
+
+msgid "Soft Landings"
+msgstr "软着陆"
+
+msgid "Each level makes you spill 10% less hay when you jump."
+msgstr "每级让跳起时少洒10%的草。"
+
+msgid " jump jolt"
+msgstr " 起跳颠簸"
+
+msgid "Longer Tape Measure"
+msgstr "加长卷尺"
+
+msgid "Each level lets you place buildings 50 cm further away."
+msgstr "每级让建筑的放置距离增加50厘米。"
+
+msgid "1 step"
+msgstr "1步"
+
+msgid "%d steps"
+msgstr "%d步"
+
+msgid "Unlocks the Hay Pulper, $%d. Mixes %d straw with %.0f litres of water into a pulp slab. Slabs sell for %.1fx the price of loose hay. Needs hay, power and a water pipe."
+msgstr "解锁干草碎浆机，$%d。把%d根草和%.0f升水打成一块纸浆板。纸浆板卖价是散草的%.1f倍。需要干草、电和水管。"
+
+msgid "Unlocks the Paper Mill, $%d. Turns %d pulp slabs into a paper roll worth %.2fx the slabs. It is %d m long and uses %.0f kW."
+msgstr "解锁造纸机，$%d。把%d块纸浆板做成一卷纸，价值是纸浆板的%.2f倍。机器长%d米，耗电%.0f kW。"
+
+msgid "%s upgrades"
+msgstr "%s升级"
+
+msgid "THE VAC IS FULL  ·  HOLD RIGHT CLICK TO EMPTY IT"
+msgstr "吸草机满了  ·  按住右键倒空"
+
+msgid "OUT OF REACH"
+msgstr "够不到"
+
+msgid "CAN'T LINK"
+msgstr "无法连接"
+
+msgid "TAKE FROM"
+msgstr "从这取"
+
+msgid "PUT ON"
+msgstr "放到这"
+
+msgid "DONE"
+msgstr "完成"
+
+msgid "Arms cannot link a splitter. Link the belt going in or out of it."
+msgstr "机械臂不能连接分流器。连接进出它的传送带。"
+
+msgid "Arms cannot link a joiner. Link the belt going in or out of it."
+msgstr "机械臂不能连接合流器。连接进出它的传送带。"
+
+msgid "This belt is enclosed, so the arm cannot reach inside it."
+msgstr "这条传送带是封闭的，机械臂伸不进去。"
+
+msgid "Look at a belt near the arm."
+msgstr "看向机械臂旁边的传送带。"
+
+msgid "Out of reach. The arm cannot get to this belt."
+msgstr "够不到。机械臂伸不到这条传送带。"
+
+msgid "It takes from this belt. Click again to unlink."
+msgstr "它从这条传送带取。再点一次取消。"
+
+msgid "It puts on this belt. Click again to unlink."
+msgstr "它往这条传送带上放。再点一次取消。"
+
+msgid "In reach. Click to link this belt."
+msgstr "够得到。点一下连接这条传送带。"
+
+msgid "LOW POWER  ·  %d%%"
+msgstr ""
+
+msgid "WHERE IT TAKES AND PUTS"
+msgstr "从哪取，放到哪"
+
+msgid "WHERE IT PUTS IT"
+msgstr "放到哪"
+
+msgid "Any belt in its radius. There is none yet, so lay one beside it."
+msgstr "范围内任意传送带。现在还没有，在旁边铺一条。"
+
+msgid "Any belt in its radius. 1 belt right now."
+msgstr "范围内任意传送带。现在有1条。"
+
+msgid "Any belt in its radius. %d belt right now, taking turns."
+msgid_plural "Any belt in its radius. %d belts right now, taking turns."
+msgstr[0] "范围内任意传送带。现在有%d条，轮流放。"
+
+msgid "Anything it picks up in its radius."
+msgstr "范围里它会抓的任何东西。"
+
+msgid "Only when this belt is stuck unlocks with Overflow Arm on the tech tree."
+msgstr "「只在卡住时」要在科技树里解锁「溢流机械臂」。"
+
+msgid "Any belt in its radius. %d right now."
+msgstr "范围内任意传送带。现在有%d条。"
+
+msgid "Leave it alone while it moves. Help out when it jams."
+msgstr "在动就别碰。卡住了就帮忙。"
+
+msgid "Only when this belt is stuck"
+msgstr "只在这条传送带卡住时"
+
+msgid "Belt, %.1f m away"
+msgstr "传送带，%.1f米外"
+
+msgid "Unlink this belt"
+msgstr "取消连接这条传送带"
+
+msgid "Nothing to choose right now. This only matters when it picks up loose hay and bigger things off the floor."
+msgstr ""
+
+msgid "BIGGEST MODEL"
+msgstr "最大型号"
+
+msgid "Can't upgrade: %s."
+msgstr "不能升级：%s。"
+
+msgid "UPGRADE TO %s  ·  $%s"
+msgstr "升级为%s  ·  $%s"
+
+msgid "HIDE RADIUS  ·  %d:%02d"
+msgstr "隐藏范围  ·  %d:%02d"
+
+msgid "SHOW RADIUS"
+msgstr "显示范围"
+
+msgid "LONG-REACH"
+msgstr "长臂"
+
+msgid "ROBOTIC ARM"
+msgstr "机械臂"
+
+msgid "%s or ESC to close"
+msgstr "按%s或ESC关闭"
+
+msgid "It lifts what you tick inside its radius onto a nearby belt."
+msgstr "把范围里你勾选的东西抓到附近的传送带上。"
+
+msgid "WHAT IT PICKS UP"
+msgstr "抓什么"
+
+msgid "Choosing belts unlocks with Belt Links on the tech tree."
+msgstr "选择传送带要在科技树里解锁「传送带连接」。"
+
+msgid "CHOOSE BELTS"
+msgstr "选择传送带"
+
+msgid "RESET"
+msgstr ""
+
+msgid "Unlink every belt. It goes back to any belt in its radius."
+msgstr ""
+
+msgid "WHAT SHOULD IT GRAB FIRST?"
+msgstr "先抓什么？"
+
+msgid "Loose hay first"
+msgstr "先抓散草"
+
+msgid "Keeps the floor tidy. Wads and bales wait until the loose hay is gone."
+msgstr "地面保持干净。草团和草捆等散草收完再说。"
+
+msgid "Big things first"
+msgstr "先抓大的"
+
+msgid "Bales and wads before loose hay, the biggest first. More hay in every swing."
+msgstr "草捆和草团排在散草前面，最大的先抓。每一趟搬的草更多。"
+
+msgid "Whatever is closest"
+msgstr "先抓最近的"
+
+msgid "Less swinging, so more loads a minute. The pile still comes last."
+msgstr "少转几圈，每分钟多搬几趟。草堆还是排最后。"
+
+msgid "Needles always come first, whatever you pick."
+msgstr "不管选哪个，针永远排第一。"
+
+msgid "Choosing what it grabs first unlocks with Pick Order on the tech tree."
+msgstr "选先抓什么要在科技树里解锁「抓取顺序」。"
+
+msgid "WORKING"
+msgstr "处理中"
+
+msgid "WAITING"
+msgstr "等待中"
+
+msgid "STOPPED"
+msgstr "已停止"
+
+msgid "NEW"
+msgstr "新"
+
+msgid "All"
+msgstr "全选"
+
+msgid "None"
+msgstr "全不选"
+
+msgid "always"
+msgstr "总是抓"
+
+msgid "TURN OFF"
+msgstr "关闭"
+
+msgid "TURN ON"
+msgstr "打开"
+
+msgid "Light plates"
+msgstr ""
+
+msgid "Dark plates"
+msgstr ""
+
+msgid "Sort by last used"
+msgstr "按最近使用排序"
+
+msgid "Pick something for slot %s"
+msgstr "给%s号格子选一样东西"
+
+msgid "BUILD CATALOGUE"
+msgstr "建造目录"
+
+msgid "Show recently built machines first."
+msgstr "最近建过的机器排在前面。"
+
+msgid "List: machines with descriptions"
+msgstr "列表：机器和说明"
+
+msgid "Icons: pictures only"
+msgstr "图标：只显示图片"
+
+msgid "Everything"
+msgstr "全部"
+
+msgid "Unlocked"
+msgstr "已解锁"
+
+msgid "Hotkeyed"
+msgstr "已设快捷键"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "1 m"
+msgstr "1米"
+
+msgid "1.5 m"
+msgstr "1.5米"
+
+msgid "How long the arms are on the next T junction you place"
+msgstr "下一个T形三通的分支有多长"
+
+msgctxt "key hint"
+msgid "NEW"
+msgstr "新"
+
+msgid "%s   ·   LMB equip   ·   RMB pin   ·   a number key binds it to that box"
+msgstr "%s   ·   左键装备   ·   右键固定   ·   按数字键绑到对应格子"
+
+msgid "%s is unlocked by %s. Click to open it in the tech tree."
+msgstr "%s：用「%s」解锁。点击在科技树里查看。"
+
+msgid "%s pinned to key %s"
+msgstr "%s已固定到%s键"
+
+msgid "%s unpinned"
+msgstr "%s已取消固定"
+
+msgid "Every slot is taken. Put a tool down to make room, or hover a card and press the key of the box you want it to replace"
+msgstr "格子都满了。先放下一件工具腾个位置，或者把鼠标移到卡片上，按下要替换的格子对应的键"
+
+msgid "Every slot is taken. Hover a card and press the key of the box you want it to replace"
+msgstr "格子都满了。把鼠标移到卡片上，按下要替换的格子对应的键"
+
+msgid "%s on key %s"
+msgstr "%s已放到%s键"
+
+msgid "Tech Tree >"
+msgstr "科技树 >"
+
+msgid "LOCKED"
+msgstr "已锁定"
+
+msgid "BAR FULL"
+msgstr "快捷栏已满"
+
+msgid "KEY %s"
+msgstr "%s键"
+
+msgid "Nothing here has that name."
+msgstr "这里没有叫这个名字的东西。"
+
+msgid "Nothing is on your bar yet. Right click anything in the catalogue to put it on a key."
+msgstr "快捷栏还是空的。在目录里右键点一样东西，就能把它放到快捷键上。"
+
+msgid "You have not unlocked anything to build yet."
+msgstr "还没有解锁任何可以建造的东西。"
+
+msgid "Esc to close"
+msgstr "按 Esc 关闭"
+
+msgid "B to close"
+msgstr "按B关闭"
+
+msgid "Equip"
+msgstr "装备"
+
+msgid "Add to hotkey bar"
+msgstr "加到快捷栏"
+
+msgid "Locked: click to show tree"
+msgstr "未解锁：点击查看科技树"
+
+msgid "Left click %s"
+msgstr "左键%s"
+
+msgid "Right click %s"
+msgstr "右键%s"
+
+msgid "CONTRACT %d OF %d"
+msgstr "订单%d/%d"
+
+msgid "SIGNED OFF"
+msgstr "已签收"
+
+msgid "DELIVERIES"
+msgstr "送货"
+
+msgid "No orders left"
+msgstr "没有订单了"
+
+msgid "ALL FILLED"
+msgstr "全部完成"
+
+msgid "Empty it"
+msgstr "倒空"
+
+msgid "Throw"
+msgstr "扔出"
+
+msgid "Reset aim"
+msgstr "重置瞄准"
+
+msgid "Aim fork"
+msgstr "草叉瞄准"
+
+msgid "Aim spade"
+msgstr "铁锹瞄准"
+
+msgid "fork full, %d"
+msgstr "草叉满了，%d"
+
+msgid "spade full, %d"
+msgstr "铁锹满了，%d"
+
+msgid "%d / %d on fork"
+msgstr "草叉上%d/%d"
+
+msgid "%d / %d on spade"
+msgstr "铁锹上%d/%d"
+
+msgid "%d on fork"
+msgstr "草叉上%d"
+
+msgid "%d on spade"
+msgstr "铁锹上%d"
+
+msgid "Suck up hay"
+msgstr "吸草"
+
+msgid "Empty it in here"
+msgstr "倒进这里"
+
+msgid "Tip it back out"
+msgstr "倒出来"
+
+msgid "the vac is full, %d"
+msgstr "吸草机满了，%d"
+
+msgid "%d / %d in the vac"
+msgstr "吸草机里%d/%d"
+
+msgid "lighter ready in %d s"
+msgstr "打火机%d秒后可用"
+
+msgid "Light the hay"
+msgstr "点燃干草"
+
+msgid "point it at hay to light it"
+msgstr "对准干草才能点着"
+
+msgid "Remove one tile"
+msgstr "拆掉一块"
+
+msgid "Dismantle (lose %s)"
+msgstr "拆除（损失%s）"
+
+msgid "Dismantle (gift: $0 back, place it again free)"
+msgstr "拆除（礼物：退$0，可再免费放置）"
+
+msgid "Copy %s"
+msgstr "复制%s"
+
+msgid "Drop %s"
+msgstr "放下%s"
+
+msgid "Wheel"
+msgstr "滚轮"
+
+msgid "Hold %s"
+msgstr "按住%s"
+
+msgid "Scoop"
+msgstr "铲起"
+
+msgid "Aim blade"
+msgstr "铲刃瞄准"
+
+msgid "Stack %s (%d/%d)"
+msgstr "叠上%s（%d/%d）"
+
+msgid "Fill jetpack (%d%%)"
+msgstr "喷气背包加油（%d%%）"
+
+msgid "Let go"
+msgstr "松手"
+
+msgid "Put down"
+msgstr "放下"
+
+msgid "Put the top one down"
+msgstr "放下最上面的"
+
+msgid "Eat it: power rush"
+msgstr "吃掉：体力爆发"
+
+msgid "Tilt / pour"
+msgstr "倾斜 / 倒出"
+
+msgid "the load is held until you tilt"
+msgstr "不倾斜就不会倒出来"
+
+msgid "%d block in your arms"
+msgid_plural "%d blocks in your arms"
+msgstr[0] "怀里抱着%d样东西"
+
+msgid "Put %s in the case"
+msgstr "把%s放进收针柜"
+
+msgid "Drop"
+msgstr "丢下"
+
+msgid "Hands full (%d/%d)"
+msgstr "拿不下了（%d/%d）"
+
+msgid "Pick up more (%d/%d)"
+msgstr "再捡一些（%d/%d）"
+
+msgid "Drop all (%d)"
+msgstr "全部丢下（%d）"
+
+msgid "Throw all (%d)"
+msgstr "全部扔出（%d）"
+
+msgid "Pick the needle up"
+msgstr "捡起这根针"
+
+msgid "Pluck strand"
+msgstr "拔一根草"
+
+msgid "Fork hay"
+msgstr "叉草"
+
+msgid "Sweep"
+msgstr "扫"
+
+msgid "loose hay on the floor only"
+msgstr "只能扫地上的散草"
+
+msgid "Switch off"
+msgstr "关掉"
+
+msgid "Switch on"
+msgstr "打开"
+
+msgid "shows how close, not which way; walk until it is loudest"
+msgstr "只显示离得多近，不显示方向；往声音最响的地方走"
+
+msgid "Start"
+msgstr "开始"
+
+msgid "Place"
+msgstr "放置"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Rotate"
+msgstr "旋转"
+
+msgid "Go another way"
+msgstr "换个方向"
+
+msgid "Grid off"
+msgstr "关闭网格"
+
+msgid "Grid on"
+msgstr "开启网格"
+
+msgid "Snap on"
+msgstr "开启吸附"
+
+msgid "Snap off"
+msgstr "关闭吸附"
+
+msgid "Distance"
+msgstr "距离"
+
+msgid "Press it"
+msgstr "按下去"
+
+msgid "Turn the machine on"
+msgstr "启动机器"
+
+msgid "Machine switch"
+msgstr "机器开关"
+
+msgid "Open leaderboards"
+msgstr "打开排行榜"
+
+msgid "Open shop"
+msgstr "打开商店"
+
+msgid "Reverse belt"
+msgstr "反转传送带"
+
+msgid "Set the launcher's power"
+msgstr "调发射器力度"
+
+msgid "Set the silo's speed"
+msgstr "调筒仓速度"
+
+msgid "Set the rake's throw"
+msgstr "调活塞耙扔多远"
+
+msgid "Adjust splitter"
+msgstr "调整分流器"
+
+msgid "Set what the arm picks up"
+msgstr "设置机械臂抓什么"
+
+msgid "Set the drone's zone and drop"
+msgstr ""
+
+msgid "Turn the line on"
+msgstr "打开整条线路"
+
+msgid "Line switch"
+msgstr "线路开关"
+
+msgid "Look at the %s"
+msgstr "看看%s"
+
+msgid "Take %s  (%d in the drawer)"
+msgstr "拿走%s  （抽屉里有%d根）"
+
+msgid "Hold"
+msgstr "按住"
+
+msgid "Please share this on the Discord, and tell me when it happened and what you were doing at the time."
+msgstr "请把这个发到 Discord 上，并告诉我是什么时候出的问题，当时你在做什么。"
+
+msgid "Copied. Please paste it into the Discord, and tell me when it happened and what you were doing at the time."
+msgstr "已复制。请贴到 Discord 上，并告诉我是什么时候出的问题，当时你在做什么。"
+
+msgid "THE GAME CLOSED UNEXPECTEDLY"
+msgstr "游戏意外关闭了"
+
+msgid "%s Your save is safe. Here is the crash log."
+msgstr "%s你的存档没事。下面是崩溃日志。"
+
+msgid "INTEL PROCESSOR"
+msgstr "INTEL 处理器"
+
+msgid "Your processor (%s) has a known Intel fault that makes many games crash, not just this one. Our Discord has a channel that explains the issue."
+msgstr "你的处理器（%s）有一个英特尔已知的缺陷，会让很多游戏崩溃，不只是这个游戏。我们的 Discord 上有个频道专门讲这个问题。"
+
+msgid "OPEN DISCORD"
+msgstr "打开 DISCORD"
+
+msgid "RENDER THREAD"
+msgstr "渲染线程"
+
+msgid "The render thread was on. It can cause crashes like this one. If they keep happening, you can turn it off in Options, on the DISPLAY page. It adds up to 30 FPS, so if it is not the cause, it is best to play with it on."
+msgstr "渲染线程是开着的。它可能导致这样的崩溃。如果经常这样，可以在选项的“显示”页面把它关掉。它最多能多出 30 FPS，所以如果不是它的问题，最好开着玩。"
+
+msgid "COPY"
+msgstr "复制"
+
+msgid "OPEN THE LOG FOLDER"
+msgstr "打开日志文件夹"
+
+msgid "SEND CRASH REPORT"
+msgstr "发送崩溃报告"
+
+msgid "CLOSE"
+msgstr "关闭"
+
+msgid "Sending..."
+msgstr "发送中…"
+
+msgid "Sent. Thank you!"
+msgstr "已发送。谢谢！"
+
+msgid "It could not be sent: %s. The COPY button still works."
+msgstr "没能发出去：%s。「复制」按钮还能用。"
+
+msgid "Could not write the setting. Is the game folder read-only?"
+msgstr "设置写不进去。游戏文件夹是不是只读的？"
+
+msgid "DEBUG MODE"
+msgstr "调试模式"
+
+msgid "Test-only tools · %s"
+msgstr "仅供测试的工具 · %s"
+
+msgid "%s is enabled"
+msgstr "%s已开启"
+
+msgid "unlocked for this session"
+msgstr "本次游戏已解锁"
+
+msgid "Reset"
+msgstr "重置"
+
+msgid "TECH TREE"
+msgstr "科技树"
+
+msgid "Skip the whole tree, or put it back"
+msgstr "一键跳过整棵树，或者恢复原样"
+
+msgid "Unlock everything"
+msgstr "全部解锁"
+
+msgid "Unlock all plans"
+msgstr "解锁所有图纸"
+
+msgid "Reset tree"
+msgstr "重置科技树"
+
+msgid "SPAWN ITEM"
+msgstr "生成物品"
+
+msgid "Choose an item to place in front of you"
+msgstr "选一样东西放在你面前"
+
+msgid "NEEDLE"
+msgstr "针"
+
+msgid "Finding one by digging takes a while"
+msgstr "靠挖要找好一阵子"
+
+msgid "Spawn needle..."
+msgstr "生成针"
+
+msgid "Fill the cabinet, all but one"
+msgstr "填满收针柜，只留一格"
+
+msgid "Every compartment but the %s one"
+msgstr "除了%s那格以外全部填满"
+
+msgid "Forget every needle"
+msgstr "忘掉所有针"
+
+msgid "Case dark, drawers empty, counters back to zero"
+msgstr "柜子熄灯，抽屉清空，计数归零"
+
+msgid "Play the ending"
+msgstr "播放结局"
+
+msgid "Specimens out, panel down, button live"
+msgstr "标本取出，面板落下，按钮可按"
+
+msgid "PILE"
+msgstr "草堆"
+
+msgid "Press again for a quarter, and again for an eighth"
+msgstr "再按一次剩四分之一，再按一次剩八分之一"
+
+msgid "Take half of it"
+msgstr "拿走一半"
+
+msgid "GIFT CARD"
+msgstr "礼物卡"
+
+msgid "Plays as the tutorial plays it, and gives nothing"
+msgstr "和教程中一样播放，不会送出任何东西"
+
+msgid "PLAYER"
+msgstr "玩家"
+
+msgid "Jump up, crouch down, shift fast"
+msgstr "跳得高，蹲得低，冲得快"
+
+msgid "Fly, and through anything in the way"
+msgstr "能飞，还能穿过挡路的东西"
+
+msgid "HELD CONTAINER"
+msgstr "手里的容器"
+
+msgid "Fill"
+msgstr "装满"
+
+msgid "Half"
+msgstr "一半"
+
+msgid "Empty"
+msgstr "清空"
+
+msgid "SHOW"
+msgstr "显示"
+
+msgid "Stays on when the menu closes"
+msgstr "关掉菜单后仍然显示"
+
+msgid "Where a machine takes hay, and where the stand pays for it"
+msgstr "机器在哪收草，收购点在哪付钱"
+
+msgid "Solid is what you walk into. All adds strands and the pile"
+msgstr "「实体」是你会撞上的东西。「全部」还会加上草和草堆"
+
+msgid "The image with the lighting taken off it"
+msgstr "去掉光照后的画面"
+
+msgid "LOOK"
+msgstr "画面"
+
+msgid "The lights and the image, live"
+msgstr "灯光和画面，实时调整"
+
+msgid "Lighting and environment..."
+msgstr "光照和环境"
+
+msgid "Sun, exposure, fog, ambient. Nothing is saved until you say so"
+msgstr "太阳、曝光、雾、环境光。不点保存就不会存下来"
+
+msgid "END THIS SESSION"
+msgstr "结束本次游戏"
+
+msgid "Press once to arm, again to do it"
+msgstr "按一次准备，再按一次执行"
+
+msgid "Everything since the last autosave goes with it. That is what a crash is. The report card comes up on the next launch."
+msgstr "上次自动存档之后的进度都会丢掉。崩溃就是这样。下次启动时会弹出报告卡。"
+
+msgid "Crash the engine"
+msgstr "让引擎崩溃"
+
+msgid "Kill the process"
+msgstr "结束进程"
+
+msgid "Throw a script error"
+msgstr "抛出脚本错误"
+
+msgid "Survivable, and deliberately not reported"
+msgstr "不会崩溃，也故意不上报"
+
+msgid "SPAWN"
+msgstr "生成"
+
+msgid "SPAWN NEEDLE"
+msgstr "生成针"
+
+msgid "Into a scanner"
+msgstr "送进扫描仪"
+
+msgid "Onto nearest belt"
+msgstr "放到最近的传送带上"
+
+msgid "At your feet"
+msgstr "放在脚下"
+
+msgid "Roll one, the way a dig would"
+msgstr "随机抽一根，和挖草时一样"
+
+msgid "LOT %d"
+msgstr "第%d批"
+
+msgid "research %d  ·  1:%d"
+msgstr "研究%d  ·  1:%d"
+
+msgid "Goes %s  ·  a roll uses lot %d"
+msgstr "放到%s  ·  随机时用第%d批"
+
+msgid "onto the run feeding the nearest scanner, riding in"
+msgstr "通往最近扫描仪的传送带上，一路送进去"
+
+msgid "onto the belt nearest YOU, whichever way it runs"
+msgstr "离你最近的传送带上，不管它往哪边走"
+
+msgid "on the floor in front of you"
+msgstr "你面前的地上"
+
+msgid "A button in this menu was used, so this game will not appear on the leaderboards."
+msgstr "用过这个菜单里的按钮，所以这局游戏不会上排行榜。"
+
+msgid "Press any button in this menu and this game will never appear on the leaderboards."
+msgstr "按下这个菜单里的任何按钮，这局游戏就永远不会上排行榜。"
+
+msgid "Press again"
+msgstr "再按一次"
+
+msgid "Throwing a script error. The game will keep running."
+msgstr "抛出脚本错误。游戏会继续运行。"
+
+msgid "Money:  $%.2f"
+msgstr "钱：  $%.2f"
+
+msgid "tech tree fully unlocked"
+msgstr "科技树已全部解锁"
+
+msgid "all plans unlocked, no levels bought"
+msgstr "所有图纸已解锁，没买任何等级"
+
+msgid "tech tree reset to bare hands"
+msgstr "科技树已重置为徒手"
+
+msgid "money reset"
+msgstr "钱已重置"
+
+msgid "spawned %s"
+msgstr "已生成%s"
+
+msgid "wallhack off"
+msgstr "透视关"
+
+msgid "wallhack on: %d buried, %d loose"
+msgstr "透视开：埋着%d根，散落%d根"
+
+msgid "Wallhack: ON"
+msgstr "透视：开"
+
+msgid "Wallhack: OFF"
+msgstr "透视：关"
+
+msgid "noclip on: walls are off"
+msgstr "穿墙开：无视墙体"
+
+msgid "noclip off"
+msgstr "穿墙关"
+
+msgid "Noclip: ON"
+msgstr "穿墙：开"
+
+msgid "Noclip: OFF"
+msgstr "穿墙：关"
+
+msgid "Normal"
+msgstr "正常"
+
+msgid "Unshaded"
+msgstr "无着色"
+
+msgid "Lighting"
+msgstr "光照"
+
+msgid "Overdraw"
+msgstr "过度绘制"
+
+msgid "Wireframe"
+msgstr "线框"
+
+msgid "zones: %d volumes"
+msgstr "区域：%d个体积"
+
+msgid "zones off"
+msgstr "区域关"
+
+msgid "collisions off"
+msgstr "碰撞关"
+
+msgid "collisions: %d shapes, %d over the cap not drawn"
+msgstr "碰撞：%d个形状，%d个超出上限未绘制"
+
+msgid "collisions: %d shapes"
+msgstr "碰撞：%d个形状"
+
+msgid "render: %s"
+msgstr "渲染：%s"
+
+msgid "Zones: ON"
+msgstr "区域：开"
+
+msgid "Zones: OFF"
+msgstr "区域：关"
+
+msgid "SOLID"
+msgstr "实体"
+
+msgid "ALL"
+msgstr "全部"
+
+msgid "Collisions: %s"
+msgstr "碰撞：%s"
+
+msgid "Render: %s"
+msgstr "渲染：%s"
+
+msgid "No cabinet to end"
+msgstr "没有收针柜可以结束"
+
+msgid "Ending playing  ·  press the button when it lands"
+msgstr "结局播放中  ·  落下后按按钮"
+
+msgid "No gift card in this scene"
+msgstr "这个场景里没有礼物卡"
+
+msgid "Cabinet FILLED  ·  no %s compartment to leave empty"
+msgstr "收针柜已填满  ·  没有%s格可以留空"
+
+msgid "Cabinet filled  ·  %s missing"
+msgstr "收针柜已填满  ·  缺%s"
+
+msgid "Collection cleared  ·  %d find forgotten"
+msgid_plural "Collection cleared  ·  %d finds forgotten"
+msgstr[0] "收藏已清空  ·  清掉%d件"
+
+msgid "No pile to take"
+msgstr "没有草堆可拿"
+
+msgid "Pile halved  ·  %s strands left"
+msgstr "草堆减半  ·  剩%s根草"
+
+msgid "%d needle left on the surface"
+msgid_plural "%d needles left on the surface"
+msgstr[0] "表面还剩%d根针"
+
+msgid "%d needles came down with it"
+msgstr "%d根针跟着掉了下来"
+
+msgid "%s at your feet"
+msgstr "%s在你脚下"
+
+msgid "no belt within %d m"
+msgstr "%d米内没有传送带"
+
+msgid "%s on the belt"
+msgstr "%s在传送带上"
+
+msgid "no scanner built"
+msgstr "还没建扫描仪"
+
+msgid "%s riding into the scanner"
+msgstr "%s正送往扫描仪"
+
+msgid "needle"
+msgstr "针"
+
+msgid "nothing to fill"
+msgstr "没有可以装满的"
+
+msgid "%s at %d%%"
+msgstr "%s：%d%%"
+
+msgid "SUN"
+msgstr "太阳"
+
+msgid "Colour"
+msgstr "颜色"
+
+msgid "Energy"
+msgstr "强度"
+
+msgid "Indirect"
+msgstr "间接光"
+
+msgid "Specular"
+msgstr "高光"
+
+msgid "Softness"
+msgstr "柔和度"
+
+msgid "Shafts"
+msgstr "光束"
+
+msgid "Draws in sky"
+msgstr "在天空中绘制"
+
+msgid "LIGHT AND SKY"
+msgstr "光照和天空"
+
+msgid "LIGHT ONLY"
+msgstr "只有光照"
+
+msgid "SKY ONLY"
+msgstr "只有天空"
+
+msgid "Rotation X"
+msgstr "旋转 X"
+
+msgid "Rotation Y"
+msgstr "旋转 Y"
+
+msgid "Rotation Z"
+msgstr "旋转 Z"
+
+msgid "SUN SHADOW"
+msgstr "太阳阴影"
+
+msgid "Shadows"
+msgstr "阴影"
+
+msgid "Mode"
+msgstr "模式"
+
+msgid "ORTHOGONAL"
+msgstr "正交"
+
+msgid "2 SPLITS"
+msgstr "2级分割"
+
+msgid "4 SPLITS"
+msgstr "4级分割"
+
+msgid "Bias"
+msgstr "偏移"
+
+msgid "Normal bias"
+msgstr "法线偏移"
+
+msgid "Blur"
+msgstr "模糊"
+
+msgid "Opacity"
+msgstr "不透明度"
+
+msgid "Transmittance"
+msgstr "透射"
+
+msgid "Split 1"
+msgstr "分割1"
+
+msgid "Split 2"
+msgstr "分割2"
+
+msgid "Split 3"
+msgstr "分割3"
+
+msgid "Blend splits"
+msgstr "分割混合"
+
+msgid "Fade start"
+msgstr "淡出起点"
+
+msgid "Range"
+msgstr "范围"
+
+msgid "Pancake"
+msgstr "阴影压平"
+
+msgid "Reverse cull"
+msgstr "反向剔除"
+
+msgid "FILL LIGHT"
+msgstr "补光"
+
+msgid "IMAGE"
+msgstr "画面"
+
+msgid "Exposure"
+msgstr "曝光"
+
+msgid "White point"
+msgstr "白点"
+
+msgid "AgX white"
+msgstr "AgX 白点"
+
+msgid "AgX contrast"
+msgstr "AgX 对比度"
+
+msgid "Contrast / sat."
+msgstr "对比度 / 饱和度"
+
+msgid "Brightness"
+msgstr "亮度"
+
+msgid "Contrast"
+msgstr "对比度"
+
+msgid "Saturation"
+msgstr "饱和度"
+
+msgid "Colour grade"
+msgstr "调色"
+
+msgid "BLOOM"
+msgstr "泛光"
+
+msgid "Bloom"
+msgstr "泛光"
+
+msgid "Intensity"
+msgstr "强度"
+
+msgid "Strength"
+msgstr "力度"
+
+msgid "Mix"
+msgstr "混合"
+
+msgid "Spread"
+msgstr "扩散"
+
+msgid "Blend"
+msgstr "混合模式"
+
+msgid "ADDITIVE"
+msgstr "叠加"
+
+msgid "SCREEN"
+msgstr "滤色"
+
+msgid "SOFT LIGHT"
+msgstr "柔光"
+
+msgid "REPLACE"
+msgstr "替换"
+
+msgid "MIX"
+msgstr "混合"
+
+msgid "HDR threshold"
+msgstr "HDR 阈值"
+
+msgid "HDR scale"
+msgstr "HDR 缩放"
+
+msgid "Normalised"
+msgstr "归一化"
+
+msgid "Level 1"
+msgstr "第1级"
+
+msgid "Level 2"
+msgstr "第2级"
+
+msgid "Level 3"
+msgstr "第3级"
+
+msgid "Level 4"
+msgstr "第4级"
+
+msgid "Level 5"
+msgstr "第5级"
+
+msgid "Level 6"
+msgstr "第6级"
+
+msgid "Level 7"
+msgstr "第7级"
+
+msgid "AMBIENT"
+msgstr "环境光"
+
+msgid "Ambient colour"
+msgstr "环境光颜色"
+
+msgid "Ambient energy"
+msgstr "环境光强度"
+
+msgid "From the sky"
+msgstr "来自天空"
+
+msgid "Ambient from sky"
+msgstr "天空环境光"
+
+msgid "Sky reflections"
+msgstr "天空反射"
+
+msgid "Sky energy"
+msgstr "天空强度"
+
+msgid "Occlusion"
+msgstr "遮蔽"
+
+msgid "AO radius"
+msgstr "AO 半径"
+
+msgid "AO strength"
+msgstr "AO 强度"
+
+msgid "AO power"
+msgstr "AO 指数"
+
+msgid "AO detail"
+msgstr "AO 细节"
+
+msgid "AO horizon"
+msgstr "AO 地平线"
+
+msgid "AO sharpness"
+msgstr "AO 锐度"
+
+msgid "AO on light"
+msgstr "AO 受光影响"
+
+msgid "AO on channel"
+msgstr "AO 通道影响"
+
+msgid "Indirect light"
+msgstr "间接光"
+
+msgid "GI radius"
+msgstr "GI 半径"
+
+msgid "GI strength"
+msgstr "GI 强度"
+
+msgid "GI sharpness"
+msgstr "GI 锐度"
+
+msgid "GI rejection"
+msgstr "GI 剔除"
+
+msgid "AIR"
+msgstr "空气"
+
+msgid "Depth fog"
+msgstr "深度雾"
+
+msgid "Fog colour"
+msgstr "雾颜色"
+
+msgid "Fog light"
+msgstr "雾光"
+
+msgid "Fog density"
+msgstr "雾密度"
+
+msgid "Sun scatter"
+msgstr "太阳散射"
+
+msgid "Aerial persp."
+msgstr "空气透视"
+
+msgid "Fog on sky"
+msgstr "雾影响天空"
+
+msgid "Fog height"
+msgstr "雾高度"
+
+msgid "Height density"
+msgstr "高度密度"
+
+msgid "Volumetric fog"
+msgstr "体积雾"
+
+msgid "Volume density"
+msgstr "体积密度"
+
+msgid "Volume albedo"
+msgstr "体积反照率"
+
+msgid "Volume emission"
+msgstr "体积自发光"
+
+msgid "Emission energy"
+msgstr "自发光强度"
+
+msgid "Anisotropy"
+msgstr "各向异性"
+
+msgid "Volume length"
+msgstr "体积长度"
+
+msgid "Detail spread"
+msgstr "细节扩散"
+
+msgid "Ambient inject"
+msgstr "环境光注入"
+
+msgid "GI inject"
+msgstr "GI 注入"
+
+msgid "Volume on sky"
+msgstr "体积影响天空"
+
+msgid "Reprojection"
+msgstr "重投影"
+
+msgid "Reproject amount"
+msgstr "重投影量"
+
+msgid "No look in this world"
+msgstr "这个世界没有画面设置"
+
+msgid "WASD walks, right mouse drag looks. %s puts one row back"
+msgstr "WASD 移动，按住右键拖动看四周。按%s恢复一行"
+
+msgid "Copy the numbers"
+msgstr "复制数值"
+
+msgid "All of it back"
+msgstr "全部恢复"
+
+msgid "Write it to the look files"
+msgstr "写入画面文件"
+
+msgid "Overwrites %s and %s"
+msgstr "会覆盖%s和%s"
+
+msgid "Back to %s, the authored value"
+msgstr "恢复为原始值%s"
+
+msgid "Elevation"
+msgstr "仰角"
+
+msgid "Azimuth"
+msgstr "方位角"
+
+msgid "SKY"
+msgstr "天空"
+
+msgid "Generated from the shader. The cloud march count is re-written by the graphics preset"
+msgstr "由着色器生成。云层步进次数会被画质预设改写"
+
+msgid "Tonemap"
+msgstr "色调映射"
+
+msgid "Copied, and printed to the log"
+msgstr "已复制，也打印到了日志里"
+
+msgid "Back to the authored look"
+msgstr "已恢复原始画面设置"
+
+msgid "Written. Reload the scene if the editor has it open"
+msgstr "已写入。如果编辑器开着这个场景，请重新加载"
+
+msgid "NEEDLE COLLECTION"
+msgstr "针收藏"
+
+msgid "WISHLIST ON STEAM"
+msgstr "在 Steam 上加入愿望单"
+
+msgid "KEEP PLAYING"
+msgstr "继续玩"
+
+msgid "MAIN MENU"
+msgstr "主菜单"
+
+msgid "DEMO COMPLETE"
+msgstr "试玩版通关"
+
+msgid "RETURNING TO THE YARD"
+msgstr "正在回到院子"
+
+msgid "Please open this address in your browser: %s"
+msgstr "请在浏览器里打开这个地址：%s"
+
+msgid "ALL TWENTY-FOUR FOUND"
+msgstr "二十四根全找到了"
+
+msgid "You found every needle in this yard."
+msgstr "你找到了这个院子里的每一根针。"
+
+msgid "That is every needle in the game. You can keep playing or stop here."
+msgstr "游戏里所有的针都在这了。你可以继续玩，也可以就此打住。"
+
+msgid "THE FIRST SIX FOUND"
+msgstr "前六根全找到了"
+
+msgid "You found every kind of needle in the first load."
+msgstr "第一批草里每种针你都找到了。"
+
+msgid "That is the end of the demo. The full game has %d more loads and %d more kinds of needle. You can keep playing or stop here."
+msgstr "试玩版到这里就结束了。完整版还有%d批草和%d种针。你可以继续玩，也可以就此打住。"
+
+msgid "needles picked up"
+msgstr "捡到的针"
+
+msgid "hay dug out of the pile"
+msgstr "从草堆里挖出的草"
+
+msgid "money earned"
+msgstr "赚到的钱"
+
+msgid "TIP"
+msgstr "提示"
+
+msgid "Not set yet."
+msgstr ""
+
+msgid "%.1f m circle, %.0f m from the pad"
+msgstr ""
+
+msgid "Floor"
+msgstr ""
+
+msgid "Belt"
+msgstr "传送带"
+
+msgid "Hay stairs"
+msgstr ""
+
+msgid "%s, %.0f m from the pad"
+msgstr ""
+
+msgid "It works up to %.0f m from its pad. Loads carried: %d."
+msgstr ""
+
+msgid "HIDE ZONE  ·  %d:%02d"
+msgstr ""
+
+msgid "HIDE ZONE"
+msgstr ""
+
+msgid "SHOW ZONE"
+msgstr ""
+
+msgid "No zone or drop set up yet. Press SET ZONE AND DROP to choose them."
+msgstr ""
+
+msgid "No zone set up yet. Press SET ZONE AND DROP to choose one."
+msgstr ""
+
+msgid "No drop set up yet. Press SET ZONE AND DROP to choose one."
+msgstr ""
+
+msgid "HAY DRONE"
+msgstr ""
+
+msgid "Give it a zone and a drop point. It digs the pile in the zone and flies the hay to the drop."
+msgstr ""
+
+msgid "WHAT IT DOES"
+msgstr ""
+
+msgid "Dig the pile"
+msgstr ""
+
+msgid "Takes hay off the top of the pile in its zone, a clawful a trip."
+msgstr ""
+
+msgid "Collect things"
+msgstr ""
+
+msgid "Picks up what you tick below from its zone, one at a time."
+msgstr ""
+
+msgid "Collecting things instead unlocks with Drone Pickup on the tech tree."
+msgstr ""
+
+msgid "WHERE IT WORKS"
+msgstr ""
+
+msgid "ZONE"
+msgstr ""
+
+msgid "Clear the zone"
+msgstr ""
+
+msgid "Clear the drop"
+msgstr ""
+
+msgid "SET ZONE AND DROP"
+msgstr ""
+
+msgid "The zone and the drop belong to this drone only. The drop can be a belt, hay stairs or the floor, but never the selling stand."
+msgstr ""
+
+msgid "That is as big as it goes. Longer Range makes zones bigger."
+msgstr ""
+
+msgid "That is as small as it goes."
+msgstr ""
+
+msgid "A drop goes on a belt, on hay stairs or on the floor."
+msgstr ""
+
+msgid "Now set the drop."
+msgstr ""
+
+msgid "Now set the zone."
+msgstr ""
+
+msgid "Ready. It starts on its next look for work."
+msgstr ""
+
+msgid "DIG ZONE  ·  %.1f m"
+msgstr ""
+
+msgid "COLLECT ZONE  ·  %.1f m"
+msgstr ""
+
+msgid "WHEEL"
+msgstr ""
+
+msgid "SIZE"
+msgstr ""
+
+msgid "Look at the pile, the floor or a belt inside the ring."
+msgstr ""
+
+msgid "It can drop on this belt."
+msgstr ""
+
+msgid "It can drop into these hay stairs."
+msgstr ""
+
+msgid "It can drop on the floor here."
+msgstr ""
+
+msgid "No drop here: %s."
+msgstr ""
+
+msgid "Its zone can go here."
+msgstr ""
+
+msgid "No zone here: %s."
+msgstr ""
+
+msgid "Running and jumping shake hay off a full tool."
+msgstr "工具装满时，跑和跳会把草颠下来。"
+
+msgid "Standing still is the fastest way to get your stamina back."
+msgstr "站着不动，体力恢复得最快。"
+
+msgid "Walk up to a Dump Hatch with a full bucket or barrow. It empties it for you, no button needed."
+msgstr "拿着装满的桶或手推车走到卸料口，会自动帮你倒空，不用按键。"
+
+msgid "The pitchfork lifts more hay at once than any other hand tool."
+msgstr "草叉一次能叉起的草比其他手持工具都多。"
+
+msgid "Press {key:build_catalog} to open the build catalog."
+msgstr "按{key:build_catalog}打开建造目录。"
+
+msgid "Press {key:build_grid} to snap buildings to a grid."
+msgstr "按{key:build_grid}让建筑对齐网格。"
+
+msgid "Press {key:build_rotate} to turn a machine before you place it."
+msgstr "放机器前按{key:build_rotate}可以转方向。"
+
+msgid "Scroll the mouse wheel to place a building further away or closer."
+msgstr "滚动鼠标滚轮，可以把建筑放远一点或近一点。"
+
+msgid "No mouse wheel? Press {keyboard:build_further} and {keyboard:build_closer} to place a building further away or closer."
+msgstr "没有滚轮？按{keyboard:build_further}和{keyboard:build_closer}把建筑放远或放近。"
+
+msgid "In the build catalog, right click a building to pin it to your hotbar."
+msgstr "在建造目录里右键点建筑，就能把它固定到快捷栏。"
+
+msgid "Placing a drone, rake, arm or pelletizer? Hold the right mouse button to see where your other ones already reach."
+msgstr "要放无人机、活塞耙、机械臂或压块机？按住鼠标右键，可以看到已放好的几台够得到哪里。"
+
+msgid "Hold {key:dismantle} on a building to take it down."
+msgstr "对着建筑按住{key:dismantle}就能拆掉。"
+
+msgid "Hold Shift and {key:dismantle} on a Platform to take away just one tile of it."
+msgstr "对着平台按住Shift和{key:dismantle}，就能只拆掉其中一格。"
+
+msgid "Placing a belt? Press {key:build_no_snap} to stop it snapping onto other belts and machines."
+msgstr "放传送带时按{key:build_no_snap}，它就不会吸附到别的传送带和机器上。"
+
+msgid "A belt bends round anything in its way by itself. Press {key:build_rotate} to send it round the other side instead."
+msgstr "传送带会自己拐弯绕过挡路的东西。按{key:build_rotate}可以让它改从另一边绕。"
+
+msgid "Laying a belt that turns a corner? Press {key:build_rotate} to try a different way round."
+msgstr "传送带要拐弯时，按{key:build_rotate}可以换一条路线试试。"
+
+msgid "A Splitter sends hay left, then right, then left. Press {key:interact} at it to adjust it."
+msgstr "分流器会把草轮流往左、往右送。对着它按{key:interact}就能调整它。"
+
+msgid "Want to clear your whole yard? Press {key:interact} at the CLEARANCE sign above the price board. You get back what you paid."
+msgstr "想清空整个院子？对着价格牌上方的「清仓」牌子按{key:interact}。花的钱会全部退给你。"
+
+msgid "Look at a power pole to see how much power your yard needs and makes. Every machine on that pole lights up too."
+msgstr "看一眼电线杆，就知道院子要用多少电、发了多少电。接在这根杆子上的机器也会一起亮起来。"
+
+msgid "When there is not enough power, every machine on the line slows down together."
+msgstr "电不够时，这条线上的所有机器会一起变慢。"
+
+msgid "Walls block power wires, but hay does not. A Cable Box buries the wire, so nothing can block it."
+msgstr "墙会挡住电线，草不会。电缆箱把电线埋到地下，就什么都挡不住了。"
+
+msgid "Press {key:interact} at a machine to turn it off. A machine that is off uses no power."
+msgstr "对着机器按{key:interact}可以关掉它。关着的机器不耗电。"
+
+msgid "A bale sells for more than the loose hay inside it."
+msgstr "一捆草比里面的散草卖得更贵。"
+
+msgid "A wrapper only takes finished bales, not loose hay."
+msgstr "裹膜机只收打好的草捆，不收散草。"
+
+msgid "A pulper needs three things at once: hay on the belt, a power wire and a water pipe."
+msgstr "碎浆机要三样东西同时到位：传送带上有草，接上电线，接上水管。"
+
+msgid "A needle can hide inside a bale or a brick, and it is gone if you sell it. Look at it and hold {key:dismantle} to rip it apart and get the needle out."
+msgstr "针可能藏在草捆或草砖里，卖掉就没了。对着它按住{key:dismantle}拆开，就能把针取出来。"
+
+msgid "The generator burns any needle hidden in its fuel. Scan your hay first."
+msgstr "发电机会把燃料里藏着的针一起烧掉。先扫描一遍草。"
+
+msgid "A scanner finds needles in loose hay, bales and bricks."
+msgstr "扫描仪能在散草、草捆和草砖里找到针。"
+
+msgid "The metal detector tells you how close a needle is, never which way. Walk around until the sound is loudest."
+msgstr "金属探测器只告诉你针有多近，不告诉你在哪个方向。四处走走，找声音最响的地方。"
+
+msgid "When a scanner's beacon lights up, its drawer is full. Go and empty it."
+msgstr "扫描仪的信号灯亮了，说明抽屉满了。快去清空。"
+
+msgid "To make your yard bigger, buy {card:yard_space} in the tech tree."
+msgstr "想让院子变大，就在科技树里买{card:yard_space}。"
+
+msgid "{card:hay_price} in the tech tree makes everything sell for more."
+msgstr "科技树里的{card:hay_price}能让所有东西都卖得更贵。"
+
+msgid "Short on power? {card:generator_output} in the tech tree makes every generator stronger."
+msgstr "电不够用？科技树里的{card:generator_output}能让每台发电机都更强。"
+
+msgid "{card:belt_speed} makes every belt faster, even the ones you already built."
+msgstr "{card:belt_speed}会让所有传送带变快，已经建好的也一样。"
+
+msgid "Out of breath? {card:strong_back} gives you more stamina, and {card:second_wind} brings it back faster."
+msgstr "跑不动了？{card:strong_back}让你体力更多，{card:second_wind}让体力恢复更快。"
+
+msgid "{card:work_boots} makes you walk and run faster."
+msgstr "{card:work_boots}让你走路和跑步都更快。"
+
+msgid "{card:overflow_gate} lets a Splitter fill one belt first and only send the extra down the other."
+msgstr "{card:overflow_gate}能让分流器先装满一条传送带，多出来的才送到另一条。"
+
+msgid "{card:firebox} lets a generator hold more hay, so a short gap in its feed does not slow the yard."
+msgstr "{card:firebox}让发电机能多装点草，供草断一小会儿也不会拖慢整个院子。"
+
+msgid "{card:pole_span} and {card:pole_drop} let power poles reach further, so you need fewer of them."
+msgstr "{card:pole_span}和{card:pole_drop}让电线杆拉得更远，要立的杆子就更少。"
+
+msgid "{card:bale_quality} makes every bale you sell worth more."
+msgstr "{card:bale_quality}让你卖的每捆草都更值钱。"
+
+msgid "Press {key:toggle_debug} to see your FPS."
+msgstr "按{key:toggle_debug}可以看帧数。"
+
+msgid "Press {key:toggle_hud} to hide the HUD. Press it again to bring it back."
+msgstr "按{key:toggle_hud}可以隐藏界面，再按一次就会回来。"
+
+msgid "Press {key:quick_save} to save your game right away."
+msgstr "按{key:quick_save}可以马上存档。"
+
+msgid "You can change the language in OPTIONS, on the DISPLAY page. Restart the game to switch."
+msgstr "可以在「选项」的「显示」页换语言。换完要重启游戏才会生效。"
+
+msgid "In OPTIONS, on the GAMEPLAY page, you can raise how many items can lie around the yard. Be careful: more items can lower your FPS."
+msgstr "在「选项」的「游戏」页，可以调高院子里能放多少东西。注意：东西越多，帧数可能越低。"
+
+msgid "On the GAMEPLAY page you can also raise how many loads your belts carry. A long line full of bales costs the most FPS."
+msgstr "在「游戏」页还能调高传送带上能运多少货。一长条装满草捆的传送带最吃帧数。"
+
+msgid "With the yard cap on, when there are too many items, the ones furthest away from you turn back into hay on the pile."
+msgstr "开启院子物品上限后，东西太多时，离你最远的那些会变回草堆上的草。"
+
+msgid "Floor full of hay? Press PUT LOOSE HAY BACK ON THE PILE on the GAMEPLAY page in OPTIONS. Bales turn back into plain hay."
+msgstr "地上全是草？在「选项」的「游戏」页按「把散落的草放回草堆」。草捆也会变回普通的草。"
+
+msgid "The graphics quality preset also picks how many items your yard can hold, until you move that slider yourself."
+msgstr "画质预设也会决定院子能放多少东西，除非你自己动过那个滑块。"
+
+msgid "Low FPS? The GRAPHICS page in OPTIONS lists the settings that help the most first."
+msgstr "帧数低？「选项」的「画面」页把最管用的设置排在了最前面。"
+
+msgid "Every key can be changed in OPTIONS, on the CONTROLS page."
+msgstr "每个按键都能在「选项」的「操作」页里改。"
+
+msgid "Want a cleaner screen? Hide the tool bar or the button hints on the HUD page in OPTIONS."
+msgstr "想让屏幕干净点？在「选项」的「界面」页可以隐藏快捷栏和按键提示。"
+
+msgid "The hay left in the top corner can show as an amount or a percent. Pick one on the GAMEPLAY page."
+msgstr "右上角的剩余草量可以显示成数量或百分比。在「游戏」页里选。"
+
+msgid "Do not want these tips? Turn them off in OPTIONS, on the GAMEPLAY page."
+msgstr "不想看这些提示？在「选项」的「游戏」页关掉就行。"
+
+msgid "Hand"
+msgstr "手"
+
+msgid "Detector"
+msgstr "探测器"
+
+msgid "BUILD"
+msgstr "建造"
+
+msgid "Bugs might exist. Please report them on Discord."
+msgstr "游戏可能还有 bug，请到 Discord 上告诉我们。"
+
+msgid "HUD hidden. Press %s to bring it back."
+msgstr "界面已隐藏。按%s显示。"
+
+msgid "HUD back. Press %s to hide it."
+msgstr "界面回来了。按%s隐藏。"
+
+msgid "NOT CAREFUL ENOUGH  ·  %s went out with the hay  ·  +$%s"
+msgstr "不够小心  ·  %s混在草里卖掉了  ·  +$%s"
+
+msgid "NOT CAREFUL ENOUGH  ·  %s went into the firebox and burned"
+msgstr "不够小心  ·  %s进了炉膛，烧没了"
+
+msgid "NOT CAREFUL ENOUGH  ·  %s was still inside the machine you took down"
+msgstr "不够小心  ·  %s还在你拆掉的机器里"
+
+msgid "NOT CAREFUL ENOUGH  ·  %s was still inside what you sold"
+msgstr "不够小心  ·  %s还在你卖掉的东西里"
+
+msgid "YOU OWE $%s"
+msgstr "你欠了$%s"
+
+msgid "UPGRADE READY  ·  %s  $%s  ·  %s"
+msgstr "可以升级  ·  %s  $%s  ·  %s"
+
+msgid "BELTS FULL  ·  LIMIT %d  ·  %s > %s"
+msgstr "传送带已满  ·  上限%d  ·  %s > %s"
+
+msgid "OPTIONS"
+msgstr "选项"
+
+msgid "GAMEPLAY"
+msgstr "游戏"
+
+msgid "$%s/min  (was $%s)"
+msgstr "$%s/分钟（之前$%s）"
+
+msgid "$%s/min"
+msgstr "$%s/分钟"
+
+msgid "%s DUG/MIN"
+msgstr "每分钟挖%s"
+
+msgid "%s HAY LEFT"
+msgstr "剩余干草%s"
+
+msgid "Click LMB to add the %s needle to the cabinet"
+msgstr "点击左键，把%s针放进收针柜"
+
+msgid "Click LMB to take a %s needle out of the drawer"
+msgstr "点击左键，从抽屉里取出一根%s针"
+
+msgid "Click LMB to look at the %s needle"
+msgstr "点击左键，看看这根%s针"
+
+msgid "OPEN THE CABINET  ·  %s"
+msgstr "打开收针柜  ·  %s"
+
+msgid "SIGNAL"
+msgstr "信号"
+
+msgid "JETPACK"
+msgstr "喷气背包"
+
+msgid "DISMANTLING %s    hold %s"
+msgstr "正在拆除%s    按住%s"
+
+msgid "DISMANTLING    hold %s"
+msgstr "正在拆除    按住%s"
+
+msgid "RIPPING OPEN    hold %s"
+msgstr "正在拆开    按住%s"
+
+msgid "REVERSING    hold %s"
+msgstr "正在反转    按住%s"
+
+msgid "throws %.0f m  ·  %.0f deg  ·  power %d%%"
+msgstr "射程%.0f米  ·  %.0f度  ·  力度%d%%"
+
+msgid "switched off"
+msgstr "已关闭"
+
+msgid "lighting %.0f m  ·  %.0f%% brightness"
+msgstr "照亮%.0f米  ·  亮度%.0f%%"
+
+msgid "SWITCHED OFF  ·  %d of %d loads inside"
+msgstr "已关闭  ·  里面有%d/%d份"
+
+msgid "STOPPED  ·  %d of %d loads inside"
+msgstr "已停止  ·  里面有%d/%d份"
+
+msgid "%d a minute  ·  %d of %d loads inside"
+msgstr "每分钟%d份  ·  里面有%d/%d份"
+
+msgid "sends %s"
+msgstr "送出%s"
+
+msgid "takes"
+msgstr "接收"
+
+msgid "takes everything"
+msgstr "全部接收"
+
+msgid "takes %s"
+msgstr "接收%s"
+
+msgid "throws %.1f m  ·  one wad every %.1f s"
+msgstr "射程%.1f米  ·  每%.1f秒一团"
+
+msgid "throws %.1f m  ·  one brick every %.1f s"
+msgstr "射程%.1f米  ·  每%.1f秒一块"
+
+msgid "This load is free"
+msgstr "这批草免费"
+
+msgid "Pay $%s now, or $%s later"
+msgstr "现在付$%s，或者以后付$%s"
+
+msgid "DRONE JOB"
+msgstr ""
+
+msgid "SET UP THE DRONE"
+msgstr ""
+
+msgid "SET POWER"
+msgstr "调力度"
+
+msgid "SET SPEED"
+msgstr "调速度"
+
+msgid "DIM THE LAMP"
+msgstr "调亮度"
+
+msgid "ADJUST THROW"
+msgstr "调整抛出距离"
+
+msgid "ADJUST SPLITTER"
+msgstr "调整分流器"
+
+msgid "connect belts to any side and it sets itself up"
+msgstr ""
+
+msgid "SET PICKUP"
+msgstr "设置抓取"
+
+msgid "TURN THE LINE ON"
+msgstr "打开整条线路"
+
+msgid "LINE SWITCH"
+msgstr "线路开关"
+
+msgid "everything on it is switched off"
+msgstr "这条线路上的东西都关了"
+
+msgid "turn off everything on this line"
+msgstr "关掉这条线路上的所有东西"
+
+msgid "MACHINE SWITCH"
+msgstr "机器开关"
+
+msgid "running"
+msgstr "运行中"
+
+msgid "Dispatch bay  ·  the yard outside"
+msgstr "发货区  ·  外面的院子"
+
+msgid "ORDER THE NEXT LOAD"
+msgstr "订下一批草"
+
+msgid "NEXT LOAD"
+msgstr "下一批"
+
+msgid "What the next load needs, and where it lands"
+msgstr "下一批要什么，会卸在哪里"
+
+msgid "PIN THIS ORDER"
+msgstr "钉到屏幕上"
+
+msgid "Show this order on your screen"
+msgstr "把这个订单显示在屏幕上"
+
+msgid "TAKE IT DOWN"
+msgstr "取下来"
+
+msgid "Remove the order from your screen"
+msgstr "从屏幕上移除这个订单"
+
+msgid "CLEARANCE SALE"
+msgstr "清仓大甩卖"
+
+msgid "Sell everything you built"
+msgstr "卖掉建好的所有东西"
+
+msgid "OPEN LEADERBOARDS"
+msgstr "打开排行榜"
+
+msgid "See your rank"
+msgstr "看看你的排名"
+
+msgid "OPEN SHOP"
+msgstr "打开商店"
+
+msgid "Supply Co.  ·  tools, buckets and barrows"
+msgstr "五金店  ·  工具、桶和手推车"
+
+msgid "NO SNAP MODE ACTIVATED"
+msgstr "已开启无吸附模式"
+
+msgid "You won't be able to snap to machines or anything"
+msgstr "不会吸附到机器或其他任何东西上"
+
+msgid "Queue won't work: hay falls off the end instead of waiting"
+msgstr "排队失效：草会从末端掉下去，不会停下来等"
+
+msgid "%.2f m long, needs %.2f m"
+msgstr "长%.2f米，需要%.2f米"
+
+msgid "%d bay · %.0f m    $%s"
+msgid_plural "%d bays · %.0f m    $%s"
+msgstr[0] "%d格 · %.0f米    $%s"
+
+msgid "%.1f m out"
+msgstr "伸出%.1f米"
+
+msgid "%d x %d bays · %.0f m2    $%s"
+msgstr "%d x %d格 · %.0f平方米    $%s"
+
+msgid "$%s    %.1f m out"
+msgstr "$%s    伸出%.1f米"
+
+msgid "%.1f m    $%s"
+msgstr "%.1f米    $%s"
+
+msgid "%.1f m rise · %.0f°    $%s"
+msgstr "升高%.1f米 · %.0f°    $%s"
+
+msgid "click the deck edge to start"
+msgstr "点击平台边缘开始"
+
+msgid "%s m up · %d sections    $%s"
+msgstr "高%s米 · %d节    $%s"
+
+msgid "click the base, then look up"
+msgstr "点击底座，然后往上看"
+
+msgid "works like a conveyor · look up to make it taller"
+msgstr "用法和传送带一样 · 往上看可以加高"
+
+msgid "meets the deck"
+msgstr "接上平台了"
+
+msgid "misses the deck by %d cm"
+msgstr "离平台差%d厘米"
+
+msgid "%.0f x %.0f m    %.0f m2    $%s"
+msgstr "%.0f x %.0f米    %.0f平方米    $%s"
+
+msgid "works with the shortest lift"
+msgstr "最矮的升降机就够"
+
+msgid "works with a %d section lift"
+msgid_plural "works with a %d section lift"
+msgstr[0] "需要%d节的升降机"
+
+msgid "too high for a lift"
+msgstr "太高了，没有升降机够得着"
+
+msgid "press %s to fit a lift"
+msgstr "按%s让升降机放得下"
+
+msgid "%s m up"
+msgstr "高%s米"
+
+msgid "one in, two out    $%s"
+msgstr "一进两出    $%s"
+
+msgid "two in, one out    $%s"
+msgstr "两进一出    $%s"
+
+msgid "one in, two out side by side    $%s"
+msgstr "一进两出，出口并排    $%s"
+
+msgid "splits 1 belt into 2, or joins 2 into 1    $%s"
+msgstr "把1条传送带分成2条，或把2条合成1条    $%s"
+
+msgid "put it on the end of a belt"
+msgstr "放在传送带的末端"
+
+msgid "splits: straight on and to one side    $%s"
+msgstr "分流：直行和一边    $%s"
+
+msgid "splits: left and right    $%s"
+msgstr "分流：左边和右边    $%s"
+
+msgid "%s changes the ways out  ·  a 2nd belt in makes it join"
+msgstr "%s 改变出口  ·  再接入第2条传送带就会合并"
+
+msgid "two in side by side, one out    $%s"
+msgstr "两进一出，入口并排    $%s"
+
+msgid "one pipe in, two out    $%s"
+msgstr "一根管进，两根出    $%s"
+
+msgid "%.1f hay/s  x%.1f  $%s/min max    $%s"
+msgstr "%.1f草/秒  %.1f倍  最多$%s/分钟    $%s"
+
+msgid "%.1f hay/s  ·  %.1f litres/s  x%.2f  $%s/min max    $%s"
+msgstr "%.1f草/秒  ·  %.1f升/秒  %.2f倍  最多$%s/分钟    $%s"
+
+msgid "%.0f m long  ·  %.1f hay/s  x%.2f  $%s/min max    $%s"
+msgstr "长%.0f米  ·  %.1f草/秒  %.2f倍  最多$%s/分钟    $%s"
+
+msgid "%d straw + %d bricks a disc  ·  %.0f m long  x%.2f  $%s/min max    $%s"
+msgstr "每个饼要%d根草+%d块砖  ·  长%.0f米  %.2f倍  最多$%s/分钟    $%s"
+
+msgid "%.0f kW  ·  bricks only  ·  needs %.1f litres/s    $%s"
+msgstr "%.0f kW  ·  只烧草砖  ·  需要%.1f升/秒    $%s"
+
+msgid "%.0f kW  ·  full, it lasts %.0f min    $%s"
+msgstr "%.0f kW  ·  装满能烧%.0f分钟    $%s"
+
+msgid "%.0f litres/s  ·  needs %.0f kW    $%s"
+msgstr "%.0f升/秒  ·  需要%.0f kW    $%s"
+
+msgid "%.0f bales/h  x%.2f  $%s/min max    $%s"
+msgstr "%.0f捆/小时  %.2f倍  最多$%s/分钟    $%s"
+
+msgid "holds %d loads  ·  0 to %d a minute    $%s"
+msgstr "能放%d份  ·  每分钟0到%d份    $%s"
+
+msgid "throws %.0f m at %d%% power    $%s"
+msgstr "射程%.0f米，力度%d%%    $%s"
+
+msgid "%s    in/out %.1f hay/s    $%s"
+msgstr "%s    进出%.1f草/秒    $%s"
+
+msgid "    SLOWER THAN YOUR BEST ARM: one can feed %.1f/s"
+msgstr "    比你最好的机械臂慢：一台就能送%.1f/秒"
+
+msgid "works up to %.0f m away%s    $%s"
+msgstr ""
+
+msgid "%.1f m reach · throws %.1f m%s    $%s"
+msgstr "耙距%.1f米 · 扔出%.1f米%s    $%s"
+
+msgid "%s    %.1f hay/s  $%s/min raw%s%s    $%s"
+msgstr "%s    %.1f草/秒  原草$%s/分钟%s%s    $%s"
+
+msgid "a board to draw on    $%s"
+msgstr "一块用来画画的板子    $%s"
+
+msgid "lights up to %.0f m · runs on a battery    $%s"
+msgstr "照亮%.0f米 · 用电池    $%s"
+
+msgid "    %.0f deg turn"
+msgstr "    转%.0f度"
+
+msgid "    goes around, %d corner"
+msgid_plural "    goes around, %d corners"
+msgstr[0] "    绕行，%d个弯"
+
+msgid "FREE GIFT"
+msgstr "免费礼物"
+
+msgid "SWITCHED OFF  ·  %s to turn it back on"
+msgstr "已关闭  ·  按%s重新打开"
+
+msgid "NOT ON A NETWORK  ·  put a power pole near this machine"
+msgstr "没接入电网  ·  在这台机器附近立一根电线杆"
+
+msgid "NO PIPE ON IT  ·  connect a water pipe to its flange"
+msgstr "没接水管  ·  把水管接到它的接口上"
+
+msgid "SHORT ON WATER  ·  everything at %d%%"
+msgstr "水不够  ·  全部降到%d%%"
+
+msgid "SHORT ON POWER  ·  everything at %d%%"
+msgstr "电不够  ·  全部降到%d%%"
+
+msgid "POWER POLE"
+msgstr "电线杆"
+
+msgid "CABLE BOX    %d machine on it"
+msgid_plural "CABLE BOX    %d machines on it"
+msgstr[0] "电缆箱    接了%d台机器"
+
+msgid "POWER POLE    %d machine on it"
+msgid_plural "POWER POLE    %d machines on it"
+msgstr[0] "电线杆    接了%d台机器"
+
+msgid "Build %d more hay generator."
+msgid_plural "Build %d more hay generators."
+msgstr[0] "再建%d台干草发电机。"
+
+msgid "needs %.1f kW  ·  makes %.1f kW  ·  SHORT %.1f kW  ·  everything at %d%%"
+msgstr "需要%.1f kW  ·  发电%.1f kW  ·  缺%.1f kW  ·  全部降到%d%%"
+
+msgid "needs %.1f kW  ·  makes %.1f kW  ·  %.1f kW spare"
+msgstr "需要%.1f kW  ·  发电%.1f kW  ·  富余%.1f kW"
+
+msgid "needs %.1f litres/s  ·  makes %.1f  ·  SHORT %.1f  ·  everything at %d%%"
+msgstr "需要%.1f升/秒  ·  供水%.1f  ·  缺%.1f  ·  全部降到%d%%"
+
+msgid "needs %.1f litres/s  ·  makes %.1f  ·  %.1f spare"
+msgstr "需要%.1f升/秒  ·  供水%.1f  ·  富余%.1f"
+
+msgctxt "fuel gauge"
+msgid "out"
+msgstr "烧完了"
+
+msgid "%d:%02d left"
+msgstr "还剩%d:%02d"
+
+msgid "%s    %s    $%s/min raw%s"
+msgstr "%s    %s    原草$%s/分钟%s"
+
+msgid "hay/s"
+msgstr "草/秒"
+
+msgid "%s    in/out %s    buffer %d/%d"
+msgstr "%s    进出%s    缓存%d/%d"
+
+msgid "    %d %s inside  ·  %.1f s"
+msgid_plural "    %d %ss inside  ·  %.1f s each"
+msgstr[0] "    里面有%d个%s  ·  每个%.1f秒"
+
+msgid "COMPRESSOR    %s    $%s/min    buffer %d/%d%s"
+msgstr "打捆机    %s    $%s/分钟    缓存%d/%d%s"
+
+msgid "GAS PLANT    makes %.1f / %.1f kW  ·  burns %.1f hay/s  ·  gets %.1f hay/s  ·  hopper %s  ·  tank %s%s"
+msgstr "燃气发电站    发电%.1f/%.1f kW  ·  烧%.1f草/秒  ·  进料%.1f草/秒  ·  料斗%s  ·  水箱%s%s"
+
+msgid "HAY GENERATOR    makes %.1f / %.1f kW  ·  burns %.1f hay/s  ·  gets %.1f hay/s  ·  box %d/%d, %s%s"
+msgstr "干草发电机    发电%.1f/%.1f kW  ·  烧%.1f草/秒  ·  进料%.1f草/秒  ·  炉膛%d/%d，%s%s"
+
+msgid "BOREHOLE PUMP    makes %s  ·  %.0f strokes a minute%s%s"
+msgstr "深井泵    出水%s  ·  每分钟%.0f次%s%s"
+
+msgid "litres/s"
+msgstr "升/秒"
+
+msgid "PULPER    %s    $%s/min    buffer %d/%d%s"
+msgstr "碎浆机    %s    $%s/分钟    缓存%d/%d%s"
+
+msgid "PAPER MILL    %s  x%.2f total    queue %d/%d%s"
+msgstr "造纸机    %s  共%.2f倍    排队%d/%d%s"
+
+msgid "rolls/h"
+msgstr "卷/小时"
+
+msgid "FEED DISC PRESS    %s  x%.2f    hay %d/%d  ·  bricks %d/%d%s"
+msgstr "饲料饼压制机    %s  %.2f倍    草%d/%d  ·  砖%d/%d%s"
+
+msgid "discs/h"
+msgstr "饼/小时"
+
+msgid "WRAPPER    %s  x%.2f total    queue %d/%d%s"
+msgstr "裹膜机    %s  共%.2f倍    排队%d/%d%s"
+
+msgid "bales/h"
+msgstr "捆/小时"
+
+msgid "standing still"
+msgstr "停着不动"
+
+msgid "one wad every %.1f s"
+msgstr "每%.1f秒一团"
+
+msgid "PISTON RAKE    %s    throws %.1f m    %s%s"
+msgstr "活塞耙    %s    扔出%.1f米    %s%s"
+
+msgid "not set up"
+msgstr ""
+
+msgid "digging"
+msgstr ""
+
+msgid "collecting"
+msgstr ""
+
+msgid "HAY DRONE    %s    %d loads carried%s"
+msgstr ""
+
+msgid "PELLETIZER    %s    $%s/min    buffer %d/%d%s"
+msgstr "压块机    %s    $%s/分钟    缓存%d/%d%s"
+
+msgid "1 bale = %d hay strands"
+msgstr "1捆 = %d根草"
+
+msgid "1 brick = %d hay strands"
+msgstr "1块砖 = %d根草"
+
+msgid "%d kW = 1 brick strand a second"
+msgstr "%d kW = 每秒烧草砖里的1根草"
+
+msgid "1 kW = 1 hay strand a second"
+msgstr "1 kW = 每秒1根草"
+
+msgid "1 pulp slab = %d hay strands + %.0fl"
+msgstr "1块纸浆板 = %d根草 + %.0f升水"
+
+msgid "1 wrapped bale = 1 bale"
+msgstr "1个裹膜草捆 = 1个草捆"
+
+msgid "1 paper roll = %d pulp slabs"
+msgstr "1卷纸 = %d块纸浆板"
+
+msgid "1 feed disc = %d hay strands + %d eco bricks (%d strands each)"
+msgstr "1个饲料饼 = %d根草 + %d块环保草砖（每块%d根草）"
+
+msgid "1 stroke = %.0fl"
+msgstr "抽1次 = %.0f升"
+
+msgid "    needs %.1f kW · %.1f spare"
+msgstr "    需要%.1f kW · 富余%.1f"
+
+msgid "    needs %.1f kW · %.1f spare · SHORT"
+msgstr "    需要%.1f kW · 富余%.1f · 电不够"
+
+msgid "%d of %d"
+msgstr "%d/%d"
+
+msgid "CLOSE THE DRAWER"
+msgstr "关上抽屉"
+
+msgid "Needle scanner  ·  the drawer is empty"
+msgstr "扫描仪  ·  抽屉是空的"
+
+msgid "NEEDLE SCANNER"
+msgstr "扫描仪"
+
+msgid "No needles yet  ·  found ones wait in the drawer"
+msgstr "还没有针  ·  找到的针会放在抽屉里"
+
+msgid "OPEN THE DRAWER"
+msgstr "打开抽屉"
+
+msgid "1 needle inside"
+msgstr "里面有1根针"
+
+msgid "%d needles inside"
+msgstr "里面有%d根针"
+
+msgid "  ·  the belt waits until you take them"
+msgstr "  ·  取走之前传送带会一直等着"
+
+msgid "SATELLITE DISH"
+msgstr "卫星天线"
+
+msgid "Buy the Satellite Dish plans to use it"
+msgstr "买了卫星天线图纸才能用"
+
+msgid "SCANNING"
+msgstr "扫描中"
+
+msgid "Watch the pile"
+msgstr "盯着草堆看"
+
+msgid "RECHARGING"
+msgstr "充能中"
+
+msgid "Ready again in %d s"
+msgstr "%d秒后可以再用"
+
+msgid "SCAN THE PILE"
+msgstr "扫描草堆"
+
+msgid "No needles close enough last time  ·  %s"
+msgstr "上次附近没扫到针  ·  %s"
+
+msgid "Turn it down if it is too bright, up to light more of the room."
+msgstr "太亮就调低，想照亮更多地方就调高。"
+
+msgid "Brightness is saved."
+msgstr "亮度已保存。"
+
+msgid "lights %.0f m"
+msgstr "照亮%.0f米"
+
+msgid "Brightness %.0f%%   ·   Charged %.0f%%"
+msgstr "亮度%.0f%%   ·   电量%.0f%%"
+
+msgid "WORK LAMP"
+msgstr "工作灯"
+
+msgid "HOW BRIGHT"
+msgstr ""
+
+msgid "Angle sets how high, power sets how far."
+msgstr "角度决定多高，力度决定多远。"
+
+msgid "%.0f deg   ·   power %.1f%%   ·   throws whatever reaches it"
+msgstr "%.0f度   ·   力度%.1f%%   ·   碰到什么就发射什么"
+
+msgid "TUBE LAUNCHER"
+msgstr "管式发射器"
+
+msgid "ANGLE"
+msgstr "角度"
+
+msgctxt "throw strength"
+msgid "POWER"
+msgstr "力度"
+
+msgid "HOW FAR IT THROWS"
+msgstr ""
+
+msgid "Show Range"
+msgstr "显示范围"
+
+msgid "LEADERBOARDS"
+msgstr "排行榜"
+
+msgid "Your totals from every run. The daily, weekly and monthly boards start fresh by themselves."
+msgstr "你所有游戏加起来的总成绩。日榜、周榜和月榜到时间会自动清零。"
+
+msgid "The leaderboards are not available in this build."
+msgstr "这个版本没有排行榜。"
+
+msgid "NEVER RESETS"
+msgstr "永不重置"
+
+msgid "RESETS IN %s"
+msgstr "%s后重置"
+
+msgid "CHANGE NAME"
+msgstr "改名"
+
+msgid "3 to 28 characters"
+msgstr "3到28个字符"
+
+msgid "CONFIRM"
+msgstr "确认"
+
+msgid "CANCEL"
+msgstr "取消"
+
+msgid "richest yard"
+msgstr "最富的院子"
+
+msgid "most money earned"
+msgstr "赚钱最多"
+
+msgid "biggest income per minute"
+msgstr "每分钟收入最高"
+
+msgid "total hay dug"
+msgstr "挖草总量"
+
+msgid "needles found"
+msgstr "找到的针"
+
+msgid "fastest first needle"
+msgstr "最快找到第一根针"
+
+msgid "fastest pile clear"
+msgstr "最快清空草堆"
+
+msgid "structures built"
+msgstr "建造数量"
+
+msgid "time played"
+msgstr "游戏时长"
+
+msgid "Loading %s..."
+msgstr "正在加载%s…"
+
+msgid "Could not load the board: %s.\nYour progress is saved and will be posted next time you open this page."
+msgstr "没能加载排行榜：%s。\n你的进度已经保存，下次打开这个页面时会上传。"
+
+msgid "the server did not answer"
+msgstr "服务器没有回应"
+
+msgid "Nothing on this board yet. Dig something and you will be first."
+msgstr "这个榜上还没有人。去挖点草，你就是第一个。"
+
+msgid "%s  %s  ·  not on this board yet"
+msgstr "%s  %s  ·  还没上这个榜"
+
+msgid "%s  %s  ·  rank %s"
+msgstr "%s  %s  ·  目前%s"
+
+msgid "OFFLINE"
+msgstr "离线"
+
+msgid "CONNECTING..."
+msgstr "连接中…"
+
+msgid "YOU ARE %s"
+msgstr "你是%s"
+
+msgid "A name can only be changed once, and this one already has been."
+msgstr "名字只能改一次，这个名字已经改过了。"
+
+msgid "This can only be done ONCE. Whatever you confirm here is your name on every board from now on, and it cannot be changed again or taken back."
+msgstr "改名只有一次机会。你在这里确认的名字会用在以后所有的榜上，不能再改，也不能撤回。"
+
+msgid "A name is at least three characters."
+msgstr "名字至少要三个字符。"
+
+msgid "That did not work."
+msgstr "失败了。"
+
+msgctxt "ordinal: 11th, 12th, 13th"
+msgid "%dth"
+msgstr "第%d名"
+
+msgctxt "ordinal: 1st, 21st"
+msgid "%dst"
+msgstr "第%d名"
+
+msgctxt "ordinal: 2nd, 22nd"
+msgid "%dnd"
+msgstr "第%d名"
+
+msgctxt "ordinal: 3rd, 23rd"
+msgid "%drd"
+msgstr "第%d名"
+
+msgctxt "ordinal: 4th and the rest"
+msgid "%dth"
+msgstr "第%d名"
+
+msgid "A truck brings a new pile of hay with new needles in it. Do these three steps to get it."
+msgstr "卡车会送来一堆新草，里面有新的针。完成这三步就能拿到。"
+
+msgid "PUT ONE OF EACH NEEDLE IN THE CABINET"
+msgstr "每种针各放一根进收针柜"
+
+msgid "CLEAR THE LANDING SPOT"
+msgstr "清空卸货点"
+
+msgid "PAY FOR THE HAY"
+msgstr "付草钱"
+
+msgid "PRESS %s OR ESC TO CLOSE"
+msgstr "按%s或ESC关闭"
+
+msgid "FULL GAME"
+msgstr "完整版"
+
+msgid "All %d kinds are in the cabinet. That is the end of the demo. The next load comes with the full game."
+msgstr "%d种针都放进收针柜了。试玩版到这里就结束了。下一批草在完整版里。"
+
+msgid "All %d kinds of needle are in the cabinet."
+msgstr "%d种针都放进收针柜了。"
+
+msgid "%d OF %d"
+msgstr "%d/%d"
+
+msgid "Find these in the hay and put them in the cabinet: %s."
+msgstr "在草里找到这些针，放进收针柜：%s。"
+
+msgid "%d kinds are still missing. Find them in the hay and put them in the cabinet."
+msgstr "还差%d种针。去草里找出来，放进收针柜。"
+
+msgid "NOT DONE"
+msgstr "未完成"
+
+msgid "Anything you built in the zone where the new pile lands has to be taken down first."
+msgstr "新草堆落下的区域里，你建的东西要先拆掉。"
+
+msgid "HIDE THE RED WALL"
+msgstr "隐藏红墙"
+
+msgid "SHOW WHERE IT LANDS"
+msgstr "显示落点"
+
+msgid "Locked. Find %d needles to use it. You have found %d."
+msgstr "未解锁。找到%d根针才能用。你已经找到%d根。"
+
+msgid "You have $%s."
+msgstr "你有$%s。"
+
+msgid "You have $%s. Do steps 1 and 2 first, then pick how to pay."
+msgstr "你有$%s。先完成第1步和第2步，再选怎么付钱。"
+
+msgid "FREE"
+msgstr "免费"
+
+msgid "GET THE LOAD"
+msgstr "运来这批草"
+
+msgid "This load costs nothing."
+msgstr "这批草不要钱。"
+
+msgid "PAY NOW  ·  $%s"
+msgstr "现在付  ·  $%s"
+
+msgid "Paid from your money straight away. You will have $%s left."
+msgstr "直接从你的钱里扣，付完还剩$%s。"
+
+msgid "You need $%s more to pay now."
+msgstr "还差$%s才能现在付。"
+
+msgid "PAY LATER  ·  $%s"
+msgstr "以后付  ·  $%s"
+
+msgid "Costs $%s more. Until it is paid, the stand keeps half of the money from every sale."
+msgstr "要多花$%s。还清之前，每卖一次东西，收购点都要扣下一半的钱。"
+
+msgid "You still owe $%s. The stand is keeping half of every sale until it is paid."
+msgstr "你还欠$%s。还清之前，每卖一次东西，收购点都扣一半。"
+
+msgid "PAY IT ALL OFF  ·  $%s"
+msgstr "全部还清  ·  $%s"
+
+msgid "PAY $%s OF IT OFF"
+msgstr "先还$%s"
+
+msgid "Find %d more needle to unlock this."
+msgid_plural "Find %d more needles to unlock this."
+msgstr[0] "再找%d根针就能解锁。"
+
+msgid "A red wall is up in the yard where the hay will land. Anything in the way is red too. Hide it here, or it goes when the load comes."
+msgstr "院子里草要落下的地方立起了一道红墙，挡路的东西也会变红。可以在这里隐藏，不然要等草运来它才会消失。"
+
+msgid "That is the end of the demo. The next load comes with the full game."
+msgstr "试玩版到这里就结束了。下一批草在完整版里。"
+
+msgid "Step 1 is not done. %s is still missing from the case."
+msgstr "第1步没完成。收针柜里还缺%s。"
+
+msgid "Step 1 is not done. %d kinds are still missing from the case."
+msgstr "第1步没完成。收针柜里还缺%d种针。"
+
+msgid "Step 2 is not done. Something is standing where the hay will land. It is marked in red in the yard."
+msgstr "第2步没完成。草要落下的地方还有东西挡着，院子里用红色标出来了。"
+
+msgid "You need $%s more to pay now. You can pay later instead."
+msgstr "还差$%s才能现在付。也可以以后再付。"
+
+msgid "You have no money to pay with yet."
+msgstr "你现在还没钱可以付。"
+
+msgid "Paid $%s. You do not owe anything now."
+msgstr "付了$%s。现在不欠钱了。"
+
+msgid "Paid $%s. You still owe $%s."
+msgstr "付了$%s。还欠$%s。"
+
+msgid "SWITCHED OFF"
+msgstr "已关闭"
+
+msgid "Not on a network.  Put a power pole near it."
+msgstr "没接入电网。在旁边立一根电线杆。"
+
+msgid "the whole line:  %s"
+msgstr "整条线路：%s"
+
+msgid "(off)"
+msgstr "（已关）"
+
+msgid "%.1f kW"
+msgstr "%.1f kW"
+
+msgid "nothing is drawing on this line"
+msgstr "这条线路上没有设备在用电"
+
+msgid "this gas plant makes"
+msgstr "这座燃气发电站发电"
+
+msgid "this generator makes"
+msgstr "这台发电机发电"
+
+msgid "%.1f of %.1f kW"
+msgstr "%.1f/%.1f kW"
+
+msgid "the whole line needs"
+msgstr "整条线路需要"
+
+msgid "each straw gives"
+msgstr "每根草出"
+
+msgid "%d kJ, eco bricks only"
+msgstr "%d kJ，只烧环保草砖"
+
+msgid "water"
+msgstr "供水"
+
+msgid "%d%%"
+msgstr "%d%%"
+
+msgid "water tank"
+msgstr "水箱"
+
+msgid "%d of %d seconds"
+msgstr "%d/%d秒"
+
+msgid "%d kJ, loose or pressed"
+msgstr "%d kJ，散草和压过的都一样"
+
+msgid "Short: %.1f kW"
+msgstr "缺电：%.1f kW"
+
+msgid "Spare: %.1f kW"
+msgstr "富余：%.1f kW"
+
+msgid "Machines run at %d%%"
+msgstr "机器以%d%%运行"
+
+msgid "%d generator has no hay"
+msgid_plural "%d generators have no hay"
+msgstr[0] "%d台发电机没有干草"
+
+msgid "burning"
+msgstr "正在烧"
+
+msgid "%.1f straws a second"
+msgstr "每秒%.1f根"
+
+msgid "coming in"
+msgstr "进来"
+
+msgid "about %.1f straws a second"
+msgstr "每秒约%.1f根"
+
+msgid "%d of %d straws"
+msgstr "%d/%d根"
+
+msgctxt "box and time left"
+msgid "%s, %s"
+msgstr "%s，%s"
+
+msgid "in the box"
+msgstr "炉膛里"
+
+msgid "the whole line burns"
+msgstr "整条线路在烧"
+
+msgid "needs %.1f kW  ·  makes %.1f kW"
+msgstr "需要%.1f kW  ·  发电%.1f kW"
+
+msgid "%s  ·  SHORT %.1f kW  ·  everything at %d%%"
+msgstr "%s  ·  缺%.1f kW  ·  全部降到%d%%"
+
+msgid "%s  ·  %.1f kW spare"
+msgstr "%s  ·  富余%.1f kW"
+
+msgid "hay compressor"
+msgstr "干草打捆机"
+
+msgid "hay wrapper"
+msgstr "草捆裹膜机"
+
+msgid "hay pelletizer"
+msgstr "干草压块机"
+
+msgid "hay drone"
+msgstr "运草无人机"
+
+msgid "hay generator"
+msgstr "干草发电机"
+
+msgid "gas plant"
+msgstr "燃气发电站"
+
+msgid "borehole pump"
+msgstr "深井泵"
+
+msgid "hay silo"
+msgstr "干草筒仓"
+
+msgid "piston rake"
+msgstr "活塞耙"
+
+msgid "robotic arm"
+msgstr "机械臂"
+
+msgid "haystack scanner"
+msgstr "草堆扫描仪"
+
+msgid "tube launcher"
+msgstr "管式发射器"
+
+msgid "hay pulper"
+msgstr "干草碎浆机"
+
+msgid "paper mill"
+msgstr "造纸机"
+
+msgid "feed disc press"
+msgstr "饲料饼压制机"
+
+msgid "MACHINE"
+msgstr "机器"
+
+msgid "LINE"
+msgstr "直线"
+
+msgid "DEMO"
+msgstr "试玩版"
+
+msgid "NEW GAME"
+msgstr "新游戏"
+
+msgid "LOAD GAME"
+msgstr "读取存档"
+
+msgid "MULTIPLAYER"
+msgstr "多人游戏"
+
+msgid "QUIT"
+msgstr "退出"
+
+msgid "STILL BACKGROUND"
+msgstr "静态背景"
+
+msgid "OFFICIAL LINKS"
+msgstr "官方链接"
+
+msgid "DISCORD COMMUNITY"
+msgstr "Discord 社区"
+
+msgid "NOT YET"
+msgstr "先不了"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "WHERE ARE YOU WORKING"
+msgstr "在哪干活"
+
+msgid "BACK"
+msgstr "返回"
+
+msgid "HOW MUCH HAY"
+msgstr "要多少草"
+
+msgid "I WANT BIGGER"
+msgstr "我要更大的"
+
+msgid "Bigger piles than this one. They ask a lot of a computer."
+msgstr "比这更大的草堆，很吃电脑配置。"
+
+msgid "BIGGER PILES"
+msgstr "更大的草堆"
+
+msgid "These piles may require your computer to be really powerful. The game may take a long time to load, may not load at all, and crashes may occur.\n\nSTANDARD is the size the game is tuned for."
+msgstr "这些草堆可能需要很强的电脑。游戏可能加载很久，甚至加载不出来，也可能崩溃。\n\n游戏是按「标准」大小调校的。"
+
+msgid "SHOW ME ANYWAY"
+msgstr "还是给我看看"
+
+msgid "%d m tall, about %d million strands."
+msgstr "高%d米，大约有%d百万根草。"
+
+msgid "%d m tall, about %.1f million strands."
+msgstr "高%d米，大约有%.1f百万根草。"
+
+msgid "START A NEW RUN IN"
+msgstr "选一个存档位开新局"
+
+msgid "CONTINUE"
+msgstr "继续游戏"
+
+msgid "SLOT %d"
+msgstr "存档位%d"
+
+msgid "ERASE?"
+msgstr "删除？"
+
+msgid "ERASE"
+msgstr "删除"
+
+msgid "LOCK"
+msgstr "锁定"
+
+msgid "Enter to save this name, Esc to leave it alone"
+msgstr "按回车保存名字，按Esc不改"
+
+msgid "Start a new run here"
+msgstr "在这里开新局"
+
+msgid "Locked. Clear the box to start a new run here"
+msgstr "已锁定。取消勾选才能在这里开新局"
+
+msgid "Click ERASE again to delete this save for good"
+msgstr "再点一次「删除」，这个存档就永久删掉了"
+
+msgid "Saved by a newer version of the game. Update to open this run"
+msgstr "这个存档来自更新的游戏版本。更新后才能打开"
+
+msgid "Damaged save. Cannot be read by this build"
+msgstr "存档已损坏，这个版本读不了"
+
+msgid "This save was made with a different pile size and cannot be opened by this build"
+msgstr "这个存档的草堆大小不一样，这个版本打不开"
+
+msgid "Recovered from a backup  ·  %s"
+msgstr "已从备份恢复  ·  %s"
+
+msgid "Click again to erase this run and start over"
+msgstr "再点一次会删掉这局，从头开始"
+
+msgid "%d needle"
+msgid_plural "%d needles"
+msgstr[0] "%d根针"
+
+msgid "%s strands dug"
+msgstr "挖了%s根草"
+
+msgid "%s left"
+msgstr "还剩%s"
+
+msgctxt "millions"
+msgid "%dM"
+msgstr "%dM"
+
+msgctxt "millions"
+msgid "%.1fM"
+msgstr "%.1fM"
+
+msgctxt "thousands"
+msgid "%dK"
+msgstr "%dK"
+
+msgid "Played"
+msgstr "游戏时长"
+
+msgid "Hay"
+msgstr "干草"
+
+msgid "Pile"
+msgstr "草堆"
+
+msgid "Site"
+msgstr "场地"
+
+msgid "Built"
+msgstr "已建造"
+
+msgid "Upgrades"
+msgstr "升级"
+
+msgid "Money"
+msgstr "金钱"
+
+msgid "Earned in total"
+msgstr "总收入"
+
+msgid "Needles found"
+msgstr "已找到针"
+
+msgid "In the cabinet"
+msgstr "柜中"
+
+msgid "First needle"
+msgstr "第一根针"
+
+msgid "Pile cleared"
+msgstr "草堆清空"
+
+msgid "Deliveries"
+msgstr "送货"
+
+msgid "Missions"
+msgstr "任务"
+
+msgid "Saved"
+msgstr "保存于"
+
+msgid "%s left of %s"
+msgstr "还剩%s，共%s"
+
+msgid "%d%% dug"
+msgstr "挖了%d%%"
+
+msgid "nothing yet"
+msgstr "还没有"
+
+msgid "%d structure"
+msgid_plural "%d structures"
+msgstr[0] "%d个建筑"
+
+msgid "%.1f km"
+msgstr "%.1f公里"
+
+msgid "%d m"
+msgstr "%d米"
+
+msgid "nothing bought yet"
+msgstr "还没买"
+
+msgid "all done"
+msgstr "全部完成"
+
+msgctxt "jobs"
+msgid "%d of %d"
+msgstr "%d/%d"
+
+msgid "BEFORE YOU START"
+msgstr "开始之前"
+
+msgid "This is a demo version, so bugs may exist. Please report anything you find in our Discord channel.\n\nThe most active community members will be included in the credits when the full game releases."
+msgstr "这是试玩版，可能会有 bug。发现问题请到我们的 Discord 频道反馈。\n\n最活跃的社区成员会在完整版发布时写进制作人员名单。"
+
+msgid "START DEMO"
+msgstr "开始试玩"
+
+msgid "This is a test version of the full game, so bugs may exist. Please report anything you find in our Discord channel."
+msgstr "这是完整版的测试版本，可能会有 bug。发现问题请到我们的 Discord 频道反馈。"
+
+msgid "START"
+msgstr "开始"
+
+msgid "We're working hard to bring multiplayer to the game. Please be patient. It's coming soon!"
+msgstr "我们正在努力给游戏加入多人模式，请耐心等等，很快就来！"
+
+msgid "GOT IT"
+msgstr "知道了"
+
+msgid "THANKS FOR PLAYING"
+msgstr "感谢游玩"
+
+msgid "Did you like it? Put Find The Needle on your Steam wishlist. It helps us a lot, and Steam will tell you when the game comes out."
+msgstr "喜欢吗？把 Find The Needle 加进 Steam 愿望单吧。这对我们帮助很大，游戏上线时 Steam 也会通知你。"
+
+msgid "Please open this address in your browser:\n%s"
+msgstr "请在浏览器里打开这个地址：\n%s"
+
+msgid "COULDN'T OPEN LINK"
+msgstr "打不开链接"
+
+msgid "PREPARING THE PILE"
+msgstr "正在准备草堆"
+
+msgid "RENAME"
+msgstr "改名"
+
+msgid "Name this run"
+msgstr "给这局起个名字"
+
+msgctxt "month"
+msgid "Jan"
+msgstr "1月"
+
+msgctxt "month"
+msgid "Feb"
+msgstr "2月"
+
+msgctxt "month"
+msgid "Mar"
+msgstr "3月"
+
+msgctxt "month"
+msgid "Apr"
+msgstr "4月"
+
+msgctxt "month"
+msgid "May"
+msgstr "5月"
+
+msgctxt "month"
+msgid "Jun"
+msgstr "6月"
+
+msgctxt "month"
+msgid "Jul"
+msgstr "7月"
+
+msgctxt "month"
+msgid "Aug"
+msgstr "8月"
+
+msgctxt "month"
+msgid "Sep"
+msgstr "9月"
+
+msgctxt "month"
+msgid "Oct"
+msgstr "10月"
+
+msgctxt "month"
+msgid "Nov"
+msgstr "11月"
+
+msgctxt "month"
+msgid "Dec"
+msgstr "12月"
+
+msgid "Not built yet"
+msgstr "还在建设中"
+
+msgid "THE WAREHOUSE"
+msgstr "仓库"
+
+msgid "Your home yard. A huge haystack inside a steel shed."
+msgstr "你自己的院子。钢棚里有一座巨大的草堆。"
+
+msgid "HOME"
+msgstr "大本营"
+
+msgid "THE PLAZA"
+msgstr "广场"
+
+msgid "A huge open concrete hall with no roof."
+msgstr "没有屋顶的巨大水泥大厅。"
+
+msgid "SITE 01"
+msgstr "场地01"
+
+msgid "HIGHLANDS CASTLE"
+msgstr "高地城堡"
+
+msgid "A castle hall filled with hay."
+msgstr "堆满干草的城堡大厅。"
+
+msgid "SITE 02"
+msgstr "场地02"
+
+msgid "THE RESEARCH SHIP"
+msgstr "科考船"
+
+msgid "A research ship with hay in its cargo hold."
+msgstr "货舱里装满干草的科考船。"
+
+msgid "SITE 03"
+msgstr "场地03"
+
+msgid "THE DEEP"
+msgstr "深海"
+
+msgid "A sunken ship on the sea floor, full of hay."
+msgstr "沉在海底的船，里面全是干草。"
+
+msgid "SITE 04"
+msgstr "场地04"
+
+msgid "ORBITAL STATION"
+msgstr "轨道空间站"
+
+msgid "A space station with no gravity. Hay floats where you leave it."
+msgstr "没有重力的空间站。草放在哪儿就飘在哪儿。"
+
+msgid "SITE 05"
+msgstr "场地05"
+
+msgid "MUCH MORE..."
+msgstr "还有更多"
+
+msgid "More places to come in the full game."
+msgstr "完整版会有更多地点。"
+
+msgid "THE FULL GAME"
+msgstr "完整版"
+
+msgid "CHANGE MAP"
+msgstr "切换地图"
+
+msgid "Travel to other sites"
+msgstr "前往其他场地"
+
+msgid "Other sites are in the full game.    E to close"
+msgstr "其他场地在完整版里。    按E关闭"
+
+msgid "E to close"
+msgstr "按E关闭"
+
+msgid "YOU ARE HERE"
+msgstr "你在这里"
+
+msgid "TRAVEL"
+msgstr "出发"
+
+msgid "RAISING THE SHED"
+msgstr "正在搭草棚"
+
+msgid "STACKING THE HAY"
+msgstr "正在堆草"
+
+msgctxt "key cue verb"
+msgid "HOLD"
+msgstr "按住"
+
+msgctxt "key cue verb"
+msgid "PRESS"
+msgstr "按"
+
+msgid "ROLL"
+msgstr "滚动"
+
+msgid "SCANNER DRAWER"
+msgstr "扫描仪抽屉"
+
+msgid "THE TRAY IS EMPTY"
+msgstr "抽屉是空的"
+
+msgid "LOAD %d  ·  1 IN %d"
+msgstr "第%d批  ·  概率1/%d"
+
+msgid "NEW TO THE CASE"
+msgstr "收针柜里还没有"
+
+msgid "IN THE CASE"
+msgstr "收针柜里已有"
+
+msgid "%d needle in the tray"
+msgid_plural "%d needles in the tray"
+msgstr[0] "抽屉里有%d根针"
+
+msgid "YOUR HANDS ARE FULL"
+msgstr "手里拿满了"
+
+msgid "CLICK A NEEDLE TO TAKE IT TO THE CABINET"
+msgstr "点击针，拿去收针柜"
+
+msgid "CHANCE 1 IN %d  (%s)"
+msgstr "概率1/%d（%s）"
+
+msgid "PUT IT IN THE CASE TO KEEP THIS"
+msgstr "放进收针柜才能留下它"
+
+msgid "HELD x%d"
+msgstr "持有x%d"
+
+msgid "FOUND x%d THIS RUN"
+msgstr "本局找到x%d"
+
+msgid "DRAG TO TURN"
+msgstr "拖动旋转"
+
+msgid "WHEEL TO ZOOM"
+msgstr "滚轮缩放"
+
+msgid "F TO TAKE ONE"
+msgstr "按F拿一根"
+
+msgid "%s OR ESC TO CLOSE"
+msgstr "按%s或ESC关闭"
+
+msgid "PRESS E OR ESC TO PUT IT BACK ON THE BOARD"
+msgstr "按E或Esc放回板上"
+
+msgid "in the case from this load  ·  %d of %d kinds"
+msgstr "这批已入柜  ·  %d/%d种"
+
+msgid "No needle from this load is lying loose in the yard."
+msgstr "这批针没有散落在院子里的。"
+
+msgid "%s is out in the yard, not in the case.%s"
+msgstr "%s还在院子里，没放进收针柜。%s"
+
+msgid "%d needles you still need are out in the yard: %s.%s"
+msgstr "你还缺的%d根针在院子里：%s。%s"
+
+msgid "One of them is packed inside a bale, a wrapped bale or a brick. Run it past a scanner, or hold X on it to tear it open."
+msgstr "有一根包在草捆、裹膜草捆或草砖里。让它过一下扫描仪，或者对着它按住X撕开。"
+
+msgid "%d of them are packed inside bales, wrapped bales or bricks. Run them past a scanner, or hold X on one to tear it open."
+msgstr "有%d根包在草捆、裹膜草捆或草砖里。让它们过一下扫描仪，或者对着其中一个按住X撕开。"
+
+msgid "YES, SEND IT BACK INTO THE STACK"
+msgstr "确定，放回草堆"
+
+msgid "RETURN %s TO THE STACK"
+msgstr "把%s放回草堆"
+
+msgid "RETURN %d NEEDLES TO THE STACK"
+msgstr "把%d根针放回草堆"
+
+msgid "RETURN A STUCK NEEDLE TO THE STACK"
+msgstr "把卡住的针放回草堆"
+
+msgid "No needles are lying loose right now. If a needle gets stuck somewhere you cannot reach, press this to put it back into the pile."
+msgstr "现在没有散落的针。如果有针卡在够不着的地方，按这个把它放回草堆。"
+
+msgid "This buries the needle in the pile again, and you will have to find it again. Press again to confirm."
+msgstr "针会重新埋进草堆，你得再找一遍。再按一次确认。"
+
+msgid "Back in the stack."
+msgstr "已放回草堆。"
+
+msgid "The pile is gone, so the needle is on the floor under this board."
+msgstr "草堆已经没了，针放在这块板下面的地上。"
+
+msgid "%d back in the stack, %d on the floor under this board."
+msgstr "%d根放回了草堆，%d根在这块板下面的地上。"
+
+msgid "It could not be moved. Nothing has changed."
+msgstr "没能移动，什么都没变。"
+
+msgid "RESTART TO SWITCH"
+msgstr "重启后切换"
+
+msgid "You are playing on %s now. The game switches to %s the next time it starts."
+msgstr "当前使用%s。下次启动游戏时会换成%s。"
+
+msgid "The game is in %s now. It switches to %s the next time it starts."
+msgstr "当前语言是%s。下次启动游戏时会换成%s。"
+
+msgid "The render thread turns on the next time the game starts."
+msgstr "下次启动游戏时渲染线程会打开。"
+
+msgid "The render thread turns off the next time the game starts."
+msgstr "下次启动游戏时渲染线程会关闭。"
+
+msgid "Save and quit now, then start the game again. Or keep playing and switch later."
+msgstr "现在存档退出，再重新启动游戏。或者继续玩，以后再换。"
+
+msgid "Quit now, then start the game again. Or switch later."
+msgstr "现在退出，再重新启动游戏。或者以后再换。"
+
+msgid "SAVE AND QUIT"
+msgstr "存档并退出"
+
+msgid "QUIT GAME"
+msgstr "退出游戏"
+
+msgid "LATER"
+msgstr "以后再说"
+
+msgid "AUDIO"
+msgstr "音频"
+
+msgid "CONTROLS"
+msgstr "操作"
+
+msgid "HUD"
+msgstr "界面"
+
+msgid "DISPLAY"
+msgstr "显示"
+
+msgid "GRAPHICS"
+msgstr "画面"
+
+msgid "Master"
+msgstr "主音量"
+
+msgid "Music"
+msgstr "音乐"
+
+msgid "Effects"
+msgstr "音效"
+
+msgid "Ambience"
+msgstr "环境音"
+
+msgid "RESET TO DEFAULTS"
+msgstr "恢复默认"
+
+msgid "Look sensitivity"
+msgstr "视角灵敏度"
+
+msgid "Invert mouse left and right"
+msgstr "鼠标左右反转"
+
+msgid "Invert mouse up and down"
+msgstr "鼠标上下反转"
+
+msgid "All keys reset to default."
+msgstr "所有按键已恢复默认。"
+
+msgid "Tech tree text"
+msgstr "科技树文字"
+
+msgid "Makes the tech tree text bigger."
+msgstr "把科技树的字调大。"
+
+msgid "Your graphics chip is built into the processor. High and Ultra can run out of memory and crash. Low is safer."
+msgstr "你的显卡集成在处理器里。「高」和「极高」可能会内存不足而崩溃，「低」更稳。"
+
+msgid "V-Sync"
+msgstr "垂直同步"
+
+msgid "MAX"
+msgstr "不限"
+
+msgid "Frame rate limit"
+msgstr "帧率上限"
+
+msgid "Smooth camera"
+msgstr "平滑镜头"
+
+msgid "Camera smoothing"
+msgstr "镜头平滑度"
+
+msgid "Fullscreen at %d x %d. Resolution only changes windowed mode."
+msgstr "全屏：%d x %d。分辨率只对窗口模式有效。"
+
+msgid "Windowed."
+msgstr "窗口模式。"
+
+msgid "Fullscreen"
+msgstr "全屏"
+
+msgid "Resolution"
+msgstr "分辨率"
+
+msgid "Left click to dig, right click to empty. Running, jumping or turning fast spills hay."
+msgstr "左键挖，右键倒空。跑、跳或者转身太快会把草洒出来。"
+
+msgid "Hold right click and move the mouse to tip the tool. Tip it further to empty it faster."
+msgstr "按住右键并移动鼠标，就能倾斜工具。倾斜越多，倒得越快。"
+
+msgid "Tool handling"
+msgstr "工具操作"
+
+msgid "Running on %s."
+msgstr "当前使用%s。"
+
+msgid "Running on %s. Restart to switch."
+msgstr "当前使用%s。重启后切换。"
+
+msgid "Renderer"
+msgstr "渲染器"
+
+msgid "An experimental Godot feature. It uses a second processor core to draw the game, for more fps. If the game crashes, turn it off."
+msgstr "Godot的实验功能。用第二个处理器核心来画游戏画面，帧数更高。如果游戏崩溃，就把它关掉。"
+
+msgid "Running now: %s."
+msgstr "当前运行：%s。"
+
+msgid "Running now: %s. After a restart: %s."
+msgstr "当前运行：%s。重启后：%s。"
+
+msgid "Render thread"
+msgstr "渲染线程"
+
+msgid "HAY DENSITY"
+msgstr "干草密度"
+
+msgid "How thick the hay looks. Higher looks better but runs slower."
+msgstr "草看起来有多密。越高越好看，但也越卡。"
+
+msgid "APPLY"
+msgstr "应用"
+
+msgid "Strands per cell"
+msgstr "每格草数"
+
+msgid "Higher values can make the game slower."
+msgstr "数值越高，游戏可能越卡。"
+
+msgid "As thin as it gets. Easiest on your computer."
+msgstr "最稀。电脑最轻松。"
+
+msgid "As thick as it gets. Looks best, runs slowest."
+msgstr "最密。最好看，也最卡。"
+
+msgid "Thicker than normal."
+msgstr "比普通更密。"
+
+msgid "READOUTS"
+msgstr "数据显示"
+
+msgid "No HUD"
+msgstr "隐藏界面"
+
+msgid "Hides the whole HUD. It comes back when you restart the game."
+msgstr "隐藏整个界面，重启游戏后恢复。"
+
+msgid "HUD scale"
+msgstr "界面大小"
+
+msgid "Size of the whole HUD."
+msgstr "整个界面的大小。"
+
+msgid "Tool bar"
+msgstr "快捷栏"
+
+msgid "Button hints"
+msgstr "按键提示"
+
+msgid "The keys keep working either way."
+msgstr "不管显不显示，按键都照常能用。"
+
+msgid "CROSSHAIR"
+msgstr "准星"
+
+msgid "Preview"
+msgstr "预览"
+
+msgid "Shape"
+msgstr "形状"
+
+msgid "Size"
+msgstr "大小"
+
+msgid "BIGGEST FPS GAINS"
+msgstr "提升帧数最明显"
+
+msgid "Machine render distance"
+msgstr "机器显示距离"
+
+msgid "Machines keep working beyond this distance."
+msgstr "超过这个距离，机器照样干活。"
+
+msgid "Depth fog softens the distance cutoff."
+msgstr "深度雾能让这个距离的边界不那么突兀。"
+
+msgid "Render scale"
+msgstr "渲染比例"
+
+msgid "Sun shadows"
+msgstr "阳光阴影"
+
+msgid "Shadow quality"
+msgstr "阴影质量"
+
+msgid "Shadow blur"
+msgstr "阴影模糊"
+
+msgid "Ambient occlusion"
+msgstr "环境光遮蔽"
+
+msgid "Bounced light"
+msgstr "间接光照"
+
+msgid "Antialiasing"
+msgstr "抗锯齿"
+
+msgid "Turn these down first if the game is slow."
+msgstr "游戏卡的话，先调低这些。"
+
+msgid "HAY AND SURFACES"
+msgstr "干草和表面"
+
+msgid "Floor texture"
+msgstr "地面纹理"
+
+msgid "Hay at distance"
+msgstr "远处的干草"
+
+msgid "LIGHTING LOOK"
+msgstr "光照效果"
+
+msgid "Sky contribution"
+msgstr "天空光照"
+
+msgid "Room reflections"
+msgstr "室内反射"
+
+msgid "SMALLER FPS GAINS"
+msgstr "提升帧数较少"
+
+msgid "Temporal AA"
+msgstr "时间抗锯齿（TAA）"
+
+msgid "FXAA"
+msgstr "FXAA"
+
+msgid "Dust motes"
+msgstr "空中浮尘"
+
+msgid "Near focus blur"
+msgstr "近处模糊"
+
+msgid "Bloom strength"
+msgstr "泛光强度"
+
+msgid "Auto exposure"
+msgstr "自动曝光"
+
+msgid "RECOVERY"
+msgstr "恢复"
+
+msgid "RESET TO PRESET"
+msgstr "恢复预设"
+
+msgid "LOOSE ITEMS IN THE YARD"
+msgstr "院子里的散落物品"
+
+msgid "How many wads, bales and bricks can lie around the yard. Past this number, the ones furthest from you go back onto the pile. Items you hold or a machine is picking up are safe."
+msgstr "院子里最多能散落多少草团、草捆和草砖。超过这个数，离你最远的会回到草堆里。你手里拿着的和机器正在拾取的不受影响。"
+
+msgid "The graphics preset sets this for you. Move the slider and it stays where you put it."
+msgstr "画质预设会自动设置这一项。拖过滑块后，就一直按你设的值来。"
+
+msgid "Cap the yard"
+msgstr "限制院子物品数"
+
+msgid "Items allowed"
+msgstr "允许数量"
+
+msgid "With no limit, the floor can fill up and the game will get slow."
+msgstr "不限制的话，地上会堆满东西，游戏会变卡。"
+
+msgid "AUTO CLEANER"
+msgstr "自动清理"
+
+msgid "Hay, bales and bricks that lie still on the floor too long go back onto the pile. Items you hold, items on belts and items a machine is picking up are safe."
+msgstr "在地上躺太久没动的草、草捆和草砖会回到草堆里。你手里拿着的、传送带上的和机器正在拾取的不受影响。"
+
+msgid "Auto clean"
+msgstr "自动清理"
+
+msgid "Clean after"
+msgstr "多久后清理"
+
+msgid "Saving bales for later? Keep this off, or they will be cleaned up too."
+msgstr "想留着草捆以后用？那就关掉这项，不然它们也会被清理掉。"
+
+msgid "Off. Hay stays where it lands."
+msgstr "关。草落在哪儿就留在哪儿。"
+
+msgid "Hay still for %s goes back on the pile."
+msgstr "静止%s的草会回到草堆里。"
+
+msgid "BUILD EFFECTS"
+msgstr "建造特效"
+
+msgid "A glowing hologram and sparks when you build something or take it down."
+msgstr "建造或拆除时，显示发光的全息投影和火花。"
+
+msgid "Build effects"
+msgstr "建造特效"
+
+msgid "Off. Buildings just appear and disappear."
+msgstr "关。建筑直接出现和消失。"
+
+msgid "On. Buildings glow as they go up and come down."
+msgstr "开。建筑建造和拆除时会发光。"
+
+msgid "PUT LOOSE HAY BACK ON THE PILE"
+msgstr "把散落的草放回草堆"
+
+msgid "Puts everything on the floor back onto the pile. Bales and bricks turn back into plain hay, so sell them first."
+msgstr "把地上所有东西放回草堆。草捆和草砖会变回普通的草，记得先卖掉。"
+
+msgid "Only works while you are playing."
+msgstr "只能在游戏里用。"
+
+msgid "YES, PUT IT ALL BACK"
+msgstr "确定，全部放回"
+
+msgid "This cannot be undone. Press it again to do it."
+msgstr "这个操作无法撤销。再按一次确认。"
+
+msgid "Nothing was lying around. The floor is already clear."
+msgstr "地上没有东西，已经很干净了。"
+
+msgid "Put %d things and %d straws back on the pile."
+msgstr "已把%d件物品和%d根草放回草堆。"
+
+msgid "STUFF ON THE BELTS"
+msgstr "传送带上的东西"
+
+msgid "Your belts are full now. Raise the limit to stop things disappearing."
+msgstr "你的传送带已经满了。提高上限，东西就不会再消失。"
+
+msgid "How many items can ride your belts at once. Loose straw only counts as a small part of a load. Past this number, new items at the start of a belt go back onto the pile."
+msgstr "传送带上同时最多能运多少东西。散草只算一小份。超过这个数，传送带起点新上来的东西会回到草堆里。"
+
+msgid "Cap the belts"
+msgstr "限制传送带物品数"
+
+msgid "Loads allowed"
+msgstr "允许数量"
+
+msgid "Full belts are hard on your computer. Lower this first if a big factory makes the game slow."
+msgstr "满载的传送带很吃电脑。工厂大了游戏变卡的话，先调低这个。"
+
+msgid "No limit. The belts will carry whatever you put on them."
+msgstr "不限制。传送带上放多少就运多少。"
+
+msgid "  ·  %d loads riding now"
+msgstr "  ·  现在有%d份在运"
+
+msgid "Low. One long belt can fill this by itself."
+msgstr "低。一条长传送带自己就能占满。"
+
+msgid "About what a busy factory keeps moving."
+msgstr "一座忙碌的工厂大概就是这个量。"
+
+msgid "More than a working yard needs."
+msgstr "比一般院子需要的还多。"
+
+msgid "As much as the belts can hold. The game will slow down."
+msgstr "传送带能装多少就放多少。游戏会变卡。"
+
+msgid "HAY LEFT"
+msgstr "剩余干草"
+
+msgid "How much hay is left in the pile, as a percent or an amount."
+msgstr "草堆里还剩多少草，用百分比或数量显示。"
+
+msgid "Show it as"
+msgstr "显示方式"
+
+msgid "Dug per minute"
+msgstr "每分钟挖草量"
+
+msgid "Shown under your money while you play."
+msgstr "玩的时候显示在钱下面。"
+
+msgid "Right now: %s HAY LEFT"
+msgstr "现在：剩余干草%s"
+
+msgid "No limit. Nothing ever disappears."
+msgstr "不设上限。什么都不会消失。"
+
+msgid "  ·  %d out there now"
+msgstr "  ·  现在院子里有%d个"
+
+msgid "Low. One busy machine can hit this by itself."
+msgstr "偏少。一台机器忙起来就能占满。"
+
+msgid "Plenty for a busy yard."
+msgstr "忙碌的院子也够用。"
+
+msgid "A big pile of stuff, more than you need."
+msgstr "很多，比你需要的还多。"
+
+msgid "As much stuff as the yard can hold. The game will slow down."
+msgstr "院子能放多少就放多少。游戏会变卡。"
+
+msgid "MISSIONS"
+msgstr "任务"
+
+msgid "The card in the top left corner that tells you what to do next. You can ignore it."
+msgstr "左上角那张卡片，告诉你下一步做什么。不理它也行。"
+
+msgid "Show missions"
+msgstr "显示任务"
+
+msgid "Hides the card. Your progress is kept."
+msgstr "卡片会隐藏。进度会保留。"
+
+msgid "TIPS"
+msgstr "提示"
+
+msgid "Shows a tip at the top of the screen every few minutes."
+msgstr "每隔几分钟在屏幕顶部显示一条提示。"
+
+msgid "Show tips"
+msgstr "显示提示"
+
+msgid "Teaching hints"
+msgstr "教学提示"
+
+msgid "New keys, buildings, tech cards and machines are shown to you once. Turn this on again to see them all again."
+msgstr "新按键、建筑、科技卡和机器都只会提示你一次。重新打开即可再次看到全部提示。"
+
+msgid "Hidden. Your progress is kept."
+msgstr "已隐藏。进度会保留。"
+
+msgid "Shown while you play."
+msgstr "玩的时候显示。"
+
+msgid "All %d done. The card is gone already."
+msgstr "%d个任务全部完成，卡片已经没了。"
+
+msgid "Step %d of %d  ·  %s"
+msgstr "第%d步，共%d步  ·  %s"
+
+msgid "System"
+msgstr "系统"
+
+msgid "The game is in %s. Restart to switch."
+msgstr "游戏现在是%s。重启后才会切换。"
+
+msgid "The game is in %s."
+msgstr "游戏现在是%s。"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Quality preset"
+msgstr "画质预设"
+
+msgid "REBUILD"
+msgstr "重建"
+
+msgid "IN GAME"
+msgstr "游戏内可用"
+
+msgid "Rebuilds how the pile looks. Use it if the pile looks wrong."
+msgstr "重建草堆的外观。草堆看着不对劲时用。"
+
+msgid "Hay shell"
+msgstr "草堆外壳"
+
+msgid "%d DONE"
+msgstr "完成%d个"
+
+msgid "PRESS..."
+msgstr "请按键"
+
+msgid "Press a key or a mouse button.  Escape cancels, Backspace clears."
+msgstr "按下任意键或鼠标键。Esc取消，Backspace清除。"
+
+msgid "Left as it was."
+msgstr "保持不变。"
+
+msgid "%s is now unbound."
+msgstr "%s现在没有绑定按键。"
+
+msgid "%s was already %s."
+msgstr "%s本来就是%s。"
+
+msgid "%s is now %s."
+msgstr "%s现在是%s。"
+
+msgid "%s is now %s, taken from %s."
+msgstr "%s现在是%s，这个键原来是%s的。"
+
+msgid "%d s"
+msgstr "%d秒"
+
+msgid "%d min"
+msgstr "%d分钟"
+
+msgid "%d min %d s"
+msgstr "%d分%d秒"
+
+msgid "PEN"
+msgstr "画笔"
+
+msgid "BOX"
+msgstr "方框"
+
+msgid "OVAL"
+msgstr "椭圆"
+
+msgid "RUBBER"
+msgstr "橡皮"
+
+msgid "NEVER"
+msgstr "从不"
+
+msgid "1 MIN"
+msgstr "1分钟"
+
+msgid "5 MIN"
+msgstr "5分钟"
+
+msgid "10 MIN"
+msgstr "10分钟"
+
+msgid "There is nothing on the board to keep."
+msgstr "画板上什么都没有，没法留下。"
+
+msgid "Nothing kept yet. Draw something on the board, then press KEEP THIS on the first page."
+msgstr "还没留过画。先在画板上画点什么，再到第一页点「留下这张」。"
+
+msgid "ON THE BOARD"
+msgstr "画板上"
+
+msgid "SURE?"
+msgstr "确定？"
+
+msgid "RUB OUT"
+msgstr "擦掉"
+
+msgid "PAINT BOARD"
+msgstr "画板"
+
+msgid "Not saved yet. Press KEEP THIS to save it."
+msgstr "还没保存。点「留下这张」保存。"
+
+msgid "Shut this, then hold the left button to draw. The right button rubs a line out."
+msgstr "关掉这个面板，然后按住左键画画。右键擦掉一条线。"
+
+msgid "A saved drawing. Drawing on it makes a new copy."
+msgstr "一张保存过的画。在上面画会另存一份新的。"
+
+msgid "DRAWING TOOLS"
+msgstr "画画工具"
+
+msgid "TOOLS"
+msgstr "工具"
+
+msgid "DRAWINGS"
+msgstr "我的画"
+
+msgid "TOOL"
+msgstr "工具"
+
+msgid "NIB"
+msgstr "笔尖"
+
+msgid "COLOUR"
+msgstr "颜色"
+
+msgid "  MIX"
+msgstr "  调色"
+
+msgid "SWAP THE PICTURE"
+msgstr "换一张画"
+
+msgid "Only ever swaps between drawings you have kept, and never while you are part way through one."
+msgstr "只会在你留下的画之间切换，你画到一半时也不会换。"
+
+msgid "KEEP THIS"
+msgstr "留下这张"
+
+msgid "CLEAR THE BOARD"
+msgstr "清空画板"
+
+msgid "YOUR DRAWINGS"
+msgstr "你的画"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "MENU"
+msgstr "菜单"
+
+msgid "RESUME"
+msgstr "继续"
+
+msgid "SAVE"
+msgstr "存档"
+
+msgid "QUICK LOAD"
+msgstr "快速读档"
+
+msgid "SAVE AND EXIT TO TITLE"
+msgstr "存档并返回标题"
+
+msgid "RESPAWN"
+msgstr "重生"
+
+msgid "LOAD"
+msgstr "读档"
+
+msgid "Slot %d"
+msgstr "存档位%d"
+
+msgid "This run is locked. Unlock it on the title screen"
+msgstr "这个存档已锁定。请到标题界面解锁"
+
+msgid "Could not write the save"
+msgstr "存档写入失败"
+
+msgid "Saved to slot %d"
+msgstr "已存到存档位%d"
+
+msgid "There is no save to load yet"
+msgstr "还没有可以读取的存档"
+
+msgid "This loads your last save, made just now."
+msgstr "这会读取你刚刚的最后一个存档。"
+
+msgid "This loads your last save, made %s ago."
+msgstr "这会读取你%s前的最后一个存档。"
+
+msgid "Everything you did after that is lost."
+msgstr "之后做的一切都会丢失。"
+
+msgid "The game saves by itself every minute, and when you press SAVE."
+msgid_plural "The game saves by itself every %d minutes, and when you press SAVE."
+msgstr[0] "游戏每%d分钟会自动存档，你按下「存档」时也会存档。"
+
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d秒"
+
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d分钟"
+
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d小时"
+
+msgid "one brick every %.1f s   ·   %d straw each   ·   %d may lie on the pad"
+msgstr "每%.1f秒出一块砖   ·   每块用%d根草   ·   台面上最多放%d块"
+
+msgid "How far out it throws its bricks. Keep that circle clear."
+msgstr "砖能扔出这么远。这个圈里别放东西。"
+
+msgid "PELLETIZER"
+msgstr "压块机"
+
+msgid "Hide Range (%s)"
+msgstr "隐藏范围（%s）"
+
+msgid "CABLE BOX"
+msgstr "电缆箱"
+
+msgid "THIS BOX"
+msgstr ""
+
+msgid "THIS POLE"
+msgstr ""
+
+msgid "EVERYTHING ON THIS LINE IS SWITCHED OFF"
+msgstr "这条线路上的机器全部关着"
+
+msgid "%d machine on this line  ·  %d switched off"
+msgid_plural "%d machines on this line  ·  %d switched off"
+msgstr[0] "这条线路上有%d台机器  ·  关了%d台"
+
+msgid "%d machine on this line"
+msgid_plural "%d machines on this line"
+msgstr[0] "这条线路上有%d台机器"
+
+msgid "TURN OFF THE WHOLE LINE"
+msgstr "关闭整条线路"
+
+msgid "NOTHING ON THIS LINE TO SWITCH"
+msgstr "这条线路上没有可开关的机器"
+
+msgid "TURN ON THE WHOLE LINE"
+msgstr "打开整条线路"
+
+msgid "No machine is wired to this box."
+msgstr "这个电缆箱没接任何机器。"
+
+msgid "No machine is wired to this pole."
+msgstr "这根电线杆没接任何机器。"
+
+msgid "NOTHING WIRED TO THIS BOX"
+msgstr "这个电缆箱没接机器"
+
+msgid "NOTHING WIRED TO THIS POLE"
+msgstr "这根电线杆没接机器"
+
+msgid "%d machine is wired to this box. The rest of the line keeps running."
+msgid_plural "%d machines are wired to this box. The rest of the line keeps running."
+msgstr[0] "这个电缆箱接了%d台机器。线路上其他机器照常运转。"
+
+msgid "%d machine is wired to this pole. The rest of the line keeps running."
+msgid_plural "%d machines are wired to this pole. The rest of the line keeps running."
+msgstr[0] "这根电线杆接了%d台机器。线路上其他机器照常运转。"
+
+msgid "TURN OFF THIS BOX'S MACHINES"
+msgstr "关闭这个电缆箱的机器"
+
+msgid "TURN OFF THIS POLE'S MACHINES"
+msgstr "关闭这根电线杆的机器"
+
+msgid "TURN ON THIS BOX'S MACHINES"
+msgstr "打开这个电缆箱的机器"
+
+msgid "TURN ON THIS POLE'S MACHINES"
+msgstr "打开这根电线杆的机器"
+
+msgid "Stops every machine on this line, generators too. Press again to start them all."
+msgstr "停掉这条线路上的所有机器，发电机也一起停。再按一次全部启动。"
+
+msgid "NOT ENOUGH POWER  ·  everything runs at %d%%"
+msgstr "电力不足  ·  所有机器降到%d%%速度"
+
+msgid "Build a Gas Plant and feed it eco bricks. It gets %d times the power from each straw."
+msgstr "建一座燃气发电站，给它喂环保草砖。每根草能发%d倍的电。"
+
+msgid "Feed your hay generator more hay."
+msgstr "给干草发电机多喂点草。"
+
+msgid "Build another hay generator."
+msgstr "再建一台干草发电机。"
+
+msgid "Build another hay generator, or upgrade it in the tech tree (%s)."
+msgstr "再建一台干草发电机，或者在科技树（%s）里升级。"
+
+msgid "done"
+msgstr "完成"
+
+msgid "STEP %d OF %d"
+msgstr "第%d步，共%d步"
+
+msgid "You haven't finished this mission in a while."
+msgstr "这个任务已经搁了一阵子了。"
+
+msgid "If you want, you can hide missions in %s > %s."
+msgstr "如果你愿意，可以在%s > %s里隐藏任务。"
+
+msgid "one wad every %.1f s   ·   %.0f straw a minute"
+msgstr "每%.1f秒出一个草团   ·   每分钟%.0f根草"
+
+msgid "How far behind itself it throws."
+msgstr "能往身后扔多远。"
+
+msgid "PISTON RAKE"
+msgstr "活塞耙"
+
+msgid "MOVE IT"
+msgstr ""
+
+msgid "Move it without taking it down."
+msgstr "不用拆掉也能挪动。"
+
+msgid "SELLING STAND"
+msgstr "收购点"
+
+msgid "Everything you built is taken down and sold.\nEverything lying around is sold too."
+msgstr "你建的东西会全部拆掉卖掉。\n地上散落的东西也一起卖掉。"
+
+msgid "YOU GET"
+msgstr "你能拿到"
+
+msgid "You keep your money, needles, the pile and loose hay."
+msgstr "钱、针、草堆和散草都会留下。"
+
+msgid "SELL EVERYTHING"
+msgstr "全部卖掉"
+
+msgid "THIS CANNOT BE UNDONE"
+msgstr "卖了就没法反悔"
+
+msgid "belts and machines"
+msgstr "传送带和机器"
+
+msgid "decks, stairs and railings"
+msgstr "平台、楼梯和栏杆"
+
+msgid "tools lying in the yard"
+msgstr "放在院子里的工具"
+
+msgid "NOT SOLD\n%s"
+msgstr "不会卖掉\n%s"
+
+msgid "NOTHING TO SELL"
+msgstr "没有可卖的东西"
+
+msgid "SUPPLY CO."
+msgstr "五金店"
+
+msgid "Tools and containers"
+msgstr "工具和容器"
+
+msgid "UNLOCKED IN THE TECH TREE"
+msgstr "在科技树里解锁"
+
+msgid "OWNED"
+msgstr "已拥有"
+
+msgid "%s is bought on the tech tree (Tab)"
+msgstr "%s要在科技树里买（Tab）"
+
+msgid "BRING TO ME"
+msgstr "送到我这"
+
+msgid "Teleport the ones you already own to your feet"
+msgstr "把你已经有的传送到脚边"
+
+msgid "BUY"
+msgstr "购买"
+
+msgid "%s is locked. Click to see what unlocks it."
+msgstr "%s还没解锁。点一下看看怎么解锁。"
+
+msgid "BACK TO THE SHELF"
+msgstr "回到货架"
+
+msgid "OPEN TECH TREE"
+msgstr "打开科技树"
+
+msgid "Buy the %s card in the tech tree first. Press %s to open it."
+msgstr "先在科技树里买下%s卡片。按%s打开科技树。"
+
+msgid "Unlock this in the tech tree first. Press %s to open it."
+msgstr "先在科技树里解锁它。按%s打开科技树。"
+
+msgid "Available:  $%.2f"
+msgstr "可用：  $%.2f"
+
+msgid "you own %d"
+msgstr "你有%d个"
+
+msgid "Not enough cash for %s"
+msgstr "钱不够买%s"
+
+msgid "Could not place that item"
+msgstr "放不下这个东西"
+
+msgid "Purchased %s. Your hands are full: press %s to put a tool down, then pick this one up."
+msgstr "已买下%s。你手里拿满了：按%s放下一个工具，再把这个捡起来。"
+
+msgid "Purchased %s"
+msgstr "已买下%s"
+
+msgid "Your %s is already in your hands"
+msgstr "你的%s已经在手里了"
+
+msgid "You do not own one yet"
+msgstr "你还没有"
+
+msgid "Brought %d %s to your feet"
+msgstr "已把%d个%s送到你脚边"
+
+msgid "loads a minute"
+msgstr "份/分钟"
+
+msgid "nothing is coming out"
+msgstr "什么都没出来"
+
+msgid "that is %s a second"
+msgstr "也就是每秒%s"
+
+msgid "up to %s a minute, all the belt can take"
+msgstr "每分钟最多%s，传送带只能运这么多"
+
+msgid "up to %s a minute"
+msgstr "每分钟最多%s"
+
+msgid "STOP"
+msgstr "停止"
+
+msgid "RUNNING"
+msgstr "运行中"
+
+msgid "BLOCKED"
+msgstr "堵住了"
+
+msgid "EMPTY"
+msgstr "空的"
+
+msgid "It holds hay and lets it out at the speed you pick."
+msgstr "存草用的，按你选的速度往外放。"
+
+msgid "%s / %s loads"
+msgstr "%s / %s份"
+
+msgid "%s loose straw"
+msgstr "%s根散草"
+
+msgid "%d needle waiting"
+msgid_plural "%d needles waiting"
+msgstr[0] "%d根针在等着"
+
+msgid "nothing in it yet"
+msgstr "里面还是空的"
+
+msgid "%s a minute"
+msgstr "每分钟%s"
+
+msgid "It is switched off and the tank is full, so the belt above it has stopped as well."
+msgstr "筒仓关着，仓里也满了，所以上面的传送带也停了。"
+
+msgid "It is switched off, so nothing is coming out. Hay can still go in until the tank is full."
+msgstr "筒仓关着，所以什么都不出来。仓满之前还能往里进草。"
+
+msgid "The dial is at zero and the tank is full, so the belt above it has stopped as well."
+msgstr "旋钮拧到了零，仓里也满了，所以上面的传送带也停了。"
+
+msgid "The dial is at zero, so nothing is coming out. Hay can still go in until the tank is full."
+msgstr "旋钮拧到了零，所以什么都不出来。仓满之前还能往里进草。"
+
+msgid "The belt below is full, so hay is waiting inside."
+msgstr "下面的传送带满了，草在里面等着。"
+
+msgid "Nothing in it yet. It will start letting hay out as soon as some arrives."
+msgstr "里面还是空的。一有草进来就开始往外放。"
+
+msgid "It is full, so the belt above has stopped. Turn the dial up, or make room on the belt underneath."
+msgstr "仓里满了，所以上面的传送带停了。把旋钮调高，或者给下面的传送带腾点地方。"
+
+msgid "Nothing has come out in the last few seconds. Check the belt below has room."
+msgstr "这几秒什么都没出来。看看下面的传送带有没有空位。"
+
+msgid "The belt below is too slow for this speed. A faster belt helps."
+msgstr "下面的传送带跟不上这个速度。换条快点的传送带会好些。"
+
+msgid "Keeping up with the dial."
+msgstr "跟得上旋钮的速度。"
+
+msgid "%s hay bale"
+msgid_plural "%s hay bales"
+msgstr[0] "%s个草捆"
+
+msgid "%s wrapped bale"
+msgid_plural "%s wrapped bales"
+msgstr[0] "%s个裹膜草捆"
+
+msgid "%s eco brick"
+msgid_plural "%s eco bricks"
+msgstr[0] "%s块环保草砖"
+
+msgid "%s hay wad"
+msgid_plural "%s hay wads"
+msgstr[0] "%s个草团"
+
+msgid "HAY SILO"
+msgstr "干草筒仓"
+
+msgid "FEED RATE"
+msgstr "出料速度"
+
+msgid "INSIDE THE TANK"
+msgstr "仓里有什么"
+
+msgid "GETTING OUT"
+msgstr "出料情况"
+
+msgid "off"
+msgstr "关"
+
+msgid "actually coming out"
+msgstr "实际出料"
+
+msgid "Once a belt arrives, the belt decides: a belt in at the middle splits left and right, a belt in at one end goes straight on and to the side."
+msgstr "等传送带接上以后，由传送带决定：从中间进就分到左边和右边，从一端进就直行和转向一边。"
+
+msgid "The belt comes in at the middle, so hay goes left or right. Bring the belt in at one end instead and the T changes by itself to straight on and to the side."
+msgstr "传送带从中间进来，所以干草往左或往右。把传送带改成从一端进来，T会自己变成直行和转向一边。"
+
+msgid "The belt comes in at one end, so hay goes straight on or to the side. Bring the belt in at the middle instead and the T changes by itself to left and right."
+msgstr "传送带从一端进来，所以干草直行或转向一边。把传送带改成从中间进来，T会自己变成往左和往右。"
+
+msgid "This one is on priority.  Everything goes down the left side."
+msgstr "这个设了优先。全部走左边。"
+
+msgid "This one is on priority.  Everything goes down the right side."
+msgstr "这个设了优先。全部走右边。"
+
+msgid "One load down each side in turn.  If one side backs up, the other takes them all until it clears."
+msgstr "两边轮流，一边一份。一边堵了，另一边就全接过来，直到堵的那边通了。"
+
+msgid "Sends everything down the left side.  The other side is shut."
+msgstr "全部送到左边。另一边关着。"
+
+msgid "Sends everything down the right side.  The other side is shut."
+msgstr "全部送到右边。另一边关着。"
+
+msgid "Off.  The splitter is using the setting above."
+msgstr "关。分流器按上面的设置走。"
+
+msgid "Everything goes down the left side first.  The right side only gets hay when the left side is backed up."
+msgstr "先全部走左边。左边堵了，右边才有草。"
+
+msgid "Everything goes down the right side first.  The left side only gets hay when the right side is backed up."
+msgstr "先全部走右边。右边堵了，左边才有草。"
+
+msgid "This one is on priority.  Everything goes straight on."
+msgstr "这个设了优先。全部直走。"
+
+msgid "Sends everything straight on.  The other side is shut."
+msgstr "全部直走。另一边关着。"
+
+msgid "Everything goes straight on first.  The side only gets hay when straight on is backed up."
+msgstr "先全部直走。直走那边堵了，侧边才有草。"
+
+msgid "Everything goes down the left side first.  Straight on only gets hay when the left side is backed up."
+msgstr "先全部走左边。左边堵了，直走那边才有草。"
+
+msgid "Everything goes down the right side first.  Straight on only gets hay when the right side is backed up."
+msgstr "先全部走右边。右边堵了，直走那边才有草。"
+
+msgid "CONVEYOR SPLITTER"
+msgstr "分流器"
+
+msgid "Where the hay goes."
+msgstr "草往哪儿走。"
+
+msgid "No belt yet. Where does the belt come in?"
+msgstr "还没有传送带。传送带从哪里进来？"
+
+msgid "AT THE MIDDLE"
+msgstr "从中间"
+
+msgid "AT ONE END"
+msgstr "从一端"
+
+msgid "PRIORITY"
+msgstr "优先"
+
+msgid "FITTED"
+msgstr "已装上"
+
+msgid "One side gets hay first."
+msgstr "一边先拿草。"
+
+msgid "SMART SPLITTER"
+msgstr "智能分流器"
+
+msgid "Pick what may leave through each door."
+msgstr "选好每个门能放什么出去。"
+
+msgid "Anything"
+msgstr "什么都行"
+
+msgid "Everything else"
+msgstr "其余全部"
+
+msgid "Overflow"
+msgstr "溢出"
+
+msgid "Closed"
+msgstr "关闭"
+
+msgid "Only %s"
+msgstr "只要%s"
+
+msgid "Output numbers match the markings on the machine."
+msgstr "出口编号和机器上标的一样。"
+
+msgid "Accepts any item."
+msgstr "什么物品都收。"
+
+msgid "Items with no specific output rule."
+msgstr "没有指定出口的物品。"
+
+msgid "Used when other eligible outputs are full."
+msgstr "其他合适的出口都满了才用它。"
+
+msgid "No items leave through this output."
+msgstr "这个出口不放任何物品出去。"
+
+msgid "Routes only the selected item."
+msgstr "只送选中的那种物品。"
+
+msgid "INPUT"
+msgstr "入口"
+
+msgid "No output takes %s, so the belt has stopped."
+msgstr "没有出口收%s，所以传送带停了。"
+
+msgid "%d of %d bought"
+msgstr "买了%d张，共%d张"
+
+msgid "  · %d ready"
+msgstr "  · %d张可买"
+
+msgid "%d ready"
+msgstr "%d张可买"
+
+msgid "Open this in the build catalogue"
+msgstr "在建造目录里打开"
+
+msgid "CONTRACT"
+msgstr "订单"
+
+msgid "Why this one cannot be bought yet"
+msgstr "为什么现在还买不了"
+
+msgid "search the tree"
+msgstr "搜索科技树"
+
+msgid "Nothing matches. Empty the box for the whole tree."
+msgstr "没有匹配的。清空搜索框看整棵树。"
+
+msgid "%d matching card, with everything they need behind them. Empty the box for the whole tree."
+msgid_plural "%d matching cards, with everything they need behind them. Empty the box for the whole tree."
+msgstr[0] "找到%d张卡片，连同它们需要的前置卡片一起显示。清空搜索框看整棵树。"
+
+msgid "%d of %d levels bought   ·   wheel to zoom, click a card, double-click to buy, right-drag to move without closing it"
+msgstr "买了%d级，共%d级   ·   滚轮缩放，单击选卡，双击购买，右键拖动可平移，不会关掉选中的卡片"
+
+msgid "Nothing selected"
+msgstr "未选择"
+
+msgid "Click a card on the board."
+msgstr "点一下科技树上的卡片。"
+
+msgid "Available in the full game."
+msgstr "完整版才有。"
+
+msgid "Only works in the shed."
+msgstr "只在草棚里有用。"
+
+msgid "Unlock   ·   owned"
+msgstr "解锁   ·   已拥有"
+
+msgid "Unlock   ·   not bought"
+msgstr "解锁   ·   未购买"
+
+msgid "Level %d of %d"
+msgstr "等级%d/%d"
+
+msgid "now %s   ->   next %s"
+msgstr "现在%s   ->   下一级%s"
+
+msgid "next level:  %s"
+msgstr "下一级：  %s"
+
+msgid "FULLY BOUGHT"
+msgstr "已全部购买"
+
+msgid "BUY LEVEL %d"
+msgstr "购买第%d级"
+
+msgid "Unlocked by finishing the %s order on the board by the bay door. %s"
+msgstr "完成卷帘门旁送货板上的%s订单后解锁。%s"
+
+msgctxt "thousands"
+msgid "$%.1fk"
+msgstr "$%.1fk"
+
+msgctxt "thousands"
+msgid "$%dk"
+msgstr "$%dk"
+
+msgid "Your rake is dropping hay on the floor. Put a conveyor or wheelbarrow there."
+msgstr "活塞耙把草扔在地上了。在那里放一条传送带或一辆手推车。"
+
+msgid "Hands full? Press {key:tech_tree} and buy {card:hand_carry}. You carry more hay on every trip."
+msgstr "手拿满了？按{key:tech_tree}，买{card:hand_carry}，每趟能多运些草。"
+
+msgid "Out of breath? Press {key:tech_tree} and buy {card:strong_back}. It gives you more stamina."
+msgstr "跑不动了？按{key:tech_tree}，买{card:strong_back}，体力就更多。"
+
+msgid "Arms full? Press {key:tech_tree} and buy {card:arm_load}. You can carry one more bale on every trip."
+msgstr "怀里抱满了？按{key:tech_tree}，买{card:arm_load}，每趟就能多抱一个草捆。"
+
+msgid "Out of room? Press {key:tech_tree} and buy {card:yard_space}. It makes the shed bigger."
+msgstr "地方不够了？按{key:tech_tree}，买{card:yard_space}，草棚就会变大。"
+
+msgid "LANDING ZONE"
+msgstr "卸货区"
+
+msgid "Hide the wall from the note on the board"
+msgstr "在送货板的便条上可以关掉这面墙"
+
+msgid "All clear. Go back to the board and order the load."
+msgstr "都清空了。回送货板去订这批货吧。"
+
+msgid "%d thing is still in the way"
+msgid_plural "%d things are still in the way"
+msgstr[0] "还有%d样东西挡着"
+
+msgid "and %d more kind"
+msgid_plural "and %d more kinds"
+msgstr[0] "还有%d种"
+
+msgid "BELTS FULL"
+msgstr "传送带已满"
+
+msgid "NEW NEEDLE"
+msgstr "新针"
+
+msgid "CHANCE 1 IN %d"
+msgstr "概率1/%d"
+
+msgid "ADDED TO THE CASE"
+msgstr "已放进收针柜"
+
+msgid "F  ·  TURN IT OVER"
+msgstr "F  ·  翻过来看看"
+
+msgid "Take it"
+msgstr "收下"
+
+msgid "or press %s"
+msgstr "或按%s"
+
+msgid "Press %s to place it"
+msgstr "按%s放置"
+
+msgid "Open the door"
+msgstr "开门"
+
+msgid "Shut the door"
+msgstr "关门"
+
+msgid "CLEARANCE"
+msgstr "清仓"
+
+msgid "sell everything you built"
+msgstr "把你建的东西全卖掉"
+
+msgid "IN THE CASE FROM THIS LOAD"
+msgstr "这批货里进柜的针"
+
+msgid "%s %d of %d needle kinds in the case"
+msgstr "%s 收针柜里已有%d/%d种针"
+
+msgid "HAY LEFT   %s"
+msgstr "剩余干草   %s"
+
+msgid "The demo ends here"
+msgstr "试玩版到这里结束"
+
+msgid "Pay now: $%s"
+msgstr "现在付款：$%s"
+
+msgid "NEXT LOAD IN THE FULL GAME"
+msgstr "下一批货在完整版里"
+
+msgid "READY  ·  PRESS %s"
+msgstr "准备好了  ·  按%s"
+
+msgid "PRESS %s TO SEE WHAT IT NEEDS"
+msgstr "按%s查看需要什么"
+
+msgid "%d STILL NEEDED, IN THE YARD"
+msgid_plural "%d STILL NEEDED, IN THE YARD"
+msgstr[0] "还缺%d种，在院子里"
+
+msgid "PAYS $%s"
+msgstr "报酬$%s"
+
+msgid "PAYS $%s\nRELEASES %s"
+msgstr "报酬$%s\n解锁%s"
+
+msgid "You have filled every order. Keep selling what you make at the stand."
+msgstr "所有订单都完成了。继续把做好的东西拿到收购点卖吧。"
+
+msgid "Twenty bales"
+msgstr "二十个草捆"
+
+msgid "Load twenty bales onto the truck. Make them with a compressor."
+msgstr "往卡车上装二十个草捆。用打捆机做。"
+
+msgid "Eighteen wrapped"
+msgstr "十八个裹膜草捆"
+
+msgid "Load eighteen wrapped bales onto the truck. Make them with a wrapper."
+msgstr "往卡车上装十八个裹膜草捆。用裹膜机做。"
+
+msgid "Thirty eco bricks"
+msgstr "三十块环保草砖"
+
+msgid "Load thirty eco bricks onto the truck. Make them with a pelletizer."
+msgstr "往卡车上装三十块环保草砖。用压块机做。"
+
+msgid "Fifty bricks"
+msgstr "五十块草砖"
+
+msgid "Load fifty eco bricks onto the truck."
+msgstr "往卡车上装五十块环保草砖。"
+
+msgid "Twelve feed discs"
+msgstr "十二块饲料饼"
+
+msgid "Load twelve feed discs onto the truck. A disc press makes them from hay and eco bricks."
+msgstr "往卡车上装十二块饲料饼。饲料饼压制机用草和环保草砖压成饲料饼。"
+
+msgid "Twenty pulp slabs"
+msgstr "二十块纸浆板"
+
+msgid "Load twenty pulp slabs onto the truck. You need a borehole pump, a water pipe and a pulper."
+msgstr "往卡车上装二十块纸浆板。需要深井泵、水管和碎浆机。"
+
+msgid "Ten paper rolls"
+msgstr "十卷纸"
+
+msgid "Load ten paper rolls onto the truck. Make them with a paper mill."
+msgstr "往卡车上装十卷纸。用造纸机做。"
+
+msgid "twenty bales"
+msgstr "二十个草捆"
+
+msgid "eighteen wrapped"
+msgstr "十八个裹膜草捆"
+
+msgid "thirty eco bricks"
+msgstr "三十块环保草砖"
+
+msgid "fifty bricks"
+msgstr "五十块草砖"
+
+msgid "twelve feed discs"
+msgstr "十二块饲料饼"
+
+msgid "twenty pulp slabs"
+msgstr "二十块纸浆板"
+
+msgid "ten paper rolls"
+msgstr "十卷纸"
+
+msgid "%d / %d BALE"
+msgid_plural "%d / %d BALES"
+msgstr[0] "%d / %d个草捆"
+
+msgid "%d / %d WRAPPED"
+msgid_plural "%d / %d WRAPPED"
+msgstr[0] "%d / %d个裹膜草捆"
+
+msgid "%d / %d BRICK"
+msgid_plural "%d / %d BRICKS"
+msgstr[0] "%d / %d块草砖"
+
+msgid "%d / %d DISC"
+msgid_plural "%d / %d DISCS"
+msgstr[0] "%d / %d块饲料饼"
+
+msgid "%d / %d SLAB"
+msgid_plural "%d / %d SLABS"
+msgstr[0] "%d / %d块纸浆板"
+
+msgid "%d / %d ROLL"
+msgid_plural "%d / %d ROLLS"
+msgstr[0] "%d / %d卷纸"
+
+msgid "TRUCK ON ITS WAY: %s"
+msgstr "卡车在路上：%s"
+
+msgid "TRUCK DUE ON THE FIRST %s"
+msgstr "做出第一个%s，卡车就来"
+
+msgid "TRUCK AT THE DOOR"
+msgstr "卡车到门口了"
+
+msgid "TRUCK ARRIVING"
+msgstr "卡车快到了"
+
+msgid "$%.4f\nPER STRAND"
+msgstr "$%.4f\n每根草"
+
+msgid "%s SOLD\n+$%s"
+msgstr "%s卖出\n+$%s"
+
+msgid "NEW BEST: $%s"
+msgstr "新纪录：$%s"
+
+msgid "%s LOST\n+$%s"
+msgstr "%s 丢了\n+$%s"
+
+msgid "Pick up some hay"
+msgstr "捡点草"
+
+msgid "Look at the haystack. Hold {primary} to pull out hay. Your hand takes only one straw at a time. A shovel takes much more."
+msgstr "看着草堆，按住{primary}把草拔出来。用手一次只能拿一根草。铲子能拿多得多。"
+
+msgid "Throw the hay"
+msgstr "扔草"
+
+msgid "Press {secondary} to throw the hay you are holding."
+msgstr "按{secondary}把手里的草扔出去。"
+
+msgid "Look where you want it, then let go"
+msgstr "看准要扔的地方，然后松手"
+
+msgid "Run"
+msgstr "奔跑"
+
+msgid "Hold {sprint} while you walk to run. Running tires you out. Walk for a moment and you can run again."
+msgstr "走路时按住{sprint}就能奔跑。奔跑会累，走一会儿就又能跑了。"
+
+msgid "Hold it while you walk"
+msgstr "走路时按住"
+
+msgid "Sell hay at the stand"
+msgstr "去收购点卖草"
+
+msgid "The selling stand is in the far corner. Walk there. Stand at the open bay and press {primary} to drop the hay in. You get money for it."
+msgstr "收购点在远处的角落里，走过去。站在敞开的入料口前，按{primary}把草放进去，就能拿到钱。"
+
+msgid "Open the tech tree"
+msgstr "打开科技树"
+
+msgid "Press {tech_tree} to open the tech tree. Buy machines and upgrades here. Press {tech_tree} again to close it."
+msgstr "按{tech_tree}打开科技树。机器和升级都在这里买。再按一次{tech_tree}关闭。"
+
+msgid "Buy Bigger Handful"
+msgstr "买下一把抓更多"
+
+msgid "Press {tech_tree}. Find the Bigger Handful card and click it. It costs {cost:hand_carry}. Now your hand holds two straws at a time. Buy more levels to hold even more."
+msgstr "按{tech_tree}，找到一把抓更多卡片点一下。要花{cost:hand_carry}。买了以后，手一次能拿两根草。多买几级，就能拿得更多。"
+
+msgid "Buy the Toy Shovel card"
+msgstr "买下玩具铲卡片"
+
+msgid "Sell hay until the bar is full. Every level of Bigger Handful you buy on the way fills it faster. Then press {tech_tree}. Find the Toy Shovel card and click it. It costs {cost:sand_shovel}. The card does not give you a shovel. It puts one in the shop, and the {price:sand_shovel} you have left buys it."
+msgstr "一直卖干草，直到进度条满了。途中每买一级一把抓更多，进度条都涨得更快。然后按{tech_tree}，找到玩具铲卡片点一下。要花{cost:sand_shovel}。买卡片不会直接给你铲子，只是让商店里能买到。剩下的{price:sand_shovel}刚好用来买它。"
+
+msgid "Find the supply shop"
+msgstr "找到五金店"
+
+msgid "The shop is the other corner building. Walk to the counter. Press {interact} to open the shop."
+msgstr "五金店在另一个角落的房子里。走到柜台前，按{interact}打开商店。"
+
+msgid "Buy the toy shovel"
+msgstr "买下玩具铲"
+
+msgid "Click Toy Shovel to buy it."
+msgstr "点玩具铲就能买下。"
+
+msgid "Pick the shovel up"
+msgstr "把铲子捡起来"
+
+msgid "The shop drops what you buy at your feet. Look down at the shovel. Press {interact} to pick it up. It takes the second box on the bar, next to your hand. Press {hotbar_2} to take it out again, and {hotbar_1} to go back to bare hands."
+msgstr "商店会把买的东西放在你脚边。低头看着铲子，按{interact}捡起来。它会放进快捷栏第二格，紧挨着空手那格。按{hotbar_2}拿出铲子，按{hotbar_1}换回空手。"
+
+msgid "Dig a scoop"
+msgstr "铲一铲"
+
+msgid "Point at the haystack. Press {primary} to dig. The hay sits on the blade and stays there. Now you can carry it anywhere."
+msgstr "对准草堆，按{primary}挖。草会留在铲面上不掉下来，这样就能拿着它到处走了。"
+
+msgid "Take a second scoop"
+msgstr "再铲一铲"
+
+msgid "Press {primary} two more times. Each dig adds more hay to the shovel."
+msgstr "再按两次{primary}。每挖一下，铲子上的草就多一些。"
+
+msgid "The shovel keeps what it has"
+msgstr "铲子上的草不会自己掉"
+
+msgid "Practise tipping"
+msgstr "练习倾倒"
+
+msgid "Hold {secondary} and move the mouse to tip the shovel. Do this ten times."
+msgstr "按住{secondary}移动鼠标，把铲子倾过来。做十次。"
+
+msgid "Empty the blade"
+msgstr "把铲子倒空"
+
+msgid "Point where you want the hay. Press {secondary}. The whole load goes there. Do this three times."
+msgstr "对准想放草的地方，按{secondary}，整铲草都会倒过去。做三次。"
+
+msgid "Get a bucket"
+msgstr "弄个桶"
+
+msgid "Press {tech_tree}. Buy the Bucket Licence for {cost:bucket}. Then buy the bucket in the shop for {price:bucket}. It holds much more hay than a shovel."
+msgstr "按{tech_tree}，花{cost:bucket}买下桶许可证。然后去商店花{price:bucket}买桶。桶装的草比铲子多得多。"
+
+msgid "Fill the bucket"
+msgstr "把桶装满"
+
+msgid "Put the bucket on the ground. Press {primary} to dig hay. Now AIM AT THE BUCKET and hold {secondary}, turning the blade over. The hay drops in."
+msgstr "把桶放在地上。按{primary}挖草。然后对准桶，按住{secondary}把铲子翻过来，草就掉进去了。"
+
+msgid "Aim at the bucket, then let the hay go"
+msgstr "先对准桶，再把草倒下去"
+
+msgid "Put the bucket on the ground. Press {primary} to dig hay. Now AIM AT THE BUCKET and press {secondary}. The whole load goes where you are looking."
+msgstr "把桶放在地上。按{primary}挖草。然后对准桶，按{secondary}。整铲草都会倒到你看着的地方。"
+
+msgid "Empty it into the stand"
+msgstr "倒进收购点"
+
+msgid "Press {interact} to pick the bucket up. Carry it to the stand. Stand at the open bay. Hold {secondary} to tip the hay in."
+msgstr "按{interact}拿起桶，提到收购点。站到敞开的入料口前，按住{secondary}把草倒进去。"
+
+msgid "The bucket empties only when you tilt it"
+msgstr "桶要倾斜才会倒空"
+
+msgid "Earn thirty dollars"
+msgstr "赚到$30"
+
+msgid "Sell hay until the bar is full. Buying things on the way does not slow the bar down. The spade costs {cost:spade} for the card and {price:spade} for the spade itself."
+msgstr "卖草直到进度条满。路上买东西不会让它变慢。铁锹的卡片要{cost:spade}，铁锹本身要{price:spade}。"
+
+msgid "Buy the spade"
+msgstr "买铁锹"
+
+msgid "Press {tech_tree}. Buy the Spade card for {cost:spade}. Then buy the spade in the shop for {price:spade}. Press {interact} to pick it up. It goes in the next free box on your bar."
+msgstr "按{tech_tree}，花{cost:spade}买下铁锹卡片。然后去商店花{price:spade}买铁锹，按{interact}捡起来。它会放进快捷栏下一个空格。"
+
+msgid "The card is in the tech tree, the spade is in the shop"
+msgstr "卡片在科技树里买，铁锹在商店里买"
+
+msgid "Put a tool down"
+msgstr "放下工具"
+
+msgid "Take a tool in your hands. Press {drop_tool} to put it on the ground, or {throw_item} to throw it. It stays there. Walk to it and press {interact} to pick it up again."
+msgstr "手里拿着工具，按{drop_tool}放到地上，或者按{throw_item}扔出去。它会一直留在那里。走过去按{interact}就能再捡起来。"
+
+msgid "Fetch a lost tool"
+msgstr "找回丢掉的工具"
+
+msgid "Press {drop_tool} to put a tool on the ground. Walk to the shop counter and press {interact}. Click BRING TO ME next to that tool. It comes back to your feet."
+msgstr "按{drop_tool}把工具放到地上。走到商店柜台前按{interact}，点那件工具旁边的「送到我这」。它就会回到你脚边。"
+
+msgid "Open the build catalogue"
+msgstr "打开建造目录"
+
+msgid "Press {build_catalog} to open the build catalogue. Buy things in the tech tree, then build them from here."
+msgstr "按{build_catalog}打开建造目录。在科技树里买下的东西，都在这里建造。"
+
+msgid "Build the needle cabinet"
+msgstr "建造收针柜"
+
+msgid "Press {build_catalog} and pick the needle cabinet. It is free. Click a place on the floor to build it."
+msgstr "按{build_catalog}，选收针柜。它是免费的。点地上一个位置就能建好。"
+
+msgid "Your first building is a gift"
+msgstr "第一座建筑是礼物"
+
+msgid "Lay your first conveyor"
+msgstr "铺第一条传送带"
+
+msgid "Press {tech_tree}. Buy Conveyor Plans for {cost:belt}. Press {build_catalog} and pick the belt. Click once for the start. Click again for the end. Hay on a belt moves by itself."
+msgstr "按{tech_tree}，花{cost:belt}买下传送带图纸。按{build_catalog}选传送带。点一下定起点，再点一下定终点。传送带上的草会自己往前走。"
+
+msgid "Move it closer or further"
+msgstr "调远调近"
+
+msgid "Press {build_catalog} and pick anything. You now see a copy of it on your cursor. Roll the mouse wheel, or press {build_closer|keys} and {build_further|keys}. The copy moves closer to you and further away."
+msgstr "按{build_catalog}随便选一样东西，光标上会出现它的虚影。滚动鼠标滚轮，或者按{build_closer|keys}和{build_further|keys}，虚影就会离你近一些或远一些。"
+
+msgid "Move it away, then bring it back"
+msgstr "先推远，再拉回来"
+
+msgid "Line it up on the grid"
+msgstr "对齐网格"
+
+msgid "Press {build_catalog} and pick a belt or a machine. Press {build_grid}. Squares appear on the floor and your building lines up with them. Press {build_grid} again to turn the grid off."
+msgstr "按{build_catalog}，选一条传送带或一台机器。按{build_grid}，地上会出现方格，建筑会和方格对齐。再按一次{build_grid}可以关掉网格。"
+
+msgid "Neat rows are easier to join up"
+msgstr "排整齐更好连接"
+
+msgid "Run a belt to the stand"
+msgstr "把传送带接到收购点"
+
+msgid "Press {build_catalog} and pick the belt. End the belt at the stand's open bay. Now hay on that belt sells by itself."
+msgstr "按{build_catalog}选传送带，让它的终点落在收购点的入料口。这样传送带上的草就会自己卖掉。"
+
+msgid "Turn a belt round"
+msgstr "让传送带掉头"
+
+msgid "A belt carries hay one way only. Look at a belt you built. Arrows appear on it showing which way the hay goes. Hold {interact} until they swing round. The belt now runs the other way. It costs nothing and you keep the belt."
+msgstr "传送带只往一个方向送草。看着你建好的一条传送带，上面会出现箭头，指着草走的方向。按住{interact}直到箭头转过来，传送带就反着走了。不花钱，传送带也还在。"
+
+msgid "The arrows show which way the hay goes"
+msgstr "箭头指着草走的方向"
+
+msgid "Look at your needle cabinet and press {pick_build}. Now you hold one just like it, ready to build. This works on anything you built."
+msgstr "看着你的收针柜按{pick_build}，你手里就会有一个一模一样的，可以直接建造。你建好的任何东西都可以这样复制。"
+
+msgid "Quicker than finding it in the list"
+msgstr "比在列表里找更快"
+
+msgid "Take something down again"
+msgstr "拆掉一样东西"
+
+msgid "Point at anything you built. Hold {dismantle} until it comes down. You get all your money back."
+msgstr "对准你建的任意东西，按住{dismantle}直到拆掉。花的钱会全部退给你。"
+
+msgid "Turn it round"
+msgstr "旋转一下"
+
+msgid "Press {build_catalog} and pick something to build. Press {build_rotate}. Each press turns it a quarter."
+msgstr "按{build_catalog}，选一个要建的东西。按{build_rotate}，每按一次转四分之一圈。"
+
+msgid "Machines work only when they face the right way"
+msgstr "机器朝对方向才会工作"
+
+msgid "Get the power running"
+msgstr "让电转起来"
+
+msgid "Buy Electricity and build a Hay Generator. Put hay in it to burn."
+msgstr "买电力，建一台干草发电机。往里放些草，让它有东西烧。"
+
+msgid "Place your free rake"
+msgstr "放下免费的活塞耙"
+
+msgid "Press {build_catalog} and pick the Piston Rake. It is free. Put it in front of the haystack, facing the hay."
+msgstr "按{build_catalog}，选活塞耙。它是免费的。把它放在草堆前面，朝着草。"
+
+msgid "Face it at the hay"
+msgstr "朝着草放"
+
+msgid "Connect the rake with a power pole"
+msgstr "用电线杆接上活塞耙"
+
+msgid "Build a Power Pole within {num:POLE_SUPPLY_R} metres of the rake and the generator. Then the rake starts working."
+msgstr "在离活塞耙和发电机都不超过{num:POLE_SUPPLY_R}米的地方立一根电线杆。活塞耙就开工了。"
+
+msgid "Set how far the rake throws"
+msgstr "调好活塞耙扔多远"
+
+msgid "Press {interact} at the rake. Drag the slider to choose where the hay lands. Make it land on your conveyor, or in a bucket or wheelbarrow."
+msgstr "在活塞耙前按{interact}。拖动滑块选草落在哪。让它落在传送带上，或者落进桶或手推车里。"
+
+msgid "The marks show where the hay lands"
+msgstr "标记就是草落下的地方"
+
+msgid "Make your belts faster"
+msgstr "让传送带快一点"
+
+msgid "Your belts move hay slowly. Press {tech_tree} and buy the first level of Faster Belt Motor for {cost:belt_speed}. Every belt gets faster, even the ones you already built."
+msgstr "传送带送草太慢了。按{tech_tree}，花{cost:belt_speed}买下高速传送带电机的第一级。所有传送带都会变快，已经建好的也一样。"
+
+msgid "Build a robotic arm"
+msgstr "建造机械臂"
+
+msgid "Press {tech_tree}. Buy Small Arm Plans for {cost:arm_small}. Press {build_catalog} and place the arm between the haystack and a belt, {price:arm} to build, with a pole near it. It digs and puts the hay on the belt."
+msgstr "按{tech_tree}，花{cost:arm_small}买下小型机械臂图纸。按{build_catalog}把机械臂放在草堆和传送带之间，建造要{price:arm}，旁边要有电线杆。它会挖草放到传送带上。"
+
+msgid "Buy the metal detector"
+msgstr "买金属探测器"
+
+msgid "Press {tech_tree} and buy the Metal Detector card for {cost:metal_detector}. Then buy the detector in the shop for {price:detector}. It beeps faster the closer you are to a needle. Walk over the pile and listen."
+msgstr "按{tech_tree}，花{cost:metal_detector}买下金属探测器卡片。然后去商店花{price:detector}买探测器。离针越近，它就嘀得越快。在草堆上走一走，仔细听。"
+
+msgid "Switch the detector on and off"
+msgstr "开关探测器"
+
+msgid "Hold the detector. Press {secondary} to turn it on and again to turn it off. Do this three times."
+msgstr "拿着探测器，按{secondary}打开，再按一次关掉。做三次。"
+
+msgid "Down is on, up is off"
+msgstr "放下是开，抬起是关"
+
+msgid "Pin the delivery order"
+msgstr "把送货订单钉到屏幕上"
+
+msgid "The board by the bay door has an order on it. Look at the big sheet on the left and press {interact}. It shows in the corner of your screen."
+msgstr "卷帘门旁的送货板上有一张订单。看着左边那张大单子按{interact}，订单就会显示在屏幕角落。"
+
+msgid "Press {interact} at the sheet to take the order off your screen, then press {interact} again to put it back."
+msgstr "对着单子按{interact}把订单从屏幕上撤下，再按一次{interact}把它放回去。"
+
+msgid "The order stays on your screen"
+msgstr "订单会一直留在屏幕上"
+
+msgid "Take the copy down, then put it back up"
+msgstr "从屏幕上撤下，再放回去"
+
+msgid "Fill the first order"
+msgstr "完成第一张订单"
+
+msgid "The order wants twenty pressed bales on the truck. Press {tech_tree} and buy Alternating Splitter, then Compressor Plans for {cost:compressor}. Press {build_catalog} and build the press on a belt, {price:compressor} to build, with a pole near it. It presses hay into bales, and bales sell for more. Stack what it makes on the truck bed. The truck comes when you make your first bale."
+msgstr "这张订单要往卡车上装20个草捆。按{tech_tree}，先买轮流分流，再花{cost:compressor}买打捆机图纸。按{build_catalog}把打捆机建在传送带上，建造要{price:compressor}，旁边要有电线杆。它会把草压成草捆，草捆卖得更贵。把压好的草捆码到卡车车斗上。做出第一个草捆，卡车就会来。"
+
+msgid "Build a haystack scanner"
+msgstr "建造草堆扫描仪"
+
+msgid "That order unlocked Scanner Mk I Plans. Press {tech_tree}, buy them for {cost:scanner_mk1}, then press {build_catalog} and place the scanner on a belt, {price:scanner} to build. It finds the needles in the hay that goes past."
+msgstr "这张订单解锁了扫描仪 Mk I 图纸。按{tech_tree}花{cost:scanner_mk1}买下，再按{build_catalog}把扫描仪放在传送带上，建造要{price:scanner}。它能找出经过的草里藏的针。"
+
+msgid "Fill the wrapped order"
+msgstr "完成裹膜订单"
+
+msgid "The next order on the board wants eighteen wrapped bales. Press {tech_tree} and buy Wrapper Plans for {cost:wrapper}. Press {build_catalog} and build the wrapper on the belt after the press, {price:wrapper} to build. It wraps each bale. Stack the wrapped bales on the truck."
+msgstr "送货板上的下一张订单要18个裹膜草捆。按{tech_tree}，花{cost:wrapper}买下裹膜机图纸。按{build_catalog}把裹膜机建在打捆机后面的传送带上，建造要{price:wrapper}。它会给每个草捆裹上膜。把裹膜草捆码到卡车上。"
+
+msgid "Build the hay drone"
+msgstr "建造运草无人机"
+
+msgid "That order unlocked Hay Drone Plans. You also need Long-Reach Arm Plans. Press {tech_tree} and buy those, then Hay Drone Plans for {cost:drone}. Press {build_catalog} to place the drone, {price:drone} to build. Then press {interact} on its pad and give it a zone and a drop. It digs or collects there and flies it all to the drop. No belts needed."
+msgstr ""
+
+msgid "Extend the shed"
+msgstr "扩建草棚"
+
+msgid "Press {tech_tree}. Buy Extend the Shed. Each level makes the shed bigger."
+msgstr "按{tech_tree}，买扩建草棚。每升一级，草棚就大一圈。"
+
+msgid "Find a needle"
+msgstr "找到一根针"
+
+msgid "Put a needle in the case"
+msgstr "把针放进收针柜"
+
+msgid "Carry the needle to the cabinet. Press {interact} to open it. Click the slot that matches your needle."
+msgstr "把针拿到收针柜前，按{interact}打开，点和这根针对应的格子。"
+
+msgid "Build a gas plant"
+msgstr "建造燃气发电站"
+
+msgid "Hay Generators get 1 kJ from each straw. A Gas Plant gets 3 kJ from each straw in an eco brick. Press {tech_tree} and buy Gas Plant Plans for {cost:gas_plant}. Press {build_catalog} and build it for {price:gas_plant}. Lay a water pipe from a borehole pump to its flange."
+msgstr "干草发电机每根草出1 kJ。燃气发电站烧环保草砖，每根草出3 kJ。按{tech_tree}，花{cost:gas_plant}买下燃气发电站图纸。按{build_catalog}，花{price:gas_plant}把它建好。从深井泵拉一根水管，接到它的接口上。"
+
+msgid "Feed it bricks"
+msgstr "给它喂草砖"
+
+msgid "Run a belt from a pelletizer into the gas plant, or carry bricks to it. It burns eco bricks and nothing else. Put a power pole near it to carry the power."
+msgstr "从压块机铺一条传送带到燃气发电站，或者把草砖搬过去。它只烧环保草砖，别的都不烧。在旁边立一根电线杆，把电送出去。"
+
+msgid "Reward: %s (free)"
+msgstr "奖励：%s（免费）"
+
+msgid "$%s / $%s   ·   $%s left"
+msgstr "$%s / $%s   ·   还差$%s"
+
+msgid "%d%% full"
+msgstr "已满%d%%"
+
+msgid "%.1fs / %ds"
+msgstr "%.1f秒 / %d秒"
+
+msgid "as %s"
+msgstr "玩家：%s"
+
+msgid "press %s to see every board"
+msgstr "按%s查看所有排行榜"
+
+msgid "UNRANKED"
+msgstr "未上榜"
+
+msgid "NOT ON THE BOARDS YET"
+msgstr "排行榜上还没有你"
+
+msgid "MOST MONEY EARNED   %s"
+msgstr "累计收入   %s"
+
+msgid "sell some hay and it will be posted for you"
+msgstr "卖点草，成绩就会自动上传"
+
+msgid "SIGNED OUT"
+msgstr "未登录"
+
+msgid "OPEN THE LEADERBOARDS TO SIGN IN"
+msgstr "打开排行榜登录"
+
+msgid "your progress is saved"
+msgstr "进度已保存"
+
+msgid "THE BOARDS CANNOT BE REACHED"
+msgstr "连不上排行榜"
+
+msgid "your progress is saved, your rank will show later"
+msgstr "进度已保存，排名稍后显示"
+
+msgid "YOUR RANK"
+msgstr "你的排名"
+
+msgid "OPEN THE LEADERBOARDS TO SEE IT"
+msgstr "打开排行榜查看"
+
+msgid "NO BOARDS"
+msgstr "没有排行榜"
+
+msgid "SWITCHED OFF IN THIS BUILD"
+msgstr "此版本已关闭排行榜"
+
+msgid "CONNECTING"
+msgstr "连接中"
+
+msgid "LOADING"
+msgstr "加载中"
+
+msgid "not yet"
+msgstr "还没有"
+
+msgid "YARD RECORDS"
+msgstr "院子纪录"
+
+msgid "BEST SALE"
+msgstr "单笔最高"
+
+msgid "BEST MINUTE"
+msgstr "单分钟最高"
+
+msgid "HAY SOLD"
+msgstr "已卖干草"
+
+msgid "TAKINGS"
+msgstr "总收入"
+
+msgid "$%s /min"
+msgstr "$%s/分钟"
+
+msgid "%d  (%d of %d)"
+msgstr "%d  （已发现%d种，共%d种）"
+
+msgid "ALL YARDS   $%s earned   %dh %02dm played"
+msgstr "所有院子   共赚$%s   已玩%d小时%02d分"
+
+msgid "WARMING UP"
+msgstr "热身中"
+
+msgid "RAISING THE SKY"
+msgstr "撑起天空"
+
+msgid "CLEARING THE YARD"
+msgstr "清理院子"
+
+msgid "ROLLING THE FIELDS"
+msgstr "铺开田野"
+
+msgid "SHAPING THE PILE"
+msgstr "堆出草堆"
+
+msgid "SETTLING THE PILE"
+msgstr "压实草堆"
+
+msgid "OPENING THE STAND"
+msgstr "收购点开张"
+
+msgid "FINDING YOU A PITCHFORK"
+msgstr "给你找把草叉"
+
+msgid "RESTORING THE YARD"
+msgstr "恢复院子"
+
+msgid "HANGING THE SIGNS"
+msgstr "挂上招牌"
+
+msgid "TUNING THE RADIO"
+msgstr "调收音机"
+
+msgid "THE CLOCK IS OUT  ·  what happens next, you find out when the game is released"
+msgstr "时间到了  ·  接下来会怎样，等游戏正式发售就知道了"
+
+msgid "DEBUG MODE ACTIVATED  ·  F1"
+msgstr "调试模式已开启  ·  F1"
+
+msgid "PAID $%s"
+msgstr "已付$%s"
+
+msgid "$%s ADDED TO WHAT YOU OWE"
+msgstr "$%s已记入欠款"
+
+msgid "A NEW LOAD IS IN  ·  SIX NEW KINDS TO FIND  ·  %s"
+msgstr "新一车草到了  ·  六种新针等你找  ·  %s"
+
+msgid "A NEW LOAD IS IN"
+msgstr "新一车草到了"
+
+msgid "YARD SOLD  ·  %d THINGS CLEARED  ·  +$%s"
+msgid_plural "YARD SOLD  ·  %d THINGS CLEARED  ·  +$%s"
+msgstr[0] "院子清仓了  ·  清走%d样东西  ·  +$%s"
+
+msgid "YOU CLEARED THE WHOLE PILE!"
+msgstr "你把整座草堆都清空了！"
+
+msgid "YOU CLEARED THE WHOLE PILE IN %s!"
+msgstr "你用%s清空了整座草堆！"
+
+msgid "T JUNCTION  ·  NOW JOINING"
+msgstr "T形三通  ·  现在合并"
+
+msgid "T JUNCTION  ·  NOW SPLITTING"
+msgstr "T形三通  ·  现在分流"
+
+msgid "BACK IN THE STACK  ·  %d TO FIND AGAIN"
+msgid_plural "BACK IN THE STACK  ·  %d TO FIND AGAIN"
+msgstr[0] "针回到草堆里了  ·  还要再找%d根"
+
+msgid "%d ON THE FLOOR UNDER THE DELIVERY BOARD"
+msgstr "%d根在送货板下面的地上"
+
+msgid "  ·  it is back in the stack"
+msgstr "  ·  针回到草堆里了"
+
+msgid "  ·  the stack is dug out, so it is on the floor under the delivery board"
+msgstr "  ·  草堆已经挖空了，所以针在送货板下面的地上"
+
+msgid "saving..."
+msgstr "正在存档..."
+
+msgid "saved to slot %d"
+msgstr "已存到存档位%d"
+
+msgid "THE THINGS ON YOUR BELTS REACHED THE LIMIT OF %d  ·  raise it in %s > %s  ·  or the newest things on your belts will start to disappear"
+msgstr "传送带上的东西已达上限%d个  ·  可以在%s > %s里调高  ·  不然传送带上最新的东西会开始消失"
+
+msgid "THE THINGS ON YOUR FLOOR REACHED THE LIMIT OF %d  ·  raise it in %s > %s  ·  or the oldest things on your floor will start to go back onto the pile"
+msgstr "地上的东西已达上限%d个  ·  可以在%s > %s里调高  ·  不然地上最旧的东西会开始回到草堆里"
+
+msgid "YOUR MACHINES NEED ELECTRICITY NOW  ·  belts still run  ·  buy ELECTRICITY in the tech tree under POWER, then build a generator and a pole"
+msgstr "机器现在要用电了  ·  传送带照常运转  ·  去科技树的「供电」分类里买「电力」卡片，再建一台发电机和一根电线杆"
+
+msgid "a scanner with needles still in the drawer. Collect them at the console first"
+msgid_plural "{n} scanners with needles still in the drawer. Collect them at the console first"
+msgstr[0] "{n}台扫描仪的抽屉里还有针，先到控制台把针取走"
+
+msgid "a deck with something standing on it that the sale does not buy"
+msgid_plural "{n} decks with something standing on them that the sale does not buy"
+msgstr[0] "{n}个平台上有清仓时卖不掉的东西"
+
+msgid "a building that cannot come down yet"
+msgid_plural "{n} buildings that cannot come down yet"
+msgstr[0] "{n}座建筑现在还拆不了"
+
+msgid "an {item} with hay in it. Tip it out first"
+msgid_plural "{n} {item}s with hay in them. Tip them out first"
+msgstr[0] "{n}个{item}里还有草，先倒出来"
+
+msgid "a {item} with hay in it. Tip it out first"
+msgid_plural "{n} {item}s with hay in them. Tip them out first"
+msgstr[0] "{n}个{item}里还有草，先倒出来"
+

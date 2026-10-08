@@ -1,0 +1,108 @@
+{
+ "flats": {},
+ "lods": [
+  {
+   "end": 6.0,
+   "node": "Wad_LOD0"
+  },
+  {
+   "end": 14.0,
+   "node": "Wad_LOD1"
+  },
+  {
+   "end": 30.0,
+   "node": "Wad_LOD2"
+  },
+  {
+   "end": 0.0,
+   "node": "Wad_LOD3"
+  }
+ ],
+ "surfaces": {
+  "M_HW_Bulk": {
+   "ao": 0.42,
+   "asset": "reed_roof_03",
+   "metal": 0.0,
+   "nor": 0.85,
+   "per_metre": 9.0,
+   "rough": [
+    0.68,
+    0.96
+   ],
+   "sat": 1.3,
+   "tint": [
+    0.88,
+    0.69,
+    0.3
+   ]
+  },
+  "M_HW_Straw": {
+   "ao": 0.6,
+   "asset": "reed_roof_03",
+   "metal": 0.0,
+   "nor": 1.15,
+   "per_metre": 3.6,
+   "rough": [
+    0.74,
+    0.98
+   ],
+   "sat": 1.25,
+   "tint": [
+    1.05,
+    0.74,
+    0.34
+   ]
+  },
+  "M_HW_Tuft": {
+   "ao": 0.2,
+   "asset": "reed_roof_03",
+   "metal": 0.0,
+   "nor": 0.8,
+   "per_metre": 26.0,
+   "rough": [
+    0.66,
+    0.96
+   ],
+   "sat": 1.35,
+   "tint": [
+    1.62,
+    1.26,
+    0.52
+   ]
+  },
+  "M_HW_TuftDark": {
+   "ao": 0.35,
+   "asset": "reed_roof_03",
+   "metal": 0.0,
+   "nor": 0.9,
+   "per_metre": 23.0,
+   "rough": [
+    0.74,
+    0.99
+   ],
+   "sat": 1.0,
+   "tint": [
+    0.88,
+    0.76,
+    0.34
+   ]
+  },
+  "M_HW_TuftPale": {
+   "ao": 0.2,
+   "asset": "reed_roof_03",
+   "metal": 0.0,
+   "nor": 0.8,
+   "per_metre": 29.0,
+   "rough": [
+    0.66,
+    0.96
+   ],
+   "sat": 0.9,
+   "tint": [
+    1.86,
+    1.54,
+    0.9
+   ]
+  }
+ }
+}

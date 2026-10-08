@@ -1,0 +1,27 @@
+[gd_scene format=4]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upmgs"]
+cull_mode = 2
+specular_mode = 2
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+roughness = 0.92
+backlight_enabled = true
+backlight = Color(0.16, 0.22, 0.1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kx086"]
+_surfaces = [{
+"aabb": AABB(-0.23949818, 0, -0.4161759, 0.55159885, 0.4000069, 0.6690453),
+"attribute_data": PackedByteArray("UWAm/1FgJv93gDb/UWAm/3eANv93gDb/d4A2/3eANv+eoEf/d4A2/56gR/+eoEf/UWAm/1FgJv93gDb/UWAm/3eANv93gDb/d4A2/3eANv+eoEf/d4A2/56gR/+eoEf/UWAm/1FgJv93gDb/UWAm/3eANv93gDb/d4A2/3eANv+eoEf/d4A2/56gR/+eoEf/UWAm/1FgJv93gDb/UWAm/3eANv93gDb/d4A2/3eANv+eoEf/d4A2/56gR/+eoEf/UWAm/1FgJv93gDb/UWAm/3eANv93gDb/d4A2/3eANv+eoEf/d4A2/56gR/+eoEf/"),
+"format": 34359738383,
+"material": SubResource("StandardMaterial3D_upmgs"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 60,
+"vertex_data": PackedByteArray("4oCrPQAAAAAEPk29no2kPQAAAAAY3WI95BIxPrctYj53XSM94oCrPQAAAAAEPk295BIxPrctYj53XSM9KFUzPrctYj7qAeu8KFUzPrctYj7qAeu85BIxPrctYj53XSM9+LCfPm57vD6ZS1g8KFUzPrctYj7qAeu8+LCfPm57vD6ZS1g8qMufPm57vD4GLuE7gkl8PQAAAAAiLko8fBfouwAAAADqqH89Yu6JPStdYT5Hlw4+gkl8PQAAAAAiLko8Yu6JPStdYT5Hlw4+bFrlPStdYT4Chdo9bFrlPStdYT4Chdo9Yu6JPStdYT5Hlw4+LZQ5PqTNuz4beIE+bFrlPStdYT4Chdo9LZQ5PqTNuz4beIE+Xcw9PqTNuz6S3H8++DmcOwAAAABY7pU9JASWvQAAAAD4q4U7egvNvcNPcz4ylX09+DmcOwAAAABY7pU9egvNvcNPcz4ylX09EGBKvcNPcz7v0No9EGBKvcNPcz7v0No9egvNvcNPcz4ylX09jTINvnjCyj4lhho+EGBKvcNPcz7v0No9jTINvnjCyj4lhho+cWcIvnjCyj5zxR4+4Op6vQAAAACkDeM7UFXROgAAAADKbny9r3i9vdLvVD772QC+4Op6vQAAAACkDeM7r3i9vdLvVD772QC+pJIIvtLvVD4zcKa9pJIIvtLvVD4zcKa9r3i9vdLvVD772QC+X2JxvoRysT5QL2G+pJIIvtLvVD4zcKa9X2JxvoRysT5QL2G+Az91voRysT78+Fy+ofnAvAAAAAAbe7u9zFwlPQAAAAA7C6+9AYIqPaXDdT6tv16+ofnAvAAAAAAbe7u9AYIqPaXDdT6tv16+AFKcOKXDdT5vymK+AFKcOKXDdT5vymK+AYIqPaXDdT6tv16+OrcpPbTNzD5A5dS+AFKcOKXDdT5vymK+OrcpPbTNzD5A5dS+NgEaPbTNzD4CFdW+VNgsW6FvY69U2CxboW9jryrQv1JXaO6sVNgsW6FvY68q0L9SV2jurGPIt0rhX1+rY8i3SuFfX6sq0L9SV2jurPfAD0OeVrGqY8i3SuFfX6v3wA9DnlaxqvfAD0OeVrGqJKgzXxhH3JokqDNfGEfcmuikiFfyPjObJKgzXxhH3JropIhX8j4zm6mh1U8bN3CcqaHVTxs3cJzopIhX8j4zm2eeG0imL22eqaHVTxs3cJxnnhtIpi9tnmeeG0imL22eIU1GbJmzoaghTUZsmbOhqPxPMWaTthKoIU1GbJmzoaj8TzFmk7YSqLlSXmBxuTWmuVJeYHG5Nab8TzFmk7YSqFhVyVr7uz6fuVJeYHG5NaZYVcla+7s+n1hVyVr7uz6ffyNBMFpG7L1/I0EwWkbsvUgrMiygQkTCfyNBMFpG7L1IKzIsoEJEwjczDii5QG3FNzMOKLlAbcVIKzIsoEJEwk871SMHPXXHNzMOKLlAbcVPO9UjBz11x0871SMHPXXHKdVjB1lxAJsp1WMHWXEAm6/MpwbmZp2hKdVjB1lxAJuvzKcG5madoVDE7QWCW7mnUMTtBYJbuaevzKcG5madoQu8NQWPTzStUMTtBYJbuacLvDUFj080rQu8NQWPTzSt")
+}]
+
+[node name="Grass" type="Node3D" unique_id=1502076116]
+
+[node name="GrassLOD0" type="MeshInstance3D" parent="." unique_id=363694417]
+mesh = SubResource("ArrayMesh_kx086")

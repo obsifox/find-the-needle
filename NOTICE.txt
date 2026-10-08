@@ -1,0 +1,69 @@
+Find The Needle - copyright notice
+
+Copyright (c) 2026. All rights reserved.
+
+This game and its source files are the property of the author. No part of
+it may be copied, modified, redistributed, or used to produce derivative
+works. Only the author is permitted to make changes to the source files.
+
+The author can be reached at:
+
+  YouTube  https://www.youtube.com/@FindTheNeedleDev
+  X        https://x.com/haydeveloper
+  Discord  https://discord.gg/MqcvCz8eyG
+
+
+Third-party components
+----------------------
+
+  Portions of this software are copyright (c) The FreeType Project
+  (www.freetype.org). All rights reserved.
+
+  Mbed TLS: Apache License 2.0, https://www.apache.org/licenses/LICENSE-2.0
+
+
+3D models, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+All modified.
+-------------------------------------------------------------------
+
+  ljungman, https://sketchfab.com/3d-models/wheat-1e4643b88a1f4683a9765287ff2871cb
+  Krag Studio, https://www.fab.com/listings/1289e8e0-bff6-4a70-a832-49c6215921f8
+  martin.constable, https://sketchfab.com/3d-models/work-lamps-3b644c9290264fb185ab12f5a7b3b716
+  Dasamura, https://sketchfab.com/3d-models/medieval-wooden-chest-51a109923dcc4849aa1b5b02c87ce26a
+  nokillnando, https://sketchfab.com/3d-models/b228a29fa84544c2be501c295653ffe7
+  carolinegiu, https://sketchfab.com/3d-models/sand-shovel-b7c663b8fe904d3b86b0ab575d0a6e6d
+  Mehdi Shahsavan, https://sketchfab.com/3d-models/wheelbarrow-13-mb-4bc60cee597d4330998d411d71ac58e3
+  luicost01, https://sketchfab.com/3d-models/low-poly-portable-metal-detector-f86fc5a64c1d495a8355e8ee1c489235
+  morgothpalantir, https://sketchfab.com/3d-models/high-poly-broom-d1bcd0d29de44562a5b0c9f2407fdb71
+  Lodgelus, https://sketchfab.com/3d-models/pitchfork-c8d37a31d890495aba98c435136b3301
+  faroface, https://sketchfab.com/3d-models/toon-vacuum-cleaner-e3d6cd363f534ff993ba2bc2fb2215cd
+  spicymeatballs645, https://sketchfab.com/3d-models/zippo-lighter-a3900690b1914f75b476d0d72253bd5d
+  ayumi ikeda, https://sketchfab.com/3d-models/safety-pins-515f811d9796446eae2269ee676137f7
+
+
+MIT licence
+-----------
+
+  Copyright (c) 2014-present Godot Engine contributors.
+  Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+  Copyright (c) 2023-2026 Cory Petkovsek, Roope Palmroos, and Contributors.
+  Copyright (c) Yui Kinomoto (@arlez80).
+  Copyright (c) 2002-2020 Lee Salzman.
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
