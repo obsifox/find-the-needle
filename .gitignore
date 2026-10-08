@@ -1,0 +1,17 @@
+# Godot 4 cache
+.godot/
+*.translation
+
+# Secrets / local
+*.session
+*.session-journal
+.env
+*.pat
+.github_pat
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large intermediates (زویپ کامل به‌جای این در Release پیوست می‌شود)
+# اگر فایل خام >100MB وجود داشت اینجا اضافه شود
