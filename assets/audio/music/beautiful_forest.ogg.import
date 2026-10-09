@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/music/compiled/beautiful_forest.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/beautiful_forest.ogg"
+dest_files=["res://assets/audio/music/compiled/beautiful_forest.oggvorbisstr"]

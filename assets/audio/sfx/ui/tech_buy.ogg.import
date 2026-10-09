@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/ui/compiled/tech_buy.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/ui/tech_buy.ogg"
+dest_files=["res://assets/audio/sfx/ui/compiled/tech_buy.oggvorbisstr"]

@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/item/compiled/tear_04.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/item/tear_04.ogg"
+dest_files=["res://assets/audio/sfx/item/compiled/tear_04.oggvorbisstr"]

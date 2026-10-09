@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/models/compact_splitters/compiled/Splitter.scn"
+
+[deps]
+
+source_file="res://assets/models/compact_splitters/Splitter.glb"
+dest_files=["res://assets/models/compact_splitters/compiled/Splitter.scn"]

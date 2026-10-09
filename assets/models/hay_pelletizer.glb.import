@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/models/compiled/hay_pelletizer.scn"
+
+[deps]
+
+source_file="res://assets/models/hay_pelletizer.glb"
+dest_files=["res://assets/models/compiled/hay_pelletizer.scn"]

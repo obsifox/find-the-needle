@@ -1154,6 +1154,10 @@ func _between_previews() -> void:
 	if _preview_usec > 0 and now - _preview_usec >= 50000:
 		print("[load]   preview %s: %.0f ms" % [get_child(get_child_count() - 1).name,
 			(now - _preview_usec) / 1000.0])
+	# V37 breadcrumb: the V36 crash died between preview steps with no
+	# trace (last log line: the WaterSplitter ghost). Note EVERY finished
+	# preview so the next crash report names the exact step that fell.
+	CrashReport.note_doing("preview:" + get_child(get_child_count() - 1).name)
 	await get_tree().process_frame
 	_preview_usec = Time.get_ticks_usec()
 

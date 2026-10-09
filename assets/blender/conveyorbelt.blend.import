@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/blender/compiled/conveyorbelt.scn"
+
+[deps]
+
+source_file="res://assets/blender/conveyorbelt.blend"
+dest_files=["res://assets/blender/compiled/conveyorbelt.scn"]

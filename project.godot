@@ -101,4 +101,13 @@ occlusion_culling/use_occlusion_culling=true
 ; that culling barely helps, and the occlusion pass is one more driver edge
 ; the 71-74% window does not need.
 occlusion_culling/use_occlusion_culling.mobile=false
-driver/threads/thread_model.template=2
+; V37 RENDER THREAD FIX: the decompiled desktop project exported
+; thread_model.template=2 -- '.template' hits EVERY export and 4.7
+; maps 2 to the separate render thread. The V36 engine log fired
+; "The separate rendering thread feature is experimental" and
+; "Rendering thread not supported by this display server" on the
+; tester's Mali-G615, and every Android crash so far (74%, 82%) died
+; natively mid world-build with no script error -- exactly the
+; instability the warning promises. Safe (0) renders on the main
+; thread; that is what every normal Godot Android game runs.
+driver/threads/thread_model=0

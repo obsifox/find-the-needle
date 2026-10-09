@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/chest/compiled/aura_loop.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/chest/aura_loop.ogg"
+dest_files=["res://assets/audio/sfx/chest/compiled/aura_loop.oggvorbisstr"]

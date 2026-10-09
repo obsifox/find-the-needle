@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/terrain/flora/compiled/bale_lying.scn"
+
+[deps]
+
+source_file="res://assets/terrain/flora/bale_lying.glb"
+dest_files=["res://assets/terrain/flora/compiled/bale_lying.scn"]

@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/downloaded/models/medieval_chest/compiled/medieval_chest.scn"
+
+[deps]
+
+source_file="res://assets/downloaded/models/medieval_chest/medieval_chest.fbx"
+dest_files=["res://assets/downloaded/models/medieval_chest/compiled/medieval_chest.scn"]

@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/chest/compiled/knock_02.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/chest/knock_02.ogg"
+dest_files=["res://assets/audio/sfx/chest/compiled/knock_02.oggvorbisstr"]

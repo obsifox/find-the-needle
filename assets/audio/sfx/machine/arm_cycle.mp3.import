@@ -1,0 +1,10 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://assets/audio/sfx/machine/compiled/arm_cycle.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/machine/arm_cycle.mp3"
+dest_files=["res://assets/audio/sfx/machine/compiled/arm_cycle.mp3str"]

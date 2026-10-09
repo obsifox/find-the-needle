@@ -1,0 +1,10 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+path="res://assets/ui/compiled/icon_view_grid.ctex"
+
+[deps]
+
+source_file="res://assets/ui/icon_view_grid.svg"
+dest_files=["res://assets/ui/compiled/icon_view_grid.ctex"]

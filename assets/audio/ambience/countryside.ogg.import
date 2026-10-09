@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/ambience/compiled/countryside.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/ambience/countryside.ogg"
+dest_files=["res://assets/audio/ambience/compiled/countryside.oggvorbisstr"]

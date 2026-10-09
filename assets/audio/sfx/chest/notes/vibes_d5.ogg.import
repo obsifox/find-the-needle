@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/chest/notes/compiled/vibes_d5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/chest/notes/vibes_d5.ogg"
+dest_files=["res://assets/audio/sfx/chest/notes/compiled/vibes_d5.oggvorbisstr"]

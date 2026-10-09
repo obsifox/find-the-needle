@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/truck/compiled/brake.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/truck/brake.ogg"
+dest_files=["res://assets/audio/sfx/truck/compiled/brake.oggvorbisstr"]

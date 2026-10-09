@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/music/compiled/harvest_season.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/harvest_season.ogg"
+dest_files=["res://assets/audio/music/compiled/harvest_season.oggvorbisstr"]

@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://compiled/robotic_arm_game_ready.scn"
+
+[deps]
+
+source_file="res://robotic_arm_game_ready.glb"
+dest_files=["res://compiled/robotic_arm_game_ready.scn"]

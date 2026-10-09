@@ -327,15 +327,15 @@ var DEMO:= not (OS.has_feature("full")
         or (OS.has_feature("editor") and "--full" in OS.get_cmdline_user_args()))
 
 
-const BUILD_TAG:= "V36"
+const BUILD_TAG:= "V37"
 
 
 ## MOBILE FIX (v2.3.0): the app version rides in the crash report's build
 ## line. Both previous reports just said "V33 demo", so there was no way to
 ## tell WHICH apk had crashed -- bump APP_VERSION/APP_CODE together with
 ## export_presets.cfg version/name and version/code on every release.
-const APP_VERSION:= "3.0.0"
-const APP_CODE:= 9
+const APP_VERSION:= "3.0.1"
+const APP_CODE:= 10
 
 
 func build_string() -> String:

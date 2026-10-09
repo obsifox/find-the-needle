@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/tool/compiled/broom_03.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/tool/broom_03.ogg"
+dest_files=["res://assets/audio/sfx/tool/compiled/broom_03.oggvorbisstr"]

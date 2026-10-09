@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/truck/compiled/gate_up.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/truck/gate_up.ogg"
+dest_files=["res://assets/audio/sfx/truck/compiled/gate_up.oggvorbisstr"]

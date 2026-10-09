@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/downloaded/models/wheat/compiled/wheat_card.scn"
+
+[deps]
+
+source_file="res://assets/downloaded/models/wheat/wheat_card.glb"
+dest_files=["res://assets/downloaded/models/wheat/compiled/wheat_card.scn"]

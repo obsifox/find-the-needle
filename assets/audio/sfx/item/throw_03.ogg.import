@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/item/compiled/throw_03.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/item/throw_03.ogg"
+dest_files=["res://assets/audio/sfx/item/compiled/throw_03.oggvorbisstr"]

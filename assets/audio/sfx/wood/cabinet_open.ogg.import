@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/sfx/wood/compiled/cabinet_open.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/wood/cabinet_open.ogg"
+dest_files=["res://assets/audio/sfx/wood/compiled/cabinet_open.oggvorbisstr"]

@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/models/compiled/paper_machine.scn"
+
+[deps]
+
+source_file="res://assets/models/paper_machine.glb"
+dest_files=["res://assets/models/compiled/paper_machine.scn"]

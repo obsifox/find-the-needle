@@ -1601,6 +1601,7 @@ func _build() -> void:
         await _stage(tr("FINDING YOU A PITCHFORK"), 0.82)
         var body_usec:= Time.get_ticks_usec()
         _drop_warm_camera()
+        CrashReport.note_doing("player_body")
         player = Player.new()
         player.name = "Player"
 
@@ -1616,6 +1617,7 @@ func _build() -> void:
                         player.add_tool(which)
                         print("[load]   player tool %s: %.0f ms"
                                 % [which, (Time.get_ticks_usec() - tool_usec) / 1000.0])
+                        CrashReport.note_doing("tool:" + which)
 
 
                         if player.build != null and not player.build.previews_ready:
@@ -1653,6 +1655,7 @@ func _build() -> void:
 
         if _staged:
                 builds.restore_slice_usec = RESTORE_SLICE_USEC
+        CrashReport.note_doing("restore_buildings")
         await builds.from_array(SaveManager.take_buildings())
         builds.restore_slice_usec = 0
 
@@ -1664,12 +1667,15 @@ func _build() -> void:
                 builds.grid_rebuilt.connect(_on_first_grid_rebuild, CONNECT_ONE_SHOT)
 
 
+        CrashReport.note_doing("restore_props")
         props.from_array(SaveManager.take_props())
 
 
+        CrashReport.note_doing("restore_belts")
         _restore_belts()
 
 
+        CrashReport.note_doing("restore_needles")
         _restore_loose_needles()
 
         live.player_ref = player
@@ -1703,6 +1709,7 @@ func _build() -> void:
         player.aim.field = field
 
 
+        CrashReport.note_doing("tool_setup")
         player.shovel.setup(self, field, live, props)
         player.pitchfork.setup(self, field, live, props)
         player.broom.setup(self, field, live)
@@ -1718,6 +1725,7 @@ func _build() -> void:
 
 
         Cfg.set_no_hud(false)
+        CrashReport.note_doing("hud")
         hud = Hud.new()
         hud.name = "HUD"
         hud.field = field

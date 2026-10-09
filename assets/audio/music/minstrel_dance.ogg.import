@@ -1,0 +1,10 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+path="res://assets/audio/music/compiled/minstrel_dance.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/minstrel_dance.ogg"
+dest_files=["res://assets/audio/music/compiled/minstrel_dance.oggvorbisstr"]

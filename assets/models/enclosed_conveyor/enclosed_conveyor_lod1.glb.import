@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/models/enclosed_conveyor/compiled/enclosed_conveyor_lod1.scn"
+
+[deps]
+
+source_file="res://assets/models/enclosed_conveyor/enclosed_conveyor_lod1.glb"
+dest_files=["res://assets/models/enclosed_conveyor/compiled/enclosed_conveyor_lod1.scn"]

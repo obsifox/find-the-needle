@@ -1,0 +1,10 @@
+[remap]
+
+importer="scene"
+type="PackedScene"
+path="res://assets/downloaded/models/treasure_chest/compiled/treasure_chest_1k.scn"
+
+[deps]
+
+source_file="res://assets/downloaded/models/treasure_chest/treasure_chest_1k.gltf"
+dest_files=["res://assets/downloaded/models/treasure_chest/compiled/treasure_chest_1k.scn"]
