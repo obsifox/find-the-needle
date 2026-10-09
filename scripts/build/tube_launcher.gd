@@ -2,7 +2,7 @@ class_name TubeLauncher
 extends Node3D
 
 
-const MODEL:= "res://assets/models/tube_launcher.glb"
+const MODEL:= "res://assets/models/compiled/tube_launcher.scn"
 const SPEC:= "res://assets/models/tube_launcher_materials.json"
 
 

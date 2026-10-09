@@ -179,7 +179,7 @@ const ICON_TILES:= {
 }
 
 
-static var LOCK_ICON: Texture2D = load("res://assets/ui/icon_lock.svg")
+static var LOCK_ICON: Texture2D = load("res://assets/ui/compiled/icon_lock.ctex")
 
 const CARD_ICON:= 52.0
 const INSPECTOR_ICON:= 96.0

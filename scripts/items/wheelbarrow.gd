@@ -2,7 +2,7 @@ class_name Wheelbarrow
 extends HayContainer
 
 
-const MODEL:= "res://assets/models/wheelbarrow.glb"
+const MODEL:= "res://assets/models/compiled/wheelbarrow.scn"
 
 
 const SCALE:= 0.688

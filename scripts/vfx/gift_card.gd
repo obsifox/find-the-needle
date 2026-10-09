@@ -100,7 +100,7 @@ const BANNER_H:= 64.0
 const BANNER_TAIL:= 44.0
 
 
-const CHEST_PATH:= "res://assets/downloaded/models/medieval_chest/medieval_chest.fbx"
+const CHEST_PATH:= "res://assets/downloaded/models/medieval_chest/compiled/medieval_chest.scn"
 
 
 const CHEST_SCALE:= 0.85

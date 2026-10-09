@@ -28,64 +28,64 @@ const AMBIENCE_FADE:= 2.5
 const SFX_LIB:= {
 
 
-	"dig": ["res://assets/audio/sfx/dig/dig_01.ogg", "res://assets/audio/sfx/dig/dig_02.ogg", "res://assets/audio/sfx/dig/dig_03.ogg", "res://assets/audio/sfx/dig/dig_04.ogg", "res://assets/audio/sfx/dig/dig_05.ogg", "res://assets/audio/sfx/dig/dig_06.ogg"],
-	"hay_rustle": ["res://assets/audio/sfx/hay/rustle_01.ogg", "res://assets/audio/sfx/hay/rustle_02.ogg", "res://assets/audio/sfx/hay/rustle_03.ogg", "res://assets/audio/sfx/hay/rustle_04.ogg"],
-	"hay_drop": ["res://assets/audio/sfx/hay/drop_01.ogg", "res://assets/audio/sfx/hay/drop_02.ogg", "res://assets/audio/sfx/hay/drop_03.ogg"],
-	"hay_dump": ["res://assets/audio/sfx/hay/dump_01.ogg", "res://assets/audio/sfx/hay/dump_02.ogg", "res://assets/audio/sfx/hay/dump_03.ogg"],
+	"dig": ["res://assets/audio/sfx/dig/compiled/dig_01.oggvorbisstr", "res://assets/audio/sfx/dig/compiled/dig_02.oggvorbisstr", "res://assets/audio/sfx/dig/compiled/dig_03.oggvorbisstr", "res://assets/audio/sfx/dig/compiled/dig_04.oggvorbisstr", "res://assets/audio/sfx/dig/compiled/dig_05.oggvorbisstr", "res://assets/audio/sfx/dig/compiled/dig_06.oggvorbisstr"],
+	"hay_rustle": ["res://assets/audio/sfx/hay/compiled/rustle_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/rustle_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/rustle_03.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/rustle_04.oggvorbisstr"],
+	"hay_drop": ["res://assets/audio/sfx/hay/compiled/drop_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/drop_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/drop_03.oggvorbisstr"],
+	"hay_dump": ["res://assets/audio/sfx/hay/compiled/dump_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/dump_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/dump_03.oggvorbisstr"],
 
 
-	"hay_shift": ["res://assets/audio/sfx/hay/shift_01.ogg", "res://assets/audio/sfx/hay/shift_02.ogg", "res://assets/audio/sfx/hay/shift_03.ogg"],
-	"pluck": ["res://assets/audio/sfx/hay/pluck.ogg"],
+	"hay_shift": ["res://assets/audio/sfx/hay/compiled/shift_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/shift_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/shift_03.oggvorbisstr"],
+	"pluck": ["res://assets/audio/sfx/hay/compiled/pluck.oggvorbisstr"],
 
 
-	"item_pick": ["res://assets/audio/sfx/item/pick_01.ogg", "res://assets/audio/sfx/item/pick_02.ogg", "res://assets/audio/sfx/item/pick_03.ogg"],
-	"item_drop": ["res://assets/audio/sfx/item/drop_01.ogg", "res://assets/audio/sfx/item/drop_02.ogg", "res://assets/audio/sfx/item/drop_03.ogg"],
+	"item_pick": ["res://assets/audio/sfx/item/compiled/pick_01.oggvorbisstr", "res://assets/audio/sfx/item/compiled/pick_02.oggvorbisstr", "res://assets/audio/sfx/item/compiled/pick_03.oggvorbisstr"],
+	"item_drop": ["res://assets/audio/sfx/item/compiled/drop_01.oggvorbisstr", "res://assets/audio/sfx/item/compiled/drop_02.oggvorbisstr", "res://assets/audio/sfx/item/compiled/drop_03.oggvorbisstr"],
 
 
-	"item_throw": ["res://assets/audio/sfx/item/throw_01.ogg", "res://assets/audio/sfx/item/throw_02.ogg", "res://assets/audio/sfx/item/throw_03.ogg"],
+	"item_throw": ["res://assets/audio/sfx/item/compiled/throw_01.oggvorbisstr", "res://assets/audio/sfx/item/compiled/throw_02.oggvorbisstr", "res://assets/audio/sfx/item/compiled/throw_03.oggvorbisstr"],
 
 
-	"tool_clang": ["res://assets/audio/sfx/tool/clang_01.ogg", "res://assets/audio/sfx/tool/clang_02.ogg", "res://assets/audio/sfx/tool/clang_03.ogg", "res://assets/audio/sfx/tool/clang_04.ogg"],
-	"item_clatter": ["res://assets/audio/sfx/item/clatter_01.ogg", "res://assets/audio/sfx/item/clatter_02.ogg", "res://assets/audio/sfx/item/clatter_03.ogg"],
+	"tool_clang": ["res://assets/audio/sfx/tool/compiled/clang_01.oggvorbisstr", "res://assets/audio/sfx/tool/compiled/clang_02.oggvorbisstr", "res://assets/audio/sfx/tool/compiled/clang_03.oggvorbisstr", "res://assets/audio/sfx/tool/compiled/clang_04.oggvorbisstr"],
+	"item_clatter": ["res://assets/audio/sfx/item/compiled/clatter_01.oggvorbisstr", "res://assets/audio/sfx/item/compiled/clatter_02.oggvorbisstr", "res://assets/audio/sfx/item/compiled/clatter_03.oggvorbisstr"],
 
 
-	"bale_land": ["res://assets/audio/sfx/hay/bale_land_01.ogg", "res://assets/audio/sfx/hay/bale_land_02.ogg", "res://assets/audio/sfx/hay/bale_land_03.ogg"],
-	"brick_land": ["res://assets/audio/sfx/item/block_01.ogg", "res://assets/audio/sfx/item/block_02.ogg", "res://assets/audio/sfx/item/block_03.ogg"],
-	"plastic_drop": ["res://assets/audio/sfx/item/plastic_01.ogg", "res://assets/audio/sfx/item/plastic_02.ogg", "res://assets/audio/sfx/item/plastic_03.ogg"],
+	"bale_land": ["res://assets/audio/sfx/hay/compiled/bale_land_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/bale_land_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/bale_land_03.oggvorbisstr"],
+	"brick_land": ["res://assets/audio/sfx/item/compiled/block_01.oggvorbisstr", "res://assets/audio/sfx/item/compiled/block_02.oggvorbisstr", "res://assets/audio/sfx/item/compiled/block_03.oggvorbisstr"],
+	"plastic_drop": ["res://assets/audio/sfx/item/compiled/plastic_01.oggvorbisstr", "res://assets/audio/sfx/item/compiled/plastic_02.oggvorbisstr", "res://assets/audio/sfx/item/compiled/plastic_03.oggvorbisstr"],
 
 
-	"paper_tear": ["res://assets/audio/sfx/item/tear_01.ogg", "res://assets/audio/sfx/item/tear_02.ogg", "res://assets/audio/sfx/item/tear_03.ogg", "res://assets/audio/sfx/item/tear_04.ogg"],
+	"paper_tear": ["res://assets/audio/sfx/item/compiled/tear_01.oggvorbisstr", "res://assets/audio/sfx/item/compiled/tear_02.oggvorbisstr", "res://assets/audio/sfx/item/compiled/tear_03.oggvorbisstr", "res://assets/audio/sfx/item/compiled/tear_04.oggvorbisstr"],
 
 
-	"wad_land": ["res://assets/audio/sfx/hay/dump_01.ogg", "res://assets/audio/sfx/hay/dump_02.ogg", "res://assets/audio/sfx/hay/dump_03.ogg"],
+	"wad_land": ["res://assets/audio/sfx/hay/compiled/dump_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/dump_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/dump_03.oggvorbisstr"],
 
 
-	"hay_place": ["res://assets/audio/sfx/hay/place_01.ogg", "res://assets/audio/sfx/hay/place_02.ogg"],
-	"hay_pick": ["res://assets/audio/sfx/hay/pick_01.ogg", "res://assets/audio/sfx/hay/pick_02.ogg", "res://assets/audio/sfx/hay/pick_03.ogg", "res://assets/audio/sfx/hay/pick_04.ogg"],
-	"broom_sweep": ["res://assets/audio/sfx/tool/broom_01.ogg", "res://assets/audio/sfx/tool/broom_02.ogg", "res://assets/audio/sfx/tool/broom_03.ogg", "res://assets/audio/sfx/tool/broom_04.ogg"],
+	"hay_place": ["res://assets/audio/sfx/hay/compiled/place_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/place_02.oggvorbisstr"],
+	"hay_pick": ["res://assets/audio/sfx/hay/compiled/pick_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/pick_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/pick_03.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/pick_04.oggvorbisstr"],
+	"broom_sweep": ["res://assets/audio/sfx/tool/compiled/broom_01.oggvorbisstr", "res://assets/audio/sfx/tool/compiled/broom_02.oggvorbisstr", "res://assets/audio/sfx/tool/compiled/broom_03.oggvorbisstr", "res://assets/audio/sfx/tool/compiled/broom_04.oggvorbisstr"],
 
 
-	"arm_cycle": ["res://assets/audio/sfx/machine/arm_cycle.mp3"],
-	"arm_claw": ["res://assets/audio/sfx/machine/claw_01.ogg", "res://assets/audio/sfx/machine/claw_02.ogg"],
-	"arm_hiss": ["res://assets/audio/sfx/machine/hiss_01.ogg"],
+	"arm_cycle": ["res://assets/audio/sfx/machine/compiled/arm_cycle.mp3str"],
+	"arm_claw": ["res://assets/audio/sfx/machine/compiled/claw_01.oggvorbisstr", "res://assets/audio/sfx/machine/compiled/claw_02.oggvorbisstr"],
+	"arm_hiss": ["res://assets/audio/sfx/machine/compiled/hiss_01.oggvorbisstr"],
 
 
-	"rake_chunk": ["res://assets/audio/sfx/machine/rake_chunk_01.ogg", "res://assets/audio/sfx/machine/rake_chunk_02.ogg"],
-	"rake_clack": ["res://assets/audio/sfx/machine/rake_clack_01.ogg", "res://assets/audio/sfx/machine/rake_clack_02.ogg"],
-	"rake_throw": ["res://assets/audio/sfx/machine/rake_throw_01.ogg", "res://assets/audio/sfx/machine/rake_throw_02.ogg"],
+	"rake_chunk": ["res://assets/audio/sfx/machine/compiled/rake_chunk_01.oggvorbisstr", "res://assets/audio/sfx/machine/compiled/rake_chunk_02.oggvorbisstr"],
+	"rake_clack": ["res://assets/audio/sfx/machine/compiled/rake_clack_01.oggvorbisstr", "res://assets/audio/sfx/machine/compiled/rake_clack_02.oggvorbisstr"],
+	"rake_throw": ["res://assets/audio/sfx/machine/compiled/rake_throw_01.oggvorbisstr", "res://assets/audio/sfx/machine/compiled/rake_throw_02.oggvorbisstr"],
 
 
-	"machine_feed": ["res://assets/audio/sfx/hay/rustle_01.ogg", "res://assets/audio/sfx/hay/rustle_02.ogg", "res://assets/audio/sfx/hay/rustle_03.ogg", "res://assets/audio/sfx/hay/rustle_04.ogg"],
-	"machine_thud": ["res://assets/audio/sfx/hay/dump_01.ogg", "res://assets/audio/sfx/hay/dump_02.ogg", "res://assets/audio/sfx/hay/dump_03.ogg"],
-	"machine_vent": ["res://assets/audio/sfx/machine/hiss_01.ogg"],
+	"machine_feed": ["res://assets/audio/sfx/hay/compiled/rustle_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/rustle_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/rustle_03.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/rustle_04.oggvorbisstr"],
+	"machine_thud": ["res://assets/audio/sfx/hay/compiled/dump_01.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/dump_02.oggvorbisstr", "res://assets/audio/sfx/hay/compiled/dump_03.oggvorbisstr"],
+	"machine_vent": ["res://assets/audio/sfx/machine/compiled/hiss_01.oggvorbisstr"],
 	"machine_clunk": ["res://assets/audio/sfx/build/place_metal.ogg"],
 
 
-	"pump_stroke": ["res://assets/audio/sfx/machine/pump_stroke_01.ogg", "res://assets/audio/sfx/machine/pump_stroke_02.ogg", "res://assets/audio/sfx/machine/pump_stroke_03.ogg"],
+	"pump_stroke": ["res://assets/audio/sfx/machine/compiled/pump_stroke_01.oggvorbisstr", "res://assets/audio/sfx/machine/compiled/pump_stroke_02.oggvorbisstr", "res://assets/audio/sfx/machine/compiled/pump_stroke_03.oggvorbisstr"],
 
 
-	"launcher_fire": ["res://assets/audio/sfx/machine/launcher_fire.ogg"],
-	"launcher_stop": ["res://assets/audio/sfx/machine/launcher_stop.ogg"],
+	"launcher_fire": ["res://assets/audio/sfx/machine/compiled/launcher_fire.oggvorbisstr"],
+	"launcher_stop": ["res://assets/audio/sfx/machine/compiled/launcher_stop.oggvorbisstr"],
 
 
 	"radar_stop": ["res://assets/audio/sfx/machine/radar_stop.ogg"],
@@ -96,30 +96,30 @@ const SFX_LIB:= {
 	"lighter_strike": ["res://assets/audio/sfx/tool/lighter_strike.ogg"],
 
 
-	"fire_catch": ["res://assets/audio/sfx/hay/fire_catch.ogg"],
+	"fire_catch": ["res://assets/audio/sfx/hay/compiled/fire_catch.oggvorbisstr"],
 
 
-	"jetpack_start": ["res://assets/audio/sfx/machine/jetpack_start.ogg"],
-	"jetpack_stop": ["res://assets/audio/sfx/machine/jetpack_stop.ogg"],
+	"jetpack_start": ["res://assets/audio/sfx/machine/compiled/jetpack_start.oggvorbisstr"],
+	"jetpack_stop": ["res://assets/audio/sfx/machine/compiled/jetpack_stop.oggvorbisstr"],
 
 
-	"jetpack_refuel": ["res://assets/audio/sfx/item/jetpack_refuel.ogg"],
+	"jetpack_refuel": ["res://assets/audio/sfx/item/compiled/jetpack_refuel.oggvorbisstr"],
 
 
-	"truck_brake": ["res://assets/audio/sfx/truck/brake.ogg"],
-	"truck_release": ["res://assets/audio/sfx/truck/release.ogg"],
-	"truck_gate_down": ["res://assets/audio/sfx/truck/gate_down.ogg"],
-	"truck_gate_up": ["res://assets/audio/sfx/truck/gate_up.ogg"],
-	"cabinet_open": ["res://assets/audio/sfx/wood/cabinet_open.ogg"],
-	"cabinet_close": ["res://assets/audio/sfx/wood/cabinet_close.ogg"],
+	"truck_brake": ["res://assets/audio/sfx/truck/compiled/brake.oggvorbisstr"],
+	"truck_release": ["res://assets/audio/sfx/truck/compiled/release.oggvorbisstr"],
+	"truck_gate_down": ["res://assets/audio/sfx/truck/compiled/gate_down.oggvorbisstr"],
+	"truck_gate_up": ["res://assets/audio/sfx/truck/compiled/gate_up.oggvorbisstr"],
+	"cabinet_open": ["res://assets/audio/sfx/wood/compiled/cabinet_open.oggvorbisstr"],
+	"cabinet_close": ["res://assets/audio/sfx/wood/compiled/cabinet_close.oggvorbisstr"],
 
 
-	"clock_tick": ["res://assets/audio/sfx/clock/tick_01.ogg", "res://assets/audio/sfx/clock/tick_02.ogg", "res://assets/audio/sfx/clock/tick_03.ogg", "res://assets/audio/sfx/clock/tick_04.ogg"],
-	"clock_tock": ["res://assets/audio/sfx/clock/tock_01.ogg", "res://assets/audio/sfx/clock/tock_02.ogg", "res://assets/audio/sfx/clock/tock_03.ogg", "res://assets/audio/sfx/clock/tock_04.ogg"],
-	"crouch_down": ["res://assets/audio/sfx/foley/crouch_down_01.ogg", "res://assets/audio/sfx/foley/crouch_down_02.ogg"],
-	"crouch_up": ["res://assets/audio/sfx/foley/crouch_up_01.ogg", "res://assets/audio/sfx/foley/crouch_up_02.ogg"],
-	"step_soft": ["res://assets/audio/sfx/footstep/soft_01.ogg", "res://assets/audio/sfx/footstep/soft_02.ogg", "res://assets/audio/sfx/footstep/soft_03.ogg", "res://assets/audio/sfx/footstep/soft_04.ogg", "res://assets/audio/sfx/footstep/soft_05.ogg"],
-	"step_hard": ["res://assets/audio/sfx/footstep/hard_01.ogg", "res://assets/audio/sfx/footstep/hard_02.ogg", "res://assets/audio/sfx/footstep/hard_03.ogg", "res://assets/audio/sfx/footstep/hard_04.ogg", "res://assets/audio/sfx/footstep/hard_05.ogg"],
+	"clock_tick": ["res://assets/audio/sfx/clock/compiled/tick_01.oggvorbisstr", "res://assets/audio/sfx/clock/compiled/tick_02.oggvorbisstr", "res://assets/audio/sfx/clock/compiled/tick_03.oggvorbisstr", "res://assets/audio/sfx/clock/compiled/tick_04.oggvorbisstr"],
+	"clock_tock": ["res://assets/audio/sfx/clock/compiled/tock_01.oggvorbisstr", "res://assets/audio/sfx/clock/compiled/tock_02.oggvorbisstr", "res://assets/audio/sfx/clock/compiled/tock_03.oggvorbisstr", "res://assets/audio/sfx/clock/compiled/tock_04.oggvorbisstr"],
+	"crouch_down": ["res://assets/audio/sfx/foley/compiled/crouch_down_01.oggvorbisstr", "res://assets/audio/sfx/foley/compiled/crouch_down_02.oggvorbisstr"],
+	"crouch_up": ["res://assets/audio/sfx/foley/compiled/crouch_up_01.oggvorbisstr", "res://assets/audio/sfx/foley/compiled/crouch_up_02.oggvorbisstr"],
+	"step_soft": ["res://assets/audio/sfx/footstep/compiled/soft_01.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/soft_02.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/soft_03.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/soft_04.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/soft_05.oggvorbisstr"],
+	"step_hard": ["res://assets/audio/sfx/footstep/compiled/hard_01.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/hard_02.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/hard_03.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/hard_04.oggvorbisstr", "res://assets/audio/sfx/footstep/compiled/hard_05.oggvorbisstr"],
 	"build_place": ["res://assets/audio/sfx/build/place_01.ogg", "res://assets/audio/sfx/build/place_02.ogg", "res://assets/audio/sfx/build/place_03.ogg"],
 
 
@@ -129,78 +129,78 @@ const SFX_LIB:= {
 
 
 	"build_dismantle": ["res://assets/audio/sfx/build/dismantle.ogg"],
-	"coins": ["res://assets/audio/sfx/money/coins_01.ogg", "res://assets/audio/sfx/money/coins_02.ogg"],
+	"coins": ["res://assets/audio/sfx/money/compiled/coins_01.oggvorbisstr", "res://assets/audio/sfx/money/compiled/coins_02.oggvorbisstr"],
 
 
-	"coin_charge": ["res://assets/audio/sfx/item/coin_charge.ogg"],
+	"coin_charge": ["res://assets/audio/sfx/item/compiled/coin_charge.oggvorbisstr"],
 
 
-	"coin_eaten": ["res://assets/audio/sfx/item/coin_eaten.ogg"],
-	"sell_register": ["res://assets/audio/sfx/money/cash_register.mp3"],
+	"coin_eaten": ["res://assets/audio/sfx/item/compiled/coin_eaten.oggvorbisstr"],
+	"sell_register": ["res://assets/audio/sfx/money/compiled/cash_register.mp3str"],
 
 
-	"needle": ["res://assets/audio/sfx/needle/alert.ogg"],
-	"needle_ting": ["res://assets/audio/sfx/needle/ting.ogg"],
+	"needle": ["res://assets/audio/sfx/needle/compiled/alert.oggvorbisstr"],
+	"needle_ting": ["res://assets/audio/sfx/needle/compiled/ting.oggvorbisstr"],
 
 
-	"needle_lost": ["res://assets/audio/sfx/needle/lost.ogg"],
+	"needle_lost": ["res://assets/audio/sfx/needle/compiled/lost.oggvorbisstr"],
 
 
-	"needle_collect": ["res://assets/audio/sfx/needle/collect.ogg"],
+	"needle_collect": ["res://assets/audio/sfx/needle/compiled/collect.oggvorbisstr"],
 
 
-	"door_open": ["res://assets/audio/sfx/door/open.mp3"],
-	"door_slam": ["res://assets/audio/sfx/door/slam.mp3"],
+	"door_open": ["res://assets/audio/sfx/door/compiled/open.mp3str"],
+	"door_slam": ["res://assets/audio/sfx/door/compiled/slam.mp3str"],
 }
 
 
 const UI_LIB:= {
 
 
-	"ui_click": ["res://assets/audio/sfx/ui/switch_click_01.ogg", "res://assets/audio/sfx/ui/switch_click_02.ogg", "res://assets/audio/sfx/ui/switch_click_03.ogg"],
-	"ui_select": ["res://assets/audio/sfx/ui/switch_select_01.ogg", "res://assets/audio/sfx/ui/switch_select_02.ogg", "res://assets/audio/sfx/ui/switch_select_03.ogg"],
-	"ui_toggle": ["res://assets/audio/sfx/ui/switch_toggle_01.ogg", "res://assets/audio/sfx/ui/switch_toggle_02.ogg"],
-	"ui_hotbar": ["res://assets/audio/sfx/ui/hotbar_01.ogg", "res://assets/audio/sfx/ui/hotbar_02.ogg", "res://assets/audio/sfx/ui/hotbar_03.ogg"],
-	"ui_back": ["res://assets/audio/sfx/ui/switch_back_01.ogg", "res://assets/audio/sfx/ui/switch_back_02.ogg"],
+	"ui_click": ["res://assets/audio/sfx/ui/compiled/switch_click_01.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_click_02.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_click_03.oggvorbisstr"],
+	"ui_select": ["res://assets/audio/sfx/ui/compiled/switch_select_01.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_select_02.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_select_03.oggvorbisstr"],
+	"ui_toggle": ["res://assets/audio/sfx/ui/compiled/switch_toggle_01.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_toggle_02.oggvorbisstr"],
+	"ui_hotbar": ["res://assets/audio/sfx/ui/compiled/hotbar_01.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/hotbar_02.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/hotbar_03.oggvorbisstr"],
+	"ui_back": ["res://assets/audio/sfx/ui/compiled/switch_back_01.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_back_02.oggvorbisstr"],
 
 
-	"ui_open": ["res://assets/audio/sfx/ui/open.ogg"],
-	"ui_close": ["res://assets/audio/sfx/ui/switch_close_01.ogg", "res://assets/audio/sfx/ui/switch_close_02.ogg"],
-	"ui_tick": ["res://assets/audio/sfx/ui/switch_tick_01.ogg", "res://assets/audio/sfx/ui/switch_tick_02.ogg", "res://assets/audio/sfx/ui/switch_tick_03.ogg"],
-	"ui_drop": ["res://assets/audio/sfx/ui/drop.ogg"],
-	"ui_error": ["res://assets/audio/sfx/ui/error.ogg"],
+	"ui_open": ["res://assets/audio/sfx/ui/compiled/open.oggvorbisstr"],
+	"ui_close": ["res://assets/audio/sfx/ui/compiled/switch_close_01.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_close_02.oggvorbisstr"],
+	"ui_tick": ["res://assets/audio/sfx/ui/compiled/switch_tick_01.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_tick_02.oggvorbisstr", "res://assets/audio/sfx/ui/compiled/switch_tick_03.oggvorbisstr"],
+	"ui_drop": ["res://assets/audio/sfx/ui/compiled/drop.oggvorbisstr"],
+	"ui_error": ["res://assets/audio/sfx/ui/compiled/error.oggvorbisstr"],
 
 
-	"needle_reveal": ["res://assets/audio/sfx/ui/sparkle_woosh.ogg"],
+	"needle_reveal": ["res://assets/audio/sfx/ui/compiled/sparkle_woosh.oggvorbisstr"],
 
 
-	"chest_reveal": ["res://assets/audio/sfx/chest/reveal.ogg"],
+	"chest_reveal": ["res://assets/audio/sfx/chest/compiled/reveal.oggvorbisstr"],
 
-	"chest_pedal": ["res://assets/audio/sfx/chest/pedal.ogg"],
-
-
-	"chest_knock": ["res://assets/audio/sfx/chest/knock_01.ogg", "res://assets/audio/sfx/chest/knock_02.ogg", "res://assets/audio/sfx/chest/knock_03.ogg"],
-	"chest_open": ["res://assets/audio/sfx/chest/open.ogg"],
-	"chest_tick": ["res://assets/audio/sfx/chest/tick_01.ogg", "res://assets/audio/sfx/chest/tick_02.ogg", "res://assets/audio/sfx/chest/tick_03.ogg"],
+	"chest_pedal": ["res://assets/audio/sfx/chest/compiled/pedal.oggvorbisstr"],
 
 
-	"chest_tumble": ["res://assets/audio/sfx/chest/tumble.ogg"],
+	"chest_knock": ["res://assets/audio/sfx/chest/compiled/knock_01.oggvorbisstr", "res://assets/audio/sfx/chest/compiled/knock_02.oggvorbisstr", "res://assets/audio/sfx/chest/compiled/knock_03.oggvorbisstr"],
+	"chest_open": ["res://assets/audio/sfx/chest/compiled/open.oggvorbisstr"],
+	"chest_tick": ["res://assets/audio/sfx/chest/compiled/tick_01.oggvorbisstr", "res://assets/audio/sfx/chest/compiled/tick_02.oggvorbisstr", "res://assets/audio/sfx/chest/compiled/tick_03.oggvorbisstr"],
 
 
-	"chest_spin": ["res://assets/audio/sfx/chest/spin.ogg"],
+	"chest_tumble": ["res://assets/audio/sfx/chest/compiled/tumble.oggvorbisstr"],
 
 
-	"detector_tick": ["res://assets/audio/sfx/detector/tick_01.ogg", "res://assets/audio/sfx/detector/tick_02.ogg", "res://assets/audio/sfx/detector/tick_03.ogg", "res://assets/audio/sfx/detector/tick_04.ogg"],
+	"chest_spin": ["res://assets/audio/sfx/chest/compiled/spin.oggvorbisstr"],
 
 
-	"detector_beep": ["res://assets/audio/sfx/detector/beep_01.ogg"],
+	"detector_tick": ["res://assets/audio/sfx/detector/compiled/tick_01.oggvorbisstr", "res://assets/audio/sfx/detector/compiled/tick_02.oggvorbisstr", "res://assets/audio/sfx/detector/compiled/tick_03.oggvorbisstr", "res://assets/audio/sfx/detector/compiled/tick_04.oggvorbisstr"],
+
+
+	"detector_beep": ["res://assets/audio/sfx/detector/compiled/beep_01.oggvorbisstr"],
 	"build_confirm": ["res://assets/audio/sfx/build/confirm.ogg"],
 
 
-	"tech_buy": ["res://assets/audio/sfx/ui/tech_buy.ogg"],
+	"tech_buy": ["res://assets/audio/sfx/ui/compiled/tech_buy.oggvorbisstr"],
 
 
-	"tech_current": ["res://assets/audio/sfx/ui/tech_current.ogg"],
+	"tech_current": ["res://assets/audio/sfx/ui/compiled/tech_current.oggvorbisstr"],
 	"build_denied": ["res://assets/audio/sfx/build/denied.ogg"],
 	"build_ghost": ["res://assets/audio/sfx/build/ghost_move.ogg"],
 }
@@ -208,18 +208,18 @@ const UI_LIB:= {
 
 const NOTE_LIB:= {
 	"vibes": {
-		71.0: "res://assets/audio/sfx/chest/notes/vibes_b4.ogg",
-		74.0: "res://assets/audio/sfx/chest/notes/vibes_d5.ogg",
-		77.0: "res://assets/audio/sfx/chest/notes/vibes_f5.ogg",
-		81.0: "res://assets/audio/sfx/chest/notes/vibes_a5.ogg",
-		84.0: "res://assets/audio/sfx/chest/notes/vibes_c6.ogg",
-		88.0: "res://assets/audio/sfx/chest/notes/vibes_e6.ogg",
+		71.0: "res://assets/audio/sfx/chest/notes/compiled/vibes_b4.oggvorbisstr",
+		74.0: "res://assets/audio/sfx/chest/notes/compiled/vibes_d5.oggvorbisstr",
+		77.0: "res://assets/audio/sfx/chest/notes/compiled/vibes_f5.oggvorbisstr",
+		81.0: "res://assets/audio/sfx/chest/notes/compiled/vibes_a5.oggvorbisstr",
+		84.0: "res://assets/audio/sfx/chest/notes/compiled/vibes_c6.oggvorbisstr",
+		88.0: "res://assets/audio/sfx/chest/notes/compiled/vibes_e6.oggvorbisstr",
 	},
 	"glock": {
-		91.12: "res://assets/audio/sfx/chest/notes/glock_g6.ogg",
-		96.15: "res://assets/audio/sfx/chest/notes/glock_c7.ogg",
-		103.16: "res://assets/audio/sfx/chest/notes/glock_g7.ogg",
-		108.24: "res://assets/audio/sfx/chest/notes/glock_c8.ogg",
+		91.12: "res://assets/audio/sfx/chest/notes/compiled/glock_g6.oggvorbisstr",
+		96.15: "res://assets/audio/sfx/chest/notes/compiled/glock_c7.oggvorbisstr",
+		103.16: "res://assets/audio/sfx/chest/notes/compiled/glock_g7.oggvorbisstr",
+		108.24: "res://assets/audio/sfx/chest/notes/compiled/glock_c8.oggvorbisstr",
 	},
 }
 
@@ -227,70 +227,70 @@ const NOTE_LIB:= {
 const UI_LOOP_LIB:= {
 
 
-	"chest_aura": "res://assets/audio/sfx/chest/aura_loop.ogg",
+	"chest_aura": "res://assets/audio/sfx/chest/compiled/aura_loop.oggvorbisstr",
 }
 
 
 const LOOP_LIB:= {
-	"belt": "res://assets/audio/sfx/machine/belt_roll.ogg",
-	"motor_a": "res://assets/audio/sfx/machine/motor_a.ogg",
-	"motor_b": "res://assets/audio/sfx/machine/motor_b.ogg",
-	"scanner": "res://assets/audio/sfx/machine/scan_loop.ogg",
+	"belt": "res://assets/audio/sfx/machine/compiled/belt_roll.oggvorbisstr",
+	"motor_a": "res://assets/audio/sfx/machine/compiled/motor_a.oggvorbisstr",
+	"motor_b": "res://assets/audio/sfx/machine/compiled/motor_b.oggvorbisstr",
+	"scanner": "res://assets/audio/sfx/machine/compiled/scan_loop.oggvorbisstr",
 
 
-	"vac_motor": "res://assets/audio/sfx/machine/vac_loop.ogg",
+	"vac_motor": "res://assets/audio/sfx/machine/compiled/vac_loop.oggvorbisstr",
 
 
-	"drone": "res://assets/audio/sfx/machine/drone_fly.ogg",
+	"drone": "res://assets/audio/sfx/machine/compiled/drone_fly.oggvorbisstr",
 
 
-	"rake_engine": "res://assets/audio/sfx/machine/rake_engine.ogg",
+	"rake_engine": "res://assets/audio/sfx/machine/compiled/rake_engine.oggvorbisstr",
 
 
-	"rake_drive": "res://assets/audio/sfx/machine/rake_drive.ogg",
+	"rake_drive": "res://assets/audio/sfx/machine/compiled/rake_drive.oggvorbisstr",
 
 
-	"generator": "res://assets/audio/sfx/machine/generator.ogg",
+	"generator": "res://assets/audio/sfx/machine/compiled/generator.oggvorbisstr",
 
 
-	"launcher_slew": "res://assets/audio/sfx/machine/launcher_slew.ogg",
+	"launcher_slew": "res://assets/audio/sfx/machine/compiled/launcher_slew.oggvorbisstr",
 
 
 	"radar_turn": "res://assets/audio/sfx/machine/radar_turn.ogg",
 
 
-	"fire_crackle": "res://assets/audio/sfx/hay/fire_crackle.ogg",
+	"fire_crackle": "res://assets/audio/sfx/hay/compiled/fire_crackle.oggvorbisstr",
 
 
-	"jetpack_thrust": "res://assets/audio/sfx/machine/jetpack_thrust.ogg",
+	"jetpack_thrust": "res://assets/audio/sfx/machine/compiled/jetpack_thrust.oggvorbisstr",
 
 
-	"pulper_churn": "res://assets/audio/sfx/machine/pulper_churn.ogg",
+	"pulper_churn": "res://assets/audio/sfx/machine/compiled/pulper_churn.oggvorbisstr",
 
 
-	"water_flow": "res://assets/audio/sfx/machine/water_flow.ogg",
+	"water_flow": "res://assets/audio/sfx/machine/compiled/water_flow.oggvorbisstr",
 
 
-	"truck_engine": "res://assets/audio/sfx/truck/engine.ogg",
+	"truck_engine": "res://assets/audio/sfx/truck/compiled/engine.oggvorbisstr",
 
 
 }
 
 
-const AMB_OUTSIDE:= "res://assets/audio/ambience/countryside.ogg"
-const AMB_INSIDE:= "res://assets/audio/ambience/room_tone_a.ogg"
+const AMB_OUTSIDE:= "res://assets/audio/ambience/compiled/countryside.oggvorbisstr"
+const AMB_INSIDE:= "res://assets/audio/ambience/compiled/room_tone_a.oggvorbisstr"
 
 
 const MUSIC_TRACKS:= [
-	"res://assets/audio/music/at_home.ogg",
-	"res://assets/audio/music/harvest_season.ogg",
-	"res://assets/audio/music/minstrel_dance.ogg",
-	"res://assets/audio/music/market_day.ogg",
-	"res://assets/audio/music/rejoicing.ogg",
-	"res://assets/audio/music/another_august.ogg",
-	"res://assets/audio/music/beautiful_forest.ogg",
-	"res://assets/audio/music/calm_loop.ogg",
-	"res://assets/audio/music/calm_ambient.ogg",
+	"res://assets/audio/music/compiled/at_home.oggvorbisstr",
+	"res://assets/audio/music/compiled/harvest_season.oggvorbisstr",
+	"res://assets/audio/music/compiled/minstrel_dance.oggvorbisstr",
+	"res://assets/audio/music/compiled/market_day.oggvorbisstr",
+	"res://assets/audio/music/compiled/rejoicing.oggvorbisstr",
+	"res://assets/audio/music/compiled/another_august.oggvorbisstr",
+	"res://assets/audio/music/compiled/beautiful_forest.oggvorbisstr",
+	"res://assets/audio/music/compiled/calm_loop.oggvorbisstr",
+	"res://assets/audio/music/compiled/calm_ambient.oggvorbisstr",
 ]
 
 

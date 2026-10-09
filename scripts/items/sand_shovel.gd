@@ -2,7 +2,7 @@ class_name SandShovel
 extends Carryable
 
 
-const MODEL:= "res://assets/models/sand_shovel.glb"
+const MODEL:= "res://assets/models/compiled/sand_shovel.scn"
 
 
 const SCALE:= 0.0769

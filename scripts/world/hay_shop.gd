@@ -2,7 +2,7 @@ class_name HayShop
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_shop.glb"
+const MODEL:= "res://assets/models/compiled/hay_shop.scn"
 
 
 const SPEC:= "res://assets/models/hay_shop_materials.json"

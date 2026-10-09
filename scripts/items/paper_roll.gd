@@ -2,7 +2,7 @@ class_name PaperRoll
 extends Carryable
 
 
-const MODEL:= "res://assets/models/paper_roll.glb"
+const MODEL:= "res://assets/models/compiled/paper_roll.scn"
 const MESH_NODE:= "PaperRoll"
 
 

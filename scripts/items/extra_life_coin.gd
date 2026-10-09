@@ -2,8 +2,8 @@ class_name ExtraLifeCoin
 extends Carryable
 
 
-const MODEL:= "res://assets/models/extra_life_coin.glb"
-const FAR_MODEL:= "res://assets/models/extra_life_coin_particle.glb"
+const MODEL:= "res://assets/models/compiled/extra_life_coin.scn"
+const FAR_MODEL:= "res://assets/models/compiled/extra_life_coin_particle.scn"
 const MESH_NODE:= "ExtraLifeCoin"
 
 

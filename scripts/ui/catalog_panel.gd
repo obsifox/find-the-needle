@@ -56,7 +56,7 @@ const TILE_POP:= 1.055
 const TILE_PRESS:= 0.94
 
 
-static var LOCK_ICON: Texture2D = load("res://assets/ui/icon_lock.svg")
+static var LOCK_ICON: Texture2D = load("res://assets/ui/compiled/icon_lock.ctex")
 
 
 const NAME_LOCK:= 16
@@ -128,20 +128,20 @@ const TAB_ICON_FOR:= {
 }
 
 
-static var TAB_ALL_ICON: Texture2D = load("res://assets/ui/icon_grid.svg")
-static var TAB_UNLOCKED_ICON: Texture2D = load("res://assets/ui/icon_unlock.svg")
+static var TAB_ALL_ICON: Texture2D = load("res://assets/ui/compiled/icon_grid.ctex")
+static var TAB_UNLOCKED_ICON: Texture2D = load("res://assets/ui/compiled/icon_unlock.ctex")
 
 
-static var TAB_HOTKEYED_ICON: Texture2D = load("res://assets/ui/icon_hotkeyed.svg")
+static var TAB_HOTKEYED_ICON: Texture2D = load("res://assets/ui/compiled/icon_hotkeyed.ctex")
 
 
-static var VIEW_LIST_ICON: Texture2D = load("res://assets/ui/icon_view_list.svg")
-static var VIEW_GRID_ICON: Texture2D = load("res://assets/ui/icon_view_grid.svg")
+static var VIEW_LIST_ICON: Texture2D = load("res://assets/ui/compiled/icon_view_list.ctex")
+static var VIEW_GRID_ICON: Texture2D = load("res://assets/ui/compiled/icon_view_grid.ctex")
 const VIEW_ICON:= 22
 const VIEW_BUTTON:= 38.0
 
 
-static var SORT_ICON: Texture2D = load("res://assets/ui/icon_recent.svg")
+static var SORT_ICON: Texture2D = load("res://assets/ui/compiled/icon_recent.ctex")
 
 
 const SORT_LABEL:= "Sort by last used"
@@ -152,7 +152,7 @@ const SORT_GAP:= 14.0
 const SORT_BUTTON:= 176.0
 
 
-static var SEARCH_ICON: Texture2D = load("res://assets/ui/icon_search.svg")
+static var SEARCH_ICON: Texture2D = load("res://assets/ui/compiled/icon_search.ctex")
 const SEARCH_W:= 230.0
 
 

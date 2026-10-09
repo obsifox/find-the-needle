@@ -4,14 +4,14 @@ extends SceneTree
 
 func _init() -> void:
 	var paths := [
-		"res://assets/models/water_splitter.glb",        # via fake .import -> compiled .scn
+		"res://assets/models/compiled/water_splitter.scn",        # via fake .import -> compiled .scn
 		"res://assets/models/compiled/water_splitter.scn", # direct artifact
-		"res://assets/blender/conveyorbelt.blend",        # via fake .import
+		"res://assets/blender/compiled/conveyorbelt.scn",        # via fake .import
 		"res://assets/blender/compiled/conveyorbelt.scn", # direct artifact
-		"res://assets/ui/icon_lock.svg",                  # via fake .import -> compiled .ctex
-		"res://assets/audio/sfx/dig/dig_01.ogg",          # via fake .import -> compiled .oggvorbisstr
+		"res://assets/ui/compiled/icon_lock.ctex",                  # via fake .import -> compiled .ctex
+		"res://assets/audio/sfx/dig/compiled/dig_01.oggvorbisstr",          # via fake .import -> compiled .oggvorbisstr
 		"res://assets/audio/sfx/dig/compiled/dig_01.oggvorbisstr", # direct artifact
-		"res://robotic_arm_game_ready.glb",               # root-level model
+		"res://compiled/robotic_arm_game_ready.scn",               # root-level model
 	]
 	for p: String in paths:
 		var res: Resource = load(p)

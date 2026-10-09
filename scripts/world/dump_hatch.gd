@@ -2,7 +2,7 @@ class_name DumpHatch
 extends Node3D
 
 
-const MODEL:= "res://assets/models/dump_hatch.glb"
+const MODEL:= "res://assets/models/compiled/dump_hatch.scn"
 
 
 const SPEC:= "res://assets/models/dump_hatch_materials.json"

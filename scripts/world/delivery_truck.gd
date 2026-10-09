@@ -2,7 +2,7 @@ class_name DeliveryTruck
 extends Node3D
 
 
-const MODEL:= "res://assets/models/delivery_truck.glb"
+const MODEL:= "res://assets/models/compiled/delivery_truck.scn"
 
 
 const SPEC:= "res://assets/models/delivery_truck_materials.json"

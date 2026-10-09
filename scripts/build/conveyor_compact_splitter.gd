@@ -45,7 +45,7 @@ func output_sides() -> Array:
 func _build_model() -> void:
 	var path:= "res://assets/models/compact_splitters/%s.glb" % (
 		"SmartSplitter" if smart else "Splitter")
-	var scene:= load(path) as PackedScene
+	var scene:= AssetFix.load_res(path) as PackedScene
 	if scene == null:
 		push_error("Compact splitter model is missing: %s" % path)
 		return

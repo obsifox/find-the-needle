@@ -2,7 +2,7 @@ class_name PistonRake
 extends Node3D
 
 
-const MODEL:= "res://assets/models/piston_rake.glb"
+const MODEL:= "res://assets/models/compiled/piston_rake.scn"
 const SPEC:= "res://assets/models/piston_rake_materials.json"
 
 const N_HEAD:= "Marker_Head"

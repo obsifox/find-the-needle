@@ -2,7 +2,7 @@ class_name EcoBrick
 extends Carryable
 
 
-const MODEL:= "res://assets/models/eco_brick.glb"
+const MODEL:= "res://assets/models/compiled/eco_brick.scn"
 const MESH_NODE:= "EcoBrick"
 const SPEC:= "res://assets/models/eco_brick_materials.json"
 

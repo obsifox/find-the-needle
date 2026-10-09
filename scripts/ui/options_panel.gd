@@ -14,8 +14,8 @@ const COL_WARN:= Color(0.93, 0.76, 0.42)
 
 const COL_GO:= Color(0.2, 0.55, 0.28)
 const COL_STOP:= Color(0.72, 0.22, 0.2)
-static var ICON_QUIT: Texture2D = load("res://assets/ui/icon_power.svg")
-static var ICON_LATER: Texture2D = load("res://assets/ui/icon_recent.svg")
+static var ICON_QUIT: Texture2D = load("res://assets/ui/compiled/icon_power.ctex")
+static var ICON_LATER: Texture2D = load("res://assets/ui/compiled/icon_recent.ctex")
 
 
 const NOTICE:= {

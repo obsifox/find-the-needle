@@ -2,7 +2,7 @@ class_name NeedleCabinet
 extends Node3D
 
 
-const MODEL:= "res://assets/models/needle_cabinet.glb"
+const MODEL:= "res://assets/models/compiled/needle_cabinet.scn"
 const SPEC:= "res://assets/models/needle_cabinet_materials.json"
 const SHADER:= "res://assets/stand_surface.gdshader"
 

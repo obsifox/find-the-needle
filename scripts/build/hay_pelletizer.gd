@@ -2,7 +2,7 @@ class_name HayPelletizer
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_pelletizer.glb"
+const MODEL:= "res://assets/models/compiled/hay_pelletizer.scn"
 const SPEC:= "res://assets/models/hay_pelletizer_materials.json"
 
 const N_BELT_IN:= "Marker_BeltIn"

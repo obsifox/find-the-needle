@@ -2,7 +2,7 @@ class_name HayLift
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_lift.glb"
+const MODEL:= "res://assets/models/compiled/hay_lift.scn"
 const SPEC:= "res://assets/models/hay_lift_materials.json"
 
 const N_BOOT:= "Lift_boot"

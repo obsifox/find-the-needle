@@ -2,7 +2,7 @@ class_name DeliveryBoard
 extends Node3D
 
 
-const MODEL:= "res://assets/models/delivery_board.glb"
+const MODEL:= "res://assets/models/compiled/delivery_board.scn"
 const SPEC:= "res://assets/models/delivery_board_materials.json"
 
 

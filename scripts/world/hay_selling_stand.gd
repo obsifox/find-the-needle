@@ -2,7 +2,7 @@ class_name HaySellingStand
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_selling_stand.glb"
+const MODEL:= "res://assets/models/compiled/hay_selling_stand.scn"
 const SELL_ANIM:= "SellCycle"
 
 
@@ -59,7 +59,7 @@ const NOTCH_TIME:= 0.35
 const SACK_PATIENCE:= 5.0
 
 
-const SACK_MODEL:= "res://assets/models/hay_sack.glb"
+const SACK_MODEL:= "res://assets/models/compiled/hay_sack.scn"
 const N_SACK:= "HaySack"
 const N_STAR:= "Star_Pop"
 const SACK_FILL:= "Fill"
@@ -1952,7 +1952,7 @@ static var _shared_coin_mesh: ArrayMesh
 func _coin_mesh() -> ArrayMesh:
         if _shared_coin_mesh != null:
                 return _shared_coin_mesh
-        var scene: Node = load("res://assets/models/extra_life_coin_particle.glb").instantiate()
+        var scene: Node = load("res://assets/models/compiled/extra_life_coin_particle.scn").instantiate()
         var source: MeshInstance3D = scene.find_child("ExtraLifeCoin", true, false) as MeshInstance3D
         assert (source != null, "Payout coin mesh is missing")
         var mesh:= source.mesh.duplicate() as ArrayMesh

@@ -17,7 +17,7 @@ const LAUNCH_SPIN:= 0.65
 const AIM_HEIGHT:= 1.3
 const AIM_RADIUS:= PAD_RADIUS
 
-const MODEL:= "res://assets/models/hay_drone.glb"
+const MODEL:= "res://assets/models/compiled/hay_drone.scn"
 
 
 const SPEC:= "res://assets/models/hay_drone_materials.json"

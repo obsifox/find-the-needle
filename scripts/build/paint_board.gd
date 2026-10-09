@@ -2,7 +2,7 @@ class_name PaintBoard
 extends Node3D
 
 
-const MODEL:= "res://assets/models/paint_board.glb"
+const MODEL:= "res://assets/models/compiled/paint_board.scn"
 const SPEC:= "res://assets/models/paint_board_materials.json"
 
 

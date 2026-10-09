@@ -2,7 +2,7 @@ class_name FeedDisc
 extends Carryable
 
 
-const MODEL:= "res://assets/models/feed_disc.glb"
+const MODEL:= "res://assets/models/compiled/feed_disc.scn"
 const MESH_NODE:= "FeedDisc"
 static var _shared_mesh: Mesh = null
 static var _looked:= false

@@ -2,7 +2,7 @@ class_name RoboticArm
 extends StaticBody3D
 
 
-static var MODEL: PackedScene = load("res://robotic_arm_game_ready.glb")
+static var MODEL: PackedScene = load("res://compiled/robotic_arm_game_ready.scn")
 
 
 const SPEC:= "res://assets/models/robotic_arm_materials.json"
@@ -425,6 +425,12 @@ func _exit_tree() -> void:
 
 
 func _build_model() -> void:
+        if MODEL == null:
+                # V38: never feed a null PackedScene to instantiate();
+                # a null model killed Mali devices at the 82% stage.
+                push_error("RoboticArm: model scene missing; continuing without visuals")
+                CrashReport.note_doing("robotic_arm:MODEL_MISSING")
+                return
         _model = MODEL.instantiate() as Node3D
         _model.name = "Model"
         _model.scale = Vector3.ONE * visual_scale()
@@ -1990,6 +1996,8 @@ func _lerp_angles(from: Vector4, to: Vector4, amount: float) -> Vector4:
 
 
 func _apply_angles(value: Vector4) -> void:
+        if _model == null:
+                return
         _angles = value
         if not is_equal_approx(_base_yaw.rotation.y, value.x):
                 _base_yaw.rotation.y = value.x

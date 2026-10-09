@@ -2,10 +2,10 @@ class_name ConveyorKit
 extends RefCounted
 
 
-const SOURCE:= "res://assets/blender/conveyorbelt.blend"
+const SOURCE:= "res://assets/blender/compiled/conveyorbelt.scn"
 
 
-const SOURCE_U:= "res://assets/blender/conveyor_u.blend"
+const SOURCE_U:= "res://assets/blender/compiled/conveyor_u.scn"
 const SHADER:= "res://assets/conveyor_surface.gdshader"
 # MOBILE FIX (the 71-74% stand crash, v2.2.0): touch-first devices -- and any
 # run recovering from a load-time crash -- build every conveyor material from

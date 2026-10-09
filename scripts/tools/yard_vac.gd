@@ -2,7 +2,7 @@ class_name YardVac
 extends Node3D
 
 
-const MODEL_PATH:= "res://assets/models/yard_vac.glb"
+const MODEL_PATH:= "res://assets/models/compiled/yard_vac.scn"
 
 
 const SPEC:= "res://assets/models/yard_vac_materials.json"

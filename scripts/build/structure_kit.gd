@@ -11,7 +11,7 @@ const RAIL_POST_SECTION:= 0.06
 const RAIL_SECTION:= 0.055
 
 
-const WALL_SOURCE:= "res://assets/models/wall.glb"
+const WALL_SOURCE:= "res://assets/models/compiled/wall.scn"
 
 static var _deck: ArrayMesh
 static var _beam: ArrayMesh

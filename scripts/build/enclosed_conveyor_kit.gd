@@ -2,7 +2,7 @@ class_name EnclosedConveyorKit
 extends RefCounted
 
 
-const ASSET:= "res://assets/models/enclosed_conveyor/enclosed_conveyor_kit.glb"
+const ASSET:= "res://assets/models/enclosed_conveyor/compiled/enclosed_conveyor_kit.scn"
 const SETTINGS:= "res://assets/models/enclosed_conveyor/enclosed_conveyor_connections.json"
 const JOIN_EPSILON:= 0.001
 

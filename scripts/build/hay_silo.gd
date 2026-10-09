@@ -2,7 +2,7 @@ class_name HaySilo
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_silo.glb"
+const MODEL:= "res://assets/models/compiled/hay_silo.scn"
 
 
 const SPEC:= "res://assets/models/hay_silo_materials.json"

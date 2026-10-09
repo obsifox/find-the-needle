@@ -2,7 +2,7 @@ class_name PowerPole
 extends Node3D
 
 
-const MODEL:= "res://assets/models/power_pole.glb"
+const MODEL:= "res://assets/models/compiled/power_pole.scn"
 const SPEC:= "res://assets/models/power_pole_materials.json"
 
 const N_WIRE:= "Marker_Wire"

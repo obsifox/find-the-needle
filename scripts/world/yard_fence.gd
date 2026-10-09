@@ -4,7 +4,7 @@ extends Node3D
 
 signal gate_settled(open: bool)
 
-const MODEL:= "res://assets/models/Fence/modular_chainlink_fence_2k.fbx"
+const MODEL:= "res://assets/models/Fence/compiled/modular_chainlink_fence_2k.scn"
 const TEX:= "res://assets/models/Fence/textures/modular_chainlink_fence_%s_2k.%s"
 
 const PANEL_NODE:= "modular_chainlink_fence_double"

@@ -2,7 +2,7 @@ class_name MetalDetector
 extends Node3D
 
 
-const MODEL_PATH:= "res://assets/models/metal_detector.glb"
+const MODEL_PATH:= "res://assets/models/compiled/metal_detector.scn"
 const PING_SHADER:= "res://assets/detector_ping.gdshader"
 
 

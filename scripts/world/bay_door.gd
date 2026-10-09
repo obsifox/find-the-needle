@@ -2,7 +2,7 @@ class_name BayDoor
 extends Node3D
 
 
-const MODEL:= "res://assets/models/warehouse_door.glb"
+const MODEL:= "res://assets/models/compiled/warehouse_door.scn"
 
 
 const SPEC:= "res://assets/models/warehouse_door_materials.json"

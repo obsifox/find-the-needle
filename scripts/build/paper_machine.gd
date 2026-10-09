@@ -2,7 +2,7 @@ class_name PaperMachine
 extends Node3D
 
 
-const MODEL:= "res://assets/models/paper_machine.glb"
+const MODEL:= "res://assets/models/compiled/paper_machine.scn"
 
 
 const SPEC:= "res://assets/models/paper_machine_materials.json"

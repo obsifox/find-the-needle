@@ -2,7 +2,7 @@ class_name BriquettePress
 extends Node3D
 
 
-const MODEL:= "res://assets/models/briquette_press.glb"
+const MODEL:= "res://assets/models/compiled/briquette_press.scn"
 
 
 const SPEC:= "res://assets/models/briquette_press_materials.json"

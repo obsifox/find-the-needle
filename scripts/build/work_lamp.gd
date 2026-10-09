@@ -2,7 +2,7 @@ class_name WorkLamp
 extends Node3D
 
 
-const MODEL:= "res://assets/models/work_lamp.glb"
+const MODEL:= "res://assets/models/compiled/work_lamp.scn"
 const SPEC:= "res://assets/models/work_lamp_materials.json"
 
 

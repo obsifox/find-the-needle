@@ -2,7 +2,7 @@ class_name WaterSplitter
 extends Node3D
 
 
-const MODEL:= "res://assets/models/water_splitter.glb"
+const MODEL:= "res://assets/models/compiled/water_splitter.scn"
 
 
 const SPEC:= "res://assets/models/water_splitter_materials.json"

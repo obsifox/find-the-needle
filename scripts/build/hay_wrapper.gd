@@ -2,7 +2,7 @@ class_name HayWrapper
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_wrapper.glb"
+const MODEL:= "res://assets/models/compiled/hay_wrapper.scn"
 
 
 const SPEC:= "res://assets/models/hay_wrapper_materials.json"

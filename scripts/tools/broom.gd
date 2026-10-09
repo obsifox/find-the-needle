@@ -2,7 +2,7 @@ class_name Broom
 extends Node3D
 
 
-const MODEL_PATH:= "res://assets/models/broom.glb"
+const MODEL_PATH:= "res://assets/models/compiled/broom.scn"
 
 
 const HEAD_W:= 0.59

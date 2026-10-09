@@ -2,7 +2,7 @@ class_name HayBale
 extends Carryable
 
 
-const MODEL:= "res://assets/models/hay_compressor.glb"
+const MODEL:= "res://assets/models/compiled/hay_compressor.scn"
 const MESH_NODE:= "Compressor_Bale"
 const MAT_STRAW:= "M_HC_Straw"
 const MAT_TWINE:= "M_HC_Twine"

@@ -2,7 +2,7 @@ class_name HayCompressor
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_compressor.glb"
+const MODEL:= "res://assets/models/compiled/hay_compressor.scn"
 
 
 const SPEC:= "res://assets/models/hay_compressor_materials.json"

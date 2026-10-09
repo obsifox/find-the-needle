@@ -2,10 +2,10 @@ class_name ConveyorTBody
 extends Node3D
 
 
-const MODEL_V1:= "res://assets/models/simple_arm_splitter.glb"
-const MODEL_V2:= "res://assets/models/simple_arm_splitter_2m.glb"
+const MODEL_V1:= "res://assets/models/compiled/simple_arm_splitter.scn"
+const MODEL_V2:= "res://assets/models/compiled/simple_arm_splitter_2m.scn"
 
-const MODEL_1M:= "res://assets/models/simple_arm_splitter_1m.glb"
+const MODEL_1M:= "res://assets/models/compiled/simple_arm_splitter_1m.scn"
 
 
 static func model_for(port_r: float) -> String:

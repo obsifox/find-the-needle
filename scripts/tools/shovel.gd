@@ -2,7 +2,7 @@ class_name Shovel
 extends Node3D
 
 
-const SPADE_PATH:= "res://assets/downloaded/models/rusted_spade_01/rusted_spade_01_1k.gltf"
+const SPADE_PATH:= "res://assets/downloaded/models/rusted_spade_01/compiled/rusted_spade_01_1k.scn"
 const SPADE_BLADE_Y0:= -0.5032
 const SPADE_BLADE_Y1:= -0.22
 const SPADE_TOP_Y:= 0.5977

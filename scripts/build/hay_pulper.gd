@@ -2,7 +2,7 @@ class_name HayPulper
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_pulper_reference.glb"
+const MODEL:= "res://assets/models/compiled/hay_pulper_reference.scn"
 
 
 const SPEC:= "res://assets/models/hay_pulper_reference_materials.json"

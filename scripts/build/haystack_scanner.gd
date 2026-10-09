@@ -2,7 +2,7 @@ class_name HaystackScanner
 extends Node3D
 
 
-const MODEL:= "res://assets/models/haystack_scanner.glb"
+const MODEL:= "res://assets/models/compiled/haystack_scanner.scn"
 const PING_SHADER:= "res://assets/scanner_ping.gdshader"
 
 

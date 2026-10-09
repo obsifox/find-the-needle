@@ -23,6 +23,7 @@ config/icon="res://assets/branding/app_icon.png"
 run/flush_stdout_on_print.release=true
 
 [autoload]
+AssetFix="*res://autoload/asset_fix.gd"
 GameLog="*res://autoload/gamelog.gd"
 Cfg="*res://autoload/cfg.gd"
 InputSetup="*res://autoload/input_setup.gd"

@@ -2,7 +2,7 @@ class_name Bucket
 extends HayContainer
 
 
-const MODEL:= "res://assets/models/bucket.glb"
+const MODEL:= "res://assets/models/compiled/bucket.scn"
 
 
 const SPEC:= "res://assets/models/bucket_materials.json"

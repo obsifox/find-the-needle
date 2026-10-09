@@ -2,7 +2,7 @@ class_name HayWad
 extends Carryable
 
 
-const MODEL:= "res://assets/models/hay_wad.glb"
+const MODEL:= "res://assets/models/compiled/hay_wad.scn"
 const SPEC:= "res://assets/models/hay_wad_materials.json"
 
 

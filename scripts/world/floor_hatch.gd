@@ -2,7 +2,7 @@ class_name FloorHatch
 extends Node3D
 
 
-const MODEL:= "res://assets/models/floor_hatch.glb"
+const MODEL:= "res://assets/models/compiled/floor_hatch.scn"
 const SPEC:= "res://assets/models/floor_hatch_materials.json"
 
 

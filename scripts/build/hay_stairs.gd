@@ -2,7 +2,7 @@ class_name HayStairs
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_stairs.glb"
+const MODEL:= "res://assets/models/compiled/hay_stairs.scn"
 const SPEC:= "res://assets/models/hay_stairs_materials.json"
 
 const N_RIDE:= "Marker_Ride_%d"

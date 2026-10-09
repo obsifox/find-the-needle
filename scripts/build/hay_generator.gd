@@ -2,7 +2,7 @@ class_name HayGenerator
 extends Node3D
 
 
-const MODEL:= "res://assets/models/hay_generator.glb"
+const MODEL:= "res://assets/models/compiled/hay_generator.scn"
 const SPEC:= "res://assets/models/hay_generator_materials.json"
 
 

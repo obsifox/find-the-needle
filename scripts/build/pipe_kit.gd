@@ -2,7 +2,7 @@ class_name PipeKit
 extends RefCounted
 
 
-const SOURCE:= "res://assets/blender/water_pipe.blend"
+const SOURCE:= "res://assets/blender/compiled/water_pipe.scn"
 
 
 const SPEC:= "res://assets/models/water_pipe_materials.json"

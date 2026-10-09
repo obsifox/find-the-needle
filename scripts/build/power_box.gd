@@ -2,7 +2,7 @@ class_name PowerBox
 extends PowerPole
 
 
-const BOX_MODEL:= "res://assets/models/cable_box.glb"
+const BOX_MODEL:= "res://assets/models/compiled/cable_box.scn"
 const BOX_SPEC:= "res://assets/models/cable_box_materials.json"
 
 

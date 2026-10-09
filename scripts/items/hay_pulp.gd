@@ -2,7 +2,7 @@ class_name HayPulp
 extends Carryable
 
 
-const MODEL:= "res://assets/models/hay_pulp.glb"
+const MODEL:= "res://assets/models/compiled/hay_pulp.scn"
 
 
 const MESH_NODE:= "Pulp"

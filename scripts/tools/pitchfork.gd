@@ -2,7 +2,7 @@ class_name Pitchfork
 extends Shovel
 
 
-const MODEL_PATH:= "res://assets/models/pitchfork.glb"
+const MODEL_PATH:= "res://assets/models/compiled/pitchfork.scn"
 
 
 const MODEL_SCALE:= Vector3(0.0175, 0.0105, 0.0085)

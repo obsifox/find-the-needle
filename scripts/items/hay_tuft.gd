@@ -2,7 +2,7 @@ class_name HayTuft
 extends HayWad
 
 
-const TUFT_MODEL:= "res://assets/models/hay_tuft.glb"
+const TUFT_MODEL:= "res://assets/models/compiled/hay_tuft.scn"
 const TUFT_SPEC:= "res://assets/models/hay_tuft_materials.json"
 
 

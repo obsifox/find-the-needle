@@ -2,7 +2,7 @@ class_name FoiledBale
 extends Carryable
 
 
-const MODEL:= "res://assets/models/hay_wrapper.glb"
+const MODEL:= "res://assets/models/compiled/hay_wrapper.scn"
 const MESH_NODE:= "Wrapper_Foiled"
 
 static var _shared_mesh: Mesh = null

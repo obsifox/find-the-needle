@@ -2,7 +2,7 @@ class_name BoreholePump
 extends Node3D
 
 
-const MODEL:= "res://assets/models/borehole_pump.glb"
+const MODEL:= "res://assets/models/compiled/borehole_pump.scn"
 
 
 const SPEC:= "res://assets/models/borehole_pump_materials.json"
