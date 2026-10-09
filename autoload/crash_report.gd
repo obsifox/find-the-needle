@@ -229,6 +229,10 @@ func note_stage(caption: String, progress: float, loading: bool = true) -> void:
         _note({ "stage": caption, "progress": snappedf(progress, 0.01),
                 "loading": loading, "pile": str(Cfg.pile_size_id),
                 "stage_at": Time.get_unix_time_from_system() })
+        # LOG FIX (v2.4.0): the loading trail must survive a hard driver crash
+        # and land in a folder the player can open. The sentinel only helps on
+        # the next clean launch; GameLog writes the same trail to shared storage.
+        GameLog.put("stage", "%s (%d%%)" % [caption, int(round(progress * 100.0))])
 
 
 func note_doing(what: String) -> void:
@@ -242,6 +246,7 @@ func note_doing(what: String) -> void:
         _doing = what
         _doing_at = now
         _note({ "doing": what, "doing_at": now })
+        GameLog.put("doing", what)
 
 
 func _note(fields: Dictionary) -> void:
@@ -340,6 +345,11 @@ func recover() -> void:
                 "died_at": died_at, "text": text, "error": pending_summary }
         pending = _compose(session, crashed, started, died_at, text, pending_summary)
 
+        # LOG FIX (v2.4.0): persist the composed report as a FILE the player
+        # can find and send, even if the in-game dialog is never opened.
+        GameLog.put("crash", "previous run died: %s" % pending_reason)
+        GameLog.write_artifact("crash_report_%s.txt" % _artifact_stamp(), pending)
+
 
         last_doing = str(session.get("doing", ""))
         safe_load = bool(session.get("loading", false))
@@ -369,6 +379,10 @@ static func intel_fault_model(cpu: String) -> String:
 
 static func lost_vulkan_device(text: String) -> bool:
         return "Vulkan device was lost" in text or "VK_ERROR_DEVICE_LOST" in text or "VkResult error -4)" in text
+
+
+static func _artifact_stamp() -> String:
+        return Time.get_datetime_string_from_system(true, true).replace(" ", "_").replace(":", ".")
 
 
 func _previous_log(started: float) -> String:
@@ -404,6 +418,7 @@ func _keep(path: String) -> String:
         var dest:= CRASH_DIR.path_join("crash_%s.log" % stamp)
         if DirAccess.copy_absolute(path, dest) != OK:
                 return ""
+        GameLog.mirror_file(dest, "engine_log_%s.log" % _artifact_stamp())
         _prune()
         return ProjectSettings.globalize_path(dest)
 

@@ -981,6 +981,12 @@ func _ready() -> void:
                 _load_laps = DevLoadLaps.new()
                 _load_laps.watch(self)
 
+        # LOG FIX (v2.4.0): first breadcrumb inside the world itself. If the
+        # driver dies during the build, the .gamelog file tells us which path
+        # (staged/inline, safe mode, mobile sim) was active.
+        GameLog.put("world", "world build start: staged=%s mobile=%s safe_load=%s last_run_doing=%s"
+                % [str(_staged), str(Cfg.is_mobile), str(CrashReport.safe_load), CrashReport.last_doing])
+
 
         Sketchbook.inert = _dev
         _apply_pile_size_override()

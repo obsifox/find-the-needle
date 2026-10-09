@@ -147,3 +147,39 @@ Asset ها:
 اگر باز هم کرش داد: خط `renderer` گزارش حالا باید `gl_compatibility` را
 نشان دهد و `last action` زیرگام دقیق (مثلاً `truck:skin`) را — عکس/متن آن
 را بفرستید.
+
+---
+
+## v2.4.0 — سیستم لاگ قابل‌ارسال؛ کرشِ صفحه سیاه دیگر نامرئی نیست (versionCode 7) ✅
+
+گزارش کاربر از v2.3.0: صفحه سیاه و خروج در ~۱ ثانیه. تا امروز اگر کرش در
+ثانیه‌های اول (بوت/منو) رخ می‌داد هیچ ردی باقی نمی‌ماند: فایل‌لاگ موتور
+روشن نبود (کلید اشتباه در project.godot) و فایل‌های داخل حافظه خصوصی اپ
+از فایل‌منیجر قابل دسترس نبودند. این ریلیز خودِ «چشم» را می‌سازد — جزئیات
+فنی در `docs/BUGS.md`:
+
+1. فایل‌لاگ گودوت واقعاً روشن شد (`user://logs/godot.log`، ۱۰ نسخه گردشی)
+2. autoload جدید `GameLog`: لاگ ماندگار + آینه در حافظه اشتراکی
+3. breadcrumbهای لودینگ (stages/standbuild/truck) حالا در فایل قابل‌ارسال هم می‌روند
+4. گزارش کرش به‌صورت `crash_report_*.txt` در پوشه لاگ ذخیره می‌شود
+5. مجوزهای MANAGE/WRITE_EXTERNAL_STORAGE برای مسیر `/sdcard/.gamelog`
+
+### کجا لاگ را ببینیم؟
+
+- مسیر پیش‌فرض (بدون هیچ مجوزی): `Android/media/com.obsifox.findtheneedle/gamelog/`
+- مسیر دلخواه کاربر: `/sdcard/.gamelog/` — بعد از یک‌بار فعال کردن
+  Settings → Apps → Find The Needle → Permissions → Files and media →
+  «Allow management of all files» (اجرای بعدی خودکار همان‌جا می‌نویسد)
+- فایل‌های مهم: `gamelog.txt` (اصلی)، `engine_prev.log` (لاگ اجرای قبل)،
+  `crash_report_*.txt` (گزارش کرش)
+
+اگر کرش برگشت: فقط جدیدترین فایل‌های این پوشه را بفرستید — آخرین خط‌ها
+دقیقاً می‌گویند بازی کجا بود (منو؟ لودینگ؟ کدام زیرگام؟).
+
+Asset ها:
+- `FindTheNeedle-v2.4.0-universal.apk` (versionCode 7 — universal: arm64-v8a +
+  armeabi-v7a، ETC2/ASTC، targetSdk 36، کیفیت‌های low/medium/high)
+- `find-the-needle-v2.4.0-source.zip`
+
+⚠️ **نکته‌ی نصب:** امضای این بیلد با همه‌ی بیلدهای قبلی فرق دارد (کلید قبلی
+در دسترس نبود) — اول uninstall کنید بعد نصب. ذخیره‌های داخل بازی پاک می‌شوند.

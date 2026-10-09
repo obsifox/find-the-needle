@@ -146,6 +146,7 @@ func _ready() -> void:
         Audio.ambience_start()
         Audio.set_indoor(0.85)
         Audio.music_start()
+        GameLog.put("menu", "main menu ready (build %s)" % Cfg.build_string())
         if "--lbshot" in OS.get_cmdline_user_args():
                 _shoot_leaderboards()
         if "--sizeshot" in OS.get_cmdline_user_args():
@@ -1565,6 +1566,7 @@ func _start(slot: int, fresh: bool) -> void:
 
 
 func _enter_game() -> void:
+        GameLog.put("game", "entering game (map=%s pile=%s)" % [_chosen_map, _chosen_size])
         Loading.show_screen("FIND THE NEEDLE", tr("PREPARING THE PILE"))
         Loading.enter_scene(GAME_SCENE)
 

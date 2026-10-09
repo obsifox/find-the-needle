@@ -23,6 +23,7 @@ config/icon="res://assets/branding/app_icon.png"
 run/flush_stdout_on_print.release=true
 
 [autoload]
+GameLog="*res://autoload/gamelog.gd"
 Cfg="*res://autoload/cfg.gd"
 InputSetup="*res://autoload/input_setup.gd"
 GameState="*res://autoload/game_state.gd"
@@ -35,7 +36,13 @@ Leaderboard="*res://autoload/leaderboard.gd"
 CrashReport="*res://autoload/crash_report.gd"
 
 [debug]
-file_logging/max_log_files=20
+; LOG FIX (v2.4.0): the old key below was a fantasy path Godot ignores
+; ("debug/file_logging/max_log_files"), so file logging was never on and
+; crash reports said "No log survived this crash". These are the real keys;
+; they make the engine write user://logs/godot.log (rotated, 10 kept), which
+; GameLog then mirrors into the shared .gamelog folder the player can open.
+settings/file_logging/enable_file_logging=true
+settings/file_logging/max_log_files=10
 
 [display]
 window/size/viewport_width=1600
