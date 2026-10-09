@@ -395,7 +395,8 @@ func _build_display(page: Control) -> void:
 		Cfg.smooth_camera_amount, Cfg.set_smooth_camera_amount, _fmt_pct))
 	if not Cfg.is_mobile:
 		_build_renderer_row(page)
-	_build_render_thread_row(page)
+	if not Cfg.is_mobile:
+		_build_render_thread_row(page)
 
 
 	page.add_child(_reset_button(tr("RESET TO DEFAULTS"), func() -> void:

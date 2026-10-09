@@ -327,15 +327,15 @@ var DEMO:= not (OS.has_feature("full")
         or (OS.has_feature("editor") and "--full" in OS.get_cmdline_user_args()))
 
 
-const BUILD_TAG:= "V35"
+const BUILD_TAG:= "V36"
 
 
 ## MOBILE FIX (v2.3.0): the app version rides in the crash report's build
 ## line. Both previous reports just said "V33 demo", so there was no way to
 ## tell WHICH apk had crashed -- bump APP_VERSION/APP_CODE together with
 ## export_presets.cfg version/name and version/code on every release.
-const APP_VERSION:= "2.5.0"
-const APP_CODE:= 8
+const APP_VERSION:= "3.0.0"
+const APP_CODE:= 9
 
 
 func build_string() -> String:
@@ -2986,6 +2986,17 @@ func _ready() -> void:
                 save_settings.call_deferred()
         if first_launch:
                 igpu_checked = true
+
+        # v3.0.0 MOBILE REBUILD: one-time reset. The desktop-heritage
+        # defaults (HIGH quality, 3D menu backdrop, every effect on) are
+        # exactly what the phone had to draw for its FIRST frame -- and the
+        # first frame is where it died. POTATO on phones, once; the player
+        # can raise it in settings afterwards and it sticks.
+        if not mobile_checked and is_mobile:
+                mobile_checked = true
+                if quality > Quality.POTATO:
+                        quality = Quality.POTATO
+                save_settings.call_deferred()
         _pick_renderer_for_gpu()
 
 
@@ -3431,6 +3442,11 @@ var menu_static:= -1
 
 var igpu_checked:= false
 
+# v3.0.0 MOBILE REBUILD: one-time reset marker (same pattern as
+# igpu_checked). Phones that ran the desktop-heritage defaults get
+# POTATO once; after that the player's own choice sticks.
+var mobile_checked:= false
+
 
 func integrated_gpu() -> bool:
         return RenderingServer.get_video_adapter_type() == RenderingDevice.DEVICE_TYPE_INTEGRATED_GPU
@@ -3544,6 +3560,7 @@ func save_settings() -> void:
         cf.set_value("game", "locale_asked", locale_asked)
         cf.set_value("display", "menu_static", menu_static)
         cf.set_value("display", "igpu_checked", igpu_checked)
+        cf.set_value("display", "mobile_checked", mobile_checked)
         cf.set_value("display", "quality", int(quality))
         cf.set_value("display", "fullscreen", fullscreen)
         cf.set_value("display", "vsync", vsync)
@@ -3624,6 +3641,7 @@ func load_settings() -> void:
         locale_asked = bool(cf.get_value("game", "locale_asked", true))
         menu_static = clampi(int(cf.get_value("display", "menu_static", menu_static)), -1, 1)
         igpu_checked = bool(cf.get_value("display", "igpu_checked", false))
+        mobile_checked = bool(cf.get_value("display", "mobile_checked", false))
 
 
         var saved_level:= int(cf.get_value("display", "quality", int(quality)))

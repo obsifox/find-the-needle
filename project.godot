@@ -72,16 +72,17 @@ jolt_physics_3d/limits/max_contact_constraints=32768
 
 [rendering]
 renderer/rendering_method="forward_plus"
-; MOBILE FIX (v2.3.0, the 74% stand crash): BOTH Vulkan renderers have now
-; hard-killed the Mali-G615 on the tester's phone -- v2.1.0 died on the
-; belt's first draws (forward+ class pipelines) and v2.2.0 died on the
-; delivery truck's first resource uploads (mobile renderer; the crash
-; report's "forward_plus" line was misreporting, it read the base setting
-; and not the .mobile override). Vulkan is done on this driver. Phones now
-; run gl_compatibility: OpenGL ES 3, Mali's oldest and most battle-tested
-; driver stack, and a completely different code path from the one that
-; keeps dying. Desktop (forward_plus) is untouched.
-renderer/rendering_method.mobile="gl_compatibility"
+; MOBILE REBUILD (v3.0.0): phones go back to the Vulkan "mobile" renderer.
+; The field data is unambiguous: v2.1.0 (forward_plus) and v2.2.0 (mobile)
+; both RENDERED for ~25 s on the tester's Mali-G615 (menu + loading up to
+; 74%) and only died on specific stand/truck GPU resources. Every GL build
+; (v2.3.0, v2.4.0, v2.5.0 -- separate-thread AND single-thread) died BEFORE
+; the first frame was presented: the OpenGL ES path of this driver cannot
+; even draw the menu. GL never drew a pixel; Vulkan did, for 25 seconds.
+; The old 74% kills are handled by the v2.1.0 instance-uniform removal,
+; the v2.3.0 staged stand build, and the v3.0.0 POTATO default (every
+; effect off, smallest texture uploads).
+renderer/rendering_method.mobile="mobile"
 textures/vram_compression/import_etc2_astc=true
 textures/vram_compression/import_s3tc_bptc=true
 rendering_device/fallback_to_vulkan=false
@@ -101,17 +102,3 @@ occlusion_culling/use_occlusion_culling=true
 ; the 71-74% window does not need.
 occlusion_culling/use_occlusion_culling.mobile=false
 driver/threads/thread_model.template=2
-; CRASH FIX (v2.5.0, the 1-second black-screen boot crash on GL): the
-; decompiled desktop project forces a SEPARATE RENDER THREAD for every
-; exported build ("driver/threads/thread_model.template=2" above, original
-; developer's choice for desktop Vulkan). The v2.3.0 llvmpipe verification
-; ran on the ENGINE default, not on this override -- so Android GL has
-; been shipping an unvalidated configuration: OpenGL ES on a worker
-; thread needs EGL context hand-off, and on the tester's Mali-G615 the
-; boot banner (written before the driver finished coming up) shows an
-; EMPTY gpu/api line and the app dies ~1 s later, before a single frame
-; is drawn. Phones now render single-threaded (Safe): the GL context
-; lives on the main thread, exactly the configuration the desktop GL
-; verification actually exercised. Desktop (forward_plus, Vulkan) keeps
-; the separate render thread.
-driver/threads/thread_model.mobile=1

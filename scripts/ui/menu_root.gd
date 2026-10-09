@@ -256,6 +256,15 @@ var _menu: MainMenu
 
 
 func _wants_plate() -> bool:
+	# v3.0.0 MOBILE REBUILD: phones always get the 2D plate menu. The 3D
+	# hay-field backdrop (HDR panorama sky + custom strand/flare shaders)
+	# is the desktop showcase; on the phone it was the first thing the
+	# broken GL path had to draw -- and the first frame is exactly where
+	# all three GL builds died. 2D UI keeps the phone's first frame
+	# trivial, and raising the quality in settings can no longer swap the
+	# heavy backdrop back in.
+	if Cfg.is_mobile:
+		return true
 	return not _force_3d and Cfg.menu_backdrop_static()
 
 
