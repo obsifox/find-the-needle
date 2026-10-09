@@ -65,3 +65,32 @@ Asset ها:
 
 ⚠️ **امضای APK دوباره عوض شده** (کلید قبلی در دسترس نیست): قبل از نصب، نسخه‌ی
 قبلی را uninstall کنید.
+
+---
+
+## v2.2.0 — فیکس هدفمند کمربند استند؛ مقصر از breadcrumb فهمیده شد (versionCode 5) ✅
+
+گزارش کرش کاربر از APK v2.1.0 دقیقاً نام برد: `standbuild:belt`. یعنی اولین
+draw کمربند استند درایور Mali را می‌کشت (تحلیل کامل در `docs/BUGS.md`). این
+ریلیز سه دفاع مستقل دارد:
+
+1. شیدر جفتی ساده‌ی موبایل برای همه‌ی متریال‌های conveyor (uniformها یکسان؛
+   بدون fwidth/tread/nرمال دست‌ساز)
+2. ساخت کامل کمربند به بعد از بسته شدن لودینگ منتقل شد — هر بخش یک فریم +
+   breadcrumb اختصاصی (`belt:node/materials/deck/noses/supports/records`)
+3. پایه‌های کمربند روی موبایل StandardMaterial3D (ترکیب MultiMesh + شیدر
+   سفارشی از مسیر لود حذف شد)
+
+- دسکتاپ: مسیر قبلی دست‌نخورده (کمربند داخل `_build_all`، شیدر کامل)
+- راستی‌آزمایی: لود کامل استیج‌شده‌ی headless با `--stagedload --mobilesim` —
+  صفر خطا + کمربند کامل بعد از لودینگ
+
+Asset ها:
+- `FindTheNeedle-v2.2.0-universal.apk` (versionCode 5 — universal: arm64-v8a +
+  armeabi-v7a، ETC2/ASTC، targetSdk 36، کیفیت‌های low/medium/high)
+- `find-the-needle-v2.2.0-source.zip`
+
+⚠️ **امضای APK دوباره عوض شده** (کلید قبلی در دسترس نیست): قبل از نصب، نسخه‌ی
+قبلی را uninstall کنید — ذخیره‌های داخل بازی با حذف برنامه پاک می‌شوند.
+اگر باز هم کرش داد: دیالوگ گزارش کرش این بار باید «last action» مثل
+`belt:deck` یا `standbuild:skin` را نشان دهد — عکس/متن آن را بفرستید.

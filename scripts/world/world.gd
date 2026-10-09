@@ -967,6 +967,12 @@ func _ready() -> void:
 
         var uargs:= OS.get_cmdline_user_args()
         _staged = not _dev or Cfg.is_mobile or "--stagedload" in uargs or "--drawerhitch" in uargs
+        # DEV (--mobilesim): force the touch-device path on any machine, so the
+        # staged load, the deferred stand belt, the mobile conveyor shader and
+        # the touch controls can all be exercised headless or on a desktop dev
+        # run. No effect without the flag.
+        if "--mobilesim" in uargs:
+                Cfg.is_mobile = true
         if "--stagedload" in OS.get_cmdline_user_args():
                 _load_laps = DevLoadLaps.new()
                 _load_laps.watch(self)
@@ -987,6 +993,18 @@ func _ready() -> void:
         await _build()
         if _staged:
                 await _finish_build()
+
+
+        # MOBILE FIX (the 71-74% stand crash, v2.2.0): the selling stand's belt
+        # is built here, AFTER the loading screen is gone -- the v2.1.0 crash
+        # report named standbuild:belt as the step whose first draws killed the
+        # Mali driver mid-load. Same draws, one part per rendered frame, each
+        # with its own breadcrumb, but on the far side of the load. Desktop
+        # runs built the belt inside _build_all, so belt_pending() is false
+        # there and this is skipped.
+        if stand != null and stand.belt_pending():
+                CrashReport.note_doing("stand:belt_deferred")
+                await stand.build_belt_staged()
 
 
         if detail != null and player != null:

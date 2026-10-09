@@ -342,6 +342,14 @@ var _belt_head:= Vector3(1.06, 1.08, 3.05)
 var _belt_tail:= Vector3(-3.12, 0.34, 3.05)
 
 
+## MOBILE FIX (the 71-74% stand crash, v2.2.0): belt geometry cache, kept
+## between the staged belt parts so they can build one per rendered frame
+## without re-deriving the curve.
+var _belt_pts: PackedVector3Array = PackedVector3Array()
+var _belt_curve: PackedVector3Array = PackedVector3Array()
+var _belt_climb_from:= Vector3.ZERO
+
+
 var _scale_plate:= Vector3(1.66, 0.61, 3.05)
 
 
@@ -484,9 +492,14 @@ func _build_all() -> void:
 ## render thread gets a frame in which whatever the step above just added is
 ## actually drawn, so a pipeline the mobile driver cannot compile is blamed on
 ## the step that drew it.
+##
+## MOBILE FIX (v2.2.0): the belt is NOT in this list any more. The v2.1.0
+## crash report named standbuild:belt as the step whose first draws killed
+## the Mali driver mid-load, so on staged builds the whole belt is built
+## after the loading screen is gone -- see build_belt_staged(), which the
+## world calls once Loading.hide_screen() has run.
 func build_staged_steps() -> void:
         var steps: Array = [
-                ["standbuild:belt", _build_belt],
                 ["standbuild:payout", _build_payout_area],
                 ["standbuild:skin", _skin],
                 ["standbuild:dress", _dress],
@@ -505,6 +518,233 @@ func build_staged_steps() -> void:
                 CrashReport.note_doing(str(step [0]))
                 (step [1] as Callable).call()
                 await get_tree().process_frame
+
+
+## True while the stand has no belt yet -- staged builds between the world's
+## creation of the stand and the deferred belt build. Desktop builds the
+## belt inside _build_all, so this is false there from the first frame.
+func belt_pending() -> bool:
+        return _belt == null
+
+
+## MOBILE FIX (the 71-74% stand crash, v2.2.0). The belt builds AFTER the
+## loading screen is gone: same draws, same order as the desktop's
+## _build_belt, but on the far side of the load and one part per rendered
+## frame, each with its own breadcrumb -- so if a driver fault ever comes
+## back, the report names the exact part (node / materials / deck / noses /
+## supports) instead of the whole belt. Parts are additionally restricted
+## to draw combinations the load itself already proved safe on the user's
+## phone: the deck and noses are MeshInstance3D + minimal mobile shader
+## (the stand model and the hay pile drew that way for the whole load), and
+## the legs/feet MultiMeshes carry a plain StandardMaterial3D (every
+## MultiMesh before the belt did), not a custom shader.
+func build_belt_staged() -> void:
+        if _belt != null:
+                return
+
+
+        CrashReport.note_doing("belt:node")
+        _belt = BeltPath.new()
+        _belt.name = "StandBelt"
+        _belt.stand_belt = true
+        _belt.gathers_straw = true
+        add_child(_belt)
+        _belt_pts = _belt_points()
+        await get_tree().process_frame
+
+
+        CrashReport.note_doing("belt:materials")
+        _belt_materials()
+        await get_tree().process_frame
+
+
+        CrashReport.note_doing("belt:deck")
+        _belt_deck(_belt_pts)
+        await get_tree().process_frame
+
+
+        CrashReport.note_doing("belt:noses")
+        _belt_noses()
+        await get_tree().process_frame
+
+
+        CrashReport.note_doing("belt:supports")
+        _belt_supports()
+        await get_tree().process_frame
+
+
+        CrashReport.note_doing("belt:records")
+        _belt.records_props = true
+        _belt.hold_records(_eats_kind)
+        print("[stand] belt built staged: deck=%s rails=%s noses=%s supports=%s" % [
+                _belt.get_node_or_null("Path/Sections") != null,
+                _belt.get_node_or_null("Path/RailL") != null,
+                get_node_or_null("BeltDrums") != null,
+                get_node_or_null("BeltSupports") != null])
+
+
+## The belt's path points, from the markers resolved by _resolve_belt_markers
+## (with the same measured fallbacks as before): flat run to the knee, the
+## knee arc, then the climb to the head.
+func _belt_points() -> PackedVector3Array:
+        var tail:= _belt_tail
+        var head:= _belt_head
+        var centre_z:= tail.z
+        var points:= PackedVector3Array()
+        points.append(tail)
+        points.append(Vector3(BELT_KNEE_X, BELT_DECK_Y, centre_z))
+        var knee_centre_y:= BELT_DECK_Y + BELT_KNEE_RADIUS
+        var a0:= - PI * 0.5
+        var a1:= a0 + BELT_INCLINE
+        for i in range(1, BELT_PATH_STEPS + 1):
+                var a:= lerpf(a0, a1, float(i) / float(BELT_PATH_STEPS))
+                points.append(Vector3(
+                        BELT_KNEE_X + BELT_KNEE_RADIUS * cos(a),
+                        knee_centre_y + BELT_KNEE_RADIUS * sin(a),
+                        centre_z))
+        points.append(head)
+        return points
+
+
+## Marker-dependent belt bookkeeping, resolved from _build_model on BOTH
+## paths so the payout mouth, the scale plate and the belt endpoints stay
+## exact while the belt's build is deferred (staged builds).
+func _resolve_belt_markers() -> void:
+        _belt_tail = _marker_local(N_BELT_IN, Vector3(-3.12, BELT_DECK_Y, 3.05))
+        _belt_head = _marker_local(N_BELT_OUT, Vector3(1.06, 1.08, 3.05))
+        _belt_mid = to_global((_belt_tail + _belt_head) * 0.5)
+        _scale_plate = _marker_local(N_SCALE_PLATE, Vector3(1.66, 0.61, 3.05))
+
+
+func _build_belt() -> void:
+        _belt = BeltPath.new()
+        _belt.name = "StandBelt"
+
+
+        _belt.stand_belt = true
+
+
+        _belt.gathers_straw = true
+        add_child(_belt)
+
+        _belt_pts = _belt_points()
+        var points:= _belt_pts
+
+        _draw_belt(points)
+
+
+        _belt.records_props = true
+        _belt.hold_records(_eats_kind)
+
+
+func _draw_belt(points: PackedVector3Array) -> void:
+        _belt_materials()
+        _belt_deck(points)
+        _belt_noses()
+        _belt_supports()
+
+
+func _belt_materials() -> void:
+        _belt_rubber = ConveyorKit.own_belt_material(Tech.stand_belt_speed())
+        _belt_drum = ConveyorKit.drum_material().duplicate() as ShaderMaterial
+        _retime_belt()
+        Tech.tech_changed.connect(_on_belt_tech_changed)
+        Tech.tech_reset.connect(_retime_belt)
+
+        if _model != null:
+                for prefix: String in MODEL_BELT_PREFIXES:
+                        for n in _model.find_children("%s*" % prefix, "Node3D", true, false):
+                                (n as Node3D).visible = false
+
+
+func _belt_deck(points: PackedVector3Array) -> void:
+        var curve:= PackedVector3Array()
+        var knee_centre:= Vector3(BELT_KNEE_X, BELT_DECK_Y + BELT_KNEE_RADIUS, _belt_tail.z)
+        _belt_climb_from = knee_centre + BELT_KNEE_RADIUS * Vector3(
+                cos(- PI * 0.5 + BELT_INCLINE), sin(- PI * 0.5 + BELT_INCLINE), 0.0)
+        _append_straight(curve, _belt_tail, points [1])
+        for i in range(1, BELT_DRAW_KNEE_STEPS):
+                var a:= - PI * 0.5 + BELT_INCLINE * float(i) / float(BELT_DRAW_KNEE_STEPS)
+                curve.append(to_global(knee_centre
+                        + BELT_KNEE_RADIUS * Vector3(cos(a), sin(a), 0.0)))
+        _append_straight(curve, _belt_climb_from, _belt_head)
+        curve.append(to_global(_belt_head))
+        _belt.draw_curve = curve
+        _belt_curve = curve
+        var world_points:= PackedVector3Array()
+        for point in points:
+                world_points.append(to_global(point))
+        _belt.build_path(world_points, BELT_PATH_OVERLAP)
+
+        var sections:= _belt.get_node_or_null("Path/Sections") as MeshInstance3D
+        if sections != null and sections.mesh is ArrayMesh:
+
+                var mesh:= sections.mesh as ArrayMesh
+                for i in mesh.get_surface_count():
+                        mesh.surface_set_material(i, _stand_material(mesh.surface_get_material(i)))
+                BeltBatch.changed(sections)
+
+
+func _belt_noses() -> void:
+        var drums:= Node3D.new()
+        drums.name = "BeltDrums"
+
+        drums.top_level = true
+        add_child(drums)
+        var tail_basis:= BeltPath.run_basis(to_global(_belt_tail),
+                to_global(_belt_pts [1]))
+        var head_basis:= BeltPath.run_basis(to_global(_belt_climb_from),
+                to_global(_belt_head))
+
+
+        for e: Array in [
+                        [ConveyorKit.nose_mesh(true), _belt_head, head_basis],
+                        [ConveyorKit.nose_mesh(false), _belt_tail, tail_basis.rotated(tail_basis.y, PI)]]:
+                var mi:= MeshInstance3D.new()
+                mi.mesh = _stand_mesh(e [0] as ArrayMesh)
+                drums.add_child(mi)
+                mi.global_transform = Transform3D(e [2] as Basis, to_global(e [1] as Vector3))
+
+
+func _belt_supports() -> void:
+        var legs: Array [Transform3D] = []
+        var feet: Array [Transform3D] = []
+        var ground_y:= global_position.y
+        var tail_basis:= BeltPath.run_basis(to_global(_belt_tail),
+                to_global(_belt_pts [1]))
+        var head_basis:= BeltPath.run_basis(to_global(_belt_climb_from),
+                to_global(_belt_head))
+        for x: float in BELT_LEG_X:
+                var on_climb:= x > _belt_climb_from.x
+                var frame:= head_basis if on_climb else tail_basis
+                var deck:= Vector3(x, _deck_y_at(x, _belt_curve), _belt_tail.z)
+                var centre_top:= to_global(deck) - frame.y * Cfg.BELT_SUPPORT_ATTACH_DEPTH
+                for side: float in [-1.0, 1.0]:
+                        var top:= centre_top + tail_basis.x * (side * Cfg.BELT_SUPPORT_HALF_WIDTH)
+                        var drop:= top.y - ground_y
+                        if drop < 0.05:
+                                continue
+                        legs.append(Transform3D(tail_basis.scaled_local(Vector3(1, drop, 1)), top))
+                        feet.append(Transform3D(tail_basis, Vector3(top.x, ground_y, top.z)))
+        var supports:= Node3D.new()
+        supports.name = "BeltSupports"
+        supports.top_level = true
+        add_child(supports)
+        supports.add_child(_support_mm_dressed("Legs", ConveyorKit.leg_mesh(), legs))
+        supports.add_child(_support_mm_dressed("Feet", ConveyorKit.foot_mesh(), feet))
+
+
+## The stand's belt legs/feet MultiMeshes. On staged builds they carry a
+## plain StandardMaterial3D instead of the frame ShaderMaterial: a MultiMesh
+## + custom-shader pipeline was the one draw combination the load never
+## proved safe on the user's Mali-G615, and there is nothing on painted
+## steel legs that needs it (see ConveyorKit.frame_material_standard).
+func _support_mm_dressed(mm_name: String, mesh: Mesh,
+                xforms: Array [Transform3D]) -> MultiMeshInstance3D:
+        var mmi:= Conveyor._support_mm(mm_name, mesh, xforms)
+        if staged_build:
+                mmi.material_override = ConveyorKit.frame_material_standard()
+        return mmi
 
 
 ## Lazy builders behind lean_fx: everything here used to be built during the
@@ -536,6 +776,14 @@ func _build_model() -> void:
         _model = packed.instantiate()
         _model.name = "Model"
         add_child(_model)
+
+
+        # Belt endpoints and the scale plate come off the model's markers and
+        # feed the payout mouth and the weighing UI. Resolved here, on BOTH
+        # paths, so they are exact even on staged builds where the belt's own
+        # build is deferred past the loading screen.
+        _resolve_belt_markers()
+
 
         for n in _model.find_children("*", "AnimationPlayer", true, false):
                 _anim = n as AnimationPlayer
@@ -964,127 +1212,6 @@ func _sample_track(a: Animation, track: int, t: float) -> Variant:
                         return a.value_track_interpolate(track, t)
         return null
 
-
-func _build_belt() -> void:
-        _belt = BeltPath.new()
-        _belt.name = "StandBelt"
-
-
-        _belt.stand_belt = true
-
-
-        _belt.gathers_straw = true
-        add_child(_belt)
-
-        var tail:= _marker_local(N_BELT_IN, Vector3(-3.12, BELT_DECK_Y, 3.05))
-        var head:= _marker_local(N_BELT_OUT, Vector3(1.06, 1.08, 3.05))
-        var centre_z:= tail.z
-        var points:= PackedVector3Array()
-        points.append(tail)
-        points.append(Vector3(BELT_KNEE_X, BELT_DECK_Y, centre_z))
-        var knee_centre_y:= BELT_DECK_Y + BELT_KNEE_RADIUS
-        var a0:= - PI * 0.5
-        var a1:= a0 + BELT_INCLINE
-        for i in range(1, BELT_PATH_STEPS + 1):
-                var a:= lerpf(a0, a1, float(i) / float(BELT_PATH_STEPS))
-                points.append(Vector3(
-                        BELT_KNEE_X + BELT_KNEE_RADIUS * cos(a),
-                        knee_centre_y + BELT_KNEE_RADIUS * sin(a),
-                        centre_z))
-        points.append(head)
-
-
-        _belt_mid = to_global((tail + head) * 0.5)
-
-
-        _belt_head = head
-        _belt_tail = tail
-        _scale_plate = _marker_local(N_SCALE_PLATE, Vector3(1.66, 0.61, 3.05))
-
-        _draw_belt(points)
-
-
-        _belt.records_props = true
-        _belt.hold_records(_eats_kind)
-
-
-func _draw_belt(points: PackedVector3Array) -> void:
-        _belt_rubber = ConveyorKit.own_belt_material(Tech.stand_belt_speed())
-        _belt_drum = ConveyorKit.drum_material().duplicate() as ShaderMaterial
-        _retime_belt()
-        Tech.tech_changed.connect(_on_belt_tech_changed)
-        Tech.tech_reset.connect(_retime_belt)
-
-        if _model != null:
-                for prefix: String in MODEL_BELT_PREFIXES:
-                        for n in _model.find_children("%s*" % prefix, "Node3D", true, false):
-                                (n as Node3D).visible = false
-
-
-        var curve:= PackedVector3Array()
-        var knee_centre:= Vector3(BELT_KNEE_X, BELT_DECK_Y + BELT_KNEE_RADIUS, _belt_tail.z)
-        var climb_from:= knee_centre + BELT_KNEE_RADIUS * Vector3(
-                cos(- PI * 0.5 + BELT_INCLINE), sin(- PI * 0.5 + BELT_INCLINE), 0.0)
-        _append_straight(curve, _belt_tail, points [1])
-        for i in range(1, BELT_DRAW_KNEE_STEPS):
-                var a:= - PI * 0.5 + BELT_INCLINE * float(i) / float(BELT_DRAW_KNEE_STEPS)
-                curve.append(to_global(knee_centre
-                        + BELT_KNEE_RADIUS * Vector3(cos(a), sin(a), 0.0)))
-        _append_straight(curve, climb_from, _belt_head)
-        curve.append(to_global(_belt_head))
-        _belt.draw_curve = curve
-        var world_points:= PackedVector3Array()
-        for point in points:
-                world_points.append(to_global(point))
-        _belt.build_path(world_points, BELT_PATH_OVERLAP)
-
-        var sections:= _belt.get_node_or_null("Path/Sections") as MeshInstance3D
-        if sections != null and sections.mesh is ArrayMesh:
-
-                var mesh:= sections.mesh as ArrayMesh
-                for i in mesh.get_surface_count():
-                        mesh.surface_set_material(i, _stand_material(mesh.surface_get_material(i)))
-                BeltBatch.changed(sections)
-
-        var drums:= Node3D.new()
-        drums.name = "BeltDrums"
-
-        drums.top_level = true
-        add_child(drums)
-        var tail_basis:= BeltPath.run_basis(to_global(_belt_tail), to_global(points [1]))
-        var head_basis:= BeltPath.run_basis(to_global(climb_from), to_global(_belt_head))
-
-
-        for e: Array in [
-                        [ConveyorKit.nose_mesh(true), _belt_head, head_basis],
-                        [ConveyorKit.nose_mesh(false), _belt_tail, tail_basis.rotated(tail_basis.y, PI)]]:
-                var mi:= MeshInstance3D.new()
-                mi.mesh = _stand_mesh(e [0] as ArrayMesh)
-                drums.add_child(mi)
-                mi.global_transform = Transform3D(e [2] as Basis, to_global(e [1] as Vector3))
-
-
-        var legs: Array [Transform3D] = []
-        var feet: Array [Transform3D] = []
-        var ground_y:= global_position.y
-        for x: float in BELT_LEG_X:
-                var on_climb:= x > climb_from.x
-                var frame:= head_basis if on_climb else tail_basis
-                var deck:= Vector3(x, _deck_y_at(x, curve), _belt_tail.z)
-                var centre_top:= to_global(deck) - frame.y * Cfg.BELT_SUPPORT_ATTACH_DEPTH
-                for side: float in [-1.0, 1.0]:
-                        var top:= centre_top + tail_basis.x * (side * Cfg.BELT_SUPPORT_HALF_WIDTH)
-                        var drop:= top.y - ground_y
-                        if drop < 0.05:
-                                continue
-                        legs.append(Transform3D(tail_basis.scaled_local(Vector3(1, drop, 1)), top))
-                        feet.append(Transform3D(tail_basis, Vector3(top.x, ground_y, top.z)))
-        var supports:= Node3D.new()
-        supports.name = "BeltSupports"
-        supports.top_level = true
-        add_child(supports)
-        supports.add_child(Conveyor._support_mm("Legs", ConveyorKit.leg_mesh(), legs))
-        supports.add_child(Conveyor._support_mm("Feet", ConveyorKit.foot_mesh(), feet))
 
 
 func _append_straight(into: PackedVector3Array, from: Vector3, to: Vector3) -> void:

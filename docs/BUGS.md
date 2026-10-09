@@ -122,3 +122,66 @@ Terrain3D نبود.
 **معیار پذیرش (تکرار):** لود کامل 0→100% روی Mali-G615 بدون کرش. اگر باز هم
 کرشی رخ دهد، دیالوگ گزارش کرش این بار «last action» دقیقی دارد که مرحله‌ی
 قاتل را نام می‌برد و اصلاح بعدی هدفمند خواهد بود.
+
+---
+
+## v2.2.0 — مقصر نهایی با breadcrumb نام برده شد: `standbuild:belt` 🎯
+
+کاربر APK versionCode 4 (v2.1.0) را نصب کرد و باز هم کرش — اما این بار گزارش
+کرشِ v2.1.0 دقیق بود:
+
+```
+last step     OPENING THE STAND (74%)
+last action   standbuild:belt (0 s before the end)
+pile          small
+```
+
+چون v2.1.0 هر زیرمرحله را در یک فریم رندر جدا می‌ساخت و هر کدام breadcrumb
+خودش را می‌نوشت، معنی گزارش این است: فریمِ بعد از ساخت کمربندِ استند — یعنی
+**اولین draw واقعی کمربند** — درایور را کشت. مرور شد که چه چیزهایی تا آن لحظه
+با موفقیت رسم شده بود (زمین، حصار، landing zone همه MultiMesh با
+StandardMaterial3D؛ پشته‌ی hay شیدر سفارشی روی MeshInstance؛ مدل استند glTF)
+و در فریم کمربند دقیقاً دو «اولین» جدید رخ می‌داد:
+
+1. **اولین کامپایل pipeline شیدر `conveyor_surface.gdshader`** در کل لود —
+   fragment آن سه چیز پرریسک برای کامپایلر موبایل دارد: `fwidth` داخل بلوک
+   شرطی، الگوی tread با فرکانس بسیار بالا (`pow(abs(sin(p*251.3)), vec2)`)، و
+   نرمال دست‌سازِ محاسبه‌شده با تفاضل مرکزی.
+2. **اولین MultiMesh با شیدر سفارشی** (پایه‌های کمربند/Feet با frame material)
+   — همه‌ی MultiMeshهای قبلی لود StandardMaterial3D داشتند.
+
+**فیکس v2.2.0 (بدون تغییر در مسیر دسکتاپ):**
+
+1. **شیدر جفتی موبایل** — `assets/conveyor_surface_mobile.gdshader`: نام‌های
+   uniform یکسان (همه‌ی `set_shader_parameter`ها بدون تغییر کار می‌کنند)،
+   vertex همان اسکرول `TIME*speed`، fragment ساده (تکسچرها + tint + بازemap
+   roughness + AO + نرمال‌مپ). از `ConveyorKit._pbr` روی
+   `Cfg.is_mobile or CrashReport.safe_load` انتخاب می‌شود.
+2. **ساخت کمربند به بعد از لودینگ منتقل شد** — در مسیر استیج‌شده، کمربند از
+   `build_staged_steps` حذف شد و `world` بعد از `Loading.hide_screen()` آن را
+   با `build_belt_staged()` می‌سازد: هر بخش (node/materials/deck/noses/
+   supports/records) یک فریم رندر جدا + breadcrumb اختصاصی. اگر درایور باز هم
+   روی یکی از این drawها بمیرد، گزارش کرش **بخش دقیق** را نام می‌برد.
+3. **پایه‌های کمربند روی مسیر استیج‌شده StandardMaterial3D گرفتند**
+   (`ConveyorKit.frame_material_standard`) — ترکیب MultiMesh + شیدر سفارشی
+   دیگر در کل بازی در زمان لود روی موبایل رخ نمی‌دهد.
+4. **هشدار ۲ فریمی**: در مسیر استیج‌شده، کمربند مدل (~۵ فریم بعد از بسته شدن
+   لودینگ) با کمربند واقعی جایگزین می‌شود — در عمل نامرئی است.
+5. ابزار تست: `--mobilesim` (مسیر کامل موبایل روی هر دستگاه) +
+   `scripts/dev/mobile_sim_check.gd` (انتخاب شیدر + کامپایل اسکریپت‌ها).
+
+راستی‌آزمایی headless: لود کامل استیج‌شده با `--stagedload --mobilesim` به
+player می‌رسد، صفر خطای اسکریپت، و خروجی
+`[stand] belt built staged: deck=true rails=true noses=true supports=true`.
+کامپایل واقعی pipeline روی GPU مقصد فقط با نصب روی دستگاه کاربر اثبات می‌شود —
+اما این بار اگر کرشی برگردد، گزارش کرش بخشِ قاتل (مثلاً `belt:supports`) را
+نام می‌برد.
+
+**معیار پذیرش (نهایی و بلامنازع):** لود کامل 0→100% روی Mali-G615 بدون کرش.
+
+### پیوست — کمبودهای شناخته‌شده‌ی غیرمرتبط با کرش (موروثی از v2.1.0)
+
+- ~۱۲ SFX بیلد (place/demolish/confirm/denied/…) در ریپو فقط `.import` دارند و
+  سورس `.ogg` آن‌ها از قبل گم شده؛ در زمان اجرا فقط بی‌صدا می‌شوند (بدون کرش).
+- `woodgas_plant_optimized.tscn` در ریپو نیست؛ `gas_plant.gd` نبودن مدل را
+  با `_model == null` مدیریت می‌کند.
