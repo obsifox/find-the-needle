@@ -1,6 +1,6 @@
 # Find The Needle (Haystack Incremental)
 
-بازی اضافه‌شونده (Incremental) ساخته‌شده با **Godot 4.7.2-stable / Forward Plus** — نسخه موبایل Android.
+بازی اضافه‌شونده (Incremental) ساخته‌شده با **Godot 4.7.2-stable** — چهار نسخه جدا از یک سورس: **Android / PC Full / PC Light / Web**.
 
 ریپو **خصوصی** است و پیشرفت پروژه release به release اینجا منتشر می‌شود.
 
@@ -8,16 +8,28 @@
 
 | Release | محتوا | وضعیت |
 |---|---|---|
-| **v1.0.0** | فقط سورس (pak-solona.zip کامل + کد در ریپو) | 🔄 در حال انتشار |
-| **v2.0.0** | سورس جدید (باگ‌فیکس) جدا + APK جدا | ⏳ بعدی |
+| **v1.0.0** | فقط سورس (pak-solona.zip کامل + کد در ریپو) | ✅ |
+| **v3.0.1** | APK موبایل (V37) + سورس | ✅ |
+| **v3.1.0** | APK + PC Full + PC Light + Web + سورس (V38 — فیکس ریشه‌ای دارایی‌ها) | 🔄 در حال انتشار |
 
-هر release از این به بعد شامل: سورس به‌روز + (در صورت آماده بودن) APK ساخته‌شده از همان سورس.
+## 💻 نسخه‌ها و حداقل سیستم
+
+| نسخه | رندرر | حداقل سیستم |
+|---|---|---|
+| **Android** (`FindTheNeedle-v3.1.0-universal.apk`) | Vulkan Mobile | گوشی با Vulkan 1.1+ (arm64/armv7) |
+| **PC Full** (`win64-full`) | Forward+ (Vulkan) + سقوط خودکار به OpenGL | طبق جدول قدیمی: i5-8400 / 8GB / GTX 1050 Ti (Vulkan 1.3)؛ اگر Vulkan نباشد خودکار به Light می‌افتد |
+| **PC Light** (`win64-light`) | OpenGL 3.3 | **i5 نسل ۳ / 4GB RAM / گرافیک اینتل (HD 2500/4000)** — هر GPU با OpenGL 3.3 |
+| **Web Light** (`web-light`) | WebGL2 | هر مرورگر دسکتاپ با WebGL2 (بدون نصب) |
+
+- نسخه **Light** تکسچرها را تا ۱۰۲۴px محدود و کیفیت پیش‌فرض LOW می‌کند (حجم نصف) — برای سیستم‌های ضعیف همین را اجرا کنید.
+- نسخه **Web**: پوشه را با `python -m http.server` (یا هر هاست استاتیک) اجرا کنید و `index.html` را باز کنید.
+- در بازی: **Options → Display → Quality preset** (POTATO تا ULTRA) + انتخاب Renderer.
 
 ## 🎮 مشخصات بازی
 
 - نام اصلی: **Haystack Incremental** (v0.1.0) — خروجی: FIND THE NEEDLE
-- موتور: Godot 4.7.2 Forward Plus
-- بیلد دمو: V33
+- موتور: Godot 4.7.2 (Forward+ / Mobile / Compatibility — بسته به نسخه)
+- بیلد دمو: V38 (v3.1.0 build 11)
 - زبان: GDScript (بعد از رمزگشایی ۶۰۹ فایل .gdc)
 
 ## 🐛 باگ‌های شناخته‌شده (هدف رفع در v2.0.0)
