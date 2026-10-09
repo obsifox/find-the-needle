@@ -50,6 +50,7 @@ const ARTIFACT_DIR := "user://gamelog_artifacts"
 var mirror_root := ""
 var local_ok := false
 var mirror_ok := false
+var _boot2_drew := false
 
 
 var _local: FileAccess = null
@@ -200,6 +201,15 @@ func _open_mirror() -> void:
 func _write_head() -> void:
         var gpu := RenderingServer.get_video_adapter_name()
         var vendor := RenderingServer.get_video_adapter_vendor()
+        var cpu_name := OS.get_processor_name()
+        if cpu_name.strip_edges() == "":
+                # Android often cannot answer get_processor_name(); the device
+                # model is the next best thing a human can google.
+                cpu_name = OS.get_model_name()
+        var mem_gb := float(OS.get_memory_info().get("physical", 0)) / 1073741824.0
+        var mem_text := "unknown"
+        if mem_gb > 0.0:
+                mem_text = "%.1f GB" % mem_gb
         var lines: Array[String] = []
         lines.append("=".repeat(72))
         lines.append("LAUNCH %s (unix %d)" % [
@@ -208,18 +218,18 @@ func _write_head() -> void:
         lines.append("build     %s" % Cfg.build_string())
         lines.append("platform  %s %s" % [OS.get_name(), OS.get_version()])
         lines.append("locale    %s" % OS.get_locale())
-        lines.append("cpu       %s (%d threads)" % [OS.get_processor_name(),
+        lines.append("cpu       %s (%d threads)" % [cpu_name,
                 OS.get_processor_count()])
         lines.append("gpu       %s %s" % [gpu, vendor])
         lines.append("driver    %s (api %s)" % [
                 RenderingServer.get_current_rendering_driver_name(),
                 RenderingServer.get_video_adapter_api_version()])
-        lines.append("renderer  %s (project %s / mobile override %s)" % [
+        lines.append("renderer  %s (project %s / mobile override %s) threads %s" % [
                 RenderingServer.get_current_rendering_method(),
                 str(ProjectSettings.get_setting("rendering/renderer/rendering_method", "")),
-                str(ProjectSettings.get_setting("rendering/renderer/rendering_method.mobile", ""))])
-        var mem: Dictionary = OS.get_memory_info()
-        lines.append("memory    %.1f GB physical" % (float(mem.get("physical", 0)) / 1073741824.0))
+                str(ProjectSettings.get_setting("rendering/renderer/rendering_method.mobile", "")),
+                str(ProjectSettings.get_setting("rendering/driver/threads/thread_model", "(default)"))])
+        lines.append("memory    %s physical" % mem_text)
         lines.append("log file  %s" % ProjectSettings.globalize_path(LOCAL_PATH))
         if mirror_root != "":
                 lines.append("mirror    %s" % mirror_root)
@@ -229,6 +239,59 @@ func _write_head() -> void:
         if mirror_root != "":
                 put("boot", "after a crash: send %s from %s" % [MIRROR_NAME, mirror_root])
         _copy_previous_engine_logs()
+        _boot2()
+
+
+## First-frame stamp (v2.5.0). The black-screen boot crash killed the app
+## ~1 s in, before a single frame was drawn, and the only symptom in the
+## log was an EMPTY gpu/api line -- the driver had not finished coming up
+## when the banner was written. This wait-and-report pass closes that
+## diagnostic gap:
+##   - "FIRST FRAME DRAWN"   -> rendering pipeline is alive; a later crash
+##                               is in game code, not driver init
+##   - "NO FRAME EVER DRAWN" -> the app died inside driver init / first
+##                               draw; everything after the banner is moot
+## It also re-logs the gpu/api fields after the driver is actually up, so
+## on GL they finally carry real values (they stay empty until the first
+## frame has been presented).
+func _boot2() -> void:
+        _boot2_drew = false
+        _boot2_watchdog()
+        await RenderingServer.frame_post_draw
+        _boot2_drew = true
+        var gpu := RenderingServer.get_video_adapter_name()
+        var vendor := RenderingServer.get_video_adapter_vendor()
+        var mem_gb := float(OS.get_memory_info().get("physical", 0)) / 1073741824.0
+        var mem_text := "unknown"
+        if mem_gb > 0.0:
+                mem_text = "%.1f GB" % mem_gb
+        put("boot2", "FIRST FRAME DRAWN %.1f s after boot -- gpu '%s %s' api '%s' method %s driver %s threads %s mem %s" % [
+                float(Time.get_ticks_msec()) / 1000.0,
+                vendor, gpu,
+                RenderingServer.get_video_adapter_api_version(),
+                RenderingServer.get_current_rendering_method(),
+                RenderingServer.get_current_rendering_driver_name(),
+                str(ProjectSettings.get_setting("rendering/driver/threads/thread_model", "(default)")),
+                mem_text])
+
+
+## Fires only if NO frame was presented within 6 s of boot -- i.e. the app
+## is stuck or already dead inside driver init / the first draw. Runs
+## alongside the frame_post_draw await above; whichever lands first wins,
+## the other goes quiet.
+func _boot2_watchdog() -> void:
+        var t0 := Time.get_ticks_msec()
+        while Time.get_ticks_msec() - t0 < 6000 and not _boot2_drew:
+                await get_tree().create_timer(1.0).timeout
+        if _boot2_drew:
+                return
+        var gpu := RenderingServer.get_video_adapter_name()
+        var vendor := RenderingServer.get_video_adapter_vendor()
+        put("boot2", "! NO FRAME EVER DRAWN 6 s after boot -- stuck or dead inside driver init / first draw (gpu '%s %s' api '%s' method %s driver %s)" % [
+                vendor, gpu,
+                RenderingServer.get_video_adapter_api_version(),
+                RenderingServer.get_current_rendering_method(),
+                RenderingServer.get_current_rendering_driver_name()])
 
 
 ## The engine's own log of the run that died. With engine file logging now

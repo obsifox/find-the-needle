@@ -63,6 +63,7 @@ const MENU_LANG_FLAG:= "--menulang"
 
 func _ready() -> void:
 	var ua:= OS.get_cmdline_user_args()
+	GameLog.put("menu", "menu_root: building UI at %d ms (%d user args)" % [Time.get_ticks_msec(), ua.size()])
 
 
 	var lang_at:= ua.find(MENU_LANG_FLAG)
@@ -142,6 +143,7 @@ func _ready() -> void:
 		add_child(bg)
 		if bg.staged:
 			await bg.built
+		GameLog.put("menu", "menu_root: 3D background built at %d ms" % Time.get_ticks_msec())
 	Cfg.quality_changed.connect(_on_quality_changed)
 
 	var layer:= CanvasLayer.new()
@@ -244,6 +246,7 @@ func _ready() -> void:
 
 	if Loading.is_active():
 		Loading.hide_screen()
+	GameLog.put("menu", "menu_root: ready at %d ms" % Time.get_ticks_msec())
 
 
 const PLATE_PATH:= "res://assets/branding/menu_plate.jpg"

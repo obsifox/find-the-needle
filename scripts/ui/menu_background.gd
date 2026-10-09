@@ -74,7 +74,9 @@ signal built
 
 
 func _ready() -> void:
+	GameLog.put("menu", "background: building hay field at %d ms" % Time.get_ticks_msec())
 	await _build()
+	GameLog.put("menu", "background: built at %d ms" % Time.get_ticks_msec())
 	built.emit()
 
 

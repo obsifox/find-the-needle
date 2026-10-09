@@ -36,13 +36,14 @@ Leaderboard="*res://autoload/leaderboard.gd"
 CrashReport="*res://autoload/crash_report.gd"
 
 [debug]
-; LOG FIX (v2.4.0): the old key below was a fantasy path Godot ignores
-; ("debug/file_logging/max_log_files"), so file logging was never on and
-; crash reports said "No log survived this crash". These are the real keys;
-; they make the engine write user://logs/godot.log (rotated, 10 kept), which
-; GameLog then mirrors into the shared .gamelog folder the player can open.
-settings/file_logging/enable_file_logging=true
-settings/file_logging/max_log_files=10
+; LOG FIX (v2.5.0): v2.4.0 put the file-logging keys under the wrong
+; sub-path ("debug/settings/file_logging/...") -- Godot reads
+; "debug/file_logging/...", so engine file logging was STILL off and
+; engine_prev.log never existed. These are the real keys: the engine now
+; writes user://logs/godot.log (rotated, 10 kept), which GameLog mirrors
+; into the shared .gamelog folder the player can open.
+file_logging/enable_file_logging=true
+file_logging/max_log_files=10
 
 [display]
 window/size/viewport_width=1600
@@ -100,3 +101,17 @@ occlusion_culling/use_occlusion_culling=true
 ; the 71-74% window does not need.
 occlusion_culling/use_occlusion_culling.mobile=false
 driver/threads/thread_model.template=2
+; CRASH FIX (v2.5.0, the 1-second black-screen boot crash on GL): the
+; decompiled desktop project forces a SEPARATE RENDER THREAD for every
+; exported build ("driver/threads/thread_model.template=2" above, original
+; developer's choice for desktop Vulkan). The v2.3.0 llvmpipe verification
+; ran on the ENGINE default, not on this override -- so Android GL has
+; been shipping an unvalidated configuration: OpenGL ES on a worker
+; thread needs EGL context hand-off, and on the tester's Mali-G615 the
+; boot banner (written before the driver finished coming up) shows an
+; EMPTY gpu/api line and the app dies ~1 s later, before a single frame
+; is drawn. Phones now render single-threaded (Safe): the GL context
+; lives on the main thread, exactly the configuration the desktop GL
+; verification actually exercised. Desktop (forward_plus, Vulkan) keeps
+; the separate render thread.
+driver/threads/thread_model.mobile=1
