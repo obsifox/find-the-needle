@@ -918,6 +918,10 @@ var quests: QuestPanel
 var mission_cue: MissionCue
 var missions: MissionDirector
 var truck: DeliveryTruck
+
+## MOBILE FIX (v2.3.0): true when the truck was NOT built during _build and
+## is assembled after the loading screen instead -- see _build_truck_staged.
+var truck_deferred:= false
 var delivery_board: DeliveryBoard
 var contracts: ContractPanel
 var deliveries: DeliveryDirector
@@ -1007,6 +1011,17 @@ func _ready() -> void:
                 await stand.build_belt_staged()
 
 
+        # MOBILE FIX (v2.3.0, the 74% stand crash): same story as the belt
+        # above, one release later -- the v2.2.0 report named stand:truck, so
+        # the truck now also builds on the far side of the load, one
+        # sub-step per rendered frame with its own breadcrumbs. Snap-parks
+        # itself when a save resumes mid-contract (the same rule
+        # DeliveryDirector._ready applies on the inline path).
+        if truck_deferred and truck == null:
+                CrashReport.note_doing("truck:deferred")
+                await _build_truck_staged()
+
+
         if detail != null and player != null:
                 detail.fill_now(player.eye_position())
         _built = true
@@ -1030,6 +1045,37 @@ func _ready() -> void:
                                 CONNECT_ONE_SHOT)
                 intro.begin()
         _run_dev_probe()
+
+
+## MOBILE FIX (v2.3.0, the 74% stand crash): the delivery truck builds after
+## the loading screen, one sub-step per rendered frame -- see the note at the
+## truck creation site in _build. Refs are handed to the prop manager and the
+## delivery director only once the truck is whole, so nobody ever sees a
+## half-built truck; both consumers are null-safe during the window. A save
+## that resumes mid-contract snap-parks the truck, the same rule
+## DeliveryDirector._ready applies on the inline path.
+func _build_truck_staged() -> void:
+        CrashReport.note_doing("truck:new")
+        truck = DeliveryTruck.new()
+        truck.name = "DeliveryTruck"
+        truck.door = bay_door
+        truck.warehouse = warehouse
+        truck.staged_build = true
+        add_child(truck)
+        await truck.build_staged_steps()
+        print("[world] truck built staged: model=%s hull=%s bed=%s parked=%s"
+                % [truck.get_node_or_null(NodePath("Model")) != null,
+                        truck.get_node_or_null(NodePath("Hull")) != null,
+                        truck.get_node_or_null(NodePath("BedVolume")) != null,
+                        truck.is_parked()])
+
+
+        if props != null:
+                props.truck = truck
+        if deliveries != null:
+                deliveries.truck = truck
+                if GameState.contract_index >= 0 and GameState.contract_delivered > 0:
+                        truck.snap_parked()
 
 
 func _seat(v: Vector3) -> Vector3:
@@ -1517,11 +1563,21 @@ func _build() -> void:
 
         await _breathe()
         CrashReport.note_doing("stand:truck")
-        truck = DeliveryTruck.new()
-        truck.name = "DeliveryTruck"
-        truck.door = bay_door
-        truck.warehouse = warehouse
-        add_child(truck)
+        # MOBILE FIX (v2.3.0, the 74% stand crash): the v2.2.0 crash report
+        # named stand:truck -- the delivery truck's first GPU resources
+        # (compiled model upload + skinned buffers + skin materials) killed
+        # the Mali Vulkan driver the same way the belt's first draws did in
+        # v2.1.0. On phones -- and on any crash-recovery run -- the truck is
+        # now built after the loading screen, one sub-step per rendered
+        # frame with its own breadcrumbs (truck:model, truck:skin, ...).
+        # Desktop runs keep the inline build, verbatim.
+        truck_deferred = _staged and (Cfg.is_mobile or CrashReport.safe_load)
+        if not truck_deferred:
+                truck = DeliveryTruck.new()
+                truck.name = "DeliveryTruck"
+                truck.door = bay_door
+                truck.warehouse = warehouse
+                add_child(truck)
 
 
         if props != null:

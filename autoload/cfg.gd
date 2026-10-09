@@ -33,48 +33,48 @@ const CHUNK_CELLS:= 10
 
 
 const PILE_SIZES: Array [Dictionary] = [
-	{
-		"id": "small",
-		"name": "SMALL",
-		"blurb": "Designed for weaker computers. A shorter hunt with room to walk around the pile.",
-		"radius": 7.0, "height": 5.0, "extent": 15.0, "prep_deg": 55.0,
-		"toe": 7.9,
-		"listed": true,
-	},
-	{
-		"id": "standard",
-		"name": "STANDARD",
-		"blurb": "The yard as it comes. The pile the game was built around, under one steel roof.",
-		"radius": 10.0, "height": 7.0, "extent": 15.0, "prep_deg": 55.0,
-		"toe": 11.2,
-	},
-	{
-		"id": "big",
-		"name": "BIG",
-		"blurb": "Twice the hay and a crown that stands over the wall plates. Bring a belt.",
-		"radius": 12.0, "height": 12.0, "extent": 18.0, "prep_deg": 58.0,
-		"toe": 14.1,
-		"heavy": true,
-	},
-	{
-		"id": "huge",
-		"name": "HUGE",
-		"blurb": "Eight storeys of straw. The shed goes out to meet it and the roof still loses. Slow to load.",
-		"radius": 15.0, "height": 24.0, "extent": 23.0, "prep_deg": 64.0,
-		"toe": 18.4,
-		"heavy": true,
-	},
-	{
-		"id": "mountain",
-		"name": "THE MOUNTAIN",
-		"blurb": "Fifty metres. It does not fit under the roof, it is not supposed to, and you will not finish it. Takes a minute to pour.",
-		"radius": 18.0, "height": 50.0, "extent": 30.0, "prep_deg": 72.0,
-		"toe": 23.1,
-		"heavy": true,
+        {
+                "id": "small",
+                "name": "SMALL",
+                "blurb": "Designed for weaker computers. A shorter hunt with room to walk around the pile.",
+                "radius": 7.0, "height": 5.0, "extent": 15.0, "prep_deg": 55.0,
+                "toe": 7.9,
+                "listed": true,
+        },
+        {
+                "id": "standard",
+                "name": "STANDARD",
+                "blurb": "The yard as it comes. The pile the game was built around, under one steel roof.",
+                "radius": 10.0, "height": 7.0, "extent": 15.0, "prep_deg": 55.0,
+                "toe": 11.2,
+        },
+        {
+                "id": "big",
+                "name": "BIG",
+                "blurb": "Twice the hay and a crown that stands over the wall plates. Bring a belt.",
+                "radius": 12.0, "height": 12.0, "extent": 18.0, "prep_deg": 58.0,
+                "toe": 14.1,
+                "heavy": true,
+        },
+        {
+                "id": "huge",
+                "name": "HUGE",
+                "blurb": "Eight storeys of straw. The shed goes out to meet it and the roof still loses. Slow to load.",
+                "radius": 15.0, "height": 24.0, "extent": 23.0, "prep_deg": 64.0,
+                "toe": 18.4,
+                "heavy": true,
+        },
+        {
+                "id": "mountain",
+                "name": "THE MOUNTAIN",
+                "blurb": "Fifty metres. It does not fit under the roof, it is not supposed to, and you will not finish it. Takes a minute to pour.",
+                "radius": 18.0, "height": 50.0, "extent": 30.0, "prep_deg": 72.0,
+                "toe": 23.1,
+                "heavy": true,
 
 
-		"start_tech": { "yard_space": 1 },
-	},
+                "start_tech": { "yard_space": 1 },
+        },
 ]
 
 
@@ -312,26 +312,35 @@ const L_KEEPOUT:= 2048
 
 
 var DEBUG:= (OS.has_feature("debug")
-	and not ("--shipped" in OS.get_cmdline_user_args())
-	and not ("--cheat" in OS.get_cmdline_user_args()))
+        and not ("--shipped" in OS.get_cmdline_user_args())
+        and not ("--cheat" in OS.get_cmdline_user_args()))
 
 
 var debug_unlocked:= false
 
 
 func debug_on() -> bool:
-	return DEBUG or debug_unlocked
+        return DEBUG or debug_unlocked
 
 
 var DEMO:= not (OS.has_feature("full")
-	or (OS.has_feature("editor") and "--full" in OS.get_cmdline_user_args()))
+        or (OS.has_feature("editor") and "--full" in OS.get_cmdline_user_args()))
 
 
 const BUILD_TAG:= "V33"
 
 
+## MOBILE FIX (v2.3.0): the app version rides in the crash report's build
+## line. Both previous reports just said "V33 demo", so there was no way to
+## tell WHICH apk had crashed -- bump APP_VERSION/APP_CODE together with
+## export_presets.cfg version/name and version/code on every release.
+const APP_VERSION:= "2.3.0"
+const APP_CODE:= 6
+
+
 func build_string() -> String:
-	return "%s %s" % [BUILD_TAG, "demo" if DEMO else "full"]
+        return "%s %s v%s build %d" % [BUILD_TAG, "demo" if DEMO else "full",
+                APP_VERSION, APP_CODE]
 
 
 const DEMO_LAST_LOT:= 0
@@ -851,21 +860,21 @@ const ROBOT_ARM_CONSOLE_REACH:= 3.2
 
 
 const ROBOT_ARM_TIERS:= [
-	{
-		"id": "arm_small", "name": "SMALL ARM", "scale": 0.78,
-		"reach": 2.69, "capacity": 60, "cost": 180.0, "cycle_scale": 1.15,
-		"draw_kw": 1.5,
-	},
-	{
-		"id": "arm_standard", "name": "STANDARD ARM", "scale": 1.0,
-		"reach": 3.45, "capacity": 90, "cost": 350.0, "cycle_scale": 1.0,
-		"draw_kw": 2.5,
-	},
-	{
-		"id": "arm_long", "name": "LONG-REACH ARM", "scale": 1.25,
-		"reach": 4.31, "capacity": 120, "cost": 600.0, "cycle_scale": 0.88,
-		"draw_kw": 4.0,
-	},
+        {
+                "id": "arm_small", "name": "SMALL ARM", "scale": 0.78,
+                "reach": 2.69, "capacity": 60, "cost": 180.0, "cycle_scale": 1.15,
+                "draw_kw": 1.5,
+        },
+        {
+                "id": "arm_standard", "name": "STANDARD ARM", "scale": 1.0,
+                "reach": 3.45, "capacity": 90, "cost": 350.0, "cycle_scale": 1.0,
+                "draw_kw": 2.5,
+        },
+        {
+                "id": "arm_long", "name": "LONG-REACH ARM", "scale": 1.25,
+                "reach": 4.31, "capacity": 120, "cost": 600.0, "cycle_scale": 0.88,
+                "draw_kw": 4.0,
+        },
 ]
 
 
@@ -897,10 +906,10 @@ const CABINET_DOOR_CLEAR:= 0.62
 
 
 const RADAR_TIERS:= [
-	{ "id": "radar_mk1", "plans": 400.0, "exact": false, "depth": false, "seconds": 15.0 },
-	{ "id": "radar_mk2", "plans": 900.0, "exact": true, "depth": false, "seconds": 15.0 },
-	{ "id": "radar_mk3", "plans": 1800.0, "exact": true, "depth": false, "seconds": 30.0 },
-	{ "id": "radar_mk4", "plans": 3500.0, "exact": true, "depth": true, "seconds": 30.0 },
+        { "id": "radar_mk1", "plans": 400.0, "exact": false, "depth": false, "seconds": 15.0 },
+        { "id": "radar_mk2", "plans": 900.0, "exact": true, "depth": false, "seconds": 15.0 },
+        { "id": "radar_mk3", "plans": 1800.0, "exact": true, "depth": false, "seconds": 30.0 },
+        { "id": "radar_mk4", "plans": 3500.0, "exact": true, "depth": true, "seconds": 30.0 },
 ]
 
 const RADAR_COST:= 1200.0
@@ -993,16 +1002,16 @@ const WORK_LAMP_CONSOLE_REACH:= 2.6
 
 
 const SCANNER_TIERS:= [
-	{
-		"id": "scanner_mk1", "name": "SCANNER MK I",
-		"batch": 60, "scan_seconds": 4.5, "buffer": 120, "cost": 250.0,
-		"halt": true,
-	},
-	{
-		"id": "scanner_mk2", "name": "SCANNER MK II",
-		"batch": 90, "scan_seconds": 3.0, "buffer": 180, "cost": 500.0,
-		"halt": false,
-	},
+        {
+                "id": "scanner_mk1", "name": "SCANNER MK I",
+                "batch": 60, "scan_seconds": 4.5, "buffer": 120, "cost": 250.0,
+                "halt": true,
+        },
+        {
+                "id": "scanner_mk2", "name": "SCANNER MK II",
+                "batch": 90, "scan_seconds": 3.0, "buffer": 180, "cost": 500.0,
+                "halt": false,
+        },
 ]
 
 
@@ -2003,123 +2012,123 @@ enum Quality { POTATO, LOW, MEDIUM, HIGH, ULTRA }
 const PRESETS:= {
 
 
-	Quality.POTATO: {
-		"name": "Potato",
+        Quality.POTATO: {
+                "name": "Potato",
 
 
-		"machine_distance": 1,
-		"texture_res": 0,
-		"strands_per_cell": 190,
-		"live_budget": 400,
-		"prop_cap": 60,
-		"lod_near": 6.0, "lod_far": 18.0, "lod_min": 0.45,
-		"shadow_distance": 0.0,
-		"yard_shadow_distance": 0.0,
-		"detail_strands": 0, "detail_radius": 0.0,
-		"msaa": Viewport.MSAA_DISABLED,
-		"ssao": false, "glow": false, "shadows": false, "shadow_quality": 0,
-		"ssil": false, "vfog": false, "taa": false,
-		"fxaa": true,
-		"gi": false, "dof": false,
-		"render_scale": 0.72,
-		"lod_threshold": 8.0,
-		"sky_marches": 0,
-		"reflect_probe": false, "dust": false,
-		"aniso": Viewport.ANISOTROPY_DISABLED,
-		"machine_lod": 15.0,
-		"crust_budget": 0.5,
-		"sign_distance": 25.0,
-	},
-	Quality.LOW: {
-		"name": "Low",
-		"machine_distance": 2,
-		"texture_res": 0,
-		"strands_per_cell": 190,
-		"live_budget": 700,
-		"prop_cap": 90,
-		"lod_near": 8.0, "lod_far": 22.0, "lod_min": 0.55,
-		"shadow_distance": 3.0,
-		"yard_shadow_distance": 0.0,
-		"detail_strands": 0, "detail_radius": 0.0,
-		"msaa": Viewport.MSAA_DISABLED,
-		"ssao": false, "glow": true, "shadows": false, "shadow_quality": 0,
-		"ssil": false, "vfog": false, "taa": false,
-		"fxaa": true,
-		"gi": false, "dof": false,
-		"render_scale": 0.85,
-		"lod_threshold": 4.0,
-		"sky_marches": 0,
-		"reflect_probe": true, "dust": true,
-		"aniso": Viewport.ANISOTROPY_2X,
-		"machine_lod": 22.0,
-		"crust_budget": 0.75,
-		"sign_distance": 35.0,
-	},
-	Quality.MEDIUM: {
-		"name": "Medium",
-		"machine_distance": 2,
-		"texture_res": 0,
-		"strands_per_cell": 190,
-		"live_budget": 1200,
-		"prop_cap": 120,
-		"lod_near": 11.0, "lod_far": 28.0, "lod_min": 0.7,
-		"shadow_distance": 6.0,
-		"yard_shadow_distance": 8.0,
-		"detail_strands": 120000, "detail_radius": 6.0,
-		"msaa": Viewport.MSAA_DISABLED,
-		"ssao": false, "glow": true, "shadows": true, "shadow_quality": 1,
-		"ssil": false, "vfog": false, "taa": true,
-		"fxaa": false,
-		"gi": false, "dof": false,
-		"render_scale": 0.92,
-		"lod_threshold": 2.0,
-		"sky_marches": 16,
-		"reflect_probe": true, "dust": true,
-	},
+                "machine_distance": 1,
+                "texture_res": 0,
+                "strands_per_cell": 190,
+                "live_budget": 400,
+                "prop_cap": 60,
+                "lod_near": 6.0, "lod_far": 18.0, "lod_min": 0.45,
+                "shadow_distance": 0.0,
+                "yard_shadow_distance": 0.0,
+                "detail_strands": 0, "detail_radius": 0.0,
+                "msaa": Viewport.MSAA_DISABLED,
+                "ssao": false, "glow": false, "shadows": false, "shadow_quality": 0,
+                "ssil": false, "vfog": false, "taa": false,
+                "fxaa": true,
+                "gi": false, "dof": false,
+                "render_scale": 0.72,
+                "lod_threshold": 8.0,
+                "sky_marches": 0,
+                "reflect_probe": false, "dust": false,
+                "aniso": Viewport.ANISOTROPY_DISABLED,
+                "machine_lod": 15.0,
+                "crust_budget": 0.5,
+                "sign_distance": 25.0,
+        },
+        Quality.LOW: {
+                "name": "Low",
+                "machine_distance": 2,
+                "texture_res": 0,
+                "strands_per_cell": 190,
+                "live_budget": 700,
+                "prop_cap": 90,
+                "lod_near": 8.0, "lod_far": 22.0, "lod_min": 0.55,
+                "shadow_distance": 3.0,
+                "yard_shadow_distance": 0.0,
+                "detail_strands": 0, "detail_radius": 0.0,
+                "msaa": Viewport.MSAA_DISABLED,
+                "ssao": false, "glow": true, "shadows": false, "shadow_quality": 0,
+                "ssil": false, "vfog": false, "taa": false,
+                "fxaa": true,
+                "gi": false, "dof": false,
+                "render_scale": 0.85,
+                "lod_threshold": 4.0,
+                "sky_marches": 0,
+                "reflect_probe": true, "dust": true,
+                "aniso": Viewport.ANISOTROPY_2X,
+                "machine_lod": 22.0,
+                "crust_budget": 0.75,
+                "sign_distance": 35.0,
+        },
+        Quality.MEDIUM: {
+                "name": "Medium",
+                "machine_distance": 2,
+                "texture_res": 0,
+                "strands_per_cell": 190,
+                "live_budget": 1200,
+                "prop_cap": 120,
+                "lod_near": 11.0, "lod_far": 28.0, "lod_min": 0.7,
+                "shadow_distance": 6.0,
+                "yard_shadow_distance": 8.0,
+                "detail_strands": 120000, "detail_radius": 6.0,
+                "msaa": Viewport.MSAA_DISABLED,
+                "ssao": false, "glow": true, "shadows": true, "shadow_quality": 1,
+                "ssil": false, "vfog": false, "taa": true,
+                "fxaa": false,
+                "gi": false, "dof": false,
+                "render_scale": 0.92,
+                "lod_threshold": 2.0,
+                "sky_marches": 16,
+                "reflect_probe": true, "dust": true,
+        },
 
 
-	Quality.HIGH: {
-		"name": "High",
-		"machine_distance": 3,
-		"texture_res": 0,
-		"strands_per_cell": 190,
-		"live_budget": 2000,
-		"prop_cap": 150,
-		"lod_near": 14.0, "lod_far": 34.0, "lod_min": 0.88,
-		"shadow_distance": 9.0,
-		"yard_shadow_distance": 12.0,
-		"detail_strands": 200000, "detail_radius": 8.0,
-		"msaa": Viewport.MSAA_DISABLED,
-		"ssao": true, "glow": true, "shadows": true, "shadow_quality": 2,
-		"ssil": false, "vfog": true, "taa": true,
-		"fxaa": false,
-		"gi": false, "dof": false,
-		"render_scale": 1.0,
-		"lod_threshold": 1.0,
-		"sky_marches": 40,
-		"reflect_probe": true, "dust": true,
-	},
-	Quality.ULTRA: {
-		"name": "Ultra",
-		"machine_distance": 3,
-		"texture_res": 0,
-		"strands_per_cell": 190,
-		"live_budget": 3500,
-		"prop_cap": 150,
-		"lod_near": 18.0, "lod_far": 44.0, "lod_min": 1.0,
-		"shadow_distance": 12.0,
-		"yard_shadow_distance": 18.0,
-		"detail_strands": 450000, "detail_radius": 10.0,
-		"msaa": Viewport.MSAA_4X,
-		"ssao": true, "glow": true, "shadows": true, "shadow_quality": 1,
-		"ssil": true, "vfog": true, "taa": true,
-		"fxaa": false,
-		"gi": true, "dof": false,
-		"render_scale": 1.0,
-		"lod_threshold": 1.0,
-		"sky_marches": 64,
-		"reflect_probe": true, "dust": true,
-	},
+        Quality.HIGH: {
+                "name": "High",
+                "machine_distance": 3,
+                "texture_res": 0,
+                "strands_per_cell": 190,
+                "live_budget": 2000,
+                "prop_cap": 150,
+                "lod_near": 14.0, "lod_far": 34.0, "lod_min": 0.88,
+                "shadow_distance": 9.0,
+                "yard_shadow_distance": 12.0,
+                "detail_strands": 200000, "detail_radius": 8.0,
+                "msaa": Viewport.MSAA_DISABLED,
+                "ssao": true, "glow": true, "shadows": true, "shadow_quality": 2,
+                "ssil": false, "vfog": true, "taa": true,
+                "fxaa": false,
+                "gi": false, "dof": false,
+                "render_scale": 1.0,
+                "lod_threshold": 1.0,
+                "sky_marches": 40,
+                "reflect_probe": true, "dust": true,
+        },
+        Quality.ULTRA: {
+                "name": "Ultra",
+                "machine_distance": 3,
+                "texture_res": 0,
+                "strands_per_cell": 190,
+                "live_budget": 3500,
+                "prop_cap": 150,
+                "lod_near": 18.0, "lod_far": 44.0, "lod_min": 1.0,
+                "shadow_distance": 12.0,
+                "yard_shadow_distance": 18.0,
+                "detail_strands": 450000, "detail_radius": 10.0,
+                "msaa": Viewport.MSAA_4X,
+                "ssao": true, "glow": true, "shadows": true, "shadow_quality": 1,
+                "ssil": true, "vfog": true, "taa": true,
+                "fxaa": false,
+                "gi": true, "dof": false,
+                "render_scale": 1.0,
+                "lod_threshold": 1.0,
+                "sky_marches": 64,
+                "reflect_probe": true, "dust": true,
+        },
 }
 
 const QUALITY_DEFAULT:= Quality.HIGH
@@ -2160,9 +2169,9 @@ const RENDERER_NAMES:= ["VULKAN", "DIRECT3D 12"]
 const RENDERER_DEFAULT:= "vulkan"
 const RENDERER_DRIVER_KEY:= "rendering_device/driver.windows"
 const RENDERER_FALLBACK_KEYS:= [
-	"rendering_device/fallback_to_vulkan",
-	"rendering_device/fallback_to_d3d12",
-	"rendering_device/fallback_to_opengl3",
+        "rendering_device/fallback_to_vulkan",
+        "rendering_device/fallback_to_d3d12",
+        "rendering_device/fallback_to_opengl3",
 ]
 
 
@@ -2176,83 +2185,83 @@ const VULKAN_LOST_GPU:= "(?i)\\bRX\\s*5[3-7]\\d\\d(?!\\d)|\\bPro\\s*W5[5-7]00\\b
 
 
 func vulkan_lost_gpu(adapter: String = "") -> bool:
-	if adapter == "":
-		adapter = OS.get_environment("FTN_FAKE_GPU")
-	if adapter == "":
-		adapter = RenderingServer.get_video_adapter_name()
-	var re:= RegEx.create_from_string(VULKAN_LOST_GPU)
-	return re.is_valid() and re.search(adapter) != null
+        if adapter == "":
+                adapter = OS.get_environment("FTN_FAKE_GPU")
+        if adapter == "":
+                adapter = RenderingServer.get_video_adapter_name()
+        var re:= RegEx.create_from_string(VULKAN_LOST_GPU)
+        return re.is_valid() and re.search(adapter) != null
 
 
 func default_renderer() -> String:
-	return "d3d12" if vulkan_lost_gpu() else RENDERER_DEFAULT
+        return "d3d12" if vulkan_lost_gpu() else RENDERER_DEFAULT
 
 
 func _override_path() -> String:
-	if override_file != "":
-		return override_file
-	if OS.has_feature("editor"):
-		return "res://override.cfg"
-	return OS.get_executable_path().get_base_dir().path_join("override.cfg")
+        if override_file != "":
+                return override_file
+        if OS.has_feature("editor"):
+                return "res://override.cfg"
+        return OS.get_executable_path().get_base_dir().path_join("override.cfg")
 
 
 func set_renderer(name: String, picked: bool = true) -> bool:
-	if not name in RENDERERS:
-		return false
-	if not _write_renderer_override(name, _renderer_may_fall_back(name, picked)):
-		return false
-	renderer = name
-	renderer_picked = picked
-	save_settings()
-	return true
+        if not name in RENDERERS:
+                return false
+        if not _write_renderer_override(name, _renderer_may_fall_back(name, picked)):
+                return false
+        renderer = name
+        renderer_picked = picked
+        save_settings()
+        return true
 
 
 func _write_renderer_override(name: String, fall_back: bool = false) -> bool:
-	if not name in RENDERERS:
-		return false
-	var cf:= ConfigFile.new()
-	var path:= _override_path()
-	var loaded:= cf.load(path)
-	if loaded != OK and loaded != ERR_FILE_NOT_FOUND:
-		return false
-	cf.set_value("rendering", RENDERER_DRIVER_KEY, name)
-	for key: String in RENDERER_FALLBACK_KEYS:
-		cf.set_value("rendering", key, false)
-	if fall_back:
-		cf.set_value("rendering", "rendering_device/fallback_to_vulkan", true)
-	return cf.save(path) == OK
+        if not name in RENDERERS:
+                return false
+        var cf:= ConfigFile.new()
+        var path:= _override_path()
+        var loaded:= cf.load(path)
+        if loaded != OK and loaded != ERR_FILE_NOT_FOUND:
+                return false
+        cf.set_value("rendering", RENDERER_DRIVER_KEY, name)
+        for key: String in RENDERER_FALLBACK_KEYS:
+                cf.set_value("rendering", key, false)
+        if fall_back:
+                cf.set_value("rendering", "rendering_device/fallback_to_vulkan", true)
+        return cf.save(path) == OK
 
 
 func _renderer_may_fall_back(name: String, picked: bool) -> bool:
-	return not picked and name != RENDERER_DEFAULT
+        return not picked and name != RENDERER_DEFAULT
 
 
 func sync_renderer() -> bool:
-	if override_file == "" and (OS.has_feature("editor") or settings_readonly or DisplayServer.get_name() == "headless"):
-		return true
-	return _write_renderer_override(renderer,
-		_renderer_may_fall_back(renderer, renderer_picked))
+        if override_file == "" and (OS.has_feature("editor") or settings_readonly or DisplayServer.get_name() == "headless"):
+                return true
+        return _write_renderer_override(renderer,
+                _renderer_may_fall_back(renderer, renderer_picked))
 
 
 func _pick_renderer_for_gpu() -> void:
-	if renderer_picked or settings_readonly:
-		return
-	var want:= default_renderer()
-	if want == RENDERER_DEFAULT or renderer == want:
-		return
-	print("[cfg] %s: renderer %s -> %s" % [RenderingServer.get_video_adapter_name(),
-		renderer, want])
-	renderer = want
+        if renderer_picked or settings_readonly:
+                return
+        var want:= default_renderer()
+        if want == RENDERER_DEFAULT or renderer == want:
+                return
+        print("[cfg] %s: renderer %s -> %s" % [RenderingServer.get_video_adapter_name(),
+                renderer, want])
+        renderer = want
 
 
-	save_settings()
+        save_settings()
 
 
 func running_renderer() -> String:
-	var driver:= RenderingServer.get_current_rendering_driver_name()
-	if driver == "":
-		driver = RENDERER_DEFAULT
-	return driver
+        var driver:= RenderingServer.get_current_rendering_driver_name()
+        if driver == "":
+                driver = RENDERER_DEFAULT
+        return driver
 
 
 enum RenderThread { AUTO, ON, OFF }
@@ -2281,90 +2290,90 @@ var override_file:= ""
 
 
 func render_thread_wanted() -> bool:
-	match render_thread:
-		RenderThread.ON:
-			return true
-		RenderThread.OFF:
-			return false
-	return render_thread_auto()
+        match render_thread:
+                RenderThread.ON:
+                        return true
+                RenderThread.OFF:
+                        return false
+        return render_thread_auto()
 
 
 func render_thread_auto() -> bool:
-	if not OS.has_feature("editor"):
-		return true
-	var cf:= ConfigFile.new()
-	if cf.load(_override_path()) != OK:
-		return false
-	return int(cf.get_value("rendering", THREAD_MODEL_KEY,
-		THREAD_MODEL_SINGLE)) == THREAD_MODEL_SEPARATE
+        if not OS.has_feature("editor"):
+                return true
+        var cf:= ConfigFile.new()
+        if cf.load(_override_path()) != OK:
+                return false
+        return int(cf.get_value("rendering", THREAD_MODEL_KEY,
+                THREAD_MODEL_SINGLE)) == THREAD_MODEL_SEPARATE
 
 
 func running_render_thread() -> bool:
-	return not RenderingServer.is_on_render_thread()
+        return not RenderingServer.is_on_render_thread()
 
 
 func set_render_thread(mode: int) -> bool:
-	render_thread = clampi(mode, 0, RenderThread.size() - 1) as RenderThread
-	save_settings()
-	return sync_render_thread()
+        render_thread = clampi(mode, 0, RenderThread.size() - 1) as RenderThread
+        save_settings()
+        return sync_render_thread()
 
 
 func sync_render_thread() -> bool:
-	if override_file == "" and (settings_readonly or DisplayServer.get_name() == "headless"):
-		return true
-	if OS.has_feature("editor") and render_thread == RenderThread.AUTO:
-		return true
-	var cf:= ConfigFile.new()
-	var path:= _override_path()
-	cf.load(path)
-	if OS.has_feature("template"):
+        if override_file == "" and (settings_readonly or DisplayServer.get_name() == "headless"):
+                return true
+        if OS.has_feature("editor") and render_thread == RenderThread.AUTO:
+                return true
+        var cf:= ConfigFile.new()
+        var path:= _override_path()
+        cf.load(path)
+        if OS.has_feature("template"):
 
 
-		cf.set_value("rendering", THREAD_MODEL_KEY_EXPORT,
-			THREAD_MODEL_SEPARATE if render_thread_wanted() else THREAD_MODEL_SINGLE)
-		if cf.has_section_key("rendering", THREAD_MODEL_KEY):
-			cf.erase_section_key("rendering", THREAD_MODEL_KEY)
-	elif render_thread_wanted():
-		cf.set_value("rendering", THREAD_MODEL_KEY, THREAD_MODEL_SEPARATE)
-	elif cf.has_section_key("rendering", THREAD_MODEL_KEY):
-		cf.erase_section_key("rendering", THREAD_MODEL_KEY)
-	if cf.get_sections().is_empty():
-		if FileAccess.file_exists(path):
-			DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
-		return true
-	return cf.save(path) == OK
+                cf.set_value("rendering", THREAD_MODEL_KEY_EXPORT,
+                        THREAD_MODEL_SEPARATE if render_thread_wanted() else THREAD_MODEL_SINGLE)
+                if cf.has_section_key("rendering", THREAD_MODEL_KEY):
+                        cf.erase_section_key("rendering", THREAD_MODEL_KEY)
+        elif render_thread_wanted():
+                cf.set_value("rendering", THREAD_MODEL_KEY, THREAD_MODEL_SEPARATE)
+        elif cf.has_section_key("rendering", THREAD_MODEL_KEY):
+                cf.erase_section_key("rendering", THREAD_MODEL_KEY)
+        if cf.get_sections().is_empty():
+                if FileAccess.file_exists(path):
+                        DirAccess.remove_absolute(ProjectSettings.globalize_path(path))
+                return true
+        return cf.save(path) == OK
 
 
 func _restart_off_the_render_thread() -> bool:
-	if OS.has_feature("editor") or not OS.has_feature("template"):
-		return false
-	if settings_readonly or DisplayServer.get_name() == "headless":
-		return false
-	if not running_render_thread() or render_thread_wanted():
-		return false
-	if OS.get_environment(RENDER_THREAD_RESTART_ENV) != "":
-		return false
-	if FileAccess.file_exists(CrashReport.SENTINEL):
-		return false
+        if OS.has_feature("editor") or not OS.has_feature("template"):
+                return false
+        if settings_readonly or DisplayServer.get_name() == "headless":
+                return false
+        if not running_render_thread() or render_thread_wanted():
+                return false
+        if OS.get_environment(RENDER_THREAD_RESTART_ENV) != "":
+                return false
+        if FileAccess.file_exists(CrashReport.SENTINEL):
+                return false
 
-	var cf:= ConfigFile.new()
-	if cf.load(_override_path()) != OK or int(cf.get_value("rendering",
-			THREAD_MODEL_KEY_EXPORT, THREAD_MODEL_SEPARATE)) != THREAD_MODEL_SINGLE:
-		return false
-	OS.set_environment(RENDER_THREAD_RESTART_ENV, "1")
-	print("[cfg] render thread running but not wanted here; restarting once without it")
-	restart_game()
-	return true
+        var cf:= ConfigFile.new()
+        if cf.load(_override_path()) != OK or int(cf.get_value("rendering",
+                        THREAD_MODEL_KEY_EXPORT, THREAD_MODEL_SEPARATE)) != THREAD_MODEL_SINGLE:
+                return false
+        OS.set_environment(RENDER_THREAD_RESTART_ENV, "1")
+        print("[cfg] render thread running but not wanted here; restarting once without it")
+        restart_game()
+        return true
 
 
 func restart_game() -> void:
-	var args:= OS.get_cmdline_args()
-	var user:= OS.get_cmdline_user_args()
-	if not user.is_empty():
-		args.append("--")
-		args.append_array(user)
-	OS.set_restart_on_exit(true, args)
-	get_tree().quit()
+        var args:= OS.get_cmdline_args()
+        var user:= OS.get_cmdline_user_args()
+        if not user.is_empty():
+                args.append("--")
+                args.append_array(user)
+        OS.set_restart_on_exit(true, args)
+        get_tree().quit()
 
 
 var gfx: Dictionary = { }
@@ -2378,43 +2387,43 @@ var _gfx_user: Dictionary = { }
 
 const GFX_FROM_PRESET:= {
 
-	"machine_distance": "machine_distance",
-	"taa": "taa",
-	"msaa": "msaa",
+        "machine_distance": "machine_distance",
+        "taa": "taa",
+        "msaa": "msaa",
 
 
-	"fxaa": "fxaa",
-	"render_scale": "render_scale",
-	"shadows": "shadows",
-	"shadow_quality": "shadow_quality",
-	"ssao": "ssao",
-	"ssil": "ssil",
-	"vfog": "vfog",
-	"glow": "glow",
+        "fxaa": "fxaa",
+        "render_scale": "render_scale",
+        "shadows": "shadows",
+        "shadow_quality": "shadow_quality",
+        "ssao": "ssao",
+        "ssil": "ssil",
+        "vfog": "vfog",
+        "glow": "glow",
 
 
-	"gi": "gi",
+        "gi": "gi",
 
 
-	"dof": "dof",
+        "dof": "dof",
 
 
-	"hay_density": "strands_per_cell",
+        "hay_density": "strands_per_cell",
 
 
-	"hay_lod_min": "lod_min",
+        "hay_lod_min": "lod_min",
 
 
-	"texture_res": "texture_res",
+        "texture_res": "texture_res",
 
 
-	"sky_marches": "sky_marches",
+        "sky_marches": "sky_marches",
 
 
-	"reflect_probe": "reflect_probe",
+        "reflect_probe": "reflect_probe",
 
 
-	"dust": "dust",
+        "dust": "dust",
 }
 
 
@@ -2424,34 +2433,34 @@ const HAY_DENSITY_MIN:= 190
 const GFX_EXTRA:= {
 
 
-	"fog": true,
+        "fog": true,
 
 
-	"shadow_blur": 3.6,
+        "shadow_blur": 3.6,
 
 
-	"glow_intensity": 0.04,
-	"adjustment": true,
+        "glow_intensity": 0.04,
+        "adjustment": true,
 
 
-	"color_correction": true,
+        "color_correction": true,
 
 
-	"tonemap": 4,
-	"exposure": 0.89,
+        "tonemap": 4,
+        "exposure": 0.89,
 
 
-	"white": 4.6,
+        "white": 4.6,
 
 
-	"ambient_sky": true,
+        "ambient_sky": true,
 
 
-	"sky_contribution": 0.8,
-	"reflect_sky": true,
+        "sky_contribution": 0.8,
+        "reflect_sky": true,
 
 
-	"auto_exposure": false,
+        "auto_exposure": false,
 }
 
 
@@ -2466,10 +2475,10 @@ const SHADOW_ATLAS_SIZES:= [1024, 2048, 4096, 8192]
 
 
 const SHADOW_FILTER_QUALITIES:= [
-	RenderingServer.SHADOW_QUALITY_SOFT_VERY_LOW,
-	RenderingServer.SHADOW_QUALITY_SOFT_LOW,
-	RenderingServer.SHADOW_QUALITY_SOFT_MEDIUM,
-	RenderingServer.SHADOW_QUALITY_SOFT_ULTRA,
+        RenderingServer.SHADOW_QUALITY_SOFT_VERY_LOW,
+        RenderingServer.SHADOW_QUALITY_SOFT_LOW,
+        RenderingServer.SHADOW_QUALITY_SOFT_MEDIUM,
+        RenderingServer.SHADOW_QUALITY_SOFT_ULTRA,
 ]
 
 
@@ -2482,47 +2491,47 @@ const MACHINE_DISTANCE_METRES:= [40.0, 60.0, 80.0, 120.0, 200.0, 400.0, 0.0]
 
 
 func sync_gfx_to_preset(keep_user: bool = true) -> void:
-	var fresh:= authored_gfx()
-	for key: String in fresh:
-		gfx [key] = fresh [key]
-	if not keep_user:
-		_gfx_user.clear()
-		sync_msaa_pipelines()
-		return
+        var fresh:= authored_gfx()
+        for key: String in fresh:
+                gfx [key] = fresh [key]
+        if not keep_user:
+                _gfx_user.clear()
+                sync_msaa_pipelines()
+                return
 
 
-	for key: String in _gfx_user:
-		if gfx.has(key):
-			gfx [key] = _gfx_user [key]
-	sync_msaa_pipelines()
+        for key: String in _gfx_user:
+                if gfx.has(key):
+                        gfx [key] = _gfx_user [key]
+        sync_msaa_pipelines()
 
 
 func sync_msaa_pipelines() -> void:
-	if old_laptop:
-		return
-	const KEY:= "rendering/anti_aliasing/quality/msaa_3d"
-	var want:= int(gfx.get("msaa", Viewport.MSAA_DISABLED))
-	if int(ProjectSettings.get_setting(KEY, 0)) != want:
-		ProjectSettings.set_setting(KEY, want)
+        if old_laptop:
+                return
+        const KEY:= "rendering/anti_aliasing/quality/msaa_3d"
+        var want:= int(gfx.get("msaa", Viewport.MSAA_DISABLED))
+        if int(ProjectSettings.get_setting(KEY, 0)) != want:
+                ProjectSettings.set_setting(KEY, want)
 
 
 func authored_gfx() -> Dictionary:
-	var out:= { }
-	var p: Dictionary = preset()
-	for key: String in GFX_FROM_PRESET:
-		out [key] = p [GFX_FROM_PRESET [key]]
-	for key: String in GFX_EXTRA:
-		out [key] = GFX_EXTRA [key]
+        var out:= { }
+        var p: Dictionary = preset()
+        for key: String in GFX_FROM_PRESET:
+                out [key] = p [GFX_FROM_PRESET [key]]
+        for key: String in GFX_EXTRA:
+                out [key] = GFX_EXTRA [key]
 
 
-	var authored:= _look_defaults()
-	for key: String in authored:
-		out [key] = authored [key]
-	return out
+        var authored:= _look_defaults()
+        for key: String in authored:
+                out [key] = authored [key]
+        return out
 
 
 func authored_prop_cap() -> int:
-	return clampi(int(PRESETS [quality] ["prop_cap"]), PROP_CAP_MIN, PROP_CAP_MAX)
+        return clampi(int(PRESETS [quality] ["prop_cap"]), PROP_CAP_MIN, PROP_CAP_MAX)
 
 
 const LOOK_ENV_PATH:= "res://scenes/look/yard_environment.tres"
@@ -2533,61 +2542,61 @@ var _look_read:= false
 
 
 func _look_defaults() -> Dictionary:
-	if _look_read:
-		return _look_defaults_cache
-	_look_read = true
-	var e: Environment = null
-	if ResourceLoader.exists(LOOK_ENV_PATH):
-		e = ResourceLoader.load(LOOK_ENV_PATH, "",
-			ResourceLoader.CACHE_MODE_IGNORE) as Environment
-	if e == null:
-		push_warning("[cfg] no look resource at %s, using GFX_EXTRA"
-			% LOOK_ENV_PATH)
-		return _look_defaults_cache
-	_look_defaults_cache = {
-		"fog": e.fog_enabled,
-		"glow_intensity": e.glow_intensity,
-		"adjustment": e.adjustment_enabled,
-		"color_correction": e.adjustment_color_correction != null,
-		"tonemap": int(e.tonemap_mode),
-		"exposure": e.tonemap_exposure,
-		"white": e.tonemap_white,
-		"ambient_sky": e.ambient_light_source == Environment.AMBIENT_SOURCE_SKY,
-		"sky_contribution": e.ambient_light_sky_contribution,
-		"reflect_sky": e.reflected_light_source == Environment.REFLECTION_SOURCE_SKY,
-	}
-	return _look_defaults_cache
+        if _look_read:
+                return _look_defaults_cache
+        _look_read = true
+        var e: Environment = null
+        if ResourceLoader.exists(LOOK_ENV_PATH):
+                e = ResourceLoader.load(LOOK_ENV_PATH, "",
+                        ResourceLoader.CACHE_MODE_IGNORE) as Environment
+        if e == null:
+                push_warning("[cfg] no look resource at %s, using GFX_EXTRA"
+                        % LOOK_ENV_PATH)
+                return _look_defaults_cache
+        _look_defaults_cache = {
+                "fog": e.fog_enabled,
+                "glow_intensity": e.glow_intensity,
+                "adjustment": e.adjustment_enabled,
+                "color_correction": e.adjustment_color_correction != null,
+                "tonemap": int(e.tonemap_mode),
+                "exposure": e.tonemap_exposure,
+                "white": e.tonemap_white,
+                "ambient_sky": e.ambient_light_source == Environment.AMBIENT_SOURCE_SKY,
+                "sky_contribution": e.ambient_light_sky_contribution,
+                "reflect_sky": e.reflected_light_source == Environment.REFLECTION_SOURCE_SKY,
+        }
+        return _look_defaults_cache
 
 
 func texture_res() -> String:
-	var i: int = clampi(int(gfx.get("texture_res", 0)), 0, TEXTURE_RES_TAGS.size() - 1)
-	return TEXTURE_RES_TAGS [i]
+        var i: int = clampi(int(gfx.get("texture_res", 0)), 0, TEXTURE_RES_TAGS.size() - 1)
+        return TEXTURE_RES_TAGS [i]
 
 
 func machine_distance_metres() -> float:
-	var index:= clampi(int(gfx.get("machine_distance", PRESETS [quality] ["machine_distance"])),
-		0, MACHINE_DISTANCE_METRES.size() - 1)
-	return MACHINE_DISTANCE_METRES [index]
+        var index:= clampi(int(gfx.get("machine_distance", PRESETS [quality] ["machine_distance"])),
+                0, MACHINE_DISTANCE_METRES.size() - 1)
+        return MACHINE_DISTANCE_METRES [index]
 
 
 func set_gfx(key: String, value: Variant) -> void:
-	if key == "machine_distance":
-		value = clampi(int(value), 0, MACHINE_DISTANCE_METRES.size() - 1)
+        if key == "machine_distance":
+                value = clampi(int(value), 0, MACHINE_DISTANCE_METRES.size() - 1)
 
-	if gfx.get(key) == value and (key != "machine_distance" or _gfx_user.has(key)):
-		return
-	gfx [key] = value
-	_gfx_user [key] = value
-	if key == "msaa":
-		sync_msaa_pipelines()
-	save_settings()
-	gfx_changed.emit()
+        if gfx.get(key) == value and (key != "machine_distance" or _gfx_user.has(key)):
+                return
+        gfx [key] = value
+        _gfx_user [key] = value
+        if key == "msaa":
+                sync_msaa_pipelines()
+        save_settings()
+        gfx_changed.emit()
 
 
 func reset_gfx() -> void:
-	sync_gfx_to_preset(false)
-	save_settings()
-	gfx_changed.emit()
+        sync_gfx_to_preset(false)
+        save_settings()
+        gfx_changed.emit()
 
 
 const SETTINGS_PATH:= "user://settings.cfg"
@@ -2621,13 +2630,13 @@ var max_fps:= MAX_FPS_DEFAULT
 
 
 const RESOLUTIONS: Array [Vector2i] = [
-	Vector2i(1280, 720),
-	Vector2i(1366, 768),
-	Vector2i(1600, 900),
-	Vector2i(1920, 1080),
-	Vector2i(2560, 1440),
-	Vector2i(3200, 1800),
-	Vector2i(3840, 2160),
+        Vector2i(1280, 720),
+        Vector2i(1366, 768),
+        Vector2i(1600, 900),
+        Vector2i(1920, 1080),
+        Vector2i(2560, 1440),
+        Vector2i(3200, 1800),
+        Vector2i(3840, 2160),
 ]
 
 
@@ -2730,12 +2739,12 @@ var crosshair_opacity:= CROSSHAIR_OPACITY_DEFAULT
 
 const CROSSHAIR_COLOUR_NAMES:= ["White", "Amber", "Lime", "Cyan", "Red", "Black"]
 const CROSSHAIR_COLOURS: Array [Color] = [
-	Color(1.0, 1.0, 1.0),
-	Color(1.0, 0.78, 0.3),
-	Color(0.62, 1.0, 0.36),
-	Color(0.4, 0.93, 1.0),
-	Color(1.0, 0.36, 0.3),
-	Color(0.04, 0.04, 0.05),
+        Color(1.0, 1.0, 1.0),
+        Color(1.0, 0.78, 0.3),
+        Color(0.62, 1.0, 0.36),
+        Color(0.4, 0.93, 1.0),
+        Color(1.0, 0.36, 0.3),
+        Color(0.04, 0.04, 0.05),
 ]
 
 
@@ -2778,152 +2787,152 @@ var catalog_recent_first:= CATALOG_RECENT_FIRST_DEFAULT
 
 
 func crosshair_tint() -> Color:
-	var i:= clampi(crosshair_colour, 0, CROSSHAIR_COLOURS.size() - 1)
-	return Color(CROSSHAIR_COLOURS [i], crosshair_opacity)
+        var i:= clampi(crosshair_colour, 0, CROSSHAIR_COLOURS.size() - 1)
+        return Color(CROSSHAIR_COLOURS [i], crosshair_opacity)
 
 
 func set_hud_scale(value: float) -> void:
-	hud_scale = clampf(value, HUD_SCALE_MIN, HUD_SCALE_MAX)
-	hud_style_changed.emit()
-	save_settings()
+        hud_scale = clampf(value, HUD_SCALE_MIN, HUD_SCALE_MAX)
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_tech_text_scale(value: float) -> void:
-	tech_text_scale = clampf(value, TECH_TEXT_SCALE_MIN, TECH_TEXT_SCALE_MAX)
-	hud_style_changed.emit()
-	save_settings()
+        tech_text_scale = clampf(value, TECH_TEXT_SCALE_MIN, TECH_TEXT_SCALE_MAX)
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_crosshair_style(value: int) -> void:
-	crosshair_style = clampi(value, 0, CROSSHAIR_STYLE_NAMES.size() - 1)
-	hud_style_changed.emit()
-	save_settings()
+        crosshair_style = clampi(value, 0, CROSSHAIR_STYLE_NAMES.size() - 1)
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_crosshair_size(value: float) -> void:
-	crosshair_size = clampf(value, CROSSHAIR_SIZE_MIN, CROSSHAIR_SIZE_MAX)
-	hud_style_changed.emit()
-	save_settings()
+        crosshair_size = clampf(value, CROSSHAIR_SIZE_MIN, CROSSHAIR_SIZE_MAX)
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_crosshair_opacity(value: float) -> void:
-	crosshair_opacity = clampf(value, CROSSHAIR_OPACITY_MIN, 1.0)
-	hud_style_changed.emit()
-	save_settings()
+        crosshair_opacity = clampf(value, CROSSHAIR_OPACITY_MIN, 1.0)
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_crosshair_colour(value: int) -> void:
-	crosshair_colour = clampi(value, 0, CROSSHAIR_COLOURS.size() - 1)
-	hud_style_changed.emit()
-	save_settings()
+        crosshair_colour = clampi(value, 0, CROSSHAIR_COLOURS.size() - 1)
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_show_hotkey_bar(on: bool) -> void:
-	show_hotkey_bar = on
-	hud_style_changed.emit()
-	save_settings()
+        show_hotkey_bar = on
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_show_control_hints(on: bool) -> void:
-	show_control_hints = on
-	hud_style_changed.emit()
-	save_settings()
+        show_control_hints = on
+        hud_style_changed.emit()
+        save_settings()
 
 
 func set_plate_dark(on: bool) -> void:
-	plate_dark = on
-	save_settings()
+        plate_dark = on
+        save_settings()
 
 
 func set_shop_dark(on: bool) -> void:
-	shop_dark = on
-	save_settings()
+        shop_dark = on
+        save_settings()
 
 
 func set_teach_hints(on: bool) -> void:
-	teach_hints = on
-	if on:
-		_forget_lessons()
-	save_settings()
+        teach_hints = on
+        if on:
+                _forget_lessons()
+        save_settings()
 
 
 func restart_lessons() -> void:
-	_forget_lessons()
-	save_settings()
+        _forget_lessons()
+        save_settings()
 
 
 func _forget_lessons() -> void:
-	keys_used.clear()
-	builds_placed.clear()
-	techs_seen.clear()
-	machines_seen.clear()
-	nudges_given.clear()
+        keys_used.clear()
+        builds_placed.clear()
+        techs_seen.clear()
+        machines_seen.clear()
+        nudges_given.clear()
 
 
 func key_used(action: String) -> bool:
-	return keys_used.has(action)
+        return keys_used.has(action)
 
 
 func use_key(action: String) -> void:
-	_learn(keys_used, action)
+        _learn(keys_used, action)
 
 
 func build_is_new(id: String) -> bool:
-	return teach_hints and not builds_placed.has(id)
+        return teach_hints and not builds_placed.has(id)
 
 
 func place_build(id: String) -> void:
-	_learn(builds_placed, id)
+        _learn(builds_placed, id)
 
 
 func tech_seen(id: String) -> bool:
-	return techs_seen.has(id)
+        return techs_seen.has(id)
 
 
 func see_tech(id: String) -> void:
-	_learn(techs_seen, id)
+        _learn(techs_seen, id)
 
 
 func machine_seen(id: String) -> bool:
-	return machines_seen.has(id)
+        return machines_seen.has(id)
 
 
 func see_machine(id: String) -> void:
-	_learn(machines_seen, id)
+        _learn(machines_seen, id)
 
 
 func nudge_given(id: String) -> bool:
-	return nudges_given.has(id)
+        return nudges_given.has(id)
 
 
 func give_nudge(id: String) -> void:
-	_learn(nudges_given, id)
+        _learn(nudges_given, id)
 
 
 func learn_many(builds: Array, machines: Array) -> void:
-	var changed:= false
-	for id in builds:
-		if id != "" and not builds_placed.has(id):
-			builds_placed [id] = true
-			changed = true
-	for id in machines:
-		if id != "" and not machines_seen.has(id):
-			machines_seen [id] = true
-			changed = true
-	if changed:
-		_save_learned()
+        var changed:= false
+        for id in builds:
+                if id != "" and not builds_placed.has(id):
+                        builds_placed [id] = true
+                        changed = true
+        for id in machines:
+                if id != "" and not machines_seen.has(id):
+                        machines_seen [id] = true
+                        changed = true
+        if changed:
+                _save_learned()
 
 
 func _learn(list: Dictionary, id: String) -> void:
-	if id == "" or list.has(id):
-		return
-	list [id] = true
-	_save_learned()
+        if id == "" or list.has(id):
+                return
+        list [id] = true
+        _save_learned()
 
 
 func _save_learned() -> void:
-	if DisplayServer.get_name() != "headless" and OS.get_cmdline_user_args().is_empty():
-		save_settings()
+        if DisplayServer.get_name() != "headless" and OS.get_cmdline_user_args().is_empty():
+                save_settings()
 
 
 var t_splitter_port_r:= T_SPLITTER_PORT_R
@@ -2931,483 +2940,483 @@ signal t_splitter_size_changed(port_r: float)
 
 
 func set_t_splitter_port_r(r: float) -> void:
-	r = T_SPLITTER_PORT_R_1M if is_equal_approx(r, T_SPLITTER_PORT_R_1M) else T_SPLITTER_PORT_R
-	if is_equal_approx(r, t_splitter_port_r):
-		return
-	t_splitter_port_r = r
-	t_splitter_size_changed.emit(r)
-	save_settings()
+        r = T_SPLITTER_PORT_R_1M if is_equal_approx(r, T_SPLITTER_PORT_R_1M) else T_SPLITTER_PORT_R
+        if is_equal_approx(r, t_splitter_port_r):
+                return
+        t_splitter_port_r = r
+        t_splitter_size_changed.emit(r)
+        save_settings()
 
 
 func set_catalog_grid(on: bool) -> void:
-	catalog_grid = on
-	save_settings()
+        catalog_grid = on
+        save_settings()
 
 
 func set_catalog_recent_first(on: bool) -> void:
-	catalog_recent_first = on
-	save_settings()
+        catalog_recent_first = on
+        save_settings()
 
 
 func _ready() -> void:
 
 
-	get_window().title = "Find The Needle"
+        get_window().title = "Find The Needle"
 
-	_apply_ui_scale()
-	get_tree().root.size_changed.connect(_apply_ui_scale)
-	get_tree().root.tree_exiting.connect(_stop_display_changes)
-
-
-	var first_launch:= not FileAccess.file_exists(SETTINGS_PATH)
-	load_settings()
+        _apply_ui_scale()
+        get_tree().root.size_changed.connect(_apply_ui_scale)
+        get_tree().root.tree_exiting.connect(_stop_display_changes)
 
 
-	apply_locale()
+        var first_launch:= not FileAccess.file_exists(SETTINGS_PATH)
+        load_settings()
 
 
-	if first_launch and integrated_gpu():
-		quality = Quality.LOW
+        apply_locale()
 
 
-	elif not igpu_checked and integrated_gpu():
-		if quality > Quality.LOW:
-			quality = Quality.LOW
-		igpu_checked = true
-		save_settings.call_deferred()
-	if first_launch:
-		igpu_checked = true
-	_pick_renderer_for_gpu()
+        if first_launch and integrated_gpu():
+                quality = Quality.LOW
 
 
-	sync_renderer()
-	sync_render_thread()
-	_restart_off_the_render_thread()
+        elif not igpu_checked and integrated_gpu():
+                if quality > Quality.LOW:
+                        quality = Quality.LOW
+                igpu_checked = true
+                save_settings.call_deferred()
+        if first_launch:
+                igpu_checked = true
+        _pick_renderer_for_gpu()
 
 
-	var ua:= OS.get_cmdline_user_args()
-	var qi:= ua.find("--quality")
-	if ("--gpuallocs" in ua or "--yardperf" in ua) and qi >= 0 and qi + 1 < ua.size():
-		settings_readonly = true
-		quality = clampi(int(ua [qi + 1]), 0, Quality.size() - 1) as Quality
+        sync_renderer()
+        sync_render_thread()
+        _restart_off_the_render_thread()
 
 
-	apply_quality(quality, false)
+        var ua:= OS.get_cmdline_user_args()
+        var qi:= ua.find("--quality")
+        if ("--gpuallocs" in ua or "--yardperf" in ua) and qi >= 0 and qi + 1 < ua.size():
+                settings_readonly = true
+                quality = clampi(int(ua [qi + 1]), 0, Quality.size() - 1) as Quality
 
 
-	for key: String in _gfx_file:
-
-		if not gfx.has(key) or (key != "machine_distance" and gfx [key] == _gfx_file [key]):
-			continue
-		gfx [key] = _gfx_file [key]
-		_gfx_user [key] = _gfx_file [key]
+        apply_quality(quality, false)
 
 
-	if _prop_cap_file != null and int(_prop_cap_file) != prop_cap and int(_prop_cap_file) != PROP_CAP_OLD_SNAPSHOT:
-		prop_cap = int(_prop_cap_file)
-		_prop_cap_user = prop_cap
+        for key: String in _gfx_file:
+
+                if not gfx.has(key) or (key != "machine_distance" and gfx [key] == _gfx_file [key]):
+                        continue
+                gfx [key] = _gfx_file [key]
+                _gfx_user [key] = _gfx_file [key]
 
 
-	gfx ["hay_density"] = maxi(int(gfx ["hay_density"]), HAY_DENSITY_MIN)
-	gfx ["shadow_quality"] = clampi(int(gfx ["shadow_quality"]),
-		0, SHADOW_QUALITY_NAMES.size() - 1)
-	gfx ["shadow_blur"] = clampf(float(gfx ["shadow_blur"]), 0.0, 10.0)
-	gfx ["machine_distance"] = clampi(int(gfx ["machine_distance"]), 0, MACHINE_DISTANCE_METRES.size() - 1)
+        if _prop_cap_file != null and int(_prop_cap_file) != prop_cap and int(_prop_cap_file) != PROP_CAP_OLD_SNAPSHOT:
+                prop_cap = int(_prop_cap_file)
+                _prop_cap_user = prop_cap
 
 
-	if settings_readonly:
-		for i in ua.size() - 1:
-			if ua [i] != "--gfx" or not "=" in ua [i + 1]:
-				continue
-			var kv:= ua [i + 1].split("=", true, 1)
-			if not gfx.has(kv [0]):
-				push_warning("Cfg: --gfx names no graphics key: %s" % kv [0])
-				continue
-			match typeof(gfx [kv [0]]):
-				TYPE_BOOL:
-					gfx [kv [0]] = kv [1] == "true"
-				TYPE_INT:
-					gfx [kv [0]] = int(kv [1])
-				_:
-					gfx [kv [0]] = float(kv [1])
-			print("[gfx] %s = %s" % [kv [0], gfx [kv [0]]])
+        gfx ["hay_density"] = maxi(int(gfx ["hay_density"]), HAY_DENSITY_MIN)
+        gfx ["shadow_quality"] = clampi(int(gfx ["shadow_quality"]),
+                0, SHADOW_QUALITY_NAMES.size() - 1)
+        gfx ["shadow_blur"] = clampf(float(gfx ["shadow_blur"]), 0.0, 10.0)
+        gfx ["machine_distance"] = clampi(int(gfx ["machine_distance"]), 0, MACHINE_DISTANCE_METRES.size() - 1)
 
 
-	sync_msaa_pipelines()
+        if settings_readonly:
+                for i in ua.size() - 1:
+                        if ua [i] != "--gfx" or not "=" in ua [i + 1]:
+                                continue
+                        var kv:= ua [i + 1].split("=", true, 1)
+                        if not gfx.has(kv [0]):
+                                push_warning("Cfg: --gfx names no graphics key: %s" % kv [0])
+                                continue
+                        match typeof(gfx [kv [0]]):
+                                TYPE_BOOL:
+                                        gfx [kv [0]] = kv [1] == "true"
+                                TYPE_INT:
+                                        gfx [kv [0]] = int(kv [1])
+                                _:
+                                        gfx [kv [0]] = float(kv [1])
+                        print("[gfx] %s = %s" % [kv [0], gfx [kv [0]]])
 
 
-	_apply_display(not OS.has_feature("editor"))
-	_unfullscreen_harness()
+        sync_msaa_pipelines()
+
+
+        _apply_display(not OS.has_feature("editor"))
+        _unfullscreen_harness()
 
 
 const PLAY_FLAGS:= ["--shipped", "--cheat"]
 
 
 func _unfullscreen_harness() -> void:
-	if not fullscreen:
-		return
-	var harness:= false
-	for arg: String in OS.get_cmdline_user_args():
-		if arg.begins_with("--") and not (arg in PLAY_FLAGS):
-			harness = true
-			break
-	if not harness:
-		return
+        if not fullscreen:
+                return
+        var harness:= false
+        for arg: String in OS.get_cmdline_user_args():
+                if arg.begins_with("--") and not (arg in PLAY_FLAGS):
+                        harness = true
+                        break
+        if not harness:
+                return
 
 
-	var want:= window_size
-	var ua:= OS.get_cmdline_user_args()
-	var wi:= ua.find("--window")
-	if wi >= 0 and wi + 1 < ua.size():
-		var parts:= ua [wi + 1].split("x")
-		if parts.size() == 2 and parts [0].is_valid_int() and parts [1].is_valid_int():
-			want = Vector2i(int(parts [0]), int(parts [1]))
-	_queue_display_state(false, want, true)
+        var want:= window_size
+        var ua:= OS.get_cmdline_user_args()
+        var wi:= ua.find("--window")
+        if wi >= 0 and wi + 1 < ua.size():
+                var parts:= ua [wi + 1].split("x")
+                if parts.size() == 2 and parts [0].is_valid_int() and parts [1].is_valid_int():
+                        want = Vector2i(int(parts [0]), int(parts [1]))
+        _queue_display_state(false, want, true)
 
 
 func set_mouse_sensitivity(value: float) -> void:
-	mouse_sensitivity = clampf(value, MOUSE_SENS_MIN, MOUSE_SENS_MAX)
-	save_settings()
+        mouse_sensitivity = clampf(value, MOUSE_SENS_MIN, MOUSE_SENS_MAX)
+        save_settings()
 
 
 func set_invert_look_x(on: bool) -> void:
-	invert_look_x = on
-	save_settings()
+        invert_look_x = on
+        save_settings()
 
 
 func set_invert_look_y(on: bool) -> void:
-	invert_look_y = on
-	save_settings()
+        invert_look_y = on
+        save_settings()
 
 
 func set_tool_mode(value: int) -> void:
-	tool_mode = clampi(value, 0, TOOL_MODE_NAMES.size() - 1)
-	save_settings()
+        tool_mode = clampi(value, 0, TOOL_MODE_NAMES.size() - 1)
+        save_settings()
 
 
 func simple_tools() -> bool:
-	return tool_mode == TOOL_SIMPLE
+        return tool_mode == TOOL_SIMPLE
 
 
 func set_prop_cap(value: int) -> void:
-	var want: int = clampi(value, PROP_CAP_MIN, PROP_CAP_MAX)
-	_prop_cap_user = want
-	if want == prop_cap:
-		return
-	prop_cap = want
-	save_settings()
+        var want: int = clampi(value, PROP_CAP_MIN, PROP_CAP_MAX)
+        _prop_cap_user = want
+        if want == prop_cap:
+                return
+        prop_cap = want
+        save_settings()
 
 
 func set_prop_decay(on: bool) -> void:
-	if on == prop_decay:
-		return
-	prop_decay = on
-	save_settings()
+        if on == prop_decay:
+                return
+        prop_decay = on
+        save_settings()
 
 
 func set_belt_cap(value: int) -> void:
-	var want: int = clampi(value, BELT_CAP_MIN, BELT_CAP_MAX)
-	if want == belt_cap:
-		return
-	belt_cap = want
-	save_settings()
+        var want: int = clampi(value, BELT_CAP_MIN, BELT_CAP_MAX)
+        if want == belt_cap:
+                return
+        belt_cap = want
+        save_settings()
 
 
 func set_belt_decay(on: bool) -> void:
-	if on == belt_decay:
-		return
-	belt_decay = on
-	save_settings()
+        if on == belt_decay:
+                return
+        belt_decay = on
+        save_settings()
 
 
 func set_auto_clean(on: bool) -> void:
-	if on == auto_clean:
-		return
-	auto_clean = on
-	save_settings()
+        if on == auto_clean:
+                return
+        auto_clean = on
+        save_settings()
 
 
 func set_build_fx(on: bool) -> void:
-	if on == build_fx:
-		return
-	build_fx = on
-	save_settings()
+        if on == build_fx:
+                return
+        build_fx = on
+        save_settings()
 
 
 func set_auto_clean_seconds(value: float) -> void:
-	var want:= clampf(value, AUTO_CLEAN_SECONDS_MIN, AUTO_CLEAN_SECONDS_MAX)
-	if is_equal_approx(want, auto_clean_seconds):
-		return
-	auto_clean_seconds = want
-	save_settings()
+        var want:= clampf(value, AUTO_CLEAN_SECONDS_MIN, AUTO_CLEAN_SECONDS_MAX)
+        if is_equal_approx(want, auto_clean_seconds):
+                return
+        auto_clean_seconds = want
+        save_settings()
 
 
 func set_fullscreen(on: bool) -> void:
-	if on == fullscreen:
-		return
-	fullscreen = on
-	_apply_display()
-	save_settings()
+        if on == fullscreen:
+                return
+        fullscreen = on
+        _apply_display()
+        save_settings()
 
 
 func window_sizes() -> Array [Vector2i]:
-	var room:= DisplayServer.screen_get_usable_rect(
-		DisplayServer.window_get_current_screen()).size
-	var out: Array [Vector2i] = []
-	for size: Vector2i in RESOLUTIONS:
-		if size.x <= room.x and size.y <= room.y:
-			out.append(size)
-	if not window_size in out:
-		out.append(window_size)
-		out.sort_custom(func(a: Vector2i, b: Vector2i) -> bool: return a.x < b.x)
-	return out
+        var room:= DisplayServer.screen_get_usable_rect(
+                DisplayServer.window_get_current_screen()).size
+        var out: Array [Vector2i] = []
+        for size: Vector2i in RESOLUTIONS:
+                if size.x <= room.x and size.y <= room.y:
+                        out.append(size)
+        if not window_size in out:
+                out.append(window_size)
+                out.sort_custom(func(a: Vector2i, b: Vector2i) -> bool: return a.x < b.x)
+        return out
 
 
 func set_window_size(size: Vector2i) -> void:
-	if size == window_size:
-		return
-	window_size = size
-	_apply_display()
-	save_settings()
+        if size == window_size:
+                return
+        window_size = size
+        _apply_display()
+        save_settings()
 
 
 func set_no_hud(on: bool) -> void:
-	if on == no_hud:
-		return
-	no_hud = on
-	no_hud_changed.emit(on)
+        if on == no_hud:
+                return
+        no_hud = on
+        no_hud_changed.emit(on)
 
 
 func set_show_missions(on: bool) -> void:
-	if on == show_missions:
-		return
-	show_missions = on
-	show_missions_changed.emit(on)
-	save_settings()
+        if on == show_missions:
+                return
+        show_missions = on
+        show_missions_changed.emit(on)
+        save_settings()
 
 
 func set_show_tips(on: bool) -> void:
-	if on == show_tips:
-		return
-	show_tips = on
-	save_settings()
+        if on == show_tips:
+                return
+        show_tips = on
+        save_settings()
 
 
 func set_hay_readout(mode: int) -> void:
-	var want: int = clampi(mode, 0, HAY_READOUT_NAMES.size() - 1)
-	if want == hay_readout:
-		return
-	hay_readout = want
-	hay_readout_changed.emit(want)
-	save_settings()
+        var want: int = clampi(mode, 0, HAY_READOUT_NAMES.size() - 1)
+        if want == hay_readout:
+                return
+        hay_readout = want
+        hay_readout_changed.emit(want)
+        save_settings()
 
 
 func set_show_hay_rate(on: bool) -> void:
-	if on == show_hay_rate:
-		return
-	show_hay_rate = on
-	show_hay_rate_changed.emit(on)
-	save_settings()
+        if on == show_hay_rate:
+                return
+        show_hay_rate = on
+        show_hay_rate_changed.emit(on)
+        save_settings()
 
 
 func set_smooth_camera(on: bool) -> void:
-	smooth_camera = on
-	save_settings()
+        smooth_camera = on
+        save_settings()
 
 
 func set_smooth_camera_amount(value: float) -> void:
-	smooth_camera_amount = clampf(value, 0.0, 1.0)
-	save_settings()
+        smooth_camera_amount = clampf(value, 0.0, 1.0)
+        save_settings()
 
 
 func set_vsync(on: bool) -> void:
-	vsync = on
-	_apply_display()
-	save_settings()
+        vsync = on
+        _apply_display()
+        save_settings()
 
 
 func set_max_fps(cap: int) -> void:
-	max_fps = cap if FPS_CAPS.has(cap) else 0
-	Engine.max_fps = max_fps
-	save_settings()
+        max_fps = cap if FPS_CAPS.has(cap) else 0
+        Engine.max_fps = max_fps
+        save_settings()
 
 
 func set_quality(level: Quality) -> void:
-	if level == quality:
-		return
-	apply_quality(level)
-	save_settings()
+        if level == quality:
+                return
+        apply_quality(level)
+        save_settings()
 
 
 func reset_controls() -> void:
-	mouse_sensitivity = MOUSE_SENS_DEFAULT
-	invert_look_x = false
-	invert_look_y = false
-	tool_mode = TOOL_SIMPLE
-	save_settings()
+        mouse_sensitivity = MOUSE_SENS_DEFAULT
+        invert_look_x = false
+        invert_look_y = false
+        tool_mode = TOOL_SIMPLE
+        save_settings()
 
 
 func reset_display() -> void:
-	fullscreen = FULLSCREEN_DEFAULT
-	vsync = VSYNC_DEFAULT
-	max_fps = MAX_FPS_DEFAULT
-	window_size = WINDOW_SIZE_DEFAULT
-	smooth_camera = SMOOTH_CAMERA_DEFAULT
-	smooth_camera_amount = SMOOTH_CAMERA_AMOUNT_DEFAULT
-	tech_text_scale = TECH_TEXT_SCALE_DEFAULT
+        fullscreen = FULLSCREEN_DEFAULT
+        vsync = VSYNC_DEFAULT
+        max_fps = MAX_FPS_DEFAULT
+        window_size = WINDOW_SIZE_DEFAULT
+        smooth_camera = SMOOTH_CAMERA_DEFAULT
+        smooth_camera_amount = SMOOTH_CAMERA_AMOUNT_DEFAULT
+        tech_text_scale = TECH_TEXT_SCALE_DEFAULT
 
-	hud_style_changed.emit()
-	set_renderer(default_renderer(), false)
-	set_render_thread(RENDER_THREAD_DEFAULT)
-
-
-	_gfx_user.clear()
+        hud_style_changed.emit()
+        set_renderer(default_renderer(), false)
+        set_render_thread(RENDER_THREAD_DEFAULT)
 
 
-	apply_quality(QUALITY_DEFAULT)
-	_apply_display()
-	save_settings()
+        _gfx_user.clear()
+
+
+        apply_quality(QUALITY_DEFAULT)
+        _apply_display()
+        save_settings()
 
 
 func reset_hud() -> void:
-	no_hud = NO_HUD_DEFAULT
-	hud_scale = HUD_SCALE_DEFAULT
-	show_hotkey_bar = SHOW_HOTKEY_BAR_DEFAULT
-	show_control_hints = SHOW_CONTROL_HINTS_DEFAULT
-	teach_hints = TEACH_HINTS_DEFAULT
-	catalog_grid = CATALOG_GRID_DEFAULT
-	catalog_recent_first = CATALOG_RECENT_FIRST_DEFAULT
-	crosshair_style = CROSSHAIR_STYLE_DEFAULT
-	crosshair_size = CROSSHAIR_SIZE_DEFAULT
-	crosshair_opacity = CROSSHAIR_OPACITY_DEFAULT
-	crosshair_colour = CROSSHAIR_WHITE
-	no_hud_changed.emit(no_hud)
-	hud_style_changed.emit()
-	save_settings()
+        no_hud = NO_HUD_DEFAULT
+        hud_scale = HUD_SCALE_DEFAULT
+        show_hotkey_bar = SHOW_HOTKEY_BAR_DEFAULT
+        show_control_hints = SHOW_CONTROL_HINTS_DEFAULT
+        teach_hints = TEACH_HINTS_DEFAULT
+        catalog_grid = CATALOG_GRID_DEFAULT
+        catalog_recent_first = CATALOG_RECENT_FIRST_DEFAULT
+        crosshair_style = CROSSHAIR_STYLE_DEFAULT
+        crosshair_size = CROSSHAIR_SIZE_DEFAULT
+        crosshair_opacity = CROSSHAIR_OPACITY_DEFAULT
+        crosshair_colour = CROSSHAIR_WHITE
+        no_hud_changed.emit(no_hud)
+        hud_style_changed.emit()
+        save_settings()
 
 
 func reset_gameplay() -> void:
 
 
-	_prop_cap_user = null
-	prop_cap = authored_prop_cap()
-	prop_decay = PROP_DECAY_DEFAULT
-	belt_cap = BELT_CAP_DEFAULT
-	belt_decay = BELT_DECAY_DEFAULT
-	auto_clean = AUTO_CLEAN_DEFAULT
-	auto_clean_seconds = AUTO_CLEAN_SECONDS_DEFAULT
-	build_fx = BUILD_FX_DEFAULT
-	show_missions = SHOW_MISSIONS_DEFAULT
-	show_tips = SHOW_TIPS_DEFAULT
-	hay_readout = HAY_READOUT_DEFAULT
-	show_hay_rate = SHOW_HAY_RATE_DEFAULT
-	show_missions_changed.emit(show_missions)
-	hay_readout_changed.emit(hay_readout)
-	show_hay_rate_changed.emit(show_hay_rate)
-	save_settings()
+        _prop_cap_user = null
+        prop_cap = authored_prop_cap()
+        prop_decay = PROP_DECAY_DEFAULT
+        belt_cap = BELT_CAP_DEFAULT
+        belt_decay = BELT_DECAY_DEFAULT
+        auto_clean = AUTO_CLEAN_DEFAULT
+        auto_clean_seconds = AUTO_CLEAN_SECONDS_DEFAULT
+        build_fx = BUILD_FX_DEFAULT
+        show_missions = SHOW_MISSIONS_DEFAULT
+        show_tips = SHOW_TIPS_DEFAULT
+        hay_readout = HAY_READOUT_DEFAULT
+        show_hay_rate = SHOW_HAY_RATE_DEFAULT
+        show_missions_changed.emit(show_missions)
+        hay_readout_changed.emit(hay_readout)
+        show_hay_rate_changed.emit(show_hay_rate)
+        save_settings()
 
 
 func _apply_display(resize: bool = true) -> void:
-	_queue_display_state(fullscreen, window_size, resize)
+        _queue_display_state(fullscreen, window_size, resize)
 
 
 func _queue_display_state(on: bool, size: Vector2i, resize: bool) -> void:
-	if _display_closing:
-		return
-	_display_target_fullscreen = on
-	_display_target_size = size
-	if _display_pending:
-		_display_target_resize = _display_target_resize or resize
-	else:
-		_display_target_resize = resize
-	_display_serial += 1
-	var start:= not _display_pending and not _display_running
-	_display_pending = true
-	if start:
-		_drain_display_changes.call_deferred()
+        if _display_closing:
+                return
+        _display_target_fullscreen = on
+        _display_target_size = size
+        if _display_pending:
+                _display_target_resize = _display_target_resize or resize
+        else:
+                _display_target_resize = resize
+        _display_serial += 1
+        var start:= not _display_pending and not _display_running
+        _display_pending = true
+        if start:
+                _drain_display_changes.call_deferred()
 
 
 func _drain_display_changes() -> void:
-	if _display_running or _display_closing or not is_inside_tree():
-		return
-	_display_running = true
-	while _display_pending and not _display_closing and is_inside_tree():
-		_display_pending = false
-		var serial:= _display_serial
-		var want_fullscreen:= _display_target_fullscreen
-		var want_size:= _display_target_size
-		var resize:= _display_target_resize
-		_display_target_resize = false
+        if _display_running or _display_closing or not is_inside_tree():
+                return
+        _display_running = true
+        while _display_pending and not _display_closing and is_inside_tree():
+                _display_pending = false
+                var serial:= _display_serial
+                var want_fullscreen:= _display_target_fullscreen
+                var want_size:= _display_target_size
+                var resize:= _display_target_resize
+                _display_target_resize = false
 
-		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if vsync else DisplayServer.VSYNC_DISABLED)
-		Engine.max_fps = max_fps
+                DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if vsync else DisplayServer.VSYNC_DISABLED)
+                Engine.max_fps = max_fps
 
-		var want_mode:= DisplayServer.WINDOW_MODE_FULLSCREEN if want_fullscreen else DisplayServer.WINDOW_MODE_WINDOWED
-		var mode_changed:= DisplayServer.window_get_mode() != want_mode
-		if mode_changed:
-			DisplayServer.window_set_mode(want_mode)
-			for _frame in DISPLAY_SETTLE_FRAMES:
-				if _display_closing or not is_inside_tree():
-					break
-				await get_tree().process_frame
-		if _display_closing or not is_inside_tree():
-			break
-		if serial != _display_serial:
-			continue
+                var want_mode:= DisplayServer.WINDOW_MODE_FULLSCREEN if want_fullscreen else DisplayServer.WINDOW_MODE_WINDOWED
+                var mode_changed:= DisplayServer.window_get_mode() != want_mode
+                if mode_changed:
+                        DisplayServer.window_set_mode(want_mode)
+                        for _frame in DISPLAY_SETTLE_FRAMES:
+                                if _display_closing or not is_inside_tree():
+                                        break
+                                await get_tree().process_frame
+                if _display_closing or not is_inside_tree():
+                        break
+                if serial != _display_serial:
+                        continue
 
-		if resize and not want_fullscreen:
-			var size_changed:= DisplayServer.window_get_size() != want_size
-			if size_changed:
-				DisplayServer.window_set_size(want_size)
-				for _frame in DISPLAY_SETTLE_FRAMES:
-					if _display_closing or not is_inside_tree():
-						break
-					await get_tree().process_frame
-			if _display_closing or not is_inside_tree():
-				break
-			if serial != _display_serial:
-				continue
-			if mode_changed or size_changed:
-				var screen:= DisplayServer.window_get_current_screen()
-				var room:= DisplayServer.screen_get_usable_rect(screen)
-				DisplayServer.window_set_position(
-					room.position + (room.size - want_size) / 2)
-	_display_running = false
+                if resize and not want_fullscreen:
+                        var size_changed:= DisplayServer.window_get_size() != want_size
+                        if size_changed:
+                                DisplayServer.window_set_size(want_size)
+                                for _frame in DISPLAY_SETTLE_FRAMES:
+                                        if _display_closing or not is_inside_tree():
+                                                break
+                                        await get_tree().process_frame
+                        if _display_closing or not is_inside_tree():
+                                break
+                        if serial != _display_serial:
+                                continue
+                        if mode_changed or size_changed:
+                                var screen:= DisplayServer.window_get_current_screen()
+                                var room:= DisplayServer.screen_get_usable_rect(screen)
+                                DisplayServer.window_set_position(
+                                        room.position + (room.size - want_size) / 2)
+        _display_running = false
 
 
 func wait_for_display() -> void:
-	while (_display_pending or _display_running) and not _display_closing:
-		await get_tree().process_frame
+        while (_display_pending or _display_running) and not _display_closing:
+                await get_tree().process_frame
 
 
 func _stop_display_changes() -> void:
-	_display_closing = true
-	_display_pending = false
+        _display_closing = true
+        _display_pending = false
 
 
 func _apply_ui_scale() -> void:
-	var root:= get_tree().root
-	var s:= maxf(1.0, float(root.size.y) / UI_DESIGN_HEIGHT)
-	ui_scale = s
-	if is_equal_approx(root.content_scale_factor, s):
-		return
-	root.content_scale_factor = s
+        var root:= get_tree().root
+        var s:= maxf(1.0, float(root.size.y) / UI_DESIGN_HEIGHT)
+        ui_scale = s
+        if is_equal_approx(root.content_scale_factor, s):
+                return
+        root.content_scale_factor = s
 
 
 const LOCALES:= [
-	{ "code": "", "name": "System" },
-	{ "code": "en", "name": "English" },
-	{ "code": "de", "name": "Deutsch" },
-	{ "code": "fr", "name": "Français" },
-	{ "code": "es", "name": "Español" },
-	{ "code": "pt", "name": "Português (Brasil)", "card": "Português" },
-	{ "code": "pl", "name": "Polski" },
-	{ "code": "cs", "name": "Čeština" },
-	{ "code": "ru", "name": "Русский" },
-	{ "code": "tr", "name": "Türkçe" },
-	{ "code": "zh", "name": "简体中文" },
-	{ "code": "ja", "name": "日本語" },
-	{ "code": "ko", "name": "한국어" },
+        { "code": "", "name": "System" },
+        { "code": "en", "name": "English" },
+        { "code": "de", "name": "Deutsch" },
+        { "code": "fr", "name": "Français" },
+        { "code": "es", "name": "Español" },
+        { "code": "pt", "name": "Português (Brasil)", "card": "Português" },
+        { "code": "pl", "name": "Polski" },
+        { "code": "cs", "name": "Čeština" },
+        { "code": "ru", "name": "Русский" },
+        { "code": "tr", "name": "Türkçe" },
+        { "code": "zh", "name": "简体中文" },
+        { "code": "ja", "name": "日本語" },
+        { "code": "ko", "name": "한국어" },
 ]
 
 
@@ -3424,418 +3433,418 @@ var igpu_checked:= false
 
 
 func integrated_gpu() -> bool:
-	return RenderingServer.get_video_adapter_type() == RenderingDevice.DEVICE_TYPE_INTEGRATED_GPU
+        return RenderingServer.get_video_adapter_type() == RenderingDevice.DEVICE_TYPE_INTEGRATED_GPU
 
 
 func menu_backdrop_static() -> bool:
-	if menu_static >= 0:
-		return menu_static == 1
-	return quality <= Quality.MEDIUM
+        if menu_static >= 0:
+                return menu_static == 1
+        return quality <= Quality.MEDIUM
 
 
 var _running_locale:= ""
 
 
 static func lower_in_english(text: String) -> String:
-	var lang:= TranslationServer.get_locale()
-	if lang.begins_with("tr"):
-		return _turkish_lower(text)
-	for code: String in ["en", "es", "pl", "fr", "cs", "ru", "pt"]:
-		if lang.begins_with(code):
-			return text.to_lower()
-	return text
+        var lang:= TranslationServer.get_locale()
+        if lang.begins_with("tr"):
+                return _turkish_lower(text)
+        for code: String in ["en", "es", "pl", "fr", "cs", "ru", "pt"]:
+                if lang.begins_with(code):
+                        return text.to_lower()
+        return text
 
 
 static func upper(text: String) -> String:
-	if TranslationServer.get_locale().begins_with("tr"):
-		return text.replace("i", "İ").to_upper()
-	return text.to_upper()
+        if TranslationServer.get_locale().begins_with("tr"):
+                return text.replace("i", "İ").to_upper()
+        return text.to_upper()
 
 
 static func percent(number: String) -> String:
-	if TranslationServer.get_locale().begins_with("tr"):
-		return "%" + number
-	return number + "%"
+        if TranslationServer.get_locale().begins_with("tr"):
+                return "%" + number
+        return number + "%"
 
 
 static func _turkish_lower(text: String) -> String:
-	return text.replace("I", "ı").replace("İ", "i").to_lower()
+        return text.replace("I", "ı").replace("İ", "i").to_lower()
 
 
 func apply_locale() -> void:
-	_running_locale = locale
-	TranslationServer.set_locale(OS.get_locale() if locale == "" else locale)
+        _running_locale = locale
+        TranslationServer.set_locale(OS.get_locale() if locale == "" else locale)
 
 
-	UiFont.relocale()
+        UiFont.relocale()
 
 
 func choose_locale(code: String) -> bool:
-	for entry: Dictionary in LOCALES:
-		if entry ["code"] == code:
-			locale = code
-			save_settings()
-			return true
-	return false
+        for entry: Dictionary in LOCALES:
+                if entry ["code"] == code:
+                        locale = code
+                        save_settings()
+                        return true
+        return false
 
 
 func running_locale() -> String:
-	return _running_locale
+        return _running_locale
 
 
 func locale_pending() -> bool:
-	return _language_of(locale) != _language_of(_running_locale)
+        return _language_of(locale) != _language_of(_running_locale)
 
 
 func locale_name(code: String) -> String:
-	var lang:= _language_of(code)
-	for entry: Dictionary in LOCALES:
-		if entry ["code"] == lang:
-			return str(entry ["name"])
-	return str(LOCALES [0] ["name"])
+        var lang:= _language_of(code)
+        for entry: Dictionary in LOCALES:
+                if entry ["code"] == lang:
+                        return str(entry ["name"])
+        return str(LOCALES [0] ["name"])
 
 
 static func _language_of(code: String) -> String:
-	return OS.get_locale_language() if code == "" else code.split("_") [0]
+        return OS.get_locale_language() if code == "" else code.split("_") [0]
 
 
 func set_locale(code: String) -> void:
-	for entry: Dictionary in LOCALES:
-		if entry ["code"] == code:
-			locale = code
-			apply_locale()
+        for entry: Dictionary in LOCALES:
+                if entry ["code"] == code:
+                        locale = code
+                        apply_locale()
 
 
-			UiFont.relocale()
+                        UiFont.relocale()
 
 
-			BuildCatalog.invalidate()
-			ItemDb.invalidate()
-			TechTree.invalidate()
-			save_settings()
-			return
+                        BuildCatalog.invalidate()
+                        ItemDb.invalidate()
+                        TechTree.invalidate()
+                        save_settings()
+                        return
 
 
 var settings_readonly:= false
 
 
 func save_settings() -> void:
-	if settings_readonly:
-		return
-	var cf:= ConfigFile.new()
-	cf.set_value("game", "mouse_sensitivity", mouse_sensitivity)
-	cf.set_value("game", "invert_look_x", invert_look_x)
-	cf.set_value("game", "invert_look_y", invert_look_y)
-	cf.set_value("game", "show_missions", show_missions)
-	cf.set_value("game", "show_tips", show_tips)
-	cf.set_value("game", "hay_readout", hay_readout)
-	cf.set_value("game", "show_hay_rate", show_hay_rate)
-	cf.set_value("game", "tool_mode", tool_mode)
-	cf.set_value("game", "locale", locale)
-	cf.set_value("game", "locale_asked", locale_asked)
-	cf.set_value("display", "menu_static", menu_static)
-	cf.set_value("display", "igpu_checked", igpu_checked)
-	cf.set_value("display", "quality", int(quality))
-	cf.set_value("display", "fullscreen", fullscreen)
-	cf.set_value("display", "vsync", vsync)
-	cf.set_value("display", "max_fps", max_fps)
-	cf.set_value("display", "window_size", window_size)
+        if settings_readonly:
+                return
+        var cf:= ConfigFile.new()
+        cf.set_value("game", "mouse_sensitivity", mouse_sensitivity)
+        cf.set_value("game", "invert_look_x", invert_look_x)
+        cf.set_value("game", "invert_look_y", invert_look_y)
+        cf.set_value("game", "show_missions", show_missions)
+        cf.set_value("game", "show_tips", show_tips)
+        cf.set_value("game", "hay_readout", hay_readout)
+        cf.set_value("game", "show_hay_rate", show_hay_rate)
+        cf.set_value("game", "tool_mode", tool_mode)
+        cf.set_value("game", "locale", locale)
+        cf.set_value("game", "locale_asked", locale_asked)
+        cf.set_value("display", "menu_static", menu_static)
+        cf.set_value("display", "igpu_checked", igpu_checked)
+        cf.set_value("display", "quality", int(quality))
+        cf.set_value("display", "fullscreen", fullscreen)
+        cf.set_value("display", "vsync", vsync)
+        cf.set_value("display", "max_fps", max_fps)
+        cf.set_value("display", "window_size", window_size)
 
 
-	cf.set_value("display", "smooth_camera", smooth_camera)
-	cf.set_value("display", "smooth_camera_amount", smooth_camera_amount)
-	cf.set_value("display", "renderer", renderer)
-	cf.set_value("display", "renderer_picked", renderer_picked)
-	cf.set_value("display", "render_thread", int(render_thread))
+        cf.set_value("display", "smooth_camera", smooth_camera)
+        cf.set_value("display", "smooth_camera_amount", smooth_camera_amount)
+        cf.set_value("display", "renderer", renderer)
+        cf.set_value("display", "renderer_picked", renderer_picked)
+        cf.set_value("display", "render_thread", int(render_thread))
 
 
-	if _prop_cap_user != null:
-		cf.set_value("yard", "prop_cap", prop_cap)
-	cf.set_value("yard", "prop_decay", prop_decay)
-	cf.set_value("yard", "belt_cap", belt_cap)
-	cf.set_value("yard", "belt_cap_rev", BELT_CAP_REV)
-	cf.set_value("yard", "belt_decay", belt_decay)
-	cf.set_value("yard", "auto_clean", auto_clean)
-	cf.set_value("yard", "auto_clean_seconds", auto_clean_seconds)
-	cf.set_value("yard", "build_fx", build_fx)
-	cf.set_value("hud", "hud_scale", hud_scale)
-	cf.set_value("hud", "tech_text_scale", tech_text_scale)
-	cf.set_value("hud", "crosshair_style", crosshair_style)
-	cf.set_value("hud", "crosshair_size", crosshair_size)
-	cf.set_value("hud", "crosshair_opacity", crosshair_opacity)
-	cf.set_value("hud", "crosshair_colour", crosshair_colour)
-	cf.set_value("hud", "show_hotkey_bar", show_hotkey_bar)
-	cf.set_value("hud", "show_control_hints", show_control_hints)
-	cf.set_value("hud", "teach_hints", teach_hints)
-	cf.set_value("hud", "plate_dark", plate_dark)
-	cf.set_value("hud", "shop_dark", shop_dark)
-	cf.set_value("hud", "keys_used", PackedStringArray(keys_used.keys()))
-	cf.set_value("hud", "builds_placed", PackedStringArray(builds_placed.keys()))
-	cf.set_value("hud", "techs_seen", PackedStringArray(techs_seen.keys()))
-	cf.set_value("hud", "machines_seen", PackedStringArray(machines_seen.keys()))
-	cf.set_value("hud", "nudges_given", PackedStringArray(nudges_given.keys()))
-	cf.set_value("hud", "catalog_grid", catalog_grid)
-	cf.set_value("hud", "t_splitter_port_r", t_splitter_port_r)
-	cf.set_value("hud", "catalog_recent_first", catalog_recent_first)
+        if _prop_cap_user != null:
+                cf.set_value("yard", "prop_cap", prop_cap)
+        cf.set_value("yard", "prop_decay", prop_decay)
+        cf.set_value("yard", "belt_cap", belt_cap)
+        cf.set_value("yard", "belt_cap_rev", BELT_CAP_REV)
+        cf.set_value("yard", "belt_decay", belt_decay)
+        cf.set_value("yard", "auto_clean", auto_clean)
+        cf.set_value("yard", "auto_clean_seconds", auto_clean_seconds)
+        cf.set_value("yard", "build_fx", build_fx)
+        cf.set_value("hud", "hud_scale", hud_scale)
+        cf.set_value("hud", "tech_text_scale", tech_text_scale)
+        cf.set_value("hud", "crosshair_style", crosshair_style)
+        cf.set_value("hud", "crosshair_size", crosshair_size)
+        cf.set_value("hud", "crosshair_opacity", crosshair_opacity)
+        cf.set_value("hud", "crosshair_colour", crosshair_colour)
+        cf.set_value("hud", "show_hotkey_bar", show_hotkey_bar)
+        cf.set_value("hud", "show_control_hints", show_control_hints)
+        cf.set_value("hud", "teach_hints", teach_hints)
+        cf.set_value("hud", "plate_dark", plate_dark)
+        cf.set_value("hud", "shop_dark", shop_dark)
+        cf.set_value("hud", "keys_used", PackedStringArray(keys_used.keys()))
+        cf.set_value("hud", "builds_placed", PackedStringArray(builds_placed.keys()))
+        cf.set_value("hud", "techs_seen", PackedStringArray(techs_seen.keys()))
+        cf.set_value("hud", "machines_seen", PackedStringArray(machines_seen.keys()))
+        cf.set_value("hud", "nudges_given", PackedStringArray(nudges_given.keys()))
+        cf.set_value("hud", "catalog_grid", catalog_grid)
+        cf.set_value("hud", "t_splitter_port_r", t_splitter_port_r)
+        cf.set_value("hud", "catalog_recent_first", catalog_recent_first)
 
 
-	for key: String in _gfx_user:
-		cf.set_value("graphics", key, _gfx_user [key])
-	cf.save(SETTINGS_PATH)
+        for key: String in _gfx_user:
+                cf.set_value("graphics", key, _gfx_user [key])
+        cf.save(SETTINGS_PATH)
 
 
 func load_settings() -> void:
-	var cf:= ConfigFile.new()
-	if cf.load(SETTINGS_PATH) != OK:
-		return
-	mouse_sensitivity = clampf(float(cf.get_value("game", "mouse_sensitivity", mouse_sensitivity)),
-		MOUSE_SENS_MIN, MOUSE_SENS_MAX)
-	invert_look_x = bool(cf.get_value("game", "invert_look_x", invert_look_x))
-	invert_look_y = bool(cf.get_value("game", "invert_look_y", invert_look_y))
-	show_missions = bool(cf.get_value("game", "show_missions", show_missions))
-	show_tips = bool(cf.get_value("game", "show_tips", show_tips))
+        var cf:= ConfigFile.new()
+        if cf.load(SETTINGS_PATH) != OK:
+                return
+        mouse_sensitivity = clampf(float(cf.get_value("game", "mouse_sensitivity", mouse_sensitivity)),
+                MOUSE_SENS_MIN, MOUSE_SENS_MAX)
+        invert_look_x = bool(cf.get_value("game", "invert_look_x", invert_look_x))
+        invert_look_y = bool(cf.get_value("game", "invert_look_y", invert_look_y))
+        show_missions = bool(cf.get_value("game", "show_missions", show_missions))
+        show_tips = bool(cf.get_value("game", "show_tips", show_tips))
 
 
-	hay_readout = clampi(int(cf.get_value("game", "hay_readout", hay_readout)),
-		0, HAY_READOUT_NAMES.size() - 1)
-	show_hay_rate = bool(cf.get_value("game", "show_hay_rate", show_hay_rate))
+        hay_readout = clampi(int(cf.get_value("game", "hay_readout", hay_readout)),
+                0, HAY_READOUT_NAMES.size() - 1)
+        show_hay_rate = bool(cf.get_value("game", "show_hay_rate", show_hay_rate))
 
 
-	tool_mode = clampi(int(cf.get_value("game", "tool_mode", tool_mode)),
-		0, TOOL_MODE_NAMES.size() - 1)
+        tool_mode = clampi(int(cf.get_value("game", "tool_mode", tool_mode)),
+                0, TOOL_MODE_NAMES.size() - 1)
 
 
-	var saved_locale:= str(cf.get_value("game", "locale", locale))
-	for entry: Dictionary in LOCALES:
-		if entry ["code"] == saved_locale:
-			locale = saved_locale
-			break
+        var saved_locale:= str(cf.get_value("game", "locale", locale))
+        for entry: Dictionary in LOCALES:
+                if entry ["code"] == saved_locale:
+                        locale = saved_locale
+                        break
 
 
-	locale_asked = bool(cf.get_value("game", "locale_asked", true))
-	menu_static = clampi(int(cf.get_value("display", "menu_static", menu_static)), -1, 1)
-	igpu_checked = bool(cf.get_value("display", "igpu_checked", false))
+        locale_asked = bool(cf.get_value("game", "locale_asked", true))
+        menu_static = clampi(int(cf.get_value("display", "menu_static", menu_static)), -1, 1)
+        igpu_checked = bool(cf.get_value("display", "igpu_checked", false))
 
 
-	var saved_level:= int(cf.get_value("display", "quality", int(quality)))
-	for level: Quality in Quality.values():
-		if int(level) == saved_level:
-			quality = level
-			break
-	fullscreen = bool(cf.get_value("display", "fullscreen", fullscreen))
-	vsync = bool(cf.get_value("display", "vsync", vsync))
+        var saved_level:= int(cf.get_value("display", "quality", int(quality)))
+        for level: Quality in Quality.values():
+                if int(level) == saved_level:
+                        quality = level
+                        break
+        fullscreen = bool(cf.get_value("display", "fullscreen", fullscreen))
+        vsync = bool(cf.get_value("display", "vsync", vsync))
 
-	var saved_cap:= int(cf.get_value("display", "max_fps", max_fps))
-	max_fps = saved_cap if FPS_CAPS.has(saved_cap) else 0
-
-
-	var saved_size:= Vector2i(cf.get_value("display", "window_size", window_size))
-	window_size = Vector2i(maxi(saved_size.x, 800), maxi(saved_size.y, 450))
+        var saved_cap:= int(cf.get_value("display", "max_fps", max_fps))
+        max_fps = saved_cap if FPS_CAPS.has(saved_cap) else 0
 
 
-	smooth_camera = bool(cf.get_value("display", "smooth_camera", smooth_camera))
-	smooth_camera_amount = clampf(
-		float(cf.get_value("display", "smooth_camera_amount", smooth_camera_amount)), 0.0, 1.0)
-	var want:= str(cf.get_value("display", "renderer", renderer))
-	if want in RENDERERS:
-		renderer = want
-	renderer_picked = bool(cf.get_value("display", "renderer_picked", false))
-	render_thread = clampi(int(cf.get_value("display", "render_thread", render_thread)),
-		0, RenderThread.size() - 1) as RenderThread
+        var saved_size:= Vector2i(cf.get_value("display", "window_size", window_size))
+        window_size = Vector2i(maxi(saved_size.x, 800), maxi(saved_size.y, 450))
 
 
-	if cf.has_section_key("yard", "prop_cap"):
-		_prop_cap_file = clampi(int(cf.get_value("yard", "prop_cap", prop_cap)),
-			PROP_CAP_MIN, PROP_CAP_MAX)
-	prop_decay = bool(cf.get_value("yard", "prop_decay", prop_decay))
+        smooth_camera = bool(cf.get_value("display", "smooth_camera", smooth_camera))
+        smooth_camera_amount = clampf(
+                float(cf.get_value("display", "smooth_camera_amount", smooth_camera_amount)), 0.0, 1.0)
+        var want:= str(cf.get_value("display", "renderer", renderer))
+        if want in RENDERERS:
+                renderer = want
+        renderer_picked = bool(cf.get_value("display", "renderer_picked", false))
+        render_thread = clampi(int(cf.get_value("display", "render_thread", render_thread)),
+                0, RenderThread.size() - 1) as RenderThread
 
 
-	belt_cap = clampi(int(cf.get_value("yard", "belt_cap", belt_cap)),
-		BELT_CAP_MIN, BELT_CAP_MAX)
+        if cf.has_section_key("yard", "prop_cap"):
+                _prop_cap_file = clampi(int(cf.get_value("yard", "prop_cap", prop_cap)),
+                        PROP_CAP_MIN, PROP_CAP_MAX)
+        prop_decay = bool(cf.get_value("yard", "prop_decay", prop_decay))
 
 
-	var belt_rev:= clampi(int(cf.get_value("yard", "belt_cap_rev", 1)), 1, BELT_CAP_REV)
-	if belt_rev < BELT_CAP_REV and belt_cap == BELT_CAP_OLD_DEFAULTS [belt_rev - 1]:
-		belt_cap = BELT_CAP_DEFAULT
-	belt_decay = bool(cf.get_value("yard", "belt_decay", belt_decay))
-	auto_clean = bool(cf.get_value("yard", "auto_clean", auto_clean))
-
-	auto_clean_seconds = clampf(
-		float(cf.get_value("yard", "auto_clean_seconds", auto_clean_seconds)),
-		AUTO_CLEAN_SECONDS_MIN, AUTO_CLEAN_SECONDS_MAX)
-	build_fx = bool(cf.get_value("yard", "build_fx", build_fx))
+        belt_cap = clampi(int(cf.get_value("yard", "belt_cap", belt_cap)),
+                BELT_CAP_MIN, BELT_CAP_MAX)
 
 
-	hud_scale = clampf(float(cf.get_value("hud", "hud_scale", hud_scale)),
-		HUD_SCALE_MIN, HUD_SCALE_MAX)
-	tech_text_scale = clampf(float(cf.get_value("hud", "tech_text_scale", tech_text_scale)),
-		TECH_TEXT_SCALE_MIN, TECH_TEXT_SCALE_MAX)
-	crosshair_style = clampi(int(cf.get_value("hud", "crosshair_style", crosshair_style)),
-		0, CROSSHAIR_STYLE_NAMES.size() - 1)
-	crosshair_size = clampf(float(cf.get_value("hud", "crosshair_size", crosshair_size)),
-		CROSSHAIR_SIZE_MIN, CROSSHAIR_SIZE_MAX)
-	crosshair_opacity = clampf(
-		float(cf.get_value("hud", "crosshair_opacity", crosshair_opacity)),
-		CROSSHAIR_OPACITY_MIN, 1.0)
-	crosshair_colour = clampi(int(cf.get_value("hud", "crosshair_colour", crosshair_colour)),
-		0, CROSSHAIR_COLOURS.size() - 1)
-	show_hotkey_bar = bool(cf.get_value("hud", "show_hotkey_bar", show_hotkey_bar))
-	show_control_hints = bool(cf.get_value("hud", "show_control_hints", show_control_hints))
-	teach_hints = bool(cf.get_value("hud", "teach_hints", teach_hints))
-	plate_dark = bool(cf.get_value("hud", "plate_dark", plate_dark))
-	shop_dark = bool(cf.get_value("hud", "shop_dark", shop_dark))
-	for pair: Array in [[keys_used, "keys_used"], [builds_placed, "builds_placed"],
-			[techs_seen, "techs_seen"], [machines_seen, "machines_seen"],
-			[nudges_given, "nudges_given"]]:
-		var list: Dictionary = pair [0]
-		list.clear()
-		for a in PackedStringArray(cf.get_value("hud", pair [1], PackedStringArray())):
-			list [a] = true
-	catalog_grid = bool(cf.get_value("hud", "catalog_grid", catalog_grid))
-	t_splitter_port_r = T_SPLITTER_PORT_R_1M if is_equal_approx(float(cf.get_value("hud", "t_splitter_port_r", T_SPLITTER_PORT_R)),
-			T_SPLITTER_PORT_R_1M) else T_SPLITTER_PORT_R
-	catalog_recent_first = bool(cf.get_value("hud", "catalog_recent_first",
-		catalog_recent_first))
+        var belt_rev:= clampi(int(cf.get_value("yard", "belt_cap_rev", 1)), 1, BELT_CAP_REV)
+        if belt_rev < BELT_CAP_REV and belt_cap == BELT_CAP_OLD_DEFAULTS [belt_rev - 1]:
+                belt_cap = BELT_CAP_DEFAULT
+        belt_decay = bool(cf.get_value("yard", "belt_decay", belt_decay))
+        auto_clean = bool(cf.get_value("yard", "auto_clean", auto_clean))
+
+        auto_clean_seconds = clampf(
+                float(cf.get_value("yard", "auto_clean_seconds", auto_clean_seconds)),
+                AUTO_CLEAN_SECONDS_MIN, AUTO_CLEAN_SECONDS_MAX)
+        build_fx = bool(cf.get_value("yard", "build_fx", build_fx))
 
 
-	_gfx_file.clear()
-	if cf.has_section("graphics"):
-		for key: String in cf.get_section_keys("graphics"):
-			_gfx_file [key] = cf.get_value("graphics", key)
+        hud_scale = clampf(float(cf.get_value("hud", "hud_scale", hud_scale)),
+                HUD_SCALE_MIN, HUD_SCALE_MAX)
+        tech_text_scale = clampf(float(cf.get_value("hud", "tech_text_scale", tech_text_scale)),
+                TECH_TEXT_SCALE_MIN, TECH_TEXT_SCALE_MAX)
+        crosshair_style = clampi(int(cf.get_value("hud", "crosshair_style", crosshair_style)),
+                0, CROSSHAIR_STYLE_NAMES.size() - 1)
+        crosshair_size = clampf(float(cf.get_value("hud", "crosshair_size", crosshair_size)),
+                CROSSHAIR_SIZE_MIN, CROSSHAIR_SIZE_MAX)
+        crosshair_opacity = clampf(
+                float(cf.get_value("hud", "crosshair_opacity", crosshair_opacity)),
+                CROSSHAIR_OPACITY_MIN, 1.0)
+        crosshair_colour = clampi(int(cf.get_value("hud", "crosshair_colour", crosshair_colour)),
+                0, CROSSHAIR_COLOURS.size() - 1)
+        show_hotkey_bar = bool(cf.get_value("hud", "show_hotkey_bar", show_hotkey_bar))
+        show_control_hints = bool(cf.get_value("hud", "show_control_hints", show_control_hints))
+        teach_hints = bool(cf.get_value("hud", "teach_hints", teach_hints))
+        plate_dark = bool(cf.get_value("hud", "plate_dark", plate_dark))
+        shop_dark = bool(cf.get_value("hud", "shop_dark", shop_dark))
+        for pair: Array in [[keys_used, "keys_used"], [builds_placed, "builds_placed"],
+                        [techs_seen, "techs_seen"], [machines_seen, "machines_seen"],
+                        [nudges_given, "nudges_given"]]:
+                var list: Dictionary = pair [0]
+                list.clear()
+                for a in PackedStringArray(cf.get_value("hud", pair [1], PackedStringArray())):
+                        list [a] = true
+        catalog_grid = bool(cf.get_value("hud", "catalog_grid", catalog_grid))
+        t_splitter_port_r = T_SPLITTER_PORT_R_1M if is_equal_approx(float(cf.get_value("hud", "t_splitter_port_r", T_SPLITTER_PORT_R)),
+                        T_SPLITTER_PORT_R_1M) else T_SPLITTER_PORT_R
+        catalog_recent_first = bool(cf.get_value("hud", "catalog_recent_first",
+                catalog_recent_first))
+
+
+        _gfx_file.clear()
+        if cf.has_section("graphics"):
+                for key: String in cf.get_section_keys("graphics"):
+                        _gfx_file [key] = cf.get_value("graphics", key)
 
 
 func preset() -> Dictionary:
-	if old_laptop:
-		return _old_laptop_row(quality)
-	return PRESETS [quality]
+        if old_laptop:
+                return _old_laptop_row(quality)
+        return PRESETS [quality]
 
 
 static var old_laptop: bool = "--oldlaptop" in OS.get_cmdline_user_args()
 
 const OLD_LAPTOP_ROWS:= {
-	Quality.POTATO: { "machine_distance": 2, "glow": true, "reflect_probe": true, "dust": true },
-	Quality.LOW: { "machine_distance": 2 },
+        Quality.POTATO: { "machine_distance": 2, "glow": true, "reflect_probe": true, "dust": true },
+        Quality.LOW: { "machine_distance": 2 },
 }
 
 var _old_rows: Dictionary = { }
 
 
 func _old_laptop_row(level: Quality) -> Dictionary:
-	if not _old_rows.has(level):
-		var row: Dictionary = (PRESETS [level] as Dictionary).duplicate()
-		for key: String in ["aniso", "machine_lod", "crust_budget", "sign_distance"]:
-			row.erase(key)
-		row.merge(OLD_LAPTOP_ROWS.get(level, { }), true)
-		_old_rows [level] = row
-	return _old_rows [level]
+        if not _old_rows.has(level):
+                var row: Dictionary = (PRESETS [level] as Dictionary).duplicate()
+                for key: String in ["aniso", "machine_lod", "crust_budget", "sign_distance"]:
+                        row.erase(key)
+                row.merge(OLD_LAPTOP_ROWS.get(level, { }), true)
+                _old_rows [level] = row
+        return _old_rows [level]
 
 
 func apply_quality(level: Quality, rebuild: bool = true) -> void:
-	quality = level
-	var p: Dictionary = preset()
-	crust_strands_per_cell = p ["strands_per_cell"]
-	live_strand_budget = p ["live_budget"]
-	crust_lod_near = p ["lod_near"]
-	crust_lod_far = p ["lod_far"]
-	crust_lod_min = p ["lod_min"]
-	crust_shadow_distance = p ["shadow_distance"]
-	yard_shadow_distance = p ["yard_shadow_distance"]
-	detail_strands = int(p.get("detail_strands", 0))
-	detail_radius = float(p.get("detail_radius", 0.0))
-	detail_scale = 1.0
-	crust_budget_scale = float(p.get("crust_budget", 1.0))
-	cell_update_budget_usec = int(CELL_UPDATE_BUDGET_USEC * crust_budget_scale)
-	chunk_rebuild_budget_usec = int(CHUNK_REBUILD_BUDGET_USEC * crust_budget_scale)
-	relax_update_budget_usec = int(RELAX_UPDATE_BUDGET_USEC * crust_budget_scale)
+        quality = level
+        var p: Dictionary = preset()
+        crust_strands_per_cell = p ["strands_per_cell"]
+        live_strand_budget = p ["live_budget"]
+        crust_lod_near = p ["lod_near"]
+        crust_lod_far = p ["lod_far"]
+        crust_lod_min = p ["lod_min"]
+        crust_shadow_distance = p ["shadow_distance"]
+        yard_shadow_distance = p ["yard_shadow_distance"]
+        detail_strands = int(p.get("detail_strands", 0))
+        detail_radius = float(p.get("detail_radius", 0.0))
+        detail_scale = 1.0
+        crust_budget_scale = float(p.get("crust_budget", 1.0))
+        cell_update_budget_usec = int(CELL_UPDATE_BUDGET_USEC * crust_budget_scale)
+        chunk_rebuild_budget_usec = int(CHUNK_REBUILD_BUDGET_USEC * crust_budget_scale)
+        relax_update_budget_usec = int(RELAX_UPDATE_BUDGET_USEC * crust_budget_scale)
 
 
-	prop_cap = authored_prop_cap() if _prop_cap_user == null else clampi(int(_prop_cap_user), PROP_CAP_MIN, PROP_CAP_MAX)
-	perf_scale = 1.0
+        prop_cap = authored_prop_cap() if _prop_cap_user == null else clampi(int(_prop_cap_user), PROP_CAP_MIN, PROP_CAP_MAX)
+        perf_scale = 1.0
 
 
-	sync_gfx_to_preset()
-	if rebuild:
-		gfx_changed.emit()
-		quality_changed.emit(level)
+        sync_gfx_to_preset()
+        if rebuild:
+                gfx_changed.emit()
+                quality_changed.emit(level)
 
 
 func effective_lod_near() -> float:
-	return crust_lod_near * perf_scale
+        return crust_lod_near * perf_scale
 
 
 func effective_lod_far() -> float:
-	return crust_lod_far * perf_scale
+        return crust_lod_far * perf_scale
 
 
 func _translated_size(spec: Dictionary) -> Dictionary:
-	var out: Dictionary = { }
-	out.merge(spec)
-	var size_name:= str(spec.get("name", ""))
-	if size_name != "":
-		out ["name"] = tr(size_name)
-	var blurb:= str(spec.get("blurb", ""))
-	if blurb != "":
-		out ["blurb"] = tr(blurb)
-	return out
+        var out: Dictionary = { }
+        out.merge(spec)
+        var size_name:= str(spec.get("name", ""))
+        if size_name != "":
+                out ["name"] = tr(size_name)
+        var blurb:= str(spec.get("blurb", ""))
+        if blurb != "":
+                out ["blurb"] = tr(blurb)
+        return out
 
 
 func listed_pile_sizes() -> Array [Dictionary]:
-	var out: Array [Dictionary] = []
-	for spec: Dictionary in PILE_SIZES:
-		if bool(spec.get("listed", true)):
-			out.append(_translated_size(spec))
-	return out
+        var out: Array [Dictionary] = []
+        for spec: Dictionary in PILE_SIZES:
+                if bool(spec.get("listed", true)):
+                        out.append(_translated_size(spec))
+        return out
 
 
 func pile_size_spec(id: String) -> Dictionary:
-	for spec: Dictionary in PILE_SIZES:
-		if str(spec.get("id", "")) == id:
-			return _translated_size(spec)
-	for spec: Dictionary in PILE_SIZES:
-		if str(spec.get("id", "")) == DEFAULT_PILE_SIZE:
-			return _translated_size(spec)
-	return _translated_size(PILE_SIZES [0])
+        for spec: Dictionary in PILE_SIZES:
+                if str(spec.get("id", "")) == id:
+                        return _translated_size(spec)
+        for spec: Dictionary in PILE_SIZES:
+                if str(spec.get("id", "")) == DEFAULT_PILE_SIZE:
+                        return _translated_size(spec)
+        return _translated_size(PILE_SIZES [0])
 
 
 func apply_pile_size(id: String) -> void:
-	var spec:= pile_size_spec(id)
-	pile_size_id = str(spec.get("id", DEFAULT_PILE_SIZE))
-	PILE_RADIUS = float(spec.get("radius", 10.0))
-	PILE_HEIGHT = float(spec.get("height", 7.0))
-	FIELD_EXTENT = float(spec.get("extent", 15.0))
-	PILE_PREP_ANGLE_DEG = float(spec.get("prep_deg", 55.0))
+        var spec:= pile_size_spec(id)
+        pile_size_id = str(spec.get("id", DEFAULT_PILE_SIZE))
+        PILE_RADIUS = float(spec.get("radius", 10.0))
+        PILE_HEIGHT = float(spec.get("height", 7.0))
+        FIELD_EXTENT = float(spec.get("extent", 15.0))
+        PILE_PREP_ANGLE_DEG = float(spec.get("prep_deg", 55.0))
 
 
 func pile_start_tech() -> Dictionary:
-	return pile_size_spec(pile_size_id).get("start_tech", { })
+        return pile_size_spec(pile_size_id).get("start_tech", { })
 
 
 func pile_volume_estimate(spec: Dictionary) -> float:
-	var r: float = float(spec.get("radius", 0.0))
-	var h: float = float(spec.get("height", 0.0))
-	return 2.267 * r * r * h
+        var r: float = float(spec.get("radius", 0.0))
+        var h: float = float(spec.get("height", 0.0))
+        return 2.267 * r * r * h
 
 
 func yard_inner_for_pile() -> float:
-	return maxf(17.0, settled_footprint() + 3.0)
+        return maxf(17.0, settled_footprint() + 3.0)
 
 
 func yard_seat_scale() -> float:
-	return yard_inner_for_pile() / 17.0
+        return yard_inner_for_pile() / 17.0
 
 
 func settled_footprint() -> float:
-	var skirt: float = PILE_HEIGHT * 0.3 / maxf(0.2, tan(deg_to_rad(PILE_PREP_ANGLE_DEG)))
-	return PILE_RADIUS * 1.075 + skirt
+        var skirt: float = PILE_HEIGHT * 0.3 / maxf(0.2, tan(deg_to_rad(PILE_PREP_ANGLE_DEG)))
+        return PILE_RADIUS * 1.075 + skirt
 
 
 func field_verts() -> int:
-	return int(round(FIELD_EXTENT * 2.0 / CELL)) + 1
+        return int(round(FIELD_EXTENT * 2.0 / CELL)) + 1
 
 
 func field_cells() -> int:
-	return field_verts() - 1
+        return field_verts() - 1
 
 
 func chunks_per_edge() -> int:
-	return int(ceil(float(field_cells()) / float(CHUNK_CELLS)))
+        return int(ceil(float(field_cells()) / float(CHUNK_CELLS)))

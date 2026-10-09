@@ -183,7 +183,14 @@ func arm() -> void:
 
                 "gpu_driver": _gpu_driver(),
                 "api": RenderingServer.get_video_adapter_api_version(),
-                "renderer": str(ProjectSettings.get_setting(
+                # MOBILE FIX (v2.3.0): report the renderer the engine is
+                # ACTUALLY running. The old line read the base project
+                # setting and printed "forward_plus" on phones that were in
+                # fact on the .mobile override -- which cost a whole release
+                # of misdiagnosis (v2.2.0's report said forward_plus while
+                # the phone was on the mobile renderer).
+                "renderer": RenderingServer.get_current_rendering_method(),
+                "renderer_project": str(ProjectSettings.get_setting(
                         "rendering/renderer/rendering_method", "")),
 
 
@@ -533,7 +540,12 @@ func _compose(session: Dictionary, crashed: bool, started: float,
                         if session.has("gpu_driver") else "not recorded by this build"],
                 [_api_label(str(session.get("backend", ""))),
                         _told(session.get("api", session.get("driver", "")))],
-                ["renderer", _told(session.get("renderer", ""))],
+                ["renderer", _told(session.get("renderer", ""))
+                        + ("" if not session.has("renderer_project")
+                                or str(session.get("renderer_project", ""))
+                                        == str(session.get("renderer", ""))
+                                else " (project asked for %s)" % _told(str(
+                                        session.get("renderer_project", ""))))],
         ]
 
         if session.has("backend"):

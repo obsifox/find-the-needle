@@ -55,6 +55,10 @@ func _initialize() -> void:
 
         for path in ["res://scripts/world/hay_selling_stand.gd",
                         "res://scripts/world/world.gd",
+                        "res://scripts/world/delivery_truck.gd",
+                        "res://scripts/world/delivery_director.gd",
+                        "res://autoload/crash_report.gd",
+                        "res://autoload/cfg.gd",
                         "res://scripts/build/belt_path.gd",
                         "res://scripts/build/belt_sweep.gd"]:
                 var s: GDScript = load(path)

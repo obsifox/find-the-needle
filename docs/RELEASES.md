@@ -94,3 +94,56 @@ Asset ها:
 قبلی را uninstall کنید — ذخیره‌های داخل بازی با حذف برنامه پاک می‌شوند.
 اگر باز هم کرش داد: دیالوگ گزارش کرش این بار باید «last action» مثل
 `belt:deck` یا `standbuild:skin` را نشان دهد — عکس/متن آن را بفرستید.
+
+---
+
+## v2.3.0 — ولکان تمام شد؛ موبایل رفت روی OpenGL (versionCode 6) ✅
+
+گزارش کرش دوم از APK v2.2.0: همان `OPENING THE STAND (74%)` ولی این بار
+`last action = stand:truck`. یعنی فیکس کمربند جواب داده (کل زنجیره‌ی
+standbuild تا آخر رفت) و حالا اولین ریسورس‌های GPU کامیون تحویل، درایور Mali
+را کشته — همان الگوی قبلی، روی شیء بعدی. دو کرش، دو شیء متفاوت، یک نتیجه:
+**درایور Vulkan این Mali-G615 در برابر pipeline/resource های جدید حین لود
+ناپایدار است.**
+
+نکته‌ی مهم تشخیصی: خط `renderer forward_plus` در هر دو گزارش **اشتباه**
+بود — `crash_report.gd` مقدار پایه‌ی project.godot را می‌خواند، نه override
+موبایل را؛ گوشی در واقع روی renderer «mobile» (ولکان) بود. یعنی هر دو
+renderer ولکان (forward_plus و mobile) روی این گوشی کرش داده‌اند.
+
+فیکس‌های v2.3.0:
+
+1. **موبایل به `gl_compatibility` (OpenGL ES 3) منتقل شد**
+   (`rendering_method.mobile`) — GLES3 از درایور کاملاً متفاوت و قدیمی‌ترِ
+   Mali استفاده می‌کند؛ مسیر ولکان که دو بار کشنده از آب درآمد به‌کلی کنار
+   گذاشته شد. دسکتاپ همچنان forward_plus.
+2. **کامیون تحویل هم مثل کمربند به بعد از لودینگ منتقل شد** —
+   `world._build_truck_staged()`: هر زیرگام یک فریم رندر + breadcrumb
+   اختصاصی (`truck:model/skin/measure/hull/bed/stack/place/done`). دسکتاپ
+   مسیر inline قبلی.
+3. **breadcrumb برای اولین drawهای واقعی کامیون** (`truck:arrive`,
+   `truck:roll`) — اگر درایور روزی روی drawهای کامیون بمیرد، گزارش دقیقاً
+   می‌گوید کجا.
+4. **گزارش کرش حالا renderer واقعی را نشان می‌دهد**
+   (`RenderingServer.get_current_rendering_method()`) + شماره‌ی نسخه در خط
+   build (`V33 demo v2.3.0 build 6`) — دیگر هیچ‌وقت معلوم نیست «کدام apk
+   کرش کرده» نیست.
+5. **فیکس شیدر آسمان برای GLES3** — `moon_textures[moon_hit.id]` در
+   `sky_atmosphere.gdshader` شیدر آسمان را روی OpenGL می‌کشت (سامپلر آرایه
+   با اندیس غیرثابت در GLSL ES 3 ممنوع است)؛ به سه شاخه‌ی اندیس ثابت شکسته
+   شد.
+
+راستی‌آزمایی: علاوه بر لود headless، این بار **لود کامل زیر renderer واقعی
+OpenGL** (llvmpipe) هم اجرا شد: صفر خطای کامپایل شیدر، کمربند و کامیون کامل،
+خروجی `[world] truck built staged: model=true hull=true bed=true`.
+
+Asset ها:
+- `FindTheNeedle-v2.3.0-universal.apk` (versionCode 6 — universal: arm64-v8a +
+  armeabi-v7a، ETC2/ASTC، targetSdk 36، کیفیت‌های low/medium/high)
+- `find-the-needle-v2.3.0-source.zip`
+
+⚠️ **نکته‌ی نصب:** امضای v2.3.0 با v2.2.0 یکی است (نصب روی آن بدون حذف
+انجام می‌شود). اگر از v2.1.0 یا قدیمی‌تر می‌آیید، اول uninstall کنید.
+اگر باز هم کرش داد: خط `renderer` گزارش حالا باید `gl_compatibility` را
+نشان دهد و `last action` زیرگام دقیق (مثلاً `truck:skin`) را — عکس/متن آن
+را بفرستید.

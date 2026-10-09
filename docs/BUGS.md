@@ -185,3 +185,74 @@ player می‌رسد، صفر خطای اسکریپت، و خروجی
   سورس `.ogg` آن‌ها از قبل گم شده؛ در زمان اجرا فقط بی‌صدا می‌شوند (بدون کرش).
 - `woodgas_plant_optimized.tscn` در ریپو نیست؛ `gas_plant.gd` نبودن مدل را
   با `_model == null` مدیریت می‌کند.
+
+---
+
+## v2.3.0 — درایور Vulkan کنار گذاشته شد؛ موبایل روی OpenGL ES 3 🎯🔧
+
+### سرنخ تازه: `stand:truck`
+
+گزارش کرش v2.2.0: همان ۷۴٪ / `OPENING THE STAND` ولی `last action =
+stand:truck`. مقایسه‌ی دو گزارش:
+
+| | v2.1.0 | v2.2.0 |
+|---|---|---|
+| last action | `standbuild:belt` | `stand:truck` |
+| مدت اجرا | ۲۳ ثانیه | ۲۵ ثانیه |
+| آخرین مرحله | OPENING THE STAND (74%) | OPENING THE STAND (74%) |
+
+یعنی فیکس v2.2.0 کار کرد — کل زنجیره‌ی standbuild (payout/skin/dress/
+ledger/price_board/till/coins/coin_pool/sack/kick/sale_fx) بدون کرش رد شد و
+لود تا ساخت کامیون پیش رفت؛ حالا اولین ریسورس‌های GPU کامیون (آپلود مدل
+کامپایل‌شده، بافرهای اسکین، متریال‌های skin) درایور را کشت. دو کرش روی دو شیء
+متفاوت = مشکل **شیء** نیست؛ **درایور Vulkan Mali-G615** در برابر
+pipeline/resource تازه حین لود ناپایدار است.
+
+### خطای گزارش: renderer اشتباه بود
+
+`crash_report.gd` برای خط renderer مقدار پایه‌ی
+`rendering/renderer/rendering_method` را می‌خواند؛ override موبایل
+(`.mobile="mobile"`) اعمال نمی‌شد. پس گوشی هر دو بار روی renderer **mobile**
+(ولکان) بود، نه forward_plus. نتیجه: هر دو renderer ولکان روی این گوشی
+کرش داده‌اند — ولکان روی این درایور تمام.
+
+### فیکس‌ها
+
+1. **`rendering_method.mobile = "gl_compatibility"`** — موبایل روی OpenGL
+   ES 3 می‌رود: درایور Mali-GLES قدیمی‌ترین و پایدارترین استک این GPU است و
+   هیچ اشتراکی با مسیر ولکانِ کرش‌دهنده ندارد. دسکتاپ forward_plus می‌ماند.
+   افت‌های شناخته‌شده (صرفاً بصری): FogVolume حصار رندر نمی‌شود (ولومتریک
+   فاگ اصلاً در mobile renderer هم نبود)، حداکثر نور per-instance محدودتر.
+2. **کامیون هم استیج‌شده ساخت** — `DeliveryTruck.staged_build` +
+   `build_staged_steps()` (model در `_ready`، بقیه بعد از لودینگ یک فریم در
+   میان): `truck:model/skin/measure/hull/bed/stack/place/done`. مصرف‌کنندگان
+   (`PropManager.truck`، `DeliveryDirector.truck`) همگی null-safe شده‌اند و
+   بعد از ساخت کامل وصل می‌شوند؛ قرارداد نیمه‌تمام در save باعث `snap_parked`
+   بعد از ساخت می‌شود (همان قاعده‌ی مسیر inline).
+3. **breadcrumb برای اولین drawهای واقعی کامیون**: `truck:arrive` و
+   `truck:roll`.
+4. **گزارش کرش درست شد**: خط renderer حالا
+   `RenderingServer.get_current_rendering_method()` است + `renderer_project`
+   برای مقایسه + نسخه‌ی apk در خط build (`V33 demo v2.3.0 build 6`).
+5. **شیدر آسمان روی GLES3 تعمیر شد**: اندیس‌گذاری داینامیک
+   `moon_textures[moon_hit.id]` در `sky_atmosphere.gdshader` کل شیدر آسمان
+   را روی OpenGL می‌کشت (GLSL ES 3 اندیس غیرثابت در آرایه‌ی sampler را
+   ممنوع می‌کند) → سه شاخه با اندیس ثابت. بدون این فیکس، آسمان روی موبایل
+   ساده/خراب بود.
+
+### راستی‌آزمایی
+
+- import headless: OK
+- `mobile_sim_check.gd` (شامل کامپایل delivery_truck/delivery_director/
+  crash_report/cfg): PASS (mobile)
+- لود استیج‌شده‌ی کامل headless `--stagedload --mobilesim`: exit 0،
+  `[stand] belt built staged: ...` و `[world] truck built staged: model=true
+  hull=true bed=true parked=false`
+- **لود کامل زیر renderer واقعی OpenGL (llvmpipe, GL 4.5 Compatibility)**:
+  صفر خطای کامپایل شیدر (خطای یک‌باره‌ی `shader type fog` = FogVolume حصار
+  است که در compat پشتیبانی نمی‌شود و عمداً نادیده گرفته می‌شود)، کمربند و
+  کامیون کامل، خروجی تمیز.
+
+**معیار پذیرش (دست‌نخورده):** لود کامل ۰→۱۰۰٪ روی Mali-G615 بدون کرش. اگر
+کرشی برگردد، گزارش کرش این بار renderer واقعی (`gl_compatibility`)، نسخه‌ی
+apk و زیرگام قاتل (مثلاً `truck:skin`) را با هم نام می‌برد.
