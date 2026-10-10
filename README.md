@@ -59,6 +59,8 @@ docs/                  ← مستندات باگ‌ها و ریلیزها
 | کرش/قفل لود روی موبایل (Terrain3D / Mali-G615) | ✅ رفع شد — زمین native جایگزین شد (`yard_terrain.gd`) |
 | لودینگ بلوکه‌شده | ✅ لود مرحله‌ای اجباری روی موبایل (`world.gd`) |
 | بسته شدن اپ بعد از لود | ✅ `loading.gd` دیگر هرگز روی موبایل quit نمی‌کند |
-| کنترل لمسی | ✅ لایه `scripts/ui/touch_controls.gd` (استیک + دکمه‌ها) |
-| برش دکمه‌ها در صفحه گوشی | ✅ stretch mode `canvas_items` + sensor landscape |
+| کنترل لمسی | ✅ لایه `scripts/ui/touch_controls.gd` — بازطراحی V39: ۹ دکمه دایره‌ای دیزاین‌شده (menu/run/jump/dig/build/use/e/q/tech) |
+| برش دکمه‌ها در صفحه گوشی | ✅ layout نرمال‌شده (0..1) + safe-area (نچ/ناوبار) + re-layout هنگام چرخش/تغییر سایز — از 16:9 تا 21:9 |
+| دکمه‌های مرده (E/MENU/TECH/BUILD/Q/هات‌بار روی لمس) | ✅ فیکس شد — tap ها الان `InputEventAction` واقعی می‌فرستند (`Input.parse_input_event`) |
+| ویرایش HUD | ✅ نگه‌داشتن طولانی MENU (۰.۷ ثانیه) → حالت ویرایش: درگ = جابجایی، تپ = سایز S/M/L، RESET/DONE — ذخیره در `user://hud_layout.cfg` |
 | تنظیمات بی‌استفاده (Resolution/Fullscreen/V-Sync/Renderer/کیبورد) | ✅ مخفی در موبایل (`options_panel.gd`) |
