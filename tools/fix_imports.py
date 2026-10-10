@@ -15,7 +15,7 @@ import os
 import shutil
 import sys
 
-REPO = "/home/z/my-project/repo"
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def read_remap_target(path: str) -> str | None:
