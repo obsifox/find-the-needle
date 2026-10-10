@@ -21,6 +21,8 @@ boot_splash/stretch_mode=0
 boot_splash/image="res://assets/branding/boot_splash.png"
 config/icon="res://assets/branding/app_icon.png"
 run/flush_stdout_on_print.release=true
+; Android BACK must reach the UI as ESC, not kill the game (V40).
+run/quit_on_go_back=false
 
 [autoload]
 AssetFix="*res://autoload/asset_fix.gd"
