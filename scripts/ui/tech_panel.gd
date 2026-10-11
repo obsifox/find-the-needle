@@ -932,6 +932,14 @@ func _input(event: InputEvent) -> void:
                 _pinch_mid = mid
                 get_viewport().set_input_as_handled()
                 return
+        if event is InputEventMagnifyGesture:
+                # Platform-synthesised pinch (trackpads, some desktops).
+                # factor > 1.0 means fingers spreading -> zoom in.
+                var mg:= event as InputEventMagnifyGesture
+                _moved_by_hand()
+                _zoom_at(_to_viewport_space(mg.position), mg.factor)
+                get_viewport().set_input_as_handled()
+                return
         # --- keyboard / actions ---------------------------------------------------
         var key:= event as InputEventKey
         if key != null and key.pressed and key.keycode == KEY_F and key.ctrl_pressed:
@@ -2020,7 +2028,8 @@ func _on_viewport_resized() -> void:
 func _to_viewport_space(screen_pos: Vector2) -> Vector2:
         # _input delivers raw touch coordinates in the root canvas; the board
         # lives inside _viewport (a child Control), so convert once here.
-        return _viewport.to_local(screen_pos)
+        # Controls have no to_local(): map through the canvas transform instead.
+        return _viewport.get_global_transform_with_canvas().affine_inverse() * screen_pos
 
 
 func _on_viewport_input(event: InputEvent) -> void:

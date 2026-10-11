@@ -3,8 +3,6 @@ extends Control
 
 
 const GAME_SCENE:= "res://scenes/main.tscn"
-const YOUTUBE_URL:= "https://www.youtube.com/@FindTheNeedleDev"
-const X_URL:= "https://x.com/haydeveloper"
 const DISCORD_URL:= "https://discord.gg/MqcvCz8eyG"
 
 const COL_TITLE:= Color(1.0, 0.86, 0.34)
@@ -54,14 +52,13 @@ const STRIP_RENAME:= 2
 const TITLE_BLUR_SHADER:= "\nshader_type canvas_item;\nrender_mode unshaded;\n\nuniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_linear;\n\nuniform float blur_radius = 0.7;\nuniform float blur_mix = 0.22;\n\nvoid fragment() {\n\tvec2 step_size = SCREEN_PIXEL_SIZE * blur_radius;\n\tvec4 center = textureLod(screen_texture, SCREEN_UV, 0.0);\n\tvec4 softened = center * 0.52;\n\tsoftened += textureLod(screen_texture, SCREEN_UV + vec2(step_size.x, 0.0), 0.0) * 0.08;\n\tsoftened += textureLod(screen_texture, SCREEN_UV - vec2(step_size.x, 0.0), 0.0) * 0.08;\n\tsoftened += textureLod(screen_texture, SCREEN_UV + vec2(0.0, step_size.y), 0.0) * 0.08;\n\tsoftened += textureLod(screen_texture, SCREEN_UV - vec2(0.0, step_size.y), 0.0) * 0.08;\n\tsoftened += textureLod(screen_texture, SCREEN_UV + step_size, 0.0) * 0.04;\n\tsoftened += textureLod(screen_texture, SCREEN_UV - step_size, 0.0) * 0.04;\n\tsoftened += textureLod(screen_texture, SCREEN_UV + vec2(step_size.x, -step_size.y), 0.0) * 0.04;\n\tsoftened += textureLod(screen_texture, SCREEN_UV + vec2(-step_size.x, step_size.y), 0.0) * 0.04;\n\tvec4 result = mix(center, softened, blur_mix);\n\tif (result.a > 0.0001) {\n\t\tresult.rgb /= result.a;\n\t}\n\tCOLOR *= result;\n}\n"
 
 
-enum Page { ROOT, MAP_PICK, SIZE_PICK, NEW_GAME, LOAD_GAME, OPTIONS, LEADERBOARDS }
+enum Page { ROOT, MAP_PICK, SIZE_PICK, NEW_GAME, LOAD_GAME, OPTIONS }
 
 
 signal static_toggled(on: bool)
 
 var _page: int = Page.ROOT
 var _root_column: VBoxContainer
-var _social_links: VBoxContainer
 var _static_box: CheckBox
 var _slot_column: VBoxContainer
 var _map_column: VBoxContainer
@@ -79,8 +76,6 @@ var _options_column: VBoxContainer
 
 
 var _options_root: Control
-var _leaderboard_root: Control
-var _leaderboard_panel: LeaderboardPanel
 var _slot_title: Label
 var _slot_rows: Array [Button] = []
 var _slot_detail: Array [Label] = []
@@ -147,8 +142,6 @@ func _ready() -> void:
         Audio.set_indoor(0.85)
         Audio.music_start()
         GameLog.put("menu", "main menu ready (build %s)" % Cfg.build_string())
-        if "--lbshot" in OS.get_cmdline_user_args():
-                _shoot_leaderboards()
         if "--sizeshot" in OS.get_cmdline_user_args():
                 _shoot_size_page()
         if "--autostart" in OS.get_cmdline_user_args():
@@ -165,34 +158,6 @@ func _autostart() -> void:
         _chosen_map = str(sites [0].get("id", ""))
         _chosen_size = Cfg.DEFAULT_PILE_SIZE
         _start.call_deferred(0, true)
-
-
-func _shoot_leaderboards() -> void:
-
-
-        print("[lbshot] the menu stayed up; no world, no slot loaded")
-        var out:= "res://captures/leaderboard.png"
-        var args:= OS.get_cmdline_user_args()
-        var i:= args.find("--lbshot")
-        if i >= 0 and i + 1 < args.size() and not args [i + 1].begins_with("--"):
-                out = args [i + 1]
-        _show_page(Page.LEADERBOARDS)
-
-        if DisplayServer.get_name() == "headless":
-
-
-                print("[lbshot] headless: nothing to draw, quitting")
-                get_tree().quit()
-                return
-
-
-        await get_tree().create_timer(6.0).timeout
-        await RenderingServer.frame_post_draw
-        DirAccess.make_dir_recursive_absolute(out.get_base_dir())
-        var img:= get_viewport().get_texture().get_image()
-        img.save_png(out)
-        print("[lbshot] wrote %s" % out)
-        get_tree().quit()
 
 
 func _shoot_size_page() -> void:
@@ -265,8 +230,6 @@ func _build() -> void:
         _build_slot_column(column)
         _build_slot_card()
         _build_options_column(column)
-        _build_leaderboard_column()
-        _build_social_links()
         _build_static_box()
         _build_footer()
         _build_modal()
@@ -401,7 +364,6 @@ func _build_root_column(parent: Control) -> void:
         var multiplayer_button:= _entry(tr("MULTIPLAYER"), _on_multiplayer)
         multiplayer_button.visible = false
         _root_column.add_child(multiplayer_button)
-        _root_column.add_child(_entry(tr("LEADERBOARDS"), _on_leaderboards))
         _root_column.add_child(_entry(tr("OPTIONS"), _on_options))
         _root_column.add_child(_entry(tr("QUIT"), _on_quit))
 
@@ -459,26 +421,6 @@ func _on_static_box(on: bool) -> void:
         Cfg.menu_static = 1 if on else 0
         Cfg.save_settings()
         static_toggled.emit(on)
-
-
-func _build_social_links() -> void:
-        _social_links = VBoxContainer.new()
-        _social_links.add_theme_constant_override("separation", 10)
-        _social_links.set_anchors_preset(Control.PRESET_BOTTOM_RIGHT)
-        _social_links.grow_horizontal = Control.GROW_DIRECTION_BEGIN
-        _social_links.grow_vertical = Control.GROW_DIRECTION_BEGIN
-        _social_links.offset_left = -444.0
-        _social_links.offset_right = -60.0
-        _social_links.offset_top = -310.0
-        _social_links.offset_bottom = -62.0
-        add_child(_social_links)
-
-        var heading:= _label(tr("OFFICIAL LINKS"), 20, COL_TITLE, true)
-        heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-        _social_links.add_child(heading)
-        _social_links.add_child(_social_button("@FindTheNeedleDev  Youtube", Color(0.9, 0.12, 0.12), _open_social.bind(YOUTUBE_URL)))
-        _social_links.add_child(_social_button("X  /  @haydeveloper", Color(0.22, 0.24, 0.28), _open_social.bind(X_URL)))
-        _social_links.add_child(_social_button(tr("DISCORD COMMUNITY"), Color(0.35, 0.4, 0.95), _open_social.bind(DISCORD_URL)))
 
 
 func _build_modal() -> void:
@@ -821,47 +763,6 @@ func _build_options_column(_parent: Control) -> void:
         _options_column.add_child(back)
 
 
-func _build_leaderboard_column() -> void:
-        var centre:= CenterContainer.new()
-        centre.name = "LeaderboardCentre"
-        centre.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-        centre.mouse_filter = Control.MOUSE_FILTER_IGNORE
-        add_child(centre)
-
-        var card:= PanelContainer.new()
-        var sb:= StyleBoxFlat.new()
-        sb.bg_color = Color(0.04, 0.05, 0.07, 0.96)
-        sb.border_color = LeaderboardPanel.COL_EDGE
-        sb.set_border_width_all(1)
-        sb.set_corner_radius_all(0)
-        sb.content_margin_left = 28.0
-        sb.content_margin_right = 28.0
-        sb.content_margin_top = 22.0
-        sb.content_margin_bottom = 22.0
-        card.add_theme_stylebox_override("panel", sb)
-        centre.add_child(card)
-
-        var column:= VBoxContainer.new()
-        column.add_theme_constant_override("separation", 10)
-        card.add_child(column)
-        _leaderboard_root = centre
-
-        var heading:= _label(tr("LEADERBOARDS"), 26, COL_TITLE)
-        heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-        column.add_child(heading)
-
-        var blurb:= _label(tr(LeaderboardPanel.BLURB), 15, COL_DIM)
-        blurb.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-        column.add_child(blurb)
-
-        _leaderboard_panel = LeaderboardPanel.new()
-        column.add_child(_leaderboard_panel)
-
-        var back:= _entry(tr("BACK"), _on_back, 46.0)
-        back.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-        column.add_child(back)
-
-
 func _build_footer() -> void:
         var foot:= _label(Cfg.BUILD_TAG, 15, COL_OFF)
         foot.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
@@ -885,7 +786,6 @@ func _show_page(page: int) -> void:
         if _slot_card != null:
                 _slot_card.visible = false
         _root_column.visible = page == Page.ROOT
-        _social_links.visible = page == Page.ROOT
         _static_box.visible = page == Page.ROOT
 
 
@@ -894,11 +794,6 @@ func _show_page(page: int) -> void:
         _size_column.visible = page == Page.SIZE_PICK
         _slot_column.visible = page == Page.NEW_GAME or page == Page.LOAD_GAME
         _options_root.visible = page == Page.OPTIONS
-        _leaderboard_root.visible = page == Page.LEADERBOARDS
-        if page == Page.LEADERBOARDS:
-
-
-                _leaderboard_panel.refresh()
         if page == Page.ROOT:
                 _load_button.disabled = not SaveManager.any_save()
         elif _slot_column.visible:
@@ -1309,11 +1204,6 @@ func _on_multiplayer() -> void:
         )
 
 
-func _on_leaderboards() -> void:
-        Audio.play("ui_open")
-        _show_page(Page.LEADERBOARDS)
-
-
 func _on_options() -> void:
         Audio.play("ui_open")
         _show_page(Page.OPTIONS)
@@ -1558,7 +1448,6 @@ func _start(slot: int, fresh: bool) -> void:
         _leaving = true
         _root_column.visible = false
         _slot_column.visible = false
-        _social_links.visible = false
         move_child(_fade, get_child_count() - 1)
         var t:= create_tween()
         t.tween_property(_fade, "color:a", 1.0, 0.45)

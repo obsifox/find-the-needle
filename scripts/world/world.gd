@@ -2198,6 +2198,20 @@ func _run_dev_probe() -> void:
                 add_child(rs)
                 rs.run()
                 return
+        if "--pinchprobe" in uargs:
+                var pp:= DevPinchProbe.new()
+                pp.world = self
+                pp.player = player
+                add_child(pp)
+                pp.run()
+                return
+        if "--v321probe" in uargs:
+                var vprobe:= DevV321Probe.new()
+                vprobe.world = self
+                vprobe.player = player
+                add_child(vprobe)
+                vprobe.run()
+                return
         if "--stagedload" in uargs:
                 var whole:= player != null and player.carry != null and player.build != null and player.hand != null and player.is_mouse_captured()
                 var late:= _first_picks() if whole else ""

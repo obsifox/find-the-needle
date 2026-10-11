@@ -639,6 +639,7 @@ func _wrapped(text: String, size: int, colour: Color) -> Label:
 
 
 func _build_hud(page: Control) -> void:
+        _build_hud_touch_section(page)
         page.add_child(_heading(tr("READOUTS")))
         page.add_child(_toggle_row(tr("No HUD"), Cfg.no_hud, Cfg.set_no_hud))
 
@@ -659,21 +660,6 @@ func _build_hud(page: Control) -> void:
                 tr("The keys keep working either way."), 14, COL_DIM)))
 
 
-        # V40 CUSTOM DESIGN HUD (touch devices): entry point for the on-screen
-        # HUD editor. Drag = move, tap = size or opacity, DONE saves to
-        # user://hud_layout.cfg. Only offered while the in-game TouchControls
-        # layer exists (i.e. inside a running game, not the main menu).
-        if Cfg.is_mobile:
-                var tc: Node = get_tree().get_first_node_in_group("touch_controls")
-                if tc != null:
-                        page.add_child(_heading(tr("TOUCH")))
-                        page.add_child(_row(tr("Custom design HUD"),
-                                _reset_button(tr("OPEN EDITOR"), func() -> void:
-                                        _open_hud_editor(tc))))
-                        page.add_child(_note_under(_label(
-                                tr("Move and resize the touch buttons, set their opacity, then DONE saves the layout on this device. Long-press the MENU button in game also opens the editor."),
-                                14, COL_DIM)))
-
         page.add_child(_heading(tr("CROSSHAIR")))
         page.add_child(_row(tr("Preview"), _beside(_crosshair_preview())))
         page.add_child(_choice_row(tr("Shape"), PackedStringArray(Cfg.CROSSHAIR_STYLE_NAMES),
@@ -687,6 +673,30 @@ func _build_hud(page: Control) -> void:
         page.add_child(_reset_button(tr("RESET TO DEFAULTS"), func() -> void:
                 Cfg.reset_hud()
                 _rebuild()))
+
+
+## V40 CUSTOM DESIGN HUD (touch devices): entry point for the on-screen HUD
+## editor. Shown on every mobile Options screen (main menu included) so the
+## feature is discoverable; the editor itself lives on the in-game
+## TouchControls layer, so the button is disabled until a game is running.
+func _build_hud_touch_section(page: Control) -> void:
+        if not Cfg.is_mobile:
+                return
+        var tc: Node = get_tree().get_first_node_in_group("touch_controls")
+        page.add_child(_heading(tr("TOUCH")))
+        if tc != null:
+                page.add_child(_row(tr("Custom design HUD"),
+                        _reset_button(tr("OPEN EDITOR"), func() -> void:
+                                _open_hud_editor(tc))))
+        else:
+                var b:= Button.new()
+                b.text = tr("OPEN EDITOR")
+                b.disabled = true
+                b.focus_mode = Control.FOCUS_NONE
+                page.add_child(_row(tr("Custom design HUD"), b))
+        page.add_child(_note_under(_label(
+                tr("Move and resize the touch buttons, set their opacity, then DONE saves the layout on this device. Available while a game is running. Long-press the MENU button in game also opens the editor."),
+                14, COL_DIM)))
 
 
 ## V40: close the pause/options stack with a synthetic ESC and flag the
