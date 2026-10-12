@@ -172,18 +172,29 @@ func _enter_tree() -> void:
 func _notification(what: int) -> void:
         if what == NOTIFICATION_APPLICATION_FOCUS_OUT or what == NOTIFICATION_WM_WINDOW_FOCUS_OUT:
                 release_held()
+        elif what == NOTIFICATION_WM_GO_BACK_REQUEST:
+                # Some Android delivery paths hand BACK over as a display-server
+                # request instead of a KEY_BACK event. The game must NEVER close:
+                # turn it into ESC exactly like the key path below.
+                _back_as_escape()
 
 
-## V40 MOBILE BACK = ESC: with run/quit_on_go_back=false the Android BACK
-## button arrives here as KEY_BACK instead of killing the game. Translate it
-## into a real ESC press+release so every menu reacts exactly like on desktop
-## (panels listen for "free_mouse" / "ui_cancel", both bound to ESC).
+## V41 MOBILE BACK NEVER QUITS: with run/quit_on_go_back=false the Android
+## BACK button arrives here as KEY_BACK instead of killing the game. It is
+## translated into a real ESC press+release so every menu reacts exactly like
+## on desktop: while any panel is open BACK closes it, and with nothing open
+## during gameplay it OPENS THE PAUSE MENU (the "menu button" of the touch
+## HUD). It can never terminate the game.
 func _input(event: InputEvent) -> void:
         var key:= event as InputEventKey
         if key == null or not key.pressed or key.echo:
                 return
         if key.keycode != KEY_BACK:
                 return
+        _back_as_escape()
+
+
+func _back_as_escape() -> void:
         var esc:= InputEventKey.new()
         esc.keycode = KEY_ESCAPE
         esc.physical_keycode = KEY_ESCAPE

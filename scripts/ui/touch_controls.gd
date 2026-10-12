@@ -32,7 +32,15 @@ extends CanvasLayer
 ## V40: while a menu/panel is open (passive mode) a designed CLOSE button
 ## (hud_close.png, half the size of the main HUD keys) floats top-right in
 ## the safe area and sends ESC, so the panel's own X can never be out of
-## reach. Android BACK is translated to ESC in InputSetup.
+## reach. Android BACK is translated to ESC in InputSetup (never quits the
+## game; with nothing open it opens the pause menu).
+##
+## V41: E and Q are true hold buttons (the action stays pressed while the
+## finger stays down, so hold-to-sabotage mechanics work; a quick tap is
+## identical to the old tap). Pushing the move stick to its outer ring
+## auto-engages sprint (released under a lower threshold; the RUN toggle
+## still wins). HUD edit mode selects a button on tap and adjusts SIZE /
+## OPACITY with continuous sliders instead of the old S/M/L + 4-step cycle.
 
 const CFG_PATH:= "user://hud_layout.cfg"
 const LAYOUT_VERSION:= 1
@@ -40,6 +48,13 @@ const EDIT_LONGPRESS_S:= 0.7
 const TAP_RELEASE_S:= 0.08
 const SIZE_SCALES:= [0.8, 1.0, 1.25]
 const ALPHA_LEVELS:= [1.0, 0.75, 0.55, 0.35]
+## V41: continuous edit ranges (sliders) + stick auto-sprint thresholds.
+## SIZE_SCALES / ALPHA_LEVELS stay only to migrate old saved layouts.
+const SCALE_MIN:= 0.6
+const SCALE_MAX:= 1.6
+const ALPHA_MIN:= 0.25
+const SPRINT_ON_AT:= 0.93
+const SPRINT_OFF_AT:= 0.8
 const HIT_GROW:= 6.0
 
 ## Close overlay: half the size of the main HUD keys (0.128 / 2), same
@@ -77,19 +92,21 @@ const COL:= {
         "tech": Color(0.8, 0.45, 1.0),
 }
 
-# mode: hold | tap | toggle ; act: an input action, or mouse_left/mouse_right
+# mode: hold | action | tap | toggle ; act: an input action, or mouse_left/mouse_right
+# hold   = stays pressed while the finger is down (dig/use = mouse, jump = action)
+# action = press event + held action state (E / Q: tap AND hold both work)
 # f: button diameter as a fraction of the short screen edge.
 # pos: default centre as a normalized (0..1) fraction of the viewport.
 const BUTTONS:= {
         "dig": {"mode": "hold", "act": "mouse_left", "f": 0.16, "pos": Vector2(0.885, 0.690)},
         "use": {"mode": "hold", "act": "mouse_right", "f": 0.128, "pos": Vector2(0.768, 0.838)},
         "jump": {"mode": "hold", "act": "jump", "f": 0.128, "pos": Vector2(0.885, 0.462)},
-        "e": {"mode": "tap", "act": "interact", "f": 0.128, "pos": Vector2(0.768, 0.628)},
+        "e": {"mode": "action", "act": "interact", "f": 0.128, "pos": Vector2(0.768, 0.628)},
         "run": {"mode": "toggle", "act": "sprint", "f": 0.128, "pos": Vector2(0.648, 0.792)},
         "menu": {"mode": "tap", "act": "free_mouse", "f": 0.1, "pos": Vector2(0.948, 0.1)},
         "tech": {"mode": "tap", "act": "tech_tree", "f": 0.118, "pos": Vector2(0.948, 0.252)},
         "build": {"mode": "tap", "act": "build_catalog", "f": 0.118, "pos": Vector2(0.948, 0.404)},
-        "q": {"mode": "tap", "act": "drop_tool", "f": 0.1, "pos": Vector2(0.948, 0.556)},
+        "q": {"mode": "action", "act": "drop_tool", "f": 0.1, "pos": Vector2(0.948, 0.556)},
 }
 
 const HOTBAR_N:= 5
@@ -110,16 +127,20 @@ var _look_touch: int = -1
 var _look_last: Vector2
 
 var _btn_touches: Dictionary = {}
-var _sprint_on:= false
+var _sprint_manual:= false
+var _sprint_auto:= false
 
 var _edit:= false
-var _edit_mode:= "size"
+var _sel_id:= ""
 var _edit_rings: Control
 var _edit_bar: Control
 var _bar_btns: Dictionary = {}
 var _bar_hint: Label
 var _bar_touch: int = -1
 var _bar_id:= ""
+var _bar_kind:= ""
+var _slider_size: Control
+var _slider_opa: Control
 var _drag_index: int = -1
 var _drag_id:= ""
 var _drag_offset: Vector2
@@ -238,15 +259,11 @@ func _safe_rect() -> Rect2:
         return r
 
 
-func _size_idx(id: String) -> int:
-        return clampi(int(_layout[id]["size"]), 0, SIZE_SCALES.size() - 1)
-
-
 func _btn_px(id: String) -> float:
         var spec: Dictionary = BUTTONS[id]
         var base:= _min_dim() * float(spec["f"])
         base = clampf(base, 58.0, 230.0)
-        return base * float(SIZE_SCALES[_size_idx(id)])
+        return base * float(_layout[id]["scale"])
 
 
 func _center_px(id: String) -> Vector2:
@@ -370,7 +387,7 @@ func _make_fallback(id: String) -> Control:
 
 
 func _alpha_of(id: String) -> float:
-        return float(ALPHA_LEVELS[clampi(int(_layout[id]["alpha"]), 0, ALPHA_LEVELS.size() - 1)])
+        return clampf(float(_layout[id]["alpha_f"]), ALPHA_MIN, 1.0)
 
 
 ## Re-apply the current visual state (keeps pressed / sprint tints and the
@@ -380,7 +397,7 @@ func _apply_btn_visual(id: String) -> void:
         if n == null:
                 return
         var a:= _alpha_of(id)
-        if id == "run" and _sprint_on:
+        if id == "run" and _sprint_active():
                 n.modulate = RUN_ON_TINT * Color(1, 1, 1, a)
         else:
                 n.modulate = Color(1, 1, 1, a)
@@ -394,7 +411,7 @@ func _set_btn_pressed(id: String, on: bool) -> void:
         if on:
                 n.scale = Vector2(0.9, 0.9)
                 n.modulate = Color(1.35, 1.35, 1.35, a)
-        elif id == "run" and _sprint_on:
+        elif id == "run" and _sprint_active():
                 n.scale = Vector2.ONE
                 n.modulate = RUN_ON_TINT * Color(1, 1, 1, a)
         else:
@@ -502,7 +519,7 @@ func _build_edit_ui() -> void:
                         var n: Control = _btn_nodes[id]
                         var c: Vector2 = n.position + n.size * 0.5
                         var r: float = n.size.x * 0.5 + 10.0
-                        var hot: bool = id == _drag_id
+                        var hot: bool = id == _drag_id or id == _sel_id
                         var col:= Color(1, 0.92, 0.55, 0.95) if hot else Color(0.85, 0.9, 1.0, 0.75)
                         var segs:= 12
                         for s in segs:
@@ -528,7 +545,7 @@ func _build_edit_ui() -> void:
 
         var hint:= Label.new()
         hint.name = "Hint"
-        hint.text = "HUD EDIT - drag: move / tap: size or opacity / DONE: save"
+        hint.text = "HUD EDIT - drag: move / tap: select / sliders: size + opacity / DONE: save"
         hint.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
         hint.mouse_filter = Control.MOUSE_FILTER_IGNORE
         hint.add_theme_color_override("font_color", Color(0.93, 0.95, 0.99, 0.95))
@@ -539,13 +556,11 @@ func _build_edit_ui() -> void:
         _bar_btns["done"] = _make_bar_btn("DONE")
         _edit_bar.add_child(_bar_btns["reset"])
         _edit_bar.add_child(_bar_btns["done"])
-        _bar_btns["mode"] = _make_bar_btn("TAP: SIZE")
-        _edit_bar.add_child(_bar_btns["mode"])
-
-
-## Public entry for Options > HUD > "Custom design HUD".
-func enter_edit() -> void:
-        _enter_edit()
+        _slider_size = _make_slider("SIZE", "size")
+        _slider_opa = _make_slider("OPACITY", "opa")
+        _edit_bar.add_child(_slider_size)
+        _edit_bar.add_child(_slider_opa)
+        _refresh_sliders()
 
 
 func _make_bar_btn(label: String) -> Control:
@@ -571,36 +586,138 @@ func _make_bar_btn(label: String) -> Control:
         return c
 
 
+## V41: continuous SIZE / OPACITY slider row for the HUD editor bar. The
+## selected button (_sel_id, set by a quick tap) is adjusted live while the
+## finger slides; value is read from its layout entry so the visuals never
+## drift out of sync.
+func _make_slider(label: String, kind: String) -> Control:
+        var c:= Control.new()
+        c.name = label
+        c.mouse_filter = Control.MOUSE_FILTER_IGNORE
+        c.set_meta("kind", kind)
+        c.set_meta("x0", 90.0)
+        c.set_meta("x1", 200.0)
+        var lab:= Label.new()
+        lab.name = "L"
+        lab.text = label
+        lab.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+        lab.mouse_filter = Control.MOUSE_FILTER_IGNORE
+        lab.add_theme_color_override("font_color", Color(0.85, 0.89, 0.95))
+        c.add_child(lab)
+        c.draw.connect(func() -> void:
+                var on: bool = _sel_id != ""
+                var a: float = 1.0 if on else 0.4
+                var x0: float = float(c.get_meta("x0"))
+                var x1: float = float(c.get_meta("x1"))
+                var mid: float = c.size.y * 0.5
+                var th: float = maxf(c.size.y * 0.16, 4.0)
+                c.draw_rect(Rect2(x0, mid - th * 0.5, maxf(x1 - x0, 1.0), th), Color(0.6, 0.68, 0.8, 0.5 * a))
+                var t:= _slider_t(kind, _slider_value(kind))
+                var kx: float = x0 + (x1 - x0) * t
+                var accent:= Color(1.0, 0.85, 0.4) if kind == "size" else Color(0.45, 0.85, 1.0)
+                c.draw_rect(Rect2(x0, mid - th * 0.5, maxf(kx - x0, 0.0), th), Color(accent.r, accent.g, accent.b, 0.4 * a))
+                var kr: float = maxf(c.size.y * 0.3, 8.0)
+                c.draw_circle(Vector2(kx, mid), kr, Color(accent.r, accent.g, accent.b, 0.95 * a))
+                c.draw_arc(Vector2(kx, mid), kr, 0.0, TAU, 24, Color(1, 1, 1, 0.75 * a), 1.6))
+        return c
+
+
+func _slider_range(kind: String) -> Vector2:
+        return Vector2(SCALE_MIN, SCALE_MAX) if kind == "size" else Vector2(ALPHA_MIN, 1.0)
+
+
+func _slider_value(kind: String) -> float:
+        if _sel_id == "" or not _layout.has(_sel_id):
+                return 1.0
+        return float(_layout[_sel_id]["scale"] if kind == "size" else _layout[_sel_id]["alpha_f"])
+
+
+func _slider_t(kind: String, v: float) -> float:
+        var r:= _slider_range(kind)
+        return clampf((v - r.x) / (r.y - r.x), 0.0, 1.0)
+
+
+func _slider_set(kind: String, t: float) -> void:
+        if _sel_id == "":
+                return
+        var r:= _slider_range(kind)
+        var v:= lerpf(r.x, r.y, clampf(t, 0.0, 1.0))
+        if kind == "size":
+                _layout[_sel_id]["scale"] = v
+                _relayout()
+        else:
+                _layout[_sel_id]["alpha_f"] = v
+                _apply_btn_visual(_sel_id)
+        _refresh_sliders()
+
+
+func _refresh_sliders() -> void:
+        if _slider_size != null:
+                _slider_size.queue_redraw()
+        if _slider_opa != null:
+                _slider_opa.queue_redraw()
+
+
+## Touch x (viewport space) -> normalized slider position 0..1.
+func _slider_t_at(s: Control, pos: Vector2) -> float:
+        var gr:= s.get_global_rect()
+        var x0: float = gr.position.x + float(s.get_meta("x0"))
+        var x1: float = gr.position.x + float(s.get_meta("x1"))
+        if x1 <= x0:
+                return 0.0
+        return clampf((pos.x - x0) / (x1 - x0), 0.0, 1.0)
+
+
+## Public entry for Options > HUD > "Custom design HUD".
+func enter_edit() -> void:
+        _enter_edit()
+
+
 func _layout_edit_bar(safe: Rect2) -> void:
         if _edit_bar == null:
                 return
         var u:= _ui_scale()
-        var h:= 58.0 * u
-        var btn_w:= 110.0 * u
+        var row:= 40.0 * u
         var pad:= 14.0 * u
         var gap:= 12.0 * u
-        var panel_w:= minf(safe.size.x - 24.0, pad * 2.0 + btn_w * 3.0 + gap * 4.0 + 380.0 * u)
+        var btn_w:= 104.0 * u
+        var h:= row * 3.0 + pad
+        var panel_w:= minf(safe.size.x - 24.0, maxf(pad * 2.0 + btn_w * 2.0 + gap * 3.0 + 420.0 * u, 360.0))
         var bx:= safe.position.x + safe.size.x * 0.5 - panel_w * 0.5
         var by:= safe.position.y + 10.0
         _edit_bar.position = Vector2(bx, by)
         _edit_bar.size = Vector2(panel_w, h)
         if _bar_hint != null:
                 _bar_hint.position = Vector2(pad, 0)
-                _bar_hint.size = Vector2(panel_w - pad * 2.0 - btn_w * 3.0 - gap * 3.0, h)
-                _bar_hint.add_theme_font_size_override("font_size", int(15.0 * u))
+                _bar_hint.size = Vector2(panel_w - pad * 2.0 - btn_w * 2.0 - gap * 2.0, row)
+                _bar_hint.add_theme_font_size_override("font_size", int(14.0 * u))
         var rx: float = panel_w - pad - btn_w
-        _bar_btns["reset"].position = Vector2(rx, (h - h * 0.72) * 0.5)
-        _bar_btns["reset"].size = Vector2(btn_w, h * 0.72)
-        _bar_btns["done"].position = Vector2(rx - gap - btn_w, (h - h * 0.72) * 0.5)
-        _bar_btns["done"].size = Vector2(btn_w, h * 0.72)
-        _bar_btns["mode"].position = Vector2(rx - gap * 2.0 - btn_w * 2.0, (h - h * 0.72) * 0.5)
-        _bar_btns["mode"].size = Vector2(btn_w, h * 0.72)
+        _bar_btns["reset"].position = Vector2(rx, (row - row * 0.7) * 0.5)
+        _bar_btns["reset"].size = Vector2(btn_w, row * 0.7)
+        _bar_btns["done"].position = Vector2(rx - gap - btn_w, (row - row * 0.7) * 0.5)
+        _bar_btns["done"].size = Vector2(btn_w, row * 0.7)
+        var sx0: float = 96.0 * u
+        var rows:= [_slider_size, _slider_opa]
+        for i in rows.size():
+                var s: Control = rows[i]
+                if s == null:
+                        continue
+                s.position = Vector2(pad, row * float(i + 1))
+                s.size = Vector2(panel_w - pad * 2.0, row * 0.95)
+                s.set_meta("x0", sx0)
+                s.set_meta("x1", s.size.x - 16.0 * u)
+                var lab: Label = s.get_node_or_null("L")
+                if lab != null:
+                        lab.position = Vector2.ZERO
+                        lab.size = Vector2(sx0 - 8.0 * u, s.size.y)
+                        lab.add_theme_font_size_override("font_size", int(13.0 * u))
+                s.queue_redraw()
         for bid in _bar_btns:
                 var b: Control = _bar_btns[bid]
-                var lab: Label = b.get_node_or_null("L")
-                if lab != null:
-                        lab.size = b.size
-                        lab.add_theme_font_size_override("font_size", int(15.0 * u))
+                var lab2: Label = b.get_node_or_null("L")
+                if lab2 != null:
+                        lab2.size = b.size
+                        lab2.add_theme_font_size_override("font_size", int(14.0 * u))
                 b.queue_redraw()
         _edit_bar.queue_redraw()
 
@@ -673,6 +790,9 @@ func _touch_end(index: int) -> void:
         elif index == _stick_touch:
                 _stick_touch = -1
                 _release_move()
+                if _sprint_auto:
+                        _sprint_auto = false
+                        _sprint_apply()
                 _stick_home()
         elif index == _look_touch:
                 _look_touch = -1
@@ -709,14 +829,12 @@ func _btn_down(id: String) -> void:
         match mode:
                 "hold":
                         _act_press(spec["act"])
+                "action":
+                        _hold_act(spec["act"], true)
                 "toggle":
-                        _sprint_on = not _sprint_on
-                        if _sprint_on:
-                                Input.action_press(spec["act"])
-                        else:
-                                Input.action_release(spec["act"])
+                        _sprint_manual = not _sprint_manual
+                        _sprint_apply()
                         _set_btn_pressed(id, false)
-                        _update_run_visual()
                 "tap":
                         if id == "menu":
                                 _menu_arm()
@@ -730,6 +848,8 @@ func _btn_up(id: String) -> void:
         match mode:
                 "hold":
                         _act_release(spec["act"])
+                "action":
+                        _hold_act(spec["act"], false)
                 "tap":
                         if id == "menu" and not _edit:
                                 _menu_fire()
@@ -744,6 +864,36 @@ func _act_press(act: String) -> void:
                 _mouse_btn(MOUSE_BUTTON_RIGHT, true)
         else:
                 Input.action_press(act)
+
+
+## V41: E / Q are hold-capable. Finger-down sends a real press EVENT (event
+## listeners fire on tap exactly as before) AND keeps the action state
+## pressed while the finger stays down (poll listeners -- e.g. hold-to-break
+## mechanics -- see a sustained key). Finger-up releases both, so a quick
+## tap stays byte-identical to the old tap behavior.
+func _hold_act(act: String, pressed: bool) -> void:
+        var ev:= InputEventAction.new()
+        ev.action = act
+        ev.pressed = pressed
+        ev.strength = 1.0
+        Input.parse_input_event(ev)
+        if pressed:
+                Input.action_press(act)
+        else:
+                Input.action_release(act)
+
+
+func _sprint_active() -> bool:
+        return _sprint_manual or _sprint_auto
+
+
+## Effective sprint = manual RUN toggle OR stick pushed to the outer ring.
+func _sprint_apply() -> void:
+        if _sprint_active():
+                Input.action_press("sprint")
+        else:
+                Input.action_release("sprint")
+        _update_run_visual()
 
 
 func _act_release(act: String) -> void:
@@ -794,7 +944,8 @@ func _release_all() -> void:
         _btn_touches.clear()
         _stick_touch = -1
         _look_touch = -1
-        _sprint_on = false
+        _sprint_manual = false
+        _sprint_auto = false
         for bid in _btn_nodes:
                 _set_btn_pressed(bid, false)
         _update_run_visual()
@@ -839,8 +990,10 @@ func _exit_edit(save: bool) -> void:
         _edit = false
         _drag_index = -1
         _drag_id = ""
+        _sel_id = ""
         _bar_touch = -1
         _bar_id = ""
+        _bar_kind = ""
         _edit_rings.visible = false
         _edit_bar.visible = false
         _buzz(20)
@@ -852,7 +1005,16 @@ func _edit_touch_start(index: int, pos: Vector2) -> void:
                 if n.get_global_rect().grow(6.0).has_point(pos):
                         _bar_touch = index
                         _bar_id = bid
+                        _bar_kind = "btn"
                         n.modulate = Color(1.3, 1.3, 1.3)
+                        return
+        for s in [_slider_size, _slider_opa]:
+                if s != null and s.get_global_rect().grow(10.0).has_point(pos):
+                        if _sel_id == "":
+                                return
+                        _bar_touch = index
+                        _bar_kind = str(s.get_meta("kind"))
+                        _slider_set(_bar_kind, _slider_t_at(s, pos))
                         return
         var id:= _hit_button(pos)
         if id != "":
@@ -866,6 +1028,10 @@ func _edit_touch_start(index: int, pos: Vector2) -> void:
 
 func _edit_touch_drag(index: int, pos: Vector2) -> void:
         if index == _bar_touch:
+                if _bar_kind == "size" or _bar_kind == "opa":
+                        var s: Control = _slider_size if _bar_kind == "size" else _slider_opa
+                        if s != null:
+                                _slider_set(_bar_kind, _slider_t_at(s, pos))
                 return
         if index != _drag_index or _drag_id == "":
                 return
@@ -884,22 +1050,22 @@ func _edit_touch_end(index: int) -> void:
         if index == _bar_touch:
                 _bar_touch = -1
                 var bid:= _bar_id
+                var kind:= _bar_kind
                 _bar_id = ""
+                _bar_kind = ""
                 if _bar_btns.has(bid):
                         _bar_btns[bid].modulate = Color(1, 1, 1)
                 if bid == "reset":
                         _layout = _default_layout()
-                        _edit_mode = "size"
-                        var mlab: Label = _bar_btns["mode"].get_node_or_null("L")
-                        if mlab != null:
-                                mlab.text = "TAP: SIZE"
+                        _sel_id = ""
+                        _refresh_sliders()
                         _relayout()
                         _save_layout()
                         _buzz(30)
-                elif bid == "mode":
-                        _cycle_edit_mode()
                 elif bid == "done":
                         _exit_edit(true)
+                elif kind == "size" or kind == "opa":
+                        _save_layout()
                 return
         if index != _drag_index or _drag_id == "":
                 return
@@ -907,35 +1073,15 @@ func _edit_touch_end(index: int) -> void:
         if _drag_moved:
                 _save_layout()
         elif quick:
-                if _edit_mode == "alpha":
-                        _cycle_alpha(_drag_id)
-                else:
-                        _cycle_size(_drag_id)
+                # V41: a quick tap SELECTS the button; the bar's SIZE / OPACITY
+                # sliders then adjust it continuously (replaces the old tap
+                # cycling through S/M/L and 4 fixed opacity steps).
+                _sel_id = _drag_id
+                _refresh_sliders()
+                _buzz(16)
         _drag_index = -1
         _drag_id = ""
         _edit_rings.queue_redraw()
-
-
-func _cycle_size(id: String) -> void:
-        _layout[id]["size"] = (_size_idx(id) + 1) % SIZE_SCALES.size()
-        _relayout()
-        _save_layout()
-        _buzz(16)
-
-
-func _cycle_alpha(id: String) -> void:
-        _layout[id]["alpha"] = (clampi(int(_layout[id]["alpha"]), 0, ALPHA_LEVELS.size() - 1) + 1) % ALPHA_LEVELS.size()
-        _apply_btn_visual(id)
-        _save_layout()
-        _buzz(16)
-
-
-func _cycle_edit_mode() -> void:
-        _edit_mode = "alpha" if _edit_mode == "size" else "size"
-        var lab: Label = _bar_btns["mode"].get_node_or_null("L")
-        if lab != null:
-                lab.text = "TAP: OPA" if _edit_mode == "alpha" else "TAP: SIZE"
-        _buzz(16)
 
 
 # ------------------------------------------------------- stick and look --
@@ -952,6 +1098,20 @@ func _stick_move(pos: Vector2) -> void:
         var side: float = clampf(d.x / _stick_r, -1.0, 1.0)
         _apply_axis("move_forward", "move_back", fwd * strn)
         _apply_axis("move_right", "move_left", side * strn)
+        _stick_auto_sprint(strn)
+
+
+## V41: pushing the stick to its outer ring (typically straight up = full
+## speed ahead) auto-engages sprint; under the lower threshold (hysteresis,
+## so it never flickers) it releases again -- unless RUN was toggled on.
+func _stick_auto_sprint(strn: float) -> void:
+        var was:= _sprint_auto
+        if strn >= SPRINT_ON_AT:
+                _sprint_auto = true
+        elif strn <= SPRINT_OFF_AT:
+                _sprint_auto = false
+        if was != _sprint_auto:
+                _sprint_apply()
 
 
 func _apply_axis(pos_action: String, neg_action: String, value: float) -> void:
@@ -989,7 +1149,7 @@ func _look_move(pos: Vector2) -> void:
 func _default_layout() -> Dictionary:
         var out: Dictionary = {}
         for id in BUTTONS:
-                out[id] = {"pos": BUTTONS[id]["pos"], "size": 1, "alpha": 0}
+                out[id] = {"pos": BUTTONS[id]["pos"], "scale": 1.0, "alpha_f": 1.0}
         return out
 
 
@@ -1006,12 +1166,23 @@ func _load_layout() -> void:
                         var v: Vector2 = p
                         if v.x >= 0.0 and v.x <= 1.0 and v.y >= 0.0 and v.y <= 1.0:
                                 _layout[id]["pos"] = v
-                var s: Variant = cf.get_value("layout", id + "_size", 1)
-                if s is int:
-                        _layout[id]["size"] = clampi(int(s), 0, SIZE_SCALES.size() - 1)
-                var a: Variant = cf.get_value("layout", id + "_alpha", 0)
-                if a is int:
-                        _layout[id]["alpha"] = clampi(int(a), 0, ALPHA_LEVELS.size() - 1)
+                # size / alpha were S-M-L + 4-step INDEX ints before V41; the
+                # slider world stores continuous floats. Migrate old indexes to
+                # their old scale/level so nothing the user set is lost.
+                var s: Variant = cf.get_value("layout", id + "_scale", null)
+                if s is float or s is int:
+                        _layout[id]["scale"] = clampf(float(s), SCALE_MIN, SCALE_MAX)
+                else:
+                        var si: Variant = cf.get_value("layout", id + "_size", 1)
+                        if si is int:
+                                _layout[id]["scale"] = float(SIZE_SCALES[clampi(int(si), 0, SIZE_SCALES.size() - 1)])
+                var af: Variant = cf.get_value("layout", id + "_alpha_f", null)
+                if af is float or af is int:
+                        _layout[id]["alpha_f"] = clampf(float(af), ALPHA_MIN, 1.0)
+                else:
+                        var ai: Variant = cf.get_value("layout", id + "_alpha", 0)
+                        if ai is int:
+                                _layout[id]["alpha_f"] = float(ALPHA_LEVELS[clampi(int(ai), 0, ALPHA_LEVELS.size() - 1)])
 
 
 func _save_layout() -> void:
@@ -1019,7 +1190,7 @@ func _save_layout() -> void:
         cf.set_value("meta", "version", LAYOUT_VERSION)
         for id in _layout:
                 cf.set_value("layout", id + "_pos", _layout[id]["pos"])
-                cf.set_value("layout", id + "_size", _layout[id]["size"])
-                cf.set_value("layout", id + "_alpha", _layout[id]["alpha"])
+                cf.set_value("layout", id + "_scale", _layout[id]["scale"])
+                cf.set_value("layout", id + "_alpha_f", _layout[id]["alpha_f"])
         cf.save(CFG_PATH)
 
