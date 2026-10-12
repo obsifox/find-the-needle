@@ -334,8 +334,8 @@ const BUILD_TAG:= "V40"
 ## line. Both previous reports just said "V33 demo", so there was no way to
 ## tell WHICH apk had crashed -- bump APP_VERSION/APP_CODE together with
 ## export_presets.cfg version/name and version/code on every release.
-const APP_VERSION:= "3.2.1"
-const APP_CODE:= 14
+const APP_VERSION:= "3.2.2"
+const APP_CODE:= 15
 
 
 func build_string() -> String:
