@@ -19,7 +19,7 @@ const LIFT:= 6.0
 
 const PROMPTS:= {
 	"en": ["CHOOSE YOUR LANGUAGE", "You can change it later in OPTIONS.", "CONFIRM"],
-	"de": ["WÄHLE DEINE SPRACHE", "Du kannst sie später in den OPTIONEN ändern.", "BESTÄTIGEN"],
+	"fa": ["زبان خود را انتخاب کنید", "بعداً می‌توانید در «گزینه‌ها» تغییرش دهید.", "تأیید"],
 	"fr": ["CHOISIS TA LANGUE", "Tu pourras la changer plus tard dans les OPTIONS.", "CONFIRMER"],
 	"es": ["ELIGE TU IDIOMA", "Puedes cambiarlo más tarde en OPCIONES.", "CONFIRMAR"],
 	"pt": ["ESCOLHA SEU IDIOMA", "Você pode mudar depois em OPÇÕES.", "CONFIRMAR"],

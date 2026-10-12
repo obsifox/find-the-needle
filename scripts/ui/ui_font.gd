@@ -4,6 +4,12 @@ extends RefCounted
 
 const OVERRIDE_PATH:= "res://assets/fonts/hud.ttf"
 
+# v3.2.3 PERSIAN: bundled Vazirmatn (SIL OFL) -- every chain carries it so
+# Persian text renders on every platform, and it becomes the PRIMARY face
+# while the Persian locale is running.
+const FA_REGULAR:= "res://assets/fonts/Vazirmatn-Regular.ttf"
+const FA_BOLD:= "res://assets/fonts/Vazirmatn-Bold.ttf"
+
 
 const FAMILIES: Array [String] = [
 	"Bahnschrift",
@@ -166,8 +172,25 @@ static func _face(weight: int) -> Font:
 	return f
 
 
+static func _fa_face(weight: int) -> Font:
+	var path:= FA_BOLD if weight >= 600 else FA_REGULAR
+	if not ResourceLoader.exists(path):
+		return null
+	var ff:= load(path) as FontFile
+	if ff == null:
+		return null
+	var copy:= ff.duplicate() as FontFile
+	copy.subpixel_positioning = TextServer.SUBPIXEL_POSITIONING_AUTO
+	copy.allow_system_fallback = true
+	return copy
+
+
 static func _new_face(weight: int) -> Font:
 	var f: Font
+	if TranslationServer.get_locale().begins_with("fa"):
+		var fa:= _fa_face(weight)
+		if fa != null:
+			return fa
 	if ResourceLoader.exists(OVERRIDE_PATH):
 		var loaded:= load(OVERRIDE_PATH) as Font
 		if loaded != null:
@@ -201,9 +224,12 @@ static func _with_cjk(font: Font, weight: int, always: bool = false) -> void:
 		var chain:= font.fallbacks.duplicate()
 		chain.append(cjk)
 		chain.append(hangul)
+		var fa:= _fa_face(weight)
+		if fa != null:
+			chain.append(fa)
 		font.fallbacks = chain
 		return
-	var host: Array = [font, cjk, hangul]
+	var host: Array = [font, cjk, hangul, _fa_face(weight)]
 	_hosts.append(host)
 	_sync(host)
 
@@ -216,6 +242,9 @@ static func _sync(host: Array) -> void:
 	if _cjk_on_screen():
 		chain.append(host [1])
 		chain.append(host [2])
+	if host.size() > 3 and host [3] != null:
+		chain.erase(host [3])
+		chain.append(host [3])
 	if chain != font.fallbacks:
 		font.fallbacks = chain
 

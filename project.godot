@@ -12,7 +12,7 @@ window/handheld/orientation=4
 [application]
 config/name="Haystack Incremental"
 config/description="First-person 3D haystack excavation. Find the needle."
-config/version="3.2.2"
+config/version="3.2.3"
 config/tags=["3d", "physics", "incremental"]
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=["4.7", "Forward Plus"]
@@ -56,7 +56,7 @@ window/size/viewport_height=900
 enabled=["res://addons/terrain_3d/plugin.cfg"]
 
 [internationalization]
-locale/translations=["res://locale/game.de.po", "res://locale/game.fr.po", "res://locale/game.es.po", "res://locale/game.pl.po", "res://locale/game.cs.po", "res://locale/game.zh.po", "res://locale/game.ru.po", "res://locale/game.tr.po", "res://locale/game.ja.po", "res://locale/game.ko.po", "res://locale/game.pt_BR.po"]
+locale/translations=["res://locale/game.fa.po", "res://locale/game.fr.po", "res://locale/game.es.po", "res://locale/game.pl.po", "res://locale/game.cs.po", "res://locale/game.zh.po", "res://locale/game.ru.po", "res://locale/game.tr.po", "res://locale/game.ja.po", "res://locale/game.ko.po", "res://locale/game.pt_BR.po"]
 locale/include_text_server_data=true
 
 [physics]

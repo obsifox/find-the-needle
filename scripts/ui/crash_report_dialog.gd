@@ -15,13 +15,14 @@ const CARD_W:= 900.0
 const LOG_H:= 340.0
 
 
-const ASK:= "Please share this on the Discord, and tell me when it happened and what you were doing at the time."
+const ASK:= "Please share this on Telegram (t.me/obsifoxstudio), and tell me when it happened and what you were doing at the time."
 
 
-const ASK_AFTER_COPY:= "Copied. Please paste it into the Discord, and tell me when it happened and what you were doing at the time."
+const ASK_AFTER_COPY:= "Copied. Please paste it into Telegram (t.me/obsifoxstudio), and tell me when it happened and what you were doing at the time."
 
 
-const INTEL_CHANNEL_URL:= "https://discord.com/channels/1541371072824344616/1552984226230444062"
+# v3.2.3: crash support moved from Discord to the Telegram channel.
+const INTEL_CHANNEL_URL:= "https://t.me/obsifoxstudio"
 
 
 const BTN_COPY:= "Copy"
@@ -98,9 +99,9 @@ func _build() -> void:
 
 	if CrashReport.intel_fault != "":
 		_offer(column, tr("INTEL PROCESSOR"),
-			tr("Your processor (%s) has a known Intel fault that makes many games crash, not just this one. Our Discord has a channel that explains the issue.")
+			tr("Your processor (%s) has a known Intel fault that makes many games crash, not just this one. Our Telegram channel explains the issue.")
 				% CrashReport.intel_fault,
-			tr("OPEN DISCORD"), OS.shell_open.bind(INTEL_CHANNEL_URL), BTN_INTEL)
+			tr("OPEN TELEGRAM"), OS.shell_open.bind(INTEL_CHANNEL_URL), BTN_INTEL)
 
 
 	if CrashReport.offer_d3d12:

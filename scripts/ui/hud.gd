@@ -51,7 +51,7 @@ const COL_WATERMARK:= Color(0.96, 0.97, 0.94, 0.6)
 const COL_WATERMARK_PLATE:= Color(0.02, 0.03, 0.04, 0.42)
 
 
-const WATERMARK_NOTE:= "Bugs might exist. Please report them on Discord."
+const WATERMARK_NOTE:= "Bugs might exist. Please report them on Telegram."
 const WATERMARK_NOTE_SIZE:= 12
 const COL_WATERMARK_NOTE:= Color(0.96, 0.97, 0.94, 0.52)
 

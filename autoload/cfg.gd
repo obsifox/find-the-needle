@@ -334,8 +334,8 @@ const BUILD_TAG:= "V40"
 ## line. Both previous reports just said "V33 demo", so there was no way to
 ## tell WHICH apk had crashed -- bump APP_VERSION/APP_CODE together with
 ## export_presets.cfg version/name and version/code on every release.
-const APP_VERSION:= "3.2.2"
-const APP_CODE:= 15
+const APP_VERSION:= "3.2.3"
+const APP_CODE:= 16
 
 
 func build_string() -> String:
@@ -3417,7 +3417,7 @@ func _apply_ui_scale() -> void:
 const LOCALES:= [
         { "code": "", "name": "System" },
         { "code": "en", "name": "English" },
-        { "code": "de", "name": "Deutsch" },
+        { "code": "fa", "name": "فارسی" },
         { "code": "fr", "name": "Français" },
         { "code": "es", "name": "Español" },
         { "code": "pt", "name": "Português (Brasil)", "card": "Português" },
@@ -3491,8 +3491,44 @@ func apply_locale() -> void:
         _running_locale = locale
         TranslationServer.set_locale(OS.get_locale() if locale == "" else locale)
 
-
+        refresh_rtl()
         UiFont.relocale()
+
+
+# v3.2.3 RTL: Persian (and any future RTL language) mirrors the whole UI
+# tree. Window has no exposed layout_direction in 4.7, so every
+# top-of-chain Control (added now or later) gets flipped via the
+# node_added hook; children inherit it. Safe to call any time.
+func refresh_rtl() -> void:
+        _rtl = false
+        for code: String in ["fa", "ar", "he", "ur"]:
+                if TranslationServer.get_locale().begins_with(code):
+                        _rtl = true
+                        break
+        if not _rtl_hooked and get_tree() != null:
+                _rtl_hooked = true
+                get_tree().node_added.connect(_rtl_on_node_added)
+        _rtl_flip_existing()
+
+
+var _rtl:= false
+var _rtl_hooked:= false
+
+
+func _rtl_on_node_added(node: Node) -> void:
+        if not _rtl or node is not Control:
+                return
+        if node.get_parent() is Control:
+                return  # inherits from its chain root
+        (node as Control).layout_direction = Control.LAYOUT_DIRECTION_RTL
+
+
+func _rtl_flip_existing() -> void:
+        if not _rtl or get_tree() == null or get_tree().root == null:
+                return
+        for node: Node in get_tree().root.get_children():
+                if node is Control and node.get_parent() is not Control:
+                        (node as Control).layout_direction = Control.LAYOUT_DIRECTION_RTL
 
 
 func choose_locale(code: String) -> bool:

@@ -332,5 +332,5 @@ func _apply_shot_language(code: String) -> void:
 	ItemDb.invalidate()
 	TechTree.invalidate()
 
-
+	Cfg.refresh_rtl()
 	UiFont.relocale()

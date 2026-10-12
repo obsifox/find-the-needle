@@ -11,7 +11,9 @@ const MENU_SCENE:= "res://scenes/main_menu.tscn"
 
 
 const WORLD_PATH:= "res://scripts/world/world.gd"
-const DISCORD_URL:= "https://discord.gg/MqcvCz8eyG"
+# v3.2.3: Discord/Steam wishlist replaced by the two Telegram channels.
+const TG_BLACK:= "https://t.me/blackxsmile"
+const TG_OBSI:= "https://t.me/obsifoxstudio"
 
 
 const STEAM_URL:= "https://store.steampowered.com/app/5160800/Find_The_Needle/"
@@ -205,20 +207,11 @@ func _build() -> void:
         _wishlist_page.add_theme_constant_override("separation", 6)
         _wishlist_page.visible = false
         box.add_child(_wishlist_page)
-        var ask:= _label(tr("Did you like it? Put Find The Needle on your Steam wishlist. It helps us a lot, and Steam will tell you when the game comes out."), 20, COL_TEXT)
-        ask.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-        ask.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-        _wishlist_page.add_child(ask)
-        var ask_gap:= Control.new()
-        ask_gap.custom_minimum_size = Vector2(0, 12)
-        _wishlist_page.add_child(ask_gap)
-        _wishlist_page.add_child(_social_button(tr("WISHLIST ON STEAM"), COL_STEAM, _on_wishlist))
-
-
-        var discord:= _social_button(tr("DISCORD COMMUNITY"), Color(0.35, 0.4, 0.95), _open_social.bind(DISCORD_URL))
-        discord.custom_minimum_size = Vector2(280.0, 44.0)
-        discord.add_theme_font_size_override("font_size", 17)
-        _wishlist_page.add_child(discord)
+        _wishlist_page.add_child(_social_button("blackxsmile", Color(0.23, 0.53, 0.96), _open_social.bind(TG_BLACK)))
+        var tg_obsi:= _social_button("obsifoxstudio", Color(0.58, 0.34, 0.92), _open_social.bind(TG_OBSI))
+        tg_obsi.custom_minimum_size = Vector2(280.0, 44.0)
+        tg_obsi.add_theme_font_size_override("font_size", 17)
+        _wishlist_page.add_child(tg_obsi)
         var quit_gap:= Control.new()
         quit_gap.custom_minimum_size = Vector2(0, 12)
         _wishlist_page.add_child(quit_gap)
@@ -418,15 +411,6 @@ func _on_quit_pressed() -> void:
                 return
         Audio.play("ui_open", -4.0)
         _show_page(_wishlist_page)
-
-
-func _on_wishlist() -> void:
-        if _leaving:
-                return
-        Audio.play("ui_select")
-        if OS.shell_open(STEAM_URL) != OK:
-                _status.text = tr("Please open this address in your browser: %s") % STEAM_URL
-                Audio.play("ui_error")
 
 
 func _on_quit() -> void:

@@ -27,8 +27,8 @@ func _draw() -> void:
 	match code:
 		"en":
 			_union_jack(r)
-		"de":
-			_tricolour_h(r, [Color("000000"), Color("dd0000"), Color("ffce00")])
+		"fa":
+			_iran(r)
 		"pl":
 
 
@@ -57,6 +57,23 @@ func _draw() -> void:
 			_unknown(r)
 	_sheen(r)
 	draw_rect(r, Color(1, 1, 1, 0.18 + 0.3 * lit), false, 1.0)
+
+
+func _iran(r: Rect2) -> void:
+	# Simplified Iran flag: green / white / red bands and a red emblem.
+	var band:= r.size.y / 3.0
+	draw_rect(Rect2(r.position, Vector2(r.size.x, band)), Color("239f40"))
+	draw_rect(Rect2(r.position + Vector2(0.0, band), Vector2(r.size.x, band)),
+			Color("f4f4f4"))
+	draw_rect(Rect2(r.position + Vector2(0.0, band * 2.0),
+			Vector2(r.size.x, band)), Color("da0000"))
+	var centre:= r.position + r.size * 0.5
+	var pts:= PackedVector2Array()
+	for i: int in 12:
+		var a:= TAU * float(i) / 12.0 - PI * 0.5
+		var rad:= 3.4 if i % 2 == 0 else 1.6
+		pts.append(centre + Vector2.from_angle(a) * rad)
+	draw_colored_polygon(pts, Color("cc0000"))
 
 
 func _tricolour_h(r: Rect2, colours: Array) -> void:

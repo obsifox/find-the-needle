@@ -601,7 +601,7 @@ func _compose(session: Dictionary, crashed: bool, started: float,
         if intel_fault != "":
                 out += "!! INTEL CPU WITH A KNOWN FAULT: %s\n" % intel_fault
                 out += "!! Intel 13th and 14th gen desktop chips can crash any game (Intel's\n"
-                out += "!! \"Vmin Shift Instability\"). The Intel channel on the Discord explains the issue.\n"
+                out += "!! \"Vmin Shift Instability\"). The Intel channel is now on Telegram (t.me/obsifoxstudio).\n"
                 out += "\n"
         out += "FIND THE NEEDLE crash report\n"
         out += "============================\n"

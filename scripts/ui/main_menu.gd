@@ -3,7 +3,10 @@ extends Control
 
 
 const GAME_SCENE:= "res://scenes/main.tscn"
-const DISCORD_URL:= "https://discord.gg/MqcvCz8eyG"
+# v3.2.3: Discord/Steam wishlist links replaced by the two Telegram
+# channels (blue + purple).
+const TG_BLACK:= "https://t.me/blackxsmile"
+const TG_OBSI:= "https://t.me/obsifoxstudio"
 
 const COL_TITLE:= Color(1.0, 0.86, 0.34)
 const COL_TEXT:= Color(0.95, 0.96, 0.99)
@@ -114,9 +117,9 @@ var _modal_action: Callable
 var _modal_cancel_action: Callable
 
 
-var _modal_link: Button
+var _tg_black: Button
 
-var _modal_discord: Button
+var _tg_obsi: Button
 var _fade: ColorRect
 var _leaving:= false
 var _title_blur_material: ShaderMaterial
@@ -470,17 +473,19 @@ func _build_modal() -> void:
         _modal_body.size_flags_vertical = Control.SIZE_EXPAND_FILL
         content.add_child(_modal_body)
 
-        _modal_link = _social_button(tr("WISHLIST ON STEAM"), PauseMenu.COL_STEAM, _on_modal_link)
-        _modal_link.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-        _modal_link.visible = false
-        content.add_child(_modal_link)
+        _tg_black = _social_button("blackxsmile", Color(0.23, 0.53, 0.96), _open_social.bind(TG_BLACK))
+        _tg_black.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+        _tg_black.custom_minimum_size = Vector2(280.0, 44.0)
+        _tg_black.add_theme_font_size_override("font_size", 17)
+        _tg_black.visible = false
+        content.add_child(_tg_black)
 
-        _modal_discord = _social_button(tr("DISCORD COMMUNITY"), Color(0.35, 0.4, 0.95), _open_social.bind(DISCORD_URL))
-        _modal_discord.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
-        _modal_discord.custom_minimum_size = Vector2(280.0, 44.0)
-        _modal_discord.add_theme_font_size_override("font_size", 17)
-        _modal_discord.visible = false
-        content.add_child(_modal_discord)
+        _tg_obsi = _social_button("obsifoxstudio", Color(0.58, 0.34, 0.92), _open_social.bind(TG_OBSI))
+        _tg_obsi.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+        _tg_obsi.custom_minimum_size = Vector2(280.0, 44.0)
+        _tg_obsi.add_theme_font_size_override("font_size", 17)
+        _tg_obsi.visible = false
+        content.add_child(_tg_obsi)
 
         var actions:= HBoxContainer.new()
         actions.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -1137,7 +1142,7 @@ func _on_new_game() -> void:
         if Cfg.DEMO:
                 _show_modal(
                         tr("BEFORE YOU START"),
-                        tr("This is a demo version, so bugs may exist. Please report anything you find in our Discord channel.\n\nThe most active community members will be included in the credits when the full game releases."),
+                        tr("This is a demo version, so bugs may exist. Please report anything you find in our Telegram channel.\n\nThe most active community members will be included in the credits when the full game releases."),
                         tr("START DEMO"),
                         _continue_new_game,
                         true
@@ -1147,7 +1152,7 @@ func _on_new_game() -> void:
 
         _show_modal(
                 tr("BEFORE YOU START"),
-                tr("This is a test version of the full game, so bugs may exist. Please report anything you find in our Discord channel."),
+                tr("This is a test version of the full game, so bugs may exist. Please report anything you find in our Telegram channel."),
                 tr("START"),
                 _continue_new_game,
                 true
@@ -1232,21 +1237,14 @@ func _on_quit() -> void:
         Audio.play("ui_open")
         _show_modal(
                 tr("THANKS FOR PLAYING"),
-                tr("Did you like it? Put Find The Needle on your Steam wishlist. It helps us a lot, and Steam will tell you when the game comes out."),
+                tr("Thanks for playing Find The Needle! Follow us on Telegram for news, updates and support."),
                 tr("QUIT"),
                 _quit_now,
                 true,
                 tr("CANCEL")
         )
-        _modal_link.visible = true
-        _modal_discord.visible = true
-
-
-func _on_modal_link() -> void:
-        Audio.play("ui_select")
-        if OS.shell_open(PauseMenu.STEAM_URL) != OK:
-                Audio.play("ui_error")
-                _modal_body.text = tr("Please open this address in your browser:\n%s") % PauseMenu.STEAM_URL
+        _tg_black.visible = true
+        _tg_obsi.visible = true
 
 
 func _quit_now() -> void:
@@ -1276,8 +1274,8 @@ func _show_modal(title: String, body: String, confirm_text: String,
         _modal_confirm.text = confirm_text
         _modal_cancel.text = cancel_text if cancel_text != "" else tr("NOT YET")
         _modal_cancel.visible = show_cancel
-        _modal_link.visible = false
-        _modal_discord.visible = false
+        _tg_black.visible = false
+        _tg_obsi.visible = false
         _modal_action = action
         _modal_cancel_action = cancel_action
         _modal.visible = true
