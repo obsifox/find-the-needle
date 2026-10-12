@@ -20,3 +20,4 @@ Thumbs.db
 .godot/shader_cache/
 .godot/exported/
 build/
+captures/

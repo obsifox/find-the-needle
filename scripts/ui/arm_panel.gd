@@ -378,7 +378,7 @@ func _write_status() -> void:
 static func write_power_chip(chip: Control, word: Label, share: float) -> void:
 	chip.visible = share < 0.999
 	if chip.visible:
-		word.text = Cfg.tr("LOW POWER  ·  %d%%") % int(round(share * 100.0))
+		word.text = Cfg.fa_digits(Cfg.tr("LOW POWER  ·  %d%%") % int(round(share * 100.0)))
 
 
 func _write_belts() -> void:
@@ -398,8 +398,8 @@ func _write_belts() -> void:
 	elif n == 1:
 		_belts.text = tr("Any belt in its radius. 1 belt right now.")
 	else:
-		_belts.text = tr_n("Any belt in its radius. %d belt right now, taking turns.",
-			"Any belt in its radius. %d belts right now, taking turns.", n) % n
+		_belts.text = Cfg.fa_digits(tr_n("Any belt in its radius. %d belt right now, taking turns.",
+			"Any belt in its radius. %d belts right now, taking turns.", n) % n)
 
 
 func _write_links() -> void:
@@ -523,7 +523,7 @@ func _link_row(role: int, link: Dictionary, none: String = "") -> Control:
 		return row
 	var at: Vector3 = link ["at"]
 	var flat:= Vector2(at.x - _arm.global_position.x, at.z - _arm.global_position.z)
-	what.text = tr("Belt, %.1f m away") % flat.length()
+	what.text = Cfg.fa_digits(tr("Belt, %.1f m away") % flat.length())
 	var run: Variant = link.get("run")
 	var cross:= _link("×", _on_unlink.bind(run))
 	cross.add_theme_font_size_override("font_size", 20)
@@ -680,7 +680,7 @@ func _write_radius() -> void:
 	var on:= _arm.radius_shown()
 	if on:
 		var left:= int(ceil(_arm.radius_seconds_left()))
-		_radius_btn.text = tr("HIDE RADIUS  ·  %d:%02d") % [left / 60, left % 60]
+		_radius_btn.text = Cfg.fa_digits(tr("HIDE RADIUS  ·  %d:%02d") % [left / 60, left % 60])
 	else:
 		_radius_btn.text = tr("SHOW RADIUS")
 	_radius_btn.icon = PlateIcons.texture("eye_off" if on else "eye", 20)

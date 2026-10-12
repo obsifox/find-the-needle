@@ -424,8 +424,8 @@ func _build_window_rows(page: Control) -> void:
                 if Cfg.fullscreen:
                         var screen:= DisplayServer.screen_get_size(
                                 DisplayServer.window_get_current_screen())
-                        note.text = tr("Fullscreen at %d x %d. Resolution only changes windowed mode.") % [
-                                screen.x, screen.y]
+                        note.text = Cfg.fa_digits(tr("Fullscreen at %d x %d. Resolution only changes windowed mode.") % [
+                                screen.x, screen.y])
                         note.add_theme_color_override("font_color", COL_ACCENT)
                 else:
                         note.text = tr("Windowed.")
@@ -1426,7 +1426,7 @@ func _choice_row(title: String, values: PackedStringArray, index: int,
         var box:= HBoxContainer.new()
         box.add_theme_constant_override("separation", 4)
 
-        var value:= _label(tr(values [index]), 16, COL_TEXT, true)
+        var value:= _label(Cfg.fa_digits(tr(values [index])), 16, COL_TEXT, true)
         value.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
         value.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
         value.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -1435,7 +1435,7 @@ func _choice_row(title: String, values: PackedStringArray, index: int,
         var state:= { "i": index }
         var step:= func(by: int) -> void:
                 state ["i"] = wrapi(int(state ["i"]) + by, 0, values.size())
-                value.text = tr(values [state ["i"]])
+                value.text = Cfg.fa_digits(tr(values [state ["i"]]))
                 on_pick.call(int(state ["i"]))
 
         box.add_child(_arrow("<", step.bind(-1)))
@@ -1564,7 +1564,7 @@ func _gfx_dropdown(title: String, names: Array, key: String) -> HBoxContainer:
         menu.custom_minimum_size = Vector2(128, 26)
         menu.size_flags_vertical = Control.SIZE_SHRINK_CENTER
         for item: String in list:
-                menu.add_item(tr(item))
+                menu.add_item(Cfg.fa_digits(tr(item)))
         menu.select(clampi(int(Cfg.gfx [key]), 0, list.size() - 1))
         _style_pill(menu)
         menu.item_selected.connect(func(i: int) -> void: Cfg.set_gfx(key, i))
@@ -1611,7 +1611,7 @@ func _on_shell_rebuild(b: Button) -> void:
         var rebuilt:= field.rebuild_shells()
         if not is_instance_valid(b):
                 return
-        b.text = tr("%d DONE") % rebuilt
+        b.text = Cfg.fa_digits(tr("%d DONE") % rebuilt)
         await get_tree().create_timer(1.2).timeout
         if is_instance_valid(b):
                 b.text = tr("REBUILD")

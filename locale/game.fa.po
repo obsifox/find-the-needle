@@ -6141,7 +6141,7 @@ msgid "LINE"
 msgstr "خط"
 
 msgid "DEMO"
-msgstr "دمو"
+msgstr "نسخه آزمایشی"
 
 msgid "NEW GAME"
 msgstr "بازی جدید"

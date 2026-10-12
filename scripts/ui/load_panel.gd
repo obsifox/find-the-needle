@@ -194,7 +194,7 @@ func _step(col: VBoxContainer, number: int, what: String) -> Label:
 	tick.draw.connect(_draw_tick.bind(tick))
 	row.add_child(tick)
 	var name_label:= Label.new()
-	name_label.text = "%d.  %s" % [number, what]
+	name_label.text = Cfg.fa_digits("%d.  %s" % [number, what])
 	name_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_ink(name_label, H_HEAD, COL_INK, true)

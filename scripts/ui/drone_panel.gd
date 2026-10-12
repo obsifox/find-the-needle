@@ -245,8 +245,8 @@ func _write_where() -> void:
 		_zone_row.text = tr("Not set yet.")
 		_zone_row.add_theme_color_override("font_color", ArmPanel.COL_INK_SOFT)
 	else:
-		_zone_row.text = tr("%.1f m circle, %.0f m from the pad") % [
-			_drone.zone_r, _flat(_drone.zone_at, pad)]
+		_zone_row.text = Cfg.fa_digits(tr("%.1f m circle, %.0f m from the pad") % [
+			_drone.zone_r, _flat(_drone.zone_at, pad)])
 		_zone_row.add_theme_color_override("font_color", ArmPanel.COL_INK)
 	_zone_x.visible = zone_set
 	_mark_set(_zone_mark, ArmPanel.COL_TAKE_INK, zone_set)
@@ -260,12 +260,12 @@ func _write_where() -> void:
 				what = tr("Belt")
 			HayDrone.Drop.STAIRS:
 				what = tr("Hay stairs")
-		_drop_row.text = tr("%s, %.0f m from the pad") % [what, _flat(_drone.drop_at, pad)]
+		_drop_row.text = Cfg.fa_digits(tr("%s, %.0f m from the pad") % [what, _flat(_drone.drop_at, pad)])
 		_drop_row.add_theme_color_override("font_color", ArmPanel.COL_INK)
 	_drop_x.visible = drop_set
 	_mark_set(_drop_mark, ArmPanel.COL_PUT_INK, drop_set)
-	_reach_line.text = tr("It works up to %.0f m from its pad. Loads carried: %d.") % [
-		_drone.radius(), _drone.trips]
+	_reach_line.text = Cfg.fa_digits(tr("It works up to %.0f m from its pad. Loads carried: %d.") % [
+			_drone.radius(), _drone.trips])
 
 
 static func _mark_set(mark: Control, ink: Color, on: bool) -> void:
@@ -286,7 +286,7 @@ func _write_show() -> void:
 	var on:= _drone.job_shown() and _has_job()
 	if on and left > 0.0:
 		var s:= int(ceil(left))
-		_show_btn.text = tr("HIDE ZONE  ·  %d:%02d") % [s / 60, s % 60]
+		_show_btn.text = Cfg.fa_digits(tr("HIDE ZONE  ·  %d:%02d") % [s / 60, s % 60])
 	elif on:
 		_show_btn.text = tr("HIDE ZONE")
 	else:

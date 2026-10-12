@@ -742,6 +742,9 @@ func _ready() -> void:
         mouse_filter = Control.MOUSE_FILTER_IGNORE
         visible = false
         process_mode = Node.PROCESS_MODE_ALWAYS
+        # V43: the tech tree keeps its LTR layout in RTL locales (fa) --
+        # children inherit LTR; Persian text still shapes RTL per glyph run.
+        layout_direction = Control.LAYOUT_DIRECTION_LTR
 
         set_process(false)
         _build()
@@ -2415,14 +2418,14 @@ func _repaint_all() -> void:
                 else:
 
 
-                        _progress.text = tr_n("%d matching card, with everything they need behind them. Empty the box for the whole tree.", "%d matching cards, with everything they need behind them. Empty the box for the whole tree.", _hits.size()) % _hits.size()
+                        _progress.text = Cfg.fa_digits(tr_n("%d matching card, with everything they need behind them. Empty the box for the whole tree.", "%d matching cards, with everything they need behind them. Empty the box for the whole tree.", _hits.size()) % _hits.size())
         elif _progress != null:
                 var bought:= 0
                 var total:= 0
                 for id: String in TechTree.ids():
                         bought += Tech.rank_of(id)
                         total += TechTree.max_rank(id)
-                _progress.text = tr("%d of %d levels bought   ·   wheel to zoom, click a card, double-click to buy, right-drag to move without closing it") % [bought, total]
+                _progress.text = Cfg.fa_digits(tr("%d of %d levels bought   ·   wheel to zoom, click a card, double-click to buy, right-drag to move without closing it") % [bought, total])
 
 
 func _count_lanes() -> void:
@@ -2512,7 +2515,7 @@ func _paint(id: String) -> void:
         elif top <= 1:
                 rank_label.text = tr("OWNED") if rank > 0 else ""
         else:
-                rank_label.text = "%d/%d" % [rank, top]
+                rank_label.text = Cfg.fa_digits("%d/%d" % [rank, top])
         rank_label.add_theme_color_override("font_color",
                 COL_OWNED if rank > 0 else COL_LOCKED)
 
@@ -2720,7 +2723,7 @@ func _paint_inspector() -> void:
 
                 _ins_rank.text = tr("Unlock   ·   owned") if rank > 0 else tr("Unlock   ·   not bought")
         else:
-                _ins_rank.text = tr("Level %d of %d") % [rank, top]
+                _ins_rank.text = Cfg.fa_digits(tr("Level %d of %d") % [rank, top])
         _ins_blurb.text = TechTree.blurb(id)
 
 
@@ -2745,7 +2748,7 @@ func _paint_inspector() -> void:
         _ins_cost.add_theme_color_override("font_color",
                 COL_AFFORD if check ["ok"] else COL_SHORT)
         _ins_buy.disabled = not check ["ok"]
-        _ins_buy.text = tr("BUY") if top <= 1 else tr("BUY LEVEL %d") % (rank + 1)
+        _ins_buy.text = Cfg.fa_digits(tr("BUY") if top <= 1 else tr("BUY LEVEL %d") % (rank + 1))
 
 
         var gate_says:= contract_gate_text(id)

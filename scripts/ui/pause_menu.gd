@@ -346,7 +346,7 @@ func _on_options_back() -> void:
 
 func _on_save() -> void:
         if _save():
-                _status.text = tr("Saved to slot %d") % (SaveManager.current_slot + 1)
+                _status.text = Cfg.fa_digits(tr("Saved to slot %d") % (SaveManager.current_slot + 1))
                 Audio.play("ui_select")
         else:
                 _status.text = tr("Could not write the save")

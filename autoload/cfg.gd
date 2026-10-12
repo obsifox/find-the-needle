@@ -334,8 +334,8 @@ const BUILD_TAG:= "V40"
 ## line. Both previous reports just said "V33 demo", so there was no way to
 ## tell WHICH apk had crashed -- bump APP_VERSION/APP_CODE together with
 ## export_presets.cfg version/name and version/code on every release.
-const APP_VERSION:= "3.2.3"
-const APP_CODE:= 16
+const APP_VERSION:= "3.2.4"
+const APP_CODE:= 17
 
 
 func build_string() -> String:
@@ -2482,8 +2482,8 @@ const SHADOW_FILTER_QUALITIES:= [
 ]
 
 
-const TEXTURE_RES_NAMES:= ["1K", "2K", "4K"]
-const TEXTURE_RES_TAGS:= ["1k", "2k", "4k"]
+const TEXTURE_RES_NAMES:= ["1K", "2K"]
+const TEXTURE_RES_TAGS:= ["1k", "2k"]
 
 
 const MACHINE_DISTANCE_NAMES:= ["40 m", "60 m", "80 m", "120 m", "200 m", "400 m", "Unlimited"]
@@ -2571,6 +2571,35 @@ func _look_defaults() -> Dictionary:
 func texture_res() -> String:
         var i: int = clampi(int(gfx.get("texture_res", 0)), 0, TEXTURE_RES_TAGS.size() - 1)
         return TEXTURE_RES_TAGS [i]
+
+
+# V43: Persian digits for every number the UI prints (fa locale only).
+# 0-9 -> ۰-۹, thousands "," -> "٬", decimal "." -> "٫".
+const _FA_DIGITS:= "۰۱۲۳۴۵۶۷۸۹"
+
+
+static func fa_digits(s: String) -> String:
+        if not TranslationServer.get_locale().begins_with("fa"):
+                return s
+        var out:= ""
+        for i in s.length():
+                var ch:= s [i]
+                var c: int = ch.unicode_at(0)
+                if c >= 48 and c <= 57:
+                        out += _FA_DIGITS [c - 48]
+                elif (ch == "," or ch == ".") and i > 0 and i + 1 < s.length():
+                        # separators only BETWEEN digits: prose commas/periods stay
+                        var prev: int = out.unicode_at(out.length() - 1)
+                        var next: int = s.unicode_at(i + 1)
+                        var lo: int = "۰".unicode_at(0)
+                        var hi: int = "۹".unicode_at(0)
+                        if prev >= lo and prev <= hi and next >= 48 and next <= 57:
+                                out += "٬" if ch == "," else "٫"
+                        else:
+                                out += ch
+                else:
+                        out += ch
+        return out
 
 
 func machine_distance_metres() -> float:

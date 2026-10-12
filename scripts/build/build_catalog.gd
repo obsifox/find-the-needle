@@ -700,8 +700,8 @@ static func cost_text(id: String) -> String:
 
 	var gifts:= GameState.gift_waiting(id)
 	if gifts > 0:
-		return Cfg.tr("FREE x%d") % gifts
-	return str(spec(id).get("cost", ""))
+		return Cfg.fa_digits(Cfg.tr("FREE x%d") % gifts)
+	return Cfg.fa_digits(str(spec(id).get("cost", "")))
 
 
 static func has_gift(id: String) -> bool:

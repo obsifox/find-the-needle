@@ -496,7 +496,7 @@ static func _build_string() -> String:
 static func format_value(kind: String, value: float) -> String:
 	match kind:
 		"money":
-			return "$" + _grouped(value)
+			return Cfg.fa_digits("$" + _grouped(value))
 		"stopwatch":
 			if value <= 0.0:
 				return Cfg.tr("no time yet")
@@ -504,7 +504,7 @@ static func format_value(kind: String, value: float) -> String:
 		"time":
 			return clock_text(value)
 		_:
-			return _grouped(value)
+			return Cfg.fa_digits(_grouped(value))
 
 
 static func clock_text(secs: float) -> String:
@@ -515,10 +515,10 @@ static func clock_text(secs: float) -> String:
 
 
 	if h > 0:
-		return Cfg.tr("%dh %02dm %02ds", "stopwatch") % [h, m, s]
+		return Cfg.fa_digits(Cfg.tr("%dh %02dm %02ds", "stopwatch") % [h, m, s])
 	if m > 0:
-		return Cfg.tr("%dm %02ds", "stopwatch") % [m, s]
-	return Cfg.tr("%ds", "stopwatch") % s
+		return Cfg.fa_digits(Cfg.tr("%dm %02ds", "stopwatch") % [m, s])
+	return Cfg.fa_digits(Cfg.tr("%ds", "stopwatch") % s)
 
 
 static func day_key(unix: float) -> String:

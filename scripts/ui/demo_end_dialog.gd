@@ -307,7 +307,7 @@ func _fill() -> void:
 			kinds += NeedleTypes.pool(lot).size()
 		_headline.text = tr("THE FIRST SIX FOUND")
 		_body.text = tr("You found every kind of needle in the first load.")
-		_after.text = tr("That is the end of the demo. The full game has %d more loads and %d more kinds of needle. You can keep playing or stop here.") % [loads, kinds]
+		_after.text = Cfg.fa_digits(tr("That is the end of the demo. The full game has %d more loads and %d more kinds of needle. You can keep playing or stop here.") % [loads, kinds])
 	for child in _figures.get_children():
 		_figures.remove_child(child)
 		child.queue_free()

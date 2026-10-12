@@ -573,7 +573,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_money_changed(amount: float) -> void:
 	if _money_label != null:
-		_money_label.text = tr("Available:  $%.2f") % amount
+		_money_label.text = Cfg.fa_digits(tr("Available:  $%.2f") % amount)
 	_refresh()
 
 
@@ -597,7 +597,7 @@ func _refresh_in() -> void:
 		var n:= _owned_count(id)
 		if _owned_labels.has(id):
 			var lab: Label = _owned_labels [id]
-			lab.text = "" if n == 0 else tr("you own %d") % n
+			lab.text = Cfg.fa_digits("" if n == 0 else tr("you own %d") % n)
 		if _fetch_buttons.has(id):
 			var fb: Button = _fetch_buttons [id]
 

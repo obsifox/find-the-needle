@@ -162,7 +162,7 @@ static func clock_line(period: String, unix: float) -> String:
 	var ends:= Leaderboard.period_ends(period, unix)
 	if ends <= 0:
 		return Cfg.tr("NEVER RESETS")
-	return Cfg.tr("RESETS IN %s") % Leaderboard.clock_text(maxf(float(ends) - unix, 0.0))
+	return Cfg.fa_digits(Cfg.tr("RESETS IN %s") % Leaderboard.clock_text(maxf(float(ends) - unix, 0.0)))
 
 
 func _process(delta: float) -> void:
@@ -646,12 +646,12 @@ static func _ordinal(n: int) -> String:
 
 
 	if n % 100 >= 11 and n % 100 <= 13:
-		return Cfg.tr("%dth", "ordinal: 11th, 12th, 13th") % n
+		return Cfg.fa_digits(Cfg.tr("%dth", "ordinal: 11th, 12th, 13th") % n)
 	match n % 10:
-		1: return Cfg.tr("%dst", "ordinal: 1st, 21st") % n
-		2: return Cfg.tr("%dnd", "ordinal: 2nd, 22nd") % n
-		3: return Cfg.tr("%drd", "ordinal: 3rd, 23rd") % n
-	return Cfg.tr("%dth", "ordinal: 4th and the rest") % n
+		1: return Cfg.fa_digits(Cfg.tr("%dst", "ordinal: 1st, 21st") % n)
+		2: return Cfg.fa_digits(Cfg.tr("%dnd", "ordinal: 2nd, 22nd") % n)
+		3: return Cfg.fa_digits(Cfg.tr("%drd", "ordinal: 3rd, 23rd") % n)
+	return Cfg.fa_digits(Cfg.tr("%dth", "ordinal: 4th and the rest") % n)
 
 
 func _style_tab(b: Button, on: bool) -> void:

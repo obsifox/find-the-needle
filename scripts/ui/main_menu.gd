@@ -280,6 +280,9 @@ func _build_title() -> void:
 
 
         box.name = "TitleBlock"
+        # V43: the logo block keeps its LTR position/alignment in RTL locales
+        # (like the tech tree); the text itself is Persian under fa.
+        box.layout_direction = Control.LAYOUT_DIRECTION_LTR
         add_child(box)
 
 
@@ -290,8 +293,14 @@ func _build_title() -> void:
         name_box.alignment = BoxContainer.ALIGNMENT_BEGIN
         box.add_child(name_box)
 
-        name_box.add_child(_title_line("FIND THE", 68))
-        name_box.add_child(_title_line("NEEDLE", 104))
+        # V43: locale-aware logo -- Persian reads "سوزن را پیدا کن"
+        # top-down when the game runs in fa; English otherwise.
+        if TranslationServer.get_locale().begins_with("fa"):
+                name_box.add_child(_title_line("سوزن را", 68))
+                name_box.add_child(_title_line("پیدا کن", 104))
+        else:
+                name_box.add_child(_title_line("FIND THE", 68))
+                name_box.add_child(_title_line("NEEDLE", 104))
 
 
         if Cfg.DEMO:
@@ -861,7 +870,7 @@ func _refresh_slots() -> void:
 
 
                 var given:= str(s.get("name", ""))
-                row.text = given if given != "" else tr("SLOT %d") % (i + 1)
+                row.text = Cfg.fa_digits(given if given != "" else tr("SLOT %d") % (i + 1))
 
 
                 var newer: bool = str(s.get("status", "")) == SaveManager.READ_NEWER
@@ -982,7 +991,7 @@ func _short_count(v: float) -> String:
                 return "%d%s" % [int(round(v / 10000.0)), man]
         if v >= 1000000.0:
                 var m:= v / 1000000.0
-                return tr("%dM", "millions") % int(round(m)) if m >= 10.0 else tr("%.1fM", "millions") % m
+                return Cfg.fa_digits(tr("%dM", "millions") % int(round(m)) if m >= 10.0 else tr("%.1fM", "millions") % m)
         if v >= 1000.0:
                 return tr("%dK", "thousands") % int(round(v / 1000.0))
         return Hud.fmt(v)
@@ -1033,7 +1042,7 @@ func _place_slot_card(slot: int) -> void:
 
 func _fill_slot_card(slot: int, s: Dictionary) -> void:
         var given:= str(s.get("name", ""))
-        _card_title.text = given if given != "" else tr("SLOT %d") % (slot + 1)
+        _card_title.text = Cfg.fa_digits(given if given != "" else tr("SLOT %d") % (slot + 1))
 
         var row:= 0
 
@@ -1862,8 +1871,10 @@ func _stamp(unix: int) -> String:
 
 
         var lang:= TranslationServer.get_locale()
+        if lang.begins_with("fa"):
+                return Cfg.fa_digits("%s %d، ساعت %02d:%02d" % [_month(int(d ["month"])), d ["day"], d ["hour"], d ["minute"]])
         if lang.begins_with("zh") or lang.begins_with("ja"):
-                return "%s%d日 %02d:%02d" % [_month(int(d ["month"])), d ["day"], d ["hour"], d ["minute"]]
+                return Cfg.fa_digits("%s%d日 %02d:%02d" % [_month(int(d ["month"])), d ["day"], d ["hour"], d ["minute"]])
         if lang.begins_with("ko"):
-                return "%s %d일 %02d:%02d" % [_month(int(d ["month"])), d ["day"], d ["hour"], d ["minute"]]
-        return "%d %s, %02d:%02d" % [d ["day"], _month(int(d ["month"])), d ["hour"], d ["minute"]]
+                return Cfg.fa_digits("%s %d일 %02d:%02d" % [_month(int(d ["month"])), d ["day"], d ["hour"], d ["minute"]])
+        return Cfg.fa_digits("%d %s, %02d:%02d" % [d ["day"], _month(int(d ["month"])), d ["hour"], d ["minute"]])

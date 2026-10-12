@@ -125,7 +125,7 @@ func _refresh() -> void:
 		return
 	var off:= bool(_machine.call("is_switched_off"))
 	_title.text = _name_of(_machine)
-	var line:= hud._machine_diagnostic(_machine) if hud != null else ""
+	var line:= Cfg.fa_digits(hud._machine_diagnostic(_machine)) if hud != null else ""
 
 
 	var first:= line.get_slice("\n", 0)
@@ -146,23 +146,23 @@ func _refresh() -> void:
 		line_label.text = ""
 	elif dark != "":
 		ArmPanel.write_state(_readout, _top ["sign"], 2)
-		line_label.text = dark
+		line_label.text = Cfg.fa_digits(dark)
 	elif alert != "":
 		ArmPanel.write_state(_readout, _top ["sign"], 2)
 		var cut:= alert.find("  ·  ")
-		_readout.text = alert.substr(0, cut) if cut >= 0 else alert
-		line_label.text = alert.substr(cut + 5) if cut >= 0 else first
+		_readout.text = Cfg.fa_digits(alert.substr(0, cut) if cut >= 0 else alert)
+		line_label.text = Cfg.fa_digits(alert.substr(cut + 5) if cut >= 0 else first)
 	else:
 		ArmPanel.write_state(_readout, _top ["sign"], 0)
 
 
-		line_label.text = "" if _machine is HayGenerator else first
+		line_label.text = "" if _machine is HayGenerator else Cfg.fa_digits(first)
 	ArmPanel.write_power_chip(_top ["chip"], _top ["chip_word"],
 		MachinePower.power_share_for(_machine, player))
 	PlateKit.set_photo(_top ["photo"], _tile_of(_machine))
 
 
-	_product.text = hud._machine_product(_machine) if hud != null else ""
+	_product.text = Cfg.fa_digits(hud._machine_product(_machine)) if hud != null else ""
 
 
 	_product.visible = _product.text != "" and not (_machine is HayGenerator)
@@ -208,16 +208,16 @@ func _write_sheet() -> bool:
 
 	var mine:= MachinePower.rating_line(_machine, grid)
 	if grid == null:
-		_budget.text = mine
+		_budget.text = Cfg.fa_digits(mine)
 		return false
 	var got: Dictionary = grid.report(_machine)
 	if not bool(got ["connected"]):
-		_budget.text = _rows(mine, tr("Not on a network.  Put a power pole near it."))
+		_budget.text = Cfg.fa_digits(_rows(mine, tr("Not on a network.  Put a power pole near it.")))
 		return false
 	if not (_machine is HayGenerator):
 
 
-		_budget.text = _rows(mine, tr("the whole line:  %s") % _network_text(got))
+		_budget.text = Cfg.fa_digits(_rows(mine, tr("the whole line:  %s") % _network_text(got)))
 		return false
 	var rows: PackedStringArray = []
 	var sheet: PackedStringArray = []
@@ -266,9 +266,9 @@ func _write_sheet() -> bool:
 	var satisfaction:= float(got ["satisfaction"])
 	var short:= satisfaction < 0.999
 	if short:
-		_status.text = tr("Short: %.1f kW") % maxf(float(got ["demand"]) - float(got ["supply"]), 0.0)
+		_status.text = Cfg.fa_digits(tr("Short: %.1f kW") % maxf(float(got ["demand"]) - float(got ["supply"]), 0.0))
 	else:
-		_status.text = tr("Spare: %.1f kW") % float(got.get("spare", 0.0))
+		_status.text = Cfg.fa_digits(tr("Spare: %.1f kW") % float(got.get("spare", 0.0)))
 	_status.add_theme_color_override("font_color", ArmPanel.COL_WARN if short else ArmPanel.COL_GO)
 	_status.visible = true
 
@@ -313,8 +313,8 @@ func _fill(grid: GridContainer, rows: PackedStringArray) -> void:
 		last.queue_free()
 	for i in rows.size():
 		var cells:= rows [i].split("\t", true, 1)
-		(grid.get_child(i * 2) as Label).text = cells [0]
-		(grid.get_child(i * 2 + 1) as Label).text = cells [1] if cells.size() > 1 else ""
+		(grid.get_child(i * 2) as Label).text = Cfg.fa_digits(cells [0])
+		(grid.get_child(i * 2 + 1) as Label).text = Cfg.fa_digits(cells [1]) if cells.size() > 1 else ""
 	grid.visible = not rows.is_empty()
 
 

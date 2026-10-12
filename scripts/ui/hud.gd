@@ -983,7 +983,7 @@ func _update_hand_count() -> void:
 	var show:= hand != null and hand.is_holding() and not hand.is_holding_needle()
 	if show:
 		var cap:= hand.capacity()
-		_hand_count.text = "%d / %d" % [hand.count(), cap]
+		_hand_count.text = Cfg.fa_digits("%d / %d" % [hand.count(), cap])
 		var full:= hand.count() >= cap
 		if full != _hand_full_shown:
 			_hand_full_shown = full
@@ -998,7 +998,7 @@ func set_belts_full(on: bool, cap: int) -> void:
 		return
 	_belts_full_cap = want
 	if on:
-		_belts_full.text = tr("BELTS FULL  ·  LIMIT %d  ·  %s > %s") % [cap, tr("OPTIONS"), tr("GAMEPLAY")]
+		_belts_full.text = Cfg.fa_digits(tr("BELTS FULL  ·  LIMIT %d  ·  %s > %s") % [cap, tr("OPTIONS"), tr("GAMEPLAY")])
 	_belts_full.visible = on and not _no_hud
 	_lay_out_corner()
 
@@ -2146,8 +2146,8 @@ func _update_build_readout() -> void:
 	if no_snap:
 
 
-		_no_snap.text = "%s\n%s" % [tr("NO SNAP MODE ACTIVATED"),
-			tr("You won't be able to snap to machines or anything")]
+		_no_snap.text = Cfg.fa_digits("%s\n%s" % [tr("NO SNAP MODE ACTIVATED"),
+			tr("You won't be able to snap to machines or anything")])
 
 
 		if player.build.belt_in_hand():
@@ -2179,19 +2179,19 @@ func _update_build_readout() -> void:
 		if product != "":
 			diagnostic += "\n" + product
 		_build.visible = diagnostic != ""
-		_build.text = diagnostic
+		_build.text = Cfg.fa_digits(diagnostic)
 
 
 		var rows:= float(diagnostic.count("\n")) * float(_build.get_line_height())
 		var tip:= _machine_tip(machine) if fault != "" else ""
-		_tip.text = tip
+		_tip.text = Cfg.fa_digits(tip)
 		_tip.visible = tip != ""
 		_tip.offset_top = TIP_TOP + rows
 		_tip.offset_bottom = TIP_BOTTOM + rows
 
 
 		var track:= _machine_upgrades(machine) if diagnostic != "" else ""
-		_upgrades.text = track
+		_upgrades.text = Cfg.fa_digits(track)
 		_upgrades.visible = track != ""
 
 
@@ -2634,7 +2634,7 @@ static func _clock(seconds: float) -> String:
 
 		return Cfg.tr("out", "fuel gauge")
 	var whole:= int(round(seconds))
-	return Cfg.tr("%d:%02d left") % [whole / 60, whole % 60]
+	return Cfg.fa_digits(Cfg.tr("%d:%02d left") % [whole / 60, whole % 60])
 
 
 func _set_build_tone(tone: String) -> void:
@@ -2990,7 +2990,7 @@ static func _fleet_text(st: Dictionary) -> String:
 
 static func money_text(v: float) -> String:
 	if absf(v) < Cfg.MONEY_CENTS_BELOW:
-		return "%.2f" % v
+		return Cfg.fa_digits("%.2f" % v)
 	return fmt(v)
 
 
@@ -3004,7 +3004,7 @@ static func fmt(v: float) -> String:
 		c += 1
 		if c % 3 == 0 and i > 0:
 			out = "," + out
-	return ("-" if n < 0 else "") + out
+	return Cfg.fa_digits(("-" if n < 0 else "") + out)
 
 
 func _aiming_at_something() -> bool:
@@ -3097,7 +3097,7 @@ func _write_radar_prompt(state: String) -> void:
 			_hide_prompt_key()
 			_prompt_title.text = tr("RECHARGING")
 			var secs:= int(parts [1]) if parts.size() > 1 else 0
-			_prompt_sub.text = tr("Ready again in %d s") % secs
+			_prompt_sub.text = Cfg.fa_digits(tr("Ready again in %d s") % secs)
 		_:
 			_show_prompt_key("interact")
 			_prompt_title.text = tr("SCAN THE PILE")
