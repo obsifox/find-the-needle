@@ -272,16 +272,19 @@ func _build_scrim() -> void:
 
 
 func _build_title() -> void:
-        var box:= VBoxContainer.new()
+        # V44: mirror-proof LTR island for the logo block. The menu root goes
+        # RTL under fa, and a plain positioned child of an RTL parent gets its
+        # rect mirrored (76 -> -76), which threw the logo off the left edge.
+        # A FULL-RECT island is mirror-invariant, and everything inside it is
+        # LTR, so the logo lands on the exact same physical rect as the
+        # English logo: the fa placement is a 1:1 copy of the en placement,
+        # only the words themselves are Persian.
+        var box:= Control.new()
         box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-        box.add_theme_constant_override("separation", 2)
-        box.position = Vector2(MARGIN_L, 60.0)
-        box.custom_minimum_size = Vector2(COLUMN_W, 0)
+        box.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
 
         box.name = "TitleBlock"
-        # V43: the logo block keeps its LTR position/alignment in RTL locales
-        # (like the tech tree); the text itself is Persian under fa.
         box.layout_direction = Control.LAYOUT_DIRECTION_LTR
         add_child(box)
 
@@ -291,7 +294,13 @@ func _build_title() -> void:
         name_box.add_theme_constant_override("separation", -8)
         name_box.custom_minimum_size = Vector2(COLUMN_W, 0)
         name_box.alignment = BoxContainer.ALIGNMENT_BEGIN
+        # V44: explicit LTR + set the rect only AFTER entering the tree. A
+        # parentless control under an RTL locale resolves INHERITED direction
+        # from the locale and mirrors the x it is given (76 -> -76) -- the
+        # exact bug that threw the fa logo off the left edge in v3.2.4.
+        name_box.layout_direction = Control.LAYOUT_DIRECTION_LTR
         box.add_child(name_box)
+        name_box.position = Vector2(MARGIN_L, 60.0)
 
         # V43: locale-aware logo -- Persian reads "سوزن را پیدا کن"
         # top-down when the game runs in fa; English otherwise.
@@ -316,6 +325,9 @@ func _title_line(text: String, size: int) -> Control:
         var holder:= Control.new()
         holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
         holder.custom_minimum_size = Vector2(COLUMN_W, full_height)
+        # V44: keep the whole logo subtree LTR (see _build_title) so no node
+        # in it ever mirrors under an RTL locale.
+        holder.layout_direction = Control.LAYOUT_DIRECTION_LTR
 
         var group:= CanvasGroup.new()
         group.clear_margin = outline_padding
@@ -325,30 +337,61 @@ func _title_line(text: String, size: int) -> Control:
 
         var border_radius:= 4.0
         var border_colour:= Color(0.0, 0.0, 0.0, 0.92)
+        var bounds:= Vector2(COLUMN_W, full_height + outline_padding)
         for index in 16:
                 var angle:= TAU * float(index) / 16.0
                 var offset:= Vector2(cos(angle), sin(angle)) * border_radius
-                group.add_child(_title_glyphs(
-                        text, size, border_colour, offset,
-                        Vector2(COLUMN_W, full_height + outline_padding)))
+                _add_glyph_cell(group, text, size, border_colour, offset, bounds)
 
-        group.add_child(_title_glyphs(
-                text, size, COL_TEXT, Vector2.ZERO,
-                Vector2(COLUMN_W, full_height + outline_padding)))
+        _add_glyph_cell(group, text, size, COL_TEXT, Vector2.ZERO, bounds)
         return holder
 
 
-func _title_glyphs(text: String, size: int, colour: Color,
-                position: Vector2, bounds: Vector2) -> Label:
+## V44: one glyph label inside a plain Control "cell". The CanvasGroup is a
+## Node2D, and a Control whose DIRECT parent is not a Control derives BOTH
+## its rect AND its text direction from the WINDOW -- under fa that mirrored
+## the glyphs off the left edge (x = -offset_right vs an empty parent rect)
+## and right-aligned the text. The cell restores a Control parent from the
+## LTR island chain, so the label behaves exactly like its English twin;
+## only the cell's own rect needs the RTL-window offset compensation.
+func _add_glyph_cell(group: CanvasGroup, text: String, size: int,
+                colour: Color, offset: Vector2, bounds: Vector2) -> void:
+        var cell:= Control.new()
+        cell.mouse_filter = Control.MOUSE_FILTER_IGNORE
+        cell.layout_direction = Control.LAYOUT_DIRECTION_LTR
+        group.add_child(cell)
+        _pin_glyphs(cell, offset, bounds)
+
+        var label:= _title_glyphs(text, size, colour)
+        cell.add_child(label)
+        label.size = bounds
+
+
+func _pin_glyphs(label: Control, offset: Vector2, bounds: Vector2) -> void:
+        # V44: see _add_glyph_cell -- under an RTL window the derivation for
+        # children of a Node2D computes x = -offset_right against an empty
+        # parent rect, so the offsets are stored negated there.
+        if get_window() != null and get_window().is_layout_rtl():
+                label.offset_left = -(offset.x + bounds.x)
+                label.offset_right = -offset.x
+        else:
+                label.offset_left = offset.x
+                label.offset_right = offset.x + bounds.x
+        label.offset_top = offset.y
+        label.offset_bottom = offset.y + bounds.y
+
+
+func _title_glyphs(text: String, size: int, colour: Color) -> Label:
         var label:= _label(text, size, colour, true)
 
 
         label.auto_translate_mode = Node.AUTO_TRANSLATE_MODE_DISABLED
+        # V44: explicit LTR -- the whole logo subtree stays LTR (see
+        # _build_title); Persian still shapes RTL per glyph run.
+        label.layout_direction = Control.LAYOUT_DIRECTION_LTR
         label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
         label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
         label.add_theme_constant_override("outline_size", 0)
-        label.position = position
-        label.size = bounds
         return label
 
 
